@@ -33,8 +33,6 @@
 
   display: flex;
   flex-wrap: wrap;
-  // margin-right: -($padding);
-  // margin-left: -($padding);
 }
 
 @each $breakpoint, $values in $breakpoints {
