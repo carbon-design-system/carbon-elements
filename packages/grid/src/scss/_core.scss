@@ -1,0 +1,42 @@
+@import 'variables';
+@import 'functions';
+@import 'mixins';
+
+/**
+ * Defines our initial grid context, including width, max-width, and padding
+ * constraints based off of the given breakpoint.
+ */
+.#{$prefix}--grid {
+  $margin: map-deep-get($breakpoints, sm, margin);
+
+  width: 100%;
+  max-width: map-deep-get($breakpoints, max, min-width);
+  padding-right: $margin;
+  padding-left: $margin;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include breakpoint(md) {
+    padding-right: map-deep-get($breakpoints, md, margin);
+    padding-left: map-deep-get($breakpoints, md, margin);
+  }
+
+  @include breakpoint(max) {
+    padding-right: map-deep-get($breakpoints, max, margin);
+    padding-left: map-deep-get($breakpoints, max, margin);
+  }
+}
+
+.#{$prefix}--grid > .#{$prefix}--row {
+  $breakpoint: map-get($breakpoints, sm);
+  $padding: map-get($breakpoint, padding);
+
+  display: flex;
+  flex-wrap: wrap;
+  // margin-right: -($padding);
+  // margin-left: -($padding);
+}
+
+@each $breakpoint, $values in $breakpoints {
+  @include columns($breakpoint);
+}
