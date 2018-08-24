@@ -4,8 +4,14 @@
 @mixin breakpoint($size) {
   @if map-has-key($breakpoints, $size) {
     $breakpoint: map-get($breakpoints, $size);
-    @media only screen and (min-width: map-get($breakpoint, min-width)) {
+    $smallest: nth(nth($breakpoints, 1), 1);
+
+    @if $smallest == $size {
       @content;
+    } @else {
+      @media only screen and (min-width: map-get($breakpoint, min-width)) {
+        @content;
+      }
     }
   } @else {
     @error 'Breakpoint not found for size: #{$size}';
@@ -15,16 +21,6 @@
 @mixin columns($size) {
   $columns: map-deep-get($breakpoints, $size, columns);
   $padding: map-deep-get($breakpoints, $size, padding);
-
-  @for $i from 0 through $columns {
-    .#{$prefix}--col-#{$size}-#{$i} {
-      position: relative;
-      width: 100%;
-      flex: 1 1 0%;
-      padding-right: $padding;
-      padding-left: $padding;
-    }
-  }
 
   @include breakpoint($size) {
     @for $i from 0 through $columns {
