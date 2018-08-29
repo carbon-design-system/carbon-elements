@@ -7,14 +7,14 @@
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @carbon/icons
+npm install -S @carbon/colors
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @carbon/icons
+yarn add @carbon/colors
 ```
 
 ## 🤲 Contributing

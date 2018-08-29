@@ -125,8 +125,6 @@ const colors = {
   },
 };
 
-const interaction = {};
-
 module.exports = {
   colors,
 };
