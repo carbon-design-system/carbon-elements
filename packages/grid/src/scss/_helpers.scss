@@ -20,14 +20,14 @@
   align-items: flex-start;
 }
 
-.#{$prefix}--grid > .#{prefix}--row.#{$prefix}--align-bottom {
+.#{$prefix}--grid > .#{$prefix}--row.#{$prefix}--align-bottom {
   align-items: flex-end;
 }
 
-.#{$prefix}--grid > .#{prefix}--row.#{$prefix}--align-center {
+.#{$prefix}--grid > .#{$prefix}--row.#{$prefix}--align-center {
   align-items: center;
 }
 
-.#{$prefix}--grid > .#{prefix}--row.#{$prefix}--align-stretch {
+.#{$prefix}--grid > .#{$prefix}--row.#{$prefix}--align-stretch {
   align-items: stretch;
 }
