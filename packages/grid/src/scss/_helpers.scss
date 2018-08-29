@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'functions';
+
+/**
+ * Generic helper column that will automatically span as much space as possible
+ * given the number of `.col` descendants there are in a row.
+ */
+.#{$prefix}--grid > .#{$prefix}--row > .#{$prefix}--col {
+  $padding: map-deep-get($breakpoints, sm, padding);
+
+  flex: 1 1 0%;
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+/**
+ * Utility classes for alignment of items within a row.
+ */
+.#{$prefix}--grid > .#{$prefix}--row.#{$prefix}--align-top {
+  align-items: flex-start;
+}
+
+.#{$prefix}--grid > .#{$prefix}--row.#{$prefix}--align-bottom {
+  align-items: flex-end;
+}
+
+.#{$prefix}--grid > .#{$prefix}--row.#{$prefix}--align-center {
+  align-items: center;
+}
+
+.#{$prefix}--grid > .#{$prefix}--row.#{$prefix}--align-stretch {
+  align-items: stretch;
+}

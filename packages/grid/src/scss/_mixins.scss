@@ -1,0 +1,75 @@
+@import 'variables';
+@import 'functions';
+
+@mixin breakpoint($size) {
+  @if map-has-key($breakpoints, $size) {
+    $breakpoint: map-get($breakpoints, $size);
+    $smallest: nth(nth($breakpoints, 1), 1);
+
+    @if $smallest == $size {
+      @content;
+    } @else {
+      @media only screen and (min-width: map-get($breakpoint, min-width)) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'Breakpoint not found for size: #{$size}';
+  }
+}
+
+@mixin columns($size) {
+  $columns: map-deep-get($breakpoints, $size, columns);
+  $min-width: map-deep-get($breakpoints, $size, min-width);
+  $padding: map-deep-get($breakpoints, $size, padding);
+
+  @include breakpoint($size) {
+    @for $i from 0 through $columns {
+      $col-width: (100% / $columns) * $i;
+
+      @include column-rules($col-width, $i, $size);
+    }
+
+    // Subgrid Code
+    // Purpose: Embed smaller nodes inside larger nodes at any breakpoint
+    // Any sub- variable is a reference to a previous breakpoint.
+    // Ex: .bx--col-#{sub-size}-2 .bx--col-#{size}-1
+    //     .bx--col-sm-2 .bx--col-md-1
+    @each $sub-size, $values in $breakpoints {
+      $sub-columns: map-deep-get($breakpoints, $sub-size, columns);
+      $sub-min-width: map-deep-get($breakpoints, $sub-size, min-width);
+
+      @if $min-width >= $sub-min-width {
+        // `$sub-columns - 1` is due to col-width already being declared as 100% without subgrid
+        // Ex: No need for '.bx-col-lg-16 .bx-col-md-8' because it equals '.bx-col-md-8', which is 100%
+        @for $i from 1 through $sub-columns - 1 {
+          $sub-col-width: (100% / $sub-columns) * $i;
+
+          @for $j from 1 through $columns {
+            $col-width-original: (100% / $columns) * $j;
+
+            @if $sub-col-width >= $col-width-original {
+              // Correct relative col-width inside of subgrid
+              $col-width: $col-width-original / $sub-col-width * 100%;
+
+              .#{$prefix}--col-#{$sub-size}-#{$i} {
+                @include column-rules($col-width, $j, $size);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin column-rules($col-width, $number, $size) {
+  .#{$prefix}--col-#{$size}-#{$number} {
+    flex: 0 0 $col-width;
+    max-width: $col-width;
+  }
+
+  .#{$prefix}--offset-#{$size}-#{$number} {
+    margin-left: $col-width;
+  }
+}

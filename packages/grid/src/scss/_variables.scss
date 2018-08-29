@@ -1,0 +1,36 @@
+$prefix: 'bx' !default;
+
+$unit: 0.5rem;
+
+$breakpoints: (
+  sm: (
+    min-width: 20rem,
+    columns: 4,
+    padding: 1rem,
+    margin: 0,
+  ),
+  md: (
+    min-width: 42rem,
+    columns: 8,
+    padding: 1rem,
+    margin: 1rem,
+  ),
+  lg: (
+    min-width: 66rem,
+    columns: 16,
+    padding: 1rem,
+    margin: 1rem,
+  ),
+  xl: (
+    min-width: 82rem,
+    columns: 16,
+    padding: 1rem,
+    margin: 1rem,
+  ),
+  max: (
+    min-width: 99rem,
+    columns: 16,
+    padding: 1rem,
+    margin: 2rem,
+  ),
+);
