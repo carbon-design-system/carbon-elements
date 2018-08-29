@@ -2,6 +2,7 @@
 
 const fs = require('fs-extra');
 const path = require('path');
+const prettier = require('prettier');
 const { colors } = require('./');
 
 const PREFIX = 'ibm';
@@ -40,7 +41,15 @@ async function build() {
   ].join('\n');
 
   await fs.ensureFile(entryFilename);
-  await fs.writeFile(entryFilename, file);
+  await fs.writeFile(
+    entryFilename,
+    prettier.format(file, {
+      jsxBracketSameLine: true,
+      printWidth: 80,
+      singleQuote: true,
+      trailingComma: 'es5',
+    })
+  );
 }
 
 /**
