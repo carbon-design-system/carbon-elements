@@ -7,6 +7,12 @@
  * constraints based off of the given breakpoint.
  */
 .#{$prefix}--grid {
+  /**
+   * var(--grid-x) is a multiplier that allows for subgrids
+   * (col classes embedded in other col classes)
+  */
+  --grid-x: 1;
+
   $margin: map-deep-get($breakpoints, sm, margin);
 
   width: 100%;
