@@ -33,4 +33,6 @@ const breakpoints = {
   },
 };
 
-module.exports = { breakpoints };
+const unit = '0.5rem';
+
+module.exports = { breakpoints, unit };

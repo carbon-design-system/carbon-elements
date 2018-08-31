@@ -13,6 +13,6 @@
   @return $map;
 }
 
-@function get-size($count) {
+@function get-fixed-size($count) {
   @return $unit * $count;
 }
