@@ -16,7 +16,7 @@ async function build() {
   const variables = Object.keys(colors).reduce((acc, key) => {
     const parts = getPartsFromString(key).join('-');
 
-    if (typeof colors[key] === 'string') {
+    if (colors[key].default) {
       return acc.concat({
         name: `${PREFIX}-colors__${parts}`,
         value: colors[key],
@@ -37,7 +37,12 @@ async function build() {
   const file = [
     generatedComment,
     '',
-    ...variables.map(({ name, value }) => `$${name}: ${value};`),
+    ...variables.map(({ name, value }) => {
+      return `$${name}: ${value.default};
+        $${name}--hover: ${value.hover};
+        $${name}--selected: ${value.selected};
+        $${name}--active: ${value.active};`;
+    }),
   ].join('\n');
 
   await fs.ensureFile(entryFilename);
