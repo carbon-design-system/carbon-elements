@@ -8,7 +8,6 @@
     "develop": "parcel index.html"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.0",
     "parcel-bundler": "^1.10.0-beta.1"
   }
 }
