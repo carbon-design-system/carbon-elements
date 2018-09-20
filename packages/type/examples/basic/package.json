@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "parcel build -d dist index.html",
+    "build": "parcel build -d build --public-url \"/carbon-elements/type/examples/basic\" index.html",
     "develop": "parcel index.html"
   },
   "devDependencies": {
