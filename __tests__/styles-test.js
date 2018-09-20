@@ -14,6 +14,7 @@ const defaultOptions = {
 const cwd = path.resolve(__dirname, '../');
 const files = glob.sync('packages/**/*.scss', {
   cwd,
+  ignore: ['**/node_modules/**/*'],
 });
 
 describe('styles', () => {
