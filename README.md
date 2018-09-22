@@ -31,6 +31,6 @@ yarn add @carbon/icons
 In this case, `icons` is the elements package name that you could install from
 this project.
 
-## 🤲 Contributing
+## Contributing
 
 To learn more about how to contribute, look [here](/.github/CONTRIBUTING.md)!
