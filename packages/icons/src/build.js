@@ -186,21 +186,6 @@ function getModuleName(name, size) {
   return name;
 }
 
-function createEntrypoint(folder, modules) {
-  const source = modules.reduce((acc, file) => {
-    const moduleName = getModuleName(file.name, file.size);
-    const modulePath = path.relative(folder, file.dest);
-    return (
-      acc + `\nexport { default as ${moduleName} } from './${modulePath}';`
-    );
-  }, '');
-  return {
-    name: 'CarbonIcons',
-    source: prettier.format(source, prettierOptions),
-    dest: path.join(folder, 'index.js'),
-  };
-}
-
 async function flatMapAsync(source, callback) {
   const sink = await Promise.all(source.map(callback));
   return sink.reduce((acc, elem) => acc.concat(elem), []);
