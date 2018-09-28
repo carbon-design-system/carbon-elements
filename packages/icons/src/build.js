@@ -54,6 +54,7 @@ async function build() {
         const descriptor = {
           ...info,
           name,
+          size,
         };
 
         if (size !== 'glyph') {
@@ -159,6 +160,20 @@ async function build() {
       return entrypointBundle.write(outputOptions);
     })
   );
+
+  // console.log('Writing icon list file...');
+  // const iconListPath = path.join(BUILD_ES_DIR, 'metadata.json');
+  // const iconList = files.map(file => file.descriptor);
+
+  // await fs.writeJson(iconListPath, files, {
+  // spaces: 2,
+  // });
+  // await Promise.all(
+  // MODULE_TYPES.map(async ({ folder }) => {
+  // const moduleTypePath = iconListPath.replace(/\/es\//, `/${folder}/`);
+  // await fs.copy(iconListPath, moduleTypePath);
+  // })
+  // );
 
   console.log('Done! 🎉');
 }
