@@ -59,18 +59,3 @@
     @include type-style('code-0#{$i}');
   }
 }
-
-// @each $name, $value in $tokens {
-// @each $step in $value {
-// $index: index($value, $step);
-// $variant: #{$name}-0#{$index};
-
-// .type--#{$variant} {
-// @include type($variant);
-// }
-// }
-// }
-
-// body {
-// @include type(body-03);
-// }
