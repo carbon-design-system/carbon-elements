@@ -1,4 +1,4 @@
-# `@carbon/import-once`
+# `@carbon/scss-helpers`
 
 > Sass helper for importing files only once. Used in the Carbon Design System
 
@@ -7,14 +7,14 @@
 Run the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @carbon/import-once
+npm install -S @carbon/scss-helpers
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @carbon/import-once
+yarn add @carbon/scss-helpers
 ```
 
 ## 🤲 Contributing
