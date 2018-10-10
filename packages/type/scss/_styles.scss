@@ -53,6 +53,7 @@ $heading-05: (
     ),
     xlg: (
       font-size: type-scale(8),
+      font-weight: font-weight('light'),
       line-height: rem(40px),
     ),
     max: (
@@ -71,6 +72,7 @@ $heading-06: (
   breakpoints: (
     md: (
       font-size: type-scale(8),
+      font-weight: font-weight('light'),
       line-height: rem(40px),
     ),
     lg: (
