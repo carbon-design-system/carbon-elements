@@ -7,7 +7,7 @@ $heading-01: (
   font-size: type-scale(2),
   font-weight: font-weight('regular'),
   line-height: rem(18px),
-  letter-spacing: 0.01rem,
+  letter-spacing: 0,
 ) !default;
 
 $heading-02: (
@@ -117,7 +117,7 @@ $code-01: (
   font-weight: font-weight('regular'),
   font-size: type-scale(1),
   line-height: rem(16px),
-  letter-spacing: 0.01rem,
+  letter-spacing: 0,
 ) !default;
 
 $code-02: (
@@ -125,7 +125,7 @@ $code-02: (
   font-weight: font-weight('regular'),
   font-size: type-scale(2),
   line-height: rem(20px),
-  letter-spacing: 0.01rem,
+  letter-spacing: 0,
 ) !default;
 
 // prettier-ignore
