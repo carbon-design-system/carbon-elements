@@ -7,7 +7,7 @@ const check = require('./commands/check');
 
 const reporter = new ConsoleReporter();
 
-async function bundler({ argv, cwd: getWorkingDirectory, exit }) {
+async function bundler({ argv, cwd: getWorkingDirectory }) {
   const cwd = getWorkingDirectory();
 
   // prettier-ignore
