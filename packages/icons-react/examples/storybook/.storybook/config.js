@@ -3,7 +3,8 @@ import { setOptions } from '@storybook/addon-options';
 
 setOptions({
   name: `@carbon/icons-react`,
-  url: 'https://github.com/IBM/carbon-elements/tree/master/packages/icons-react',
+  url:
+    'https://github.com/IBM/carbon-elements/tree/master/packages/icons-react',
 });
 
 function loadStories() {
