@@ -2,13 +2,10 @@
 
 Want to contribute to this repository? Please read below first:
 
-* [Issues and Bugs](#issues-and-bugs)
-* [Feature Requests](#feature-requests)
-* [Doc Fixes](#doc-fixes)
-* [Submission Guidelines](#submission-guidelines)
-* [Coding Standards](#coding-standards)
-* [Commit Message Guidelines](#commit-message-guidlines)
-* [Testing](#testing)
+- [Issues and Bugs](#issues-and-bugs)
+- [Feature Requests](#feature-requests)
+- [Doc Fixes](#doc-fixes)
+- [Submission Guidelines](#submission-guidelines)
 
 ## Issues and Bugs
 
@@ -73,9 +70,9 @@ If your issue appears to be a bug, and hasn't been reported, open a new issue. H
    $ git checkout -b { YOUR_BRANCH_NAME } master
    ```
 
-4. Create your patch or feature following our [coding standards](#coding-standards).
+4. Create your patch or feature.
 
-5. Test your branch and add new test cases where appropriate per the [testing guidelines](#testing).
+5. Test your branch and add new test cases where appropriate.
 
 6. Commit your changes using a descriptive commit message.
 
@@ -102,61 +99,3 @@ If your issue appears to be a bug, and hasn't been reported, open a new issue. H
     Once all revisions to your pull request are complete, a maintainer will squash and merge your commits for you.
 
 **That's it! Thank you for your contribution!**
-
-## Coding Standards
-
-To ensure consistency throughout the source code, keep these rules in mind as you are working:
-
-### Style Guide
-
-For a set of basic rules and guidelines for developing React components, see [here](https://github.com/airbnb/javascript/tree/master/react#basic-rules).
-
-Feel free to edit/write components in your own style but be wary that we may ask you to make changes while reviewing your pull request.
-
-### Linting
-
-We enforce some style rules for code in this repository using [eslint](http://eslint.org/). You can install a linting addon to a lot of editors and IDEs that will follow our linting rules.
-
-If you decide to not install a linter addon, or cannot, you can run `yarn lint` to get a report of any style issues. Any issues not fixed will be caught during CI, and will prevent merging.
-
-## Commit Message Guidelines
-
-We use commit message guidelines based on the [Angular Commit Conventions](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit).
-
-After the commit message has been submitted, it is checked by [`husky`](https://www.npmjs.com/package/husky) and [`validate-commit-msg`](https://www.npmjs.com/package/validate-commit-msg) to ensure it is syntactically correct.
-
-## Testing
-
-If you add any features to our code, make sure to add tests so that your changes are covered. Tests are written using [JEST](https://github.com/facebook/jest). You can see how well your code is covered by looking at the `.gh-pages/coverage/lcov-report/index.html` file after running the coverage command.
-
-Test your changes by running our test commands:
-
-* Run linting:
-
-  ```
-  yarn lint
-  ```
-
-* Run unit tests:
-
-  ```
-  yarn test
-  ```
-
-* Run both linting and unit tests:
-
-  ```
-  yarn ci-check
-  ```
-
-* Watching unit tests:
-
-  ```
-  yarn test --watch
-  ```
-
-* Generate code coverage report (stored in `.gh-pages/coverage` folder):
-
-  ```
-  yarn test --coverage
-  ```
