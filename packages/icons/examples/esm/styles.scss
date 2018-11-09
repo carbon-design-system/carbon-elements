@@ -43,5 +43,10 @@ th {
 }
 
 .icon-preview > svg {
-  border: 1px solid black;
+  background-color: white;
+  outline: 1px solid #8a3ffc;
+}
+
+.icon-preview-container {
+  background-color: #bab9b9;
 }
