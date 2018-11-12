@@ -9,5 +9,11 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.10.0-beta.1"
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "classnames": "^2.2.6",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
   }
 }
