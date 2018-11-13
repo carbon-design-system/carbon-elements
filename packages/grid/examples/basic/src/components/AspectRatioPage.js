@@ -36,25 +36,36 @@ export default function AspectRatioPage() {
           </Column>
         </Row>
         <Row>
-          <Column breakpoint="md" span={2}>
-            <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+          <Column auto>
+            <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--1x1">
               <RatioObject />
             </div>
           </Column>
-          <Column breakpoint="md" span={2}>
-            <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
-              <RatioObject />
-            </div>
-          </Column>
-          <Column breakpoint="md" span={2}>
-            <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
-              <RatioObject />
-            </div>
-          </Column>
-          <Column breakpoint="md" span={2}>
-            <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
-              <RatioObject />
-            </div>
+          <Column auto>
+            <Row>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <RatioObject />
+                </div>
+              </Column>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <RatioObject />
+                </div>
+              </Column>
+            </Row>
+            <Row condensed>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <RatioObject />
+                </div>
+              </Column>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <RatioObject />
+                </div>
+              </Column>
+            </Row>
           </Column>
         </Row>
         <Row>
@@ -64,7 +75,7 @@ export default function AspectRatioPage() {
         </Row>
         <Row>
           <Column auto>
-            <div className="bx--aspect-ratio bx--aspect-ratio--4x3">
+            <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--4x3">
               <RatioObject />
             </div>
           </Column>
@@ -81,7 +92,7 @@ export default function AspectRatioPage() {
                 </div>
               </Column>
             </Row>
-            <Row>
+            <Row condensed>
               <Column auto>
                 <div className="bx--aspect-ratio bx--aspect-ratio--4x3">
                   <RatioObject />
@@ -101,7 +112,7 @@ export default function AspectRatioPage() {
           </Column>
         </Row>
         {Array.from({ length: 2 }, (_, i) => (
-          <Row key={i}>
+          <Row key={i} condensed>
             <Column breakpoint="md" span={2}>
               <div className="bx--aspect-ratio bx--aspect-ratio--16x9">
                 <RatioObject />

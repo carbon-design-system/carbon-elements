@@ -24,9 +24,18 @@ export function Grid({
   );
 }
 
-export function Row({ children, className, ...rest }) {
+export function Row({
+  children,
+  className: customClassName,
+  condensed,
+  ...rest
+}) {
+  const className = cx({
+    'bx--row': true,
+    'bx--row--condensed': condensed,
+  });
   return (
-    <div {...rest} className={cx('bx--row', className)}>
+    <div {...rest} className={className}>
       {children}
     </div>
   );
