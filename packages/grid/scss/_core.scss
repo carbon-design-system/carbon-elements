@@ -46,8 +46,7 @@
   }
 
   .#{$prefix}--grid.#{$prefix}--grid--condensed & {
-    padding-right: 0.5px;
-    padding-left: 0.5px;
+    padding: 0.5px;
   }
 
   .#{$prefix}--grid.#{$prefix}--grid--padding & > * {
@@ -67,16 +66,15 @@
 .#{$prefix}--col,
 .#{$prefix}--col--auto {
   @include make-column-ready();
-  flex: 0 0 auto;
 }
 
 @each $name, $value in $breakpoints {
   $columns: map-get($value, columns);
   $gutter: map-get($value, gutter);
+
   .#{$prefix}--col-#{$name},
   .#{$prefix}--col-#{$name}--auto {
     @include make-column-ready($gutter);
-    flex: 0 0 auto;
   }
 
   @for $i from 1 through $columns {
@@ -101,11 +99,12 @@
       margin-right: -1 * $gutter;
       margin-left: -1 * $gutter;
     }
-  }
-}
 
-.#{$prefix}--grid.#{$prefix}--grid--condensed
-  .#{$prefix}--row
-  + .#{$prefix}--row {
-  margin-bottom: 1px;
+    .#{$prefix}--grid.#{$prefix}--grid--condensed
+      .#{$prefix}--row
+      .#{$prefix}--row {
+      margin-right: -1px;
+      margin-left: -1px;
+    }
+  }
 }

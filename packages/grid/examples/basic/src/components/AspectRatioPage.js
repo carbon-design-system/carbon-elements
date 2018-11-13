@@ -63,10 +63,36 @@ export default function AspectRatioPage() {
           </Column>
         </Row>
         <Row>
-          <Column breakpoint="md" span={2}>
+          <Column auto>
             <div className="bx--aspect-ratio bx--aspect-ratio--4x3">
               <RatioObject />
             </div>
+          </Column>
+          <Column auto>
+            <Row>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--4x3">
+                  <RatioObject />
+                </div>
+              </Column>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--4x3">
+                  <RatioObject />
+                </div>
+              </Column>
+            </Row>
+            <Row>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--4x3">
+                  <RatioObject />
+                </div>
+              </Column>
+              <Column auto>
+                <div className="bx--aspect-ratio bx--aspect-ratio--4x3">
+                  <RatioObject />
+                </div>
+              </Column>
+            </Row>
           </Column>
         </Row>
         <Row>
