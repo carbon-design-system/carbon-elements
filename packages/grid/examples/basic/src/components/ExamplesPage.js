@@ -3,7 +3,7 @@ import { Link } from '@reach/router';
 import { Grid, Row, Column } from './Grid';
 import Main from './Main';
 
-const { PATH_PREFIX = '/' } = process.env;
+const { PATH_PREFIX = '' } = process.env;
 
 export default function ExamplesPage() {
   return (
@@ -41,6 +41,15 @@ export default function ExamplesPage() {
               </li>
               <li>
                 <Link to={`${PATH_PREFIX}/subgrid`}>Subgrid (TODO)</Link>
+              </li>
+              <li>
+                <Link to={`${PATH_PREFIX}/alignment`}>Alignment (TODO)</Link>
+              </li>
+              <li>
+                <Link to={`${PATH_PREFIX}/aspect`}>Aspect Ratio (TODO)</Link>
+              </li>
+              <li>
+                <Link to={`${PATH_PREFIX}/12`}>12 Column (TODO)</Link>
               </li>
             </ul>
           </Column>

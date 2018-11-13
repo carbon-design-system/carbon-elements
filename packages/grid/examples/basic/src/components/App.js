@@ -9,12 +9,12 @@ import CondensedPage from './CondensedPage';
 import HangPage from './HangPage';
 import NotFound from './NotFound';
 
-const { PATH_PREFIX = '/' } = process.env;
+const { PATH_PREFIX = '' } = process.env;
 
 export default function App() {
   return (
     <Router>
-      <ExamplesPage path={PATH_PREFIX} />
+      <ExamplesPage path={PATH_PREFIX === '' ? '/' : PATH_PREFIX} />
       <BasicUsagePage path={`${PATH_PREFIX}/basic`} />
       <OffsetPage path={`${PATH_PREFIX}/offset`} />
       <PaddingPage path={`${PATH_PREFIX}/padding`} />

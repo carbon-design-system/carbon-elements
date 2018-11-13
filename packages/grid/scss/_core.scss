@@ -1,0 +1,101 @@
+@import '@carbon/layout/scss/breakpoint';
+@import '@carbon/layout/scss/utilities';
+@import 'prefix';
+
+//----------------------------------------------------------------------------
+// Grid
+//----------------------------------------------------------------------------
+.#{$prefix}--grid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $name, $value in $breakpoints {
+    @include breakpoint($name) {
+      padding-left: map-get($value, margin);
+      padding-right: map-get($value, margin);
+      max-width: map-get($value, width);
+    }
+  }
+}
+
+//----------------------------------------------------------------------------
+// Row
+//----------------------------------------------------------------------------
+.#{$prefix}--row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//----------------------------------------------------------------------------
+// Column
+//----------------------------------------------------------------------------
+@mixin make-column-ready($gutter: 0) {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+
+  padding-right: $gutter;
+  padding-left: $gutter;
+
+  .#{$prefix}--grid.#{$prefix}--grid--bleed & {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .#{$prefix}--grid.#{$prefix}--grid--condensed & {
+    padding-right: 1px;
+    padding-left: 1px;
+  }
+
+  .#{$prefix}--grid.#{$prefix}--grid--padding & > * {
+    padding: 1rem;
+  }
+
+  .#{$prefix}--grid.#{$prefix}--grid--hang & {
+    padding-left: 0;
+  }
+
+  [dir='rtl'] .#{$prefix}--grid.#{$prefix}--grid--hang & {
+    padding-left: $gutter;
+    padding-right: 0;
+  }
+}
+
+.#{$prefix}--col,
+.#{$prefix}--col--auto {
+  @include make-column-ready();
+  flex: 0 0 auto;
+}
+
+@each $name, $value in $breakpoints {
+  $columns: map-get($value, columns);
+  $gutter: map-get($value, gutter);
+
+  .#{$prefix}--col-#{$name},
+  .#{$prefix}--col-#{$name}--auto {
+    @include make-column-ready($gutter);
+    flex: 0 0 auto;
+  }
+
+  @for $i from 1 through $columns {
+    .#{$prefix}--col-#{$name}-#{$i} {
+      @include make-column-ready($gutter);
+    }
+
+    .#{$prefix}--offset-#{$name}-#{$i} {
+      margin-left: percentage($i / $columns);
+    }
+  }
+
+  @include breakpoint($name) {
+    @for $i from 1 through $columns {
+      .#{$prefix}--col-#{$name}-#{$i} {
+        flex: 0 0 percentage($i / $columns);
+        max-width: percentage($i / $columns);
+      }
+    }
+  }
+}
