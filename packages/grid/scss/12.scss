@@ -1,7 +1,6 @@
 @import '@carbon/layout/scss/breakpoint';
 
 $breakpoints: map-merge(
-  $breakpoints,
   (
     lg: (
       columns: 12,
@@ -12,7 +11,8 @@ $breakpoints: map-merge(
     max: (
       columns: 12,
     ),
-  )
+  ),
+  $breakpoints
 );
 
 @import 'prefix';

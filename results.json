@@ -12,22 +12,10 @@
     "gzip": 20
   },
   {
-    "filename": "_alignment.scss",
-    "package": "@carbon/grid",
-    "size": 5216,
-    "gzip": 509
-  },
-  {
     "filename": "_core.scss",
     "package": "@carbon/grid",
-    "size": 47468,
-    "gzip": 2589
-  },
-  {
-    "filename": "_order.scss",
-    "package": "@carbon/grid",
-    "size": 2607,
-    "gzip": 347
+    "size": 48169,
+    "gzip": 2658
   },
   {
     "filename": "_prefix.scss",
@@ -38,14 +26,32 @@
   {
     "filename": "12.scss",
     "package": "@carbon/grid",
-    "size": 43614,
-    "gzip": 3060
+    "size": 48169,
+    "gzip": 2657
+  },
+  {
+    "filename": "alignment.scss",
+    "package": "@carbon/grid",
+    "size": 5216,
+    "gzip": 509
+  },
+  {
+    "filename": "aspect-ratio.scss",
+    "package": "@carbon/grid",
+    "size": 361,
+    "gzip": 178
   },
   {
     "filename": "grid.scss",
     "package": "@carbon/grid",
-    "size": 55293,
-    "gzip": 3484
+    "size": 48169,
+    "gzip": 2658
+  },
+  {
+    "filename": "order.scss",
+    "package": "@carbon/grid",
+    "size": 2607,
+    "gzip": 347
   },
   {
     "filename": "import-once.scss",
