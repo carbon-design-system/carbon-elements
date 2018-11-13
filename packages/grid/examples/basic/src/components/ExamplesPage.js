@@ -40,16 +40,10 @@ export default function ExamplesPage() {
                 <Link to={`${PATH_PREFIX}/hang`}>Hang</Link>
               </li>
               <li>
+                <Link to={`${PATH_PREFIX}/aspect-ratio`}>Aspect Ratio</Link>
+              </li>
+              <li>
                 <Link to={`${PATH_PREFIX}/nested`}>Nested</Link>
-              </li>
-              <li>
-                <Link to={`${PATH_PREFIX}/alignment`}>Alignment (TODO)</Link>
-              </li>
-              <li>
-                <Link to={`${PATH_PREFIX}/aspect`}>Aspect Ratio (TODO)</Link>
-              </li>
-              <li>
-                <Link to={`${PATH_PREFIX}/12`}>12 Column (TODO)</Link>
               </li>
             </ul>
           </Column>

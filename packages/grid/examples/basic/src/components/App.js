@@ -8,6 +8,7 @@ import BleedPage from './BleedPage';
 import CondensedPage from './CondensedPage';
 import HangPage from './HangPage';
 import NestedPage from './NestedPage';
+import AspectRatioPage from './AspectRatioPage';
 import NotFound from './NotFound';
 
 const { PATH_PREFIX = '' } = process.env;
@@ -23,6 +24,7 @@ export default function App() {
       <CondensedPage path={`${PATH_PREFIX}/condensed`} />
       <HangPage path={`${PATH_PREFIX}/hang`} />
       <NestedPage path={`${PATH_PREFIX}/nested`} />
+      <AspectRatioPage path={`${PATH_PREFIX}/aspect-ratio`} />
       <NotFound default />
     </Router>
   );

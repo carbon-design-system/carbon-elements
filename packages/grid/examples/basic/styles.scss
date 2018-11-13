@@ -1,8 +1,9 @@
 @import '@carbon/layout/scss/breakpoint';
 @import '@carbon/layout/scss/utilities';
-// @import '@carbon/layout/scss/key-height';
-// @import '@carbon/layout/scss/spacing';
 @import '../../scss/grid';
+@import '../../scss/alignment';
+@import '../../scss/aspect-ratio';
+@import '../../scss/order';
 
 *,
 *::before,

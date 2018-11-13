@@ -46,8 +46,8 @@
   }
 
   .#{$prefix}--grid.#{$prefix}--grid--condensed & {
-    padding-right: 1px;
-    padding-left: 1px;
+    padding-right: 0.5px;
+    padding-left: 0.5px;
   }
 
   .#{$prefix}--grid.#{$prefix}--grid--padding & > * {
@@ -102,4 +102,10 @@
       margin-left: -1 * $gutter;
     }
   }
+}
+
+.#{$prefix}--grid.#{$prefix}--grid--condensed
+  .#{$prefix}--row
+  + .#{$prefix}--row {
+  margin-bottom: 1px;
 }
