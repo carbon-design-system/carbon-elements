@@ -11,7 +11,7 @@ export default function BleedPage() {
           <Column breakpoint="md" span={4}>
             <h1>Bleed example</h1>
             <p>
-              This examples hows how to apply the <code>.bx--grid--bleed</code>{' '}
+              This example shows how to apply the <code>.bx--grid--bleed</code>{' '}
               class to collapse the gutters on each of the columns in the grid
               context. We also apply <code>.bx--grid--padding</code> so that the
               contents of each column have a set padding amount.

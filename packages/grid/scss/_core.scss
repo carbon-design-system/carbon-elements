@@ -73,7 +73,6 @@
 @each $name, $value in $breakpoints {
   $columns: map-get($value, columns);
   $gutter: map-get($value, gutter);
-
   .#{$prefix}--col-#{$name},
   .#{$prefix}--col-#{$name}--auto {
     @include make-column-ready($gutter);
@@ -96,6 +95,11 @@
         flex: 0 0 percentage($i / $columns);
         max-width: percentage($i / $columns);
       }
+    }
+
+    .#{$prefix}--row .#{$prefix}--row {
+      margin-right: -1 * $gutter;
+      margin-left: -1 * $gutter;
     }
   }
 }

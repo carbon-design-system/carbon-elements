@@ -40,7 +40,7 @@ export default function ExamplesPage() {
                 <Link to={`${PATH_PREFIX}/hang`}>Hang</Link>
               </li>
               <li>
-                <Link to={`${PATH_PREFIX}/subgrid`}>Subgrid (TODO)</Link>
+                <Link to={`${PATH_PREFIX}/nested`}>Nested</Link>
               </li>
               <li>
                 <Link to={`${PATH_PREFIX}/alignment`}>Alignment (TODO)</Link>

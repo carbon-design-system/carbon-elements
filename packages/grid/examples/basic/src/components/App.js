@@ -7,6 +7,7 @@ import PaddingPage from './PaddingPage';
 import BleedPage from './BleedPage';
 import CondensedPage from './CondensedPage';
 import HangPage from './HangPage';
+import NestedPage from './NestedPage';
 import NotFound from './NotFound';
 
 const { PATH_PREFIX = '' } = process.env;
@@ -21,6 +22,7 @@ export default function App() {
       <BleedPage path={`${PATH_PREFIX}/bleed`} />
       <CondensedPage path={`${PATH_PREFIX}/condensed`} />
       <HangPage path={`${PATH_PREFIX}/hang`} />
+      <NestedPage path={`${PATH_PREFIX}/nested`} />
       <NotFound default />
     </Router>
   );
