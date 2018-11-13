@@ -12,10 +12,40 @@
     "gzip": 20
   },
   {
+    "filename": "_alignment.scss",
+    "package": "@carbon/grid",
+    "size": 5216,
+    "gzip": 509
+  },
+  {
+    "filename": "_core.scss",
+    "package": "@carbon/grid",
+    "size": 47468,
+    "gzip": 2589
+  },
+  {
+    "filename": "_order.scss",
+    "package": "@carbon/grid",
+    "size": 2607,
+    "gzip": 347
+  },
+  {
+    "filename": "_prefix.scss",
+    "package": "@carbon/grid",
+    "size": 0,
+    "gzip": 20
+  },
+  {
+    "filename": "12.scss",
+    "package": "@carbon/grid",
+    "size": 43614,
+    "gzip": 3060
+  },
+  {
     "filename": "grid.scss",
     "package": "@carbon/grid",
-    "size": 43928,
-    "gzip": 2533
+    "size": 55293,
+    "gzip": 3484
   },
   {
     "filename": "import-once.scss",
