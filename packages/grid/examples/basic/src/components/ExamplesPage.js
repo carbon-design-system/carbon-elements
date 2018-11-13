@@ -3,6 +3,8 @@ import { Link } from '@reach/router';
 import { Grid, Row, Column } from './Grid';
 import Main from './Main';
 
+const { PATH_PREFIX = '/' } = process.env;
+
 export default function ExamplesPage() {
   return (
     <Main>
@@ -20,25 +22,25 @@ export default function ExamplesPage() {
           <Column auto>
             <ul>
               <li>
-                <Link to="/basic">Basic Usage</Link>
+                <Link to={`${PATH_PREFIX}/basic`}>Basic Usage</Link>
               </li>
               <li>
-                <Link to="/offset">Offsets</Link>
+                <Link to={`${PATH_PREFIX}/offset`}>Offsets</Link>
               </li>
               <li>
-                <Link to="/padding">Padding</Link>
+                <Link to={`${PATH_PREFIX}/padding`}>Padding</Link>
               </li>
               <li>
-                <Link to="/bleed">Bleed</Link>
+                <Link to={`${PATH_PREFIX}/bleed`}>Bleed</Link>
               </li>
               <li>
-                <Link to="/condensed">Condensed</Link>
+                <Link to={`${PATH_PREFIX}/condensed`}>Condensed</Link>
               </li>
               <li>
-                <Link to="/hang">Hang</Link>
+                <Link to={`${PATH_PREFIX}/hang`}>Hang</Link>
               </li>
               <li>
-                <Link to="/subgrid">Subgrid (TODO)</Link>
+                <Link to={`${PATH_PREFIX}/subgrid`}>Subgrid (TODO)</Link>
               </li>
             </ul>
           </Column>

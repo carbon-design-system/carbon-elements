@@ -7,17 +7,21 @@ import PaddingPage from './PaddingPage';
 import BleedPage from './BleedPage';
 import CondensedPage from './CondensedPage';
 import HangPage from './HangPage';
+import NotFound from './NotFound';
+
+const { PATH_PREFIX = '/' } = process.env;
 
 export default function App() {
   return (
     <Router>
-      <ExamplesPage path="/" />
-      <BasicUsagePage path="/basic" />
-      <OffsetPage path="/offset" />
-      <PaddingPage path="/padding" />
-      <BleedPage path="/bleed" />
-      <CondensedPage path="/condensed" />
-      <HangPage path="/hang" />
+      <ExamplesPage path={PATH_PREFIX} />
+      <BasicUsagePage path={`${PATH_PREFIX}/basic`} />
+      <OffsetPage path={`${PATH_PREFIX}/offset`} />
+      <PaddingPage path={`${PATH_PREFIX}/padding`} />
+      <BleedPage path={`${PATH_PREFIX}/bleed`} />
+      <CondensedPage path={`${PATH_PREFIX}/condensed`} />
+      <HangPage path={`${PATH_PREFIX}/hang`} />
+      <NotFound default />
     </Router>
   );
 }
