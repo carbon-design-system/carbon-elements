@@ -1,0 +1,24 @@
+{
+  "name": "www",
+  "private": true,
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "rimraf .cache public && gatsby build --prefix-paths",
+    "develop": "rimraf .cache && gatsby develop"
+  },
+  "dependencies": {
+    "@carbon/type": "0.0.1-alpha.7",
+    "carbon-components": "^9.51.0",
+    "carbon-components-react": "^6.50.1",
+    "gatsby": "^2.0.48",
+    "gatsby-plugin-sass": "^2.0.4",
+    "node-sass": "^4.10.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
+}
