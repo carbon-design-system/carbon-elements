@@ -82,19 +82,19 @@
 // Spacing
 //------------------------------------------------------------------------------
 .type-margin-01 {
-  margin-bottom: $type-margin-01;
+  @include type-spacing(margin-01);
 }
 
 .type-margin-02 {
-  margin-bottom: $type-margin-02;
+  @include type-spacing(margin-02);
 }
 
 .type-margin-03 {
-  margin-bottom: $type-margin-03;
+  @include type-spacing(margin-03);
 }
 
 .type-layout-01 {
-  margin-top: $layout-margin-01;
+  @include type-spacing(layout-01, top);
 }
 
 //------------------------------------------------------------------------------
