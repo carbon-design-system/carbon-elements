@@ -5,4 +5,13 @@ $feature-flags: (
   ui-shell: true,
   components-x: true,
 );
+// TODO: weirdness with map-deep-get, have to place this first
+@import '@carbon/layout/scss/layout';
+@import '@carbon/grid/scss/grid';
+@import '@carbon/grid/scss/aspect-ratio';
+@import '@carbon/grid/scss/debug';
 @import 'carbon-components/scss/globals/scss/styles.scss';
+
+body {
+  background-color: $ibm-colors__gray--10;
+}

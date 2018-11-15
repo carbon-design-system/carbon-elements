@@ -1,0 +1,15 @@
+@import 'prefix';
+
+.bx--grid,
+.bx--row,
+[class*='col'] > * {
+  outline: 1px dashed #97c1ff;
+}
+
+.bx--grid {
+  // background-color: rgba(#97c1ff, 0.1);
+}
+
+.bx--row {
+  // background-color: white;
+}

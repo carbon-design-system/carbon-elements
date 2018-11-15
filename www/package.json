@@ -8,11 +8,18 @@
     "develop": "rimraf .cache && gatsby develop"
   },
   "dependencies": {
+    "@carbon/colors": "0.0.1-alpha.7",
+    "@carbon/grid": "0.0.1-alpha.7",
+    "@carbon/icons-react": "0.0.1-alpha.7",
+    "@carbon/layout": "0.0.1-alpha.7",
     "@carbon/type": "0.0.1-alpha.7",
     "carbon-components": "^9.51.0",
     "carbon-components-react": "^6.50.1",
+    "classnames": "^2.2.6",
     "gatsby": "^2.0.48",
+    "gatsby-plugin-glamor": "^2.0.6",
     "gatsby-plugin-sass": "^2.0.4",
+    "glamor": "^2.20.40",
     "node-sass": "^4.10.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",

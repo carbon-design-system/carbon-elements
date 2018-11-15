@@ -12,7 +12,7 @@
       "packages/*",
       "www"
     ],
-    "nohoist": ["www/**"]
+    "nohoist": ["www/**", "**/node-sass"]
   },
   "scripts": {
     "build": "lerna run build --stream --prefix --npm-client yarn",

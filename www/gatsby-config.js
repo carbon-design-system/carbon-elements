@@ -10,6 +10,7 @@ module.exports = {
     title: 'Carbon Elements',
   },
   plugins: [
+    'gatsby-plugin-glamor',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
