@@ -1962,9 +1962,9 @@
   integrity sha512-EGoI4ylB/lPOaqXqtzAyL8HcgOuCtH2hkEaLmkueOYufsTFWBn4VCvlCDC2HW8Q+9iF+QVC3sxjDKQYjHQeZ9w==
 
 "@types/node@^7.0.11":
-  version "7.10.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.10.1.tgz#a7f4ffa91fc632981d6ff0ed0ea4d259a109e8ab"
-  integrity sha512-fZvabBkcFJzc+eJN2XTuhKhop1RKdlGQgjmQuxYuQJ6K5rMNoHr6tomb6q0E8Axe+WPyfe/lr7CnnkGvzNh5mA==
+  version "7.10.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.10.2.tgz#a98845168012d7a63a84d50e738829da43bdb0de"
+  integrity sha512-RO4ig5taKmcrU4Rex8ojG1gpwFkjddzug9iPQSDvbewHN9vDpcFewevkaOK+KT+w1LeZnxbgOyfXwV4pxsQ4GQ==
 
 "@types/prop-types@*":
   version "15.5.6"
@@ -3166,10 +3166,10 @@ babel-preset-fbjs@^2.1.4:
     babel-plugin-transform-react-display-name "^6.8.0"
     babel-plugin-transform-react-jsx "^6.8.0"
 
-babel-preset-gatsby@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-0.1.3.tgz#048e3893212662d5091428272f02a34d6795503b"
-  integrity sha512-cE8GXHs94hBzm+xnF7wMYZkhDmV0iatsqzCI56cJP8axGvcUynsTGFC6xaXxjh2c3tOoe3IC3ce6VGyl6uiAPQ==
+babel-preset-gatsby@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby/-/babel-preset-gatsby-0.1.4.tgz#de0d292194597b0f78008294c7c9bcf5f4eb8b9b"
+  integrity sha512-chkpgzQgSoNZauNsmE6j3vbrTj1LsjSUCGYMYwnyCRZkhneXo64ZAXVkkL8zmrrrLgBCrqbBvGTCkVAH4CnFiQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/plugin-syntax-dynamic-import" "^7.0.0"
@@ -3844,11 +3844,10 @@ carbon-components-react@^6.50.1:
     window-or-global "^1.0.1"
 
 carbon-components@^9.51.0:
-  version "9.51.0"
-  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.51.0.tgz#2968df2a6a0c77a51327af4e630b2253113b4915"
-  integrity sha512-2V0nzDKLDyyB7raQp8ahm+uIi4s0IuxY2Gtu10lSWjKR3hniUzyRAvtEl1hT6IGMmm3ZalseTyruJ8xRrLPz7Q==
+  version "9.53.1"
+  resolved "https://registry.yarnpkg.com/carbon-components/-/carbon-components-9.53.1.tgz#89d96ecd9abbb34b66ecbf39161d823ac4c61f74"
+  integrity sha512-oUfZ4JLCdITjeFGmvxexjp5XsPTAYQubJX5IiwF0IwBJgIshfI6OTrFNKsL+7My/W3YKXe0hM9FCQZUrPg9Inw==
   dependencies:
-    "@carbon/colors" "^0.0.1-alpha.0"
     carbon-icons "^7.0.7"
     flatpickr "4.5.2"
     lodash.debounce "^4.0.8"
@@ -6825,9 +6824,9 @@ gatsby-react-router-scroll@^2.0.1:
     warning "^3.0.0"
 
 gatsby@^2.0.48:
-  version "2.0.48"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.48.tgz#083173a4f5dd319cbd68f3036eedcdfbc07812f6"
-  integrity sha512-X7/BC/4II+D2sH0Wggys2CMRzcEKOYEvjeFkPC/cpHDFPs5h2Q7JrXJnvi2ZkWX7tBur7XsVGSnXlAgi29xtIg==
+  version "2.0.50"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.50.tgz#ea68745c455f9f6c9d36b552ab4722e6a5e817f3"
+  integrity sha512-rf2GTYiCALqTKNIMn6/8KsQDrJvYuFTsgmFOWJsPhybYwrUv5EjZT71KccZdLZ4sAV5aBbq8JJC3hrvqCuciMQ==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6843,7 +6842,7 @@ gatsby@^2.0.48:
     babel-plugin-add-module-exports "^0.2.1"
     babel-plugin-dynamic-import-node "^1.2.0"
     babel-plugin-remove-graphql-queries "^2.5.1"
-    babel-preset-gatsby "^0.1.3"
+    babel-preset-gatsby "^0.1.4"
     better-queue "^3.8.6"
     bluebird "^3.5.0"
     cache-manager "^2.9.0"
