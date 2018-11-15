@@ -1,10 +1,10 @@
-const icons = require("@carbon/icons");
 const fs = require("fs-extra");
 const { join, resolve } = require("path");
 const { param, lower, pascal } = require("change-case");
 const { componentTemplate, moduleTemplate, indexTemplate } = require("./templates");
 const ngc = require("@angular/compiler-cli/src/main");
 
+// generate a safe class name
 const formatClassName = (fileName, size) => {
   const name = fileName.replace(".svg", "");
   if (isNaN(name[0])) {
@@ -18,14 +18,18 @@ async function generateComponents() {
   const svgPath = resolve(require.resolve("@carbon/icons"), "../../svg");
   const dirs = await fs.readdir(svgPath);
   const exportList = [];
+  // loop through the directories and svgs
   for (const dir of dirs) {
     const svgs = await fs.readdir(join(svgPath, dir))
     for (const svg of svgs) {
+      // various names we need to generate the component
       const dirName = pascal(svg.replace(".svg", ""));
       const className = formatClassName(svg, dir);
       const selectorName = `${param(lower(svg.replace(".svg", "")))}${pascal(dir)}`;
+      // find the source svg we'll use in the template
       const rawSvg = await fs.readFile(join(svgPath, dir, svg));
       const dirExists = await fs.exists(join("ts", dirName));
+      // try to write out the component
       try {
         if (!dirExists) {
           await fs.mkdir(join("ts", dirName))
@@ -60,6 +64,7 @@ async function build() {
   console.log("Generating source components...");
   await generateComponents();
   console.log("Compiling and generating modules...");
+  // run the angular compiler over everything
   ngc.main(["-p", "./config/tsconfig-aot.json"]);
 }
 
