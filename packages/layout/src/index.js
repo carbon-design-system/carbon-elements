@@ -20,6 +20,10 @@ export function em(px) {
   return `${px / baseFontSize}em`;
 }
 
+export function px(value) {
+  return `${value}px`;
+}
+
 // Breakpoint
 // Initial map of our breakpoints and their values
 export const breakpoints = {
