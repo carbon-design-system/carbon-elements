@@ -42,6 +42,15 @@ $smallest-breakpoint: nth(map-keys($breakpoints), 1);
   @return $name == $smallest-breakpoint;
 }
 
+@function get-min-breakpoint() {
+  @return map-merge(
+    (
+      name: sm,
+    ),
+    map-get($breakpoints, sm)
+  );
+}
+
 /// Generate a media query up to the width of the given breakpoint name
 /// @param {string} $name
 /// @content
