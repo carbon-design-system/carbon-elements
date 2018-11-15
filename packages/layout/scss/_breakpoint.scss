@@ -36,8 +36,10 @@ $breakpoints: (
   ),
 ) !default;
 
+$smallest-breakpoint: nth(map-keys($breakpoints), 1);
+
 @function breakpoint-min($name) {
-  @return $name == sm;
+  @return $name == $smallest-breakpoint;
 }
 
 /// Generate a media query up to the width of the given breakpoint name
@@ -45,7 +47,7 @@ $breakpoints: (
 /// @content
 @mixin breakpoint-up($name) {
   @if map-has-key($breakpoints, $name) {
-    @if $name == sm {
+    @if $name == $smallest-breakpoint {
       @content;
     } @else {
       @media (min-width: map-deep-get($breakpoints, $name, width)) {
@@ -62,7 +64,7 @@ $breakpoints: (
 /// @content
 @mixin breakpoint-down($name) {
   @if map-has-key($breakpoints, $name) {
-    @if $name == sm {
+    @if $name == $smallest-breakpoint {
       @content;
     } @else {
       @media (max-width: map-deep-get($breakpoints, $name, width)) {

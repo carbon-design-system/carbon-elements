@@ -26,7 +26,7 @@
 }
 
 @each $breakpoint, $values in $breakpoints {
-  @if $breakpoint == sm {
+  @if $breakpoint == nth(map-keys($breakpoints), 1) {
     @include columns($breakpoint, $values);
   } @else {
     @include breakpoint($breakpoint) {
