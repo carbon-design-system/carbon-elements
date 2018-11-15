@@ -6,6 +6,7 @@ es
 lib
 dist
 umd
+ts
 
 # Config files
 .npmrc
