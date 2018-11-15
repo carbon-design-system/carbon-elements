@@ -3,6 +3,8 @@
 const fs = require('fs-extra');
 const path = require('path');
 const rollup = require('rollup').rollup;
+const commonjs = require('rollup-plugin-commonjs');
+const nodeResolve = require('rollup-plugin-node-resolve');
 
 async function bundle(entrypoint, { cwd, name } = {}) {
   const outputFolders = [
@@ -28,6 +30,17 @@ async function bundle(entrypoint, { cwd, name } = {}) {
   );
   const bundle = await rollup({
     input: entrypoint,
+    plugins: [
+      nodeResolve({
+        jsnext: true,
+        main: true,
+        module: true,
+      }),
+      commonjs({
+        include: ['node_modules/**'],
+        extensions: ['.js'],
+      }),
+    ],
   });
   await bundle.write({
     format: 'esm',
