@@ -38,40 +38,74 @@ export {
 };
 `;
 
-const componentTemplate = (iconName, className, svg) => `
-import {
-	Component,
-	ElementRef,
-  Input,
-  AfterViewInit
-} from "@angular/core";
+const componentTemplate = (iconName, className, svg, size) => `
+import { Component, ElementRef, Input } from "@angular/core";
 
 @Component({
 	selector: "ibm-icon-${iconName}",
 	template: \`${svg}\`
 })
-export class ${className} implements AfterViewInit {
-	/**
-	 * Pass down \`classList\` from host element.
-	 */
-	get classList(): any {
-		return this.elementRef.nativeElement.classList;
-	}
+export class ${className} {
+  @Input() ariaLabel: string;
+  @Input() ariaLabelledby: string;
+  @Input() focusable: boolean = null;
 
-	/**
-	 * Initialize the component
-	 */
-	constructor(protected elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef) {}
 
-	ngAfterViewInit() {
-    const root: HTMLElement = this.elementRef.nativeElement;
-    // root.classList = this.classList;
-	}
+  ngAfterViewInit() {
+    const size: string = \`${size}\`;
+    const svg = this.elementRef.nativeElement.querySelector("svg");
+    if (size === "glyph") {
+      svg.style.width = \`\$\{svg.viewBox.baseVal.width\}px\`;
+      svg.style.height = \`\$\{svg.viewBox.baseVal.height\}px\`;
+    } else {
+      svg.style.width = \`\$\{size\}px\`;
+      svg.style.height = \`\$\{size\}px\`;
+    }
+
+    if (this.ariaLabel || this.ariaLabelledby) {
+      // set attrs for interactive element
+      svg.setAttribute("role", "img");
+      // override anything the user has set
+      this.focusable = true;
+      // set label/labelledby
+      if (this.ariaLabel) {
+        svg.setAttribute("aria-label", this.ariaLabel);
+      }
+      if (this.ariaLabelledby) {
+        svg.setAttribute("aria-labelledby", this.ariaLabelledby);
+      }
+    } else {
+      // hide it from screen readers since it shouldn't be interactive
+      svg.setAttribute("aria-hidden", true);
+    }
+
+    // set focusable if it has a value
+    if (this.focusable !== null) {
+      svg.setAttribute("focusable", this.focusable);
+    }
+  }
 }
+`;
+
+
+const storyTemplate = icon => `
+import { storiesOf, moduleMetadata } from "@storybook/angular";
+
+import { IconModule } from "./../lib";
+
+storiesOf("${icon.name}", module)
+  .addDecorator(moduleMetadata({
+    imports: [ IconModule ],
+  }))
+  .add("${icon.name}", () => ({
+    template: \`<ibm-icon-${icon.selector}></ibm-icon-${icon.selector}>\`
+  }));
 `;
 
 module.exports = {
   moduleTemplate,
   componentTemplate,
-  indexTemplate
+  indexTemplate,
+  storyTemplate
 };
