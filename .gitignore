@@ -9,6 +9,9 @@ umd
 ts
 scss
 
+# icons-angular stories are generated dynamically ...
+packages/icons-angular/examples/storybook/stories
+
 # Config files
 .npmrc
 
