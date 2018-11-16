@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "build-storybook -o build",
     "develop": "start-storybook -p 3000"
   },
   "author": "",
