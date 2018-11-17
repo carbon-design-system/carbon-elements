@@ -41,7 +41,7 @@ describe('CommonJS', () => {
     'should export icons that can be rendered',
     async () => {
       const icons = (await fs.readdir(BUILD_CJS_DIR)).filter(
-        name => name !== 'tools.js' && name !== 'index.js'
+        name !== 'index.js'
       );
 
       for (const icon of icons) {
