@@ -13,6 +13,6 @@ const buildFiles = klaw(BUILD_SVG_DIR, { nodir: true });
 
 describe('svg', () => {
   it('should export all files as optimized svg files', () => {
-    expect(icons.length).toEqual(buildFiles.length);
+    expect(icons.length - 1).toEqual(buildFiles.length);
   });
 });

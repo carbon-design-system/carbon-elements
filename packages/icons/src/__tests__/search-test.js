@@ -70,19 +70,20 @@ describe('search', () => {
     expect(results.find(result => result.basename === 'icon1').prefix).toEqual(
       []
     );
-    expect(results.find(result => result.basename === 'icon2').prefix).toEqual(
-      []
-    );
+    expect(results.find(result => result.basename === 'icon2').prefix).toEqual([
+      '16',
+    ]);
     expect(results.find(result => result.basename === 'icon2').size).toEqual(
       16
     );
-    expect(results.find(result => result.basename === 'icon3').prefix).toEqual(
-      []
-    );
+    expect(results.find(result => result.basename === 'icon3').prefix).toEqual([
+      '32',
+    ]);
     expect(results.find(result => result.basename === 'icon3').size).toEqual(
       32
     );
     expect(results.find(result => result.basename === 'icon4').prefix).toEqual([
+      '32',
       'nested1',
     ]);
     expect(results.find(result => result.basename === 'icon4').size).toEqual(
@@ -96,6 +97,7 @@ describe('search', () => {
     ).not.toBeDefined();
     expect(results.find(result => result.basename === 'icon6').prefix).toEqual([
       'nested3',
+      '16',
     ]);
     expect(results.find(result => result.basename === 'icon6').size).toEqual(
       16
