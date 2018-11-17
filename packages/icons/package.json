@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "yarn clean && node tasks/build.js",
-    "clean": "rimraf es lib svg umd",
+    "clean": "rimraf es lib svg umd meta.json",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
