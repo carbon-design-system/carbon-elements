@@ -20,6 +20,50 @@ const prettierOptions = {
   trailingComma: 'es5',
 };
 
+function createIconSource(file, descriptor) {
+  const { basename, prefix, size } = file;
+  return {
+    source: prettier.format(
+      `export default ${JSON.stringify(descriptor)};`,
+      prettierOptions
+    ),
+    moduleName: getModuleName(basename, size, prefix),
+  };
+}
+
+async function createDescriptorFromFile(file) {
+  const { basename, size, optimized, original, prefix } = file;
+  const info = await parse(optimized.data, basename);
+  const descriptor = {
+    ...info,
+    name: basename,
+  };
+
+  if (size) {
+    descriptor.size = size;
+    descriptor.attrs.width = size;
+    descriptor.attrs.height = size;
+    descriptor.attrs.viewBox = original
+      ? `0 0 ${original} ${original}`
+      : `0 0 ${size} ${size}`;
+  } else {
+    const [width, height] = info.attrs.viewBox.split(' ').slice(2);
+    descriptor.attrs.width = width;
+    descriptor.attrs.height = height;
+  }
+
+  const { source, moduleName } = createIconSource(file, descriptor);
+
+  return {
+    ...file,
+    descriptor,
+    source,
+    moduleName,
+  };
+}
+
+const SCALED_SIZES = [24, 20];
+
 async function build(source, { cwd } = {}) {
   const optimized = await optimize(source, { cwd });
 
@@ -48,54 +92,41 @@ async function build(source, { cwd } = {}) {
       `under: [${bundles.map(b => b.directory).join(', ')}]`
   );
 
-  reporter.info('Cleaning up build directories...');
-  await del(bundles.map(b => b.directory).concat(esmFolder));
-
   reporter.info('Building module source...');
-  const files = optimized.map(icon => {
-    const { filename, info, size } = icon;
-    const { attrs, content } = info;
-    const name = formatIconName(path.basename(icon.filename, '.svg'));
-    const descriptor = {
-      name,
-      size,
-      attrs: {
-        ...attrs,
-      },
-      content,
-    };
 
-    if (size === 'glyph') {
-      const [width, height] = info.attrs.viewBox.split(' ').slice(2);
-      descriptor.attrs.width = width;
-      descriptor.attrs.height = height;
-    } else {
-      descriptor.attrs.width = size;
-      descriptor.attrs.height = size;
-      descriptor.attrs.viewBox = `0 0 ${size} ${size}`;
+  const files = await flatMapAsync(optimized, async file => {
+    const { size } = file;
+    if (size === 32) {
+      const defaultIcon = await createDescriptorFromFile(file);
+      const scaledIcons = await Promise.all(
+        SCALED_SIZES.map(size =>
+          createDescriptorFromFile({
+            ...file,
+            size,
+            original: 32,
+          })
+        )
+      );
+      return [defaultIcon, ...scaledIcons];
     }
-
-    return {
-      icon,
-      descriptor,
-      source: prettier.format(
-        `export default ${JSON.stringify(descriptor)};`,
-        prettierOptions
-      ),
-      moduleName: getModuleName(name, size),
-    };
+    return Object.assign({}, file, await createDescriptorFromFile(file));
   });
 
   reporter.info('Building JavaScript modules...');
+
   await Promise.all(
     files.map(async file => {
-      const { descriptor, moduleName, source } = file;
-      const { name, size } = descriptor;
-      const moduleFolder = path.join(esmFolder, name);
-      const jsFilepath = path.join(moduleFolder, `${size}.js`);
+      const { basename, descriptor, moduleName, prefix, size, source } = file;
+      const formattedPrefix = prefix.filter(step => isNaN(step));
+      const moduleFolder = path.join(esmFolder, ...formattedPrefix, basename);
+      const jsFilepath = path.join(
+        moduleFolder,
+        size ? `${size}.js` : 'index.js'
+      );
 
       await fs.ensureDir(moduleFolder);
       await fs.writeFile(jsFilepath, source);
+
       await Promise.all(
         bundles.map(async ({ type, directory }) => {
           const bundle = await rollup({
@@ -146,16 +177,28 @@ async function build(source, { cwd } = {}) {
   reporter.success('Done! 🎉');
 }
 
-function formatIconName(name) {
-  return pascal(name);
-}
+function getModuleName(name, size, prefixParts) {
+  const prefix = prefixParts
+    .filter(size => isNaN(size))
+    .map(pascal)
+    .join('');
 
-function getModuleName(name, size) {
-  const basename = name + size[0].toUpperCase() + size.slice(1);
-  if (isNaN(basename[0])) {
-    return pascal(basename);
+  if (prefix !== '') {
+    if (!size) {
+      return prefix + pascal(name) + 'Glyph';
+    }
+    return prefix + pascal(name) + size;
   }
-  return '_' + pascal(basename);
+
+  if (!size) {
+    return pascal(name) + 'Glyph';
+  }
+
+  if (isNaN(name[0])) {
+    return pascal(name) + size;
+  }
+
+  return '_' + pascal(name) + size;
 }
 
 async function findPackageJsonFor(filepath) {
