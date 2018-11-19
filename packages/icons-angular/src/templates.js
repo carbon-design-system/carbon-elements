@@ -1,15 +1,17 @@
-const formatImports = iconInfo => {
+const { param } = require("change-case");
+
+const formatImports = iconMeta => {
   let value = "";
-  for (const icon of iconInfo) {
-    value += `import { ${icon.name} } from "./${icon.dir}";\n`;
+  for (const icon of iconMeta) {
+    value += `import { ${icon.moduleName} } from "./${icon.outputOptions.file.replace("es/", "").replace(".js", "")}";\n`;
   }
   return value;
 }
 
-formatDeclarations = iconInfo => {
+formatDeclarations = iconMeta => {
   let value = "";
-  for (const icon of iconInfo) {
-    value += `${icon.name},\n`;
+  for (const icon of iconMeta) {
+    value += `${icon.moduleName},\n`;
   }
   return value;
 }
@@ -18,23 +20,23 @@ const indexTemplate = () => `
 export * from "./IconModule";
 `;
 
-const moduleTemplate = iconInfo => `
+const moduleTemplate = iconMeta => `
 import { NgModule } from "@angular/core";
 
-${formatImports(iconInfo)}
+${formatImports(iconMeta)}
 
 @NgModule({
 	declarations: [
-    ${formatDeclarations(iconInfo)}
+    ${formatDeclarations(iconMeta)}
   ],
 	exports: [
-    ${formatDeclarations(iconInfo)}
+    ${formatDeclarations(iconMeta)}
   ]
 })
 export class IconModule {}
 
 export {
-  ${formatDeclarations(iconInfo)}
+  ${formatDeclarations(iconMeta)}
 };
 `;
 
@@ -94,12 +96,12 @@ import { storiesOf, moduleMetadata } from "@storybook/angular";
 
 import { IconModule } from "./../lib";
 
-storiesOf("${icon.name}", module)
+storiesOf("${icon.moduleName}", module)
   .addDecorator(moduleMetadata({
     imports: [ IconModule ],
   }))
-  .add("${icon.name}", () => ({
-    template: \`<ibm-icon-${icon.selector}></ibm-icon-${icon.selector}>\`
+  .add("${icon.moduleName}", () => ({
+    template: \`<ibm-icon-${param(icon.moduleName)}></ibm-icon-${param(icon.moduleName)}>\`
   }));
 `;
 
