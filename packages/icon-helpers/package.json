@@ -6,6 +6,11 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/icon-helpers",
   "bugs": "https://github.com/IBM/carbon-elements/issues",
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
   "publishConfig": {
     "access": "public"
   },
