@@ -19,7 +19,7 @@ async function generateComponents() {
       if (!dirExists) {
         await fs.ensureDir(dirname(outputPath));
       }
-      await fs.writeFile(outputPath, componentTemplate(selectorName, className, rawSvg, icon.size));
+      await fs.writeFile(outputPath, componentTemplate(selectorName, className, rawSvg, icon.descriptor.attrs));
     } catch (err) {
       console.error(err);
     }
@@ -35,9 +35,16 @@ async function generateComponents() {
 
 async function buildExamples() {
   await fs.copy("lib", "examples/storybook/lib");
-  let filesToWrite = [];
+  const grouped = new Map();
   for (const icon of icons) {
-    filesToWrite.push(fs.writeFile(`examples/storybook/stories/${icon.moduleName}.stories.ts`, storyTemplate(icon)));
+    if (!grouped.has(icon.basename)) {
+      grouped.set(icon.basename, []);
+    }
+    grouped.get(icon.basename).push(icon);
+  }
+  let filesToWrite = [];
+  for (const [basename, icons] of grouped) {
+    filesToWrite.push(fs.writeFile(`examples/storybook/stories/${basename}.stories.ts`, storyTemplate(basename, icons)));
   }
   await Promise.all(filesToWrite);
 }

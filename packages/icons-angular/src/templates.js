@@ -40,8 +40,9 @@ export {
 };
 `;
 
-const componentTemplate = (iconName, className, svg, size) => `
+const componentTemplate = (iconName, className, svg, attrs) => `
 import { Component, ElementRef, Input } from "@angular/core";
+import { getAttributes } from "@carbon/icon-helpers";
 
 @Component({
 	selector: "ibm-icon-${iconName}",
@@ -50,59 +51,74 @@ import { Component, ElementRef, Input } from "@angular/core";
 export class ${className} {
   @Input() ariaLabel: string;
   @Input() ariaLabelledby: string;
-  @Input() focusable: boolean = null;
+  @Input() ariaHidden: boolean;
+  @Input() title: string;
+  @Input() focusable: boolean;
+
+  static titleIdCounter = 0;
 
   constructor(private elementRef: ElementRef) {}
 
   ngAfterViewInit() {
-    const size: string = \`${size}\`;
     const svg = this.elementRef.nativeElement.querySelector("svg");
-    if (size === "glyph") {
-      svg.style.width = \`\$\{svg.viewBox.baseVal.width\}px\`;
-      svg.style.height = \`\$\{svg.viewBox.baseVal.height\}px\`;
-    } else {
-      svg.style.width = \`\$\{size\}px\`;
-      svg.style.height = \`\$\{size\}px\`;
+
+    const attributes = getAttributes({
+      width: ${attrs.width},
+      height: ${attrs.height},
+      viewBox: "${attrs.viewBox}",
+      title: this.title,
+      "aria-label": this.ariaLabel,
+      "aria-labelledby": this.ariaLabelledby,
+      "aria-hidden": this.ariaHidden,
+      focusable: this.focusable
+    });
+
+    const attrKeys = Object.keys(attributes);
+    for (let i = 0; i < attrKeys.length; i++) {
+      const key = attrKeys[i];
+      const value = attributes[key];
+      if (key === "title") {
+        continue;
+      }
+      if (value) {
+        svg.setAttribute(key, value);
+      }
     }
 
-    if (this.ariaLabel || this.ariaLabelledby) {
-      // set attrs for interactive element
-      svg.setAttribute("role", "img");
-      // override anything the user has set
-      this.focusable = true;
-      // set label/labelledby
-      if (this.ariaLabel) {
-        svg.setAttribute("aria-label", this.ariaLabel);
-      }
-      if (this.ariaLabelledby) {
-        svg.setAttribute("aria-labelledby", this.ariaLabelledby);
-      }
-    } else {
-      // hide it from screen readers since it shouldn't be interactive
-      svg.setAttribute("aria-hidden", true);
-    }
-
-    // set focusable if it has a value
-    if (this.focusable !== null) {
-      svg.setAttribute("focusable", this.focusable);
+    if (attributes.title) {
+      const title = document.createElement("title");
+      title.textContent = attributes.title;
+      ${className}.titleIdCounter++;
+      title.setAttribute("id", \`${iconName}-\$\{${className}.titleIdCounter\}\`);
+      svg.appendChild(title);
+      svg.setAttribute("aria-labelledby", \`${iconName}-\$\{${className}.titleIdCounter\}\`);
     }
   }
 }
 `;
 
+const iconStoryTemplate = icon => `.add("${icon.moduleName}", () => ({
+  template: \`<ibm-icon-${param(icon.moduleName)}></ibm-icon-${param(icon.moduleName)}>\`
+}))`;
 
-const storyTemplate = icon => `
+const gerateIconStories = icons => {
+  let value = "";
+  for (const icon of icons) {
+    value += iconStoryTemplate(icon);
+  }
+  return value;
+}
+
+const storyTemplate = (basename, icons) => `
 import { storiesOf, moduleMetadata } from "@storybook/angular";
 
 import { IconModule } from "./../lib";
 
-storiesOf("${icon.moduleName}", module)
+storiesOf("${basename}", module)
   .addDecorator(moduleMetadata({
     imports: [ IconModule ],
   }))
-  .add("${icon.moduleName}", () => ({
-    template: \`<ibm-icon-${param(icon.moduleName)}></ibm-icon-${param(icon.moduleName)}>\`
-  }));
+  ${gerateIconStories(icons)};
 `;
 
 module.exports = {
