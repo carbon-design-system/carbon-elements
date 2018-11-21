@@ -1,10 +1,17 @@
 {
   "name": "@carbon/icons-handlebars",
-  "version": "0.0.1-alpha.13",
-  "main": "index.js",
+  "version": "0.0.1-alpha.14",
   "license": "Apache-2.0",
+  "main": "index.js",
   "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/icons-handlebars",
   "bugs": "https://github.com/IBM/carbon-elements/issues",
+  "keywords": [
+    "ibm",
+    "elements",
+    "carbon",
+    "carbon-elements",
+    "carbon-design-system"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -12,8 +19,8 @@
     "handlebars": "^4.0.12"
   },
   "dependencies": {
-    "@carbon/icon-helpers": "0.0.1-alpha.13",
-    "@carbon/icons": "0.0.1-alpha.13"
+    "@carbon/icon-helpers": "0.0.1-alpha.14",
+    "@carbon/icons": "0.0.1-alpha.14"
   },
   "devDependencies": {
     "handlebars": "^4.0.12"
