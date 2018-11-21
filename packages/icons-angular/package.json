@@ -32,8 +32,8 @@
     "@angular/compiler": "6.1.10",
     "@angular/compiler-cli": "6.1.10",
     "@angular/core": "6.1.10",
-    "@carbon/icon-helpers": "^0.0.1-alpha.12",
-    "@carbon/icons": "0.0.1-alpha.12",
+    "@carbon/icon-helpers": "0.0.1-alpha.14",
+    "@carbon/icons": "0.0.1-alpha.14",
     "change-case": "3.0.2",
     "fs-extra": "7.0.1",
     "typescript": "2.9.2"
