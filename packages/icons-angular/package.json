@@ -7,7 +7,8 @@
   "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/icons-angular",
   "bugs": "https://github.com/IBM/carbon-elements/issues",
   "files": [
-    "lib"
+    "lib",
+    "umd"
   ],
   "keywords": [
     "ibm",
