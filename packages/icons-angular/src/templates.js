@@ -1,20 +1,24 @@
-const { param } = require("change-case");
+const { param } = require('change-case');
 
 const formatImports = iconMeta => {
-  let value = "";
+  let value = '';
   for (const icon of iconMeta) {
-    value += `import { ${icon.moduleName} } from "./${icon.outputOptions.file.replace("es/", "").replace(".js", "")}";\n`;
+    value += `import { ${
+      icon.moduleName
+    }Module } from "./${icon.outputOptions.file
+      .replace('es/', '')
+      .replace('.js', '')}";\n`;
   }
   return value;
-}
+};
 
 formatDeclarations = iconMeta => {
-  let value = "";
+  let value = '';
   for (const icon of iconMeta) {
-    value += `${icon.moduleName},\n`;
+    value += `${icon.moduleName}Module,\n`;
   }
   return value;
-}
+};
 
 const indexTemplate = () => `
 export * from "./IconModule";
@@ -26,7 +30,7 @@ import { NgModule } from "@angular/core";
 ${formatImports(iconMeta)}
 
 @NgModule({
-	declarations: [
+	imports: [
     ${formatDeclarations(iconMeta)}
   ],
 	exports: [
@@ -41,7 +45,7 @@ export {
 `;
 
 const componentTemplate = (iconName, className, svg, attrs) => `
-import { Component, ElementRef, Input } from "@angular/core";
+import { NgModule, Component, ElementRef, Input } from "@angular/core";
 import { getAttributes } from "@carbon/icon-helpers";
 
 @Component({
@@ -95,19 +99,41 @@ export class ${className} {
     }
   }
 }
+
+@NgModule({
+  declarations: [
+    ${className}
+  ],
+  exports: [
+    ${className}
+  ]
+})
+export class ${className}Module {}
 `;
 
 const iconStoryTemplate = icon => `.add("${icon.moduleName}", () => ({
-  template: \`<ibm-icon-${param(icon.moduleName)}></ibm-icon-${param(icon.moduleName)}>\`
+  template: \`<ibm-icon-${param(icon.moduleName)}></ibm-icon-${param(
+  icon.moduleName
+)}>\`
+}))
+.add("${icon.moduleName} with label", () => ({
+  template: \`<ibm-icon-${param(
+    icon.moduleName
+  )} ariaLabel="label for the icon"></ibm-icon-${param(icon.moduleName)}>\`
+}))
+.add("${icon.moduleName} with title", () => ({
+  template: \`<ibm-icon-${param(
+    icon.moduleName
+  )} title="icon title"></ibm-icon-${param(icon.moduleName)}>\`
 }))`;
 
 const gerateIconStories = icons => {
-  let value = "";
+  let value = '';
   for (const icon of icons) {
     value += iconStoryTemplate(icon);
   }
   return value;
-}
+};
 
 const storyTemplate = (basename, icons) => `
 import { storiesOf, moduleMetadata } from "@storybook/angular";
@@ -125,5 +151,5 @@ module.exports = {
   moduleTemplate,
   componentTemplate,
   indexTemplate,
-  storyTemplate
+  storyTemplate,
 };
