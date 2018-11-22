@@ -58,7 +58,7 @@ async function buildUMD() {
     external: ['@angular/core', '@carbon/icon-helpers'],
   });
 
-  bundle.write({
+  await bundle.write({
     name: 'CarbonIconsAngular',
     format: 'umd',
     file: join(paths.UMD, 'index.js'),
@@ -73,10 +73,11 @@ async function buildUMD() {
     const iconbundle = await rollup({
       input: jsSource,
       external: ['@angular/core', '@carbon/icon-helpers'],
+      cache: false,
     });
 
     const jsOutput = jsSource.replace('lib', 'umd');
-    iconbundle.write({
+    await iconbundle.write({
       name: 'CarbonIconsAngular',
       format: 'umd',
       file: jsOutput,
