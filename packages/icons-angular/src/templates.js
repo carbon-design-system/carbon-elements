@@ -12,7 +12,7 @@ const formatImports = iconMeta => {
   return value;
 };
 
-formatDeclarations = iconMeta => {
+const formatDeclarations = iconMeta => {
   let value = '';
   for (const icon of iconMeta) {
     value += `${icon.moduleName}Module,\n`;
