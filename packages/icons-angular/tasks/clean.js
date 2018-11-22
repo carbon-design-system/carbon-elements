@@ -1,6 +1,6 @@
-const build = require('../src/build');
+const clean = require('../src/clean');
 const { reporter } = require('@carbon/cli-reporter');
 
-build().catch(error => {
+clean().catch(error => {
   reporter.error(error);
 });
