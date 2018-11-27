@@ -58,6 +58,14 @@ function iconToString(descriptor) {
 function createComponentFromInfo({ descriptor, moduleName }) {
   const source = `
 function ${moduleName}({ children, ...rest }) {
+  const props = getAttributes(rest);
+
+  // Protect against the following warning from React:
+  // Received \`false\` for a non-boolean attribute \`focusable\`.
+  if (!props.focusable) {
+    props.focusable = 'false';
+  }
+
   return React.createElement(
     'svg',
     getAttributes(rest),
