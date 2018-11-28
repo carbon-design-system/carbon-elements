@@ -16,9 +16,10 @@ export default function getAttributes({
   viewBox = `0 0 ${width} ${height}`,
   ...attributes
 } = {}) {
+  const { tabIndex, ...rest } = attributes;
   const iconAttributes = {
     ...defaultAttributes,
-    ...attributes,
+    ...rest,
     width,
     height,
     viewBox,
@@ -32,7 +33,13 @@ export default function getAttributes({
     attributes.title
   ) {
     iconAttributes.role = 'img';
-    iconAttributes.focusable = true;
+
+    // Reference:
+    // https://allyjs.io/tutorials/focusing-in-svg.html
+    if (tabIndex !== undefined && tabIndex !== null) {
+      iconAttributes.focusable = true;
+      iconAttributes.tabIndex = tabIndex;
+    }
   } else {
     iconAttributes['aria-hidden'] = true;
   }

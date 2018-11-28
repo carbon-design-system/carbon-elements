@@ -92,7 +92,7 @@ ${moduleName}.defaultProps = {
   width: ${descriptor.attrs.width},
   height: ${descriptor.attrs.height},
   viewBox: '${descriptor.attrs.viewBox}',
-  xmlns: '${descriptor.attrs.xmlns}',
+  xmlns: 'http://www.w3.org/2000/svg',
   // Reference:
   // https://github.com/IBM/carbon-components-react/issues/1392
   // https://github.com/PolymerElements/iron-iconset-svg/pull/47
