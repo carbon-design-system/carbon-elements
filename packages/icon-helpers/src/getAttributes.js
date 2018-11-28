@@ -2,7 +2,8 @@ const defaultAttributes = {
   // Reference:
   // https://github.com/IBM/carbon-components-react/issues/1392
   // https://github.com/PolymerElements/iron-iconset-svg/pull/47
-  focusable: false,
+  // `focusable` is a string attribute which is why we do not use a boolean here
+  focusable: 'false',
   preserveAspectRatio: 'xMidYMid meet',
 };
 
@@ -16,7 +17,7 @@ export default function getAttributes({
   viewBox = `0 0 ${width} ${height}`,
   ...attributes
 } = {}) {
-  const { tabIndex, ...rest } = attributes;
+  const { tabindex, ...rest } = attributes;
   const iconAttributes = {
     ...defaultAttributes,
     ...rest,
@@ -28,17 +29,17 @@ export default function getAttributes({
   // TODO: attributes.title assumes that the consumer will implement <title> and
   // correctly set `aria-labelledby`.
   if (
-    attributes['aria-label'] ||
-    attributes['aria-labelledby'] ||
-    attributes.title
+    iconAttributes['aria-label'] ||
+    iconAttributes['aria-labelledby'] ||
+    iconAttributes.title
   ) {
     iconAttributes.role = 'img';
 
     // Reference:
     // https://allyjs.io/tutorials/focusing-in-svg.html
-    if (tabIndex !== undefined && tabIndex !== null) {
-      iconAttributes.focusable = true;
-      iconAttributes.tabIndex = tabIndex;
+    if (tabindex !== undefined && tabindex !== null) {
+      iconAttributes.focusable = 'true';
+      iconAttributes.tabindex = tabindex;
     }
   } else {
     iconAttributes['aria-hidden'] = true;

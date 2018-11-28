@@ -57,18 +57,23 @@ function iconToString(descriptor) {
 
 function createComponentFromInfo({ descriptor, moduleName }) {
   const source = `
-function ${moduleName}({ children, ...rest }) {
-  const props = getAttributes(rest);
+function ${moduleName}({ className, children, tabIndex, ...rest }) {
+  const { tabindex, ...props } = getAttributes({
+    ...rest,
+    tabindex: tabIndex,
+  });
 
-  // Protect against the following warning from React:
-  // Received \`false\` for a non-boolean attribute \`focusable\`.
-  if (!props.focusable) {
-    props.focusable = 'false';
+  if (className) {
+    props.className = className;
+  }
+
+  if (tabindex !== undefined && tabindex !== null) {
+    props.tabIndex = tabindex;
   }
 
   return React.createElement(
     'svg',
-    getAttributes(rest),
+    props,
     children,
     ${descriptor.content.map(iconToString).join(', ')}
   );
@@ -79,10 +84,12 @@ ${moduleName}.propTypes = {
   'aria-hidden': PropTypes.bool,
   'aria-label': PropTypes.string,
   'aria-labelledby': PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node,
   focusable: PropTypes.bool,
   height: PropTypes.number,
   preserveAspectRatio: PropTypes.string,
+  tabIndex: PropTypes.string,
   title: PropTypes.string,
   viewBox: PropTypes.string,
   width: PropTypes.number,
