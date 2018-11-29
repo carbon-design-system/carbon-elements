@@ -1,7 +1,7 @@
 {
   "name": "@carbon/icons-vue",
   "private": true,
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.20",
   "main": "index.js",
   "license": "Apache-2.0",
   "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/icons-vue",
@@ -9,7 +9,17 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "yarn clean && node tasks/build.js",
+    "clean": "rimraf es lib umd"
+  },
   "devDependencies": {
-    "@carbon/icons": "0.0.1-alpha.4"
+    "@carbon/cli-reporter": "0.0.1-alpha.20",
+    "@carbon/icon-helpers": "0.0.1-alpha.20",
+    "@carbon/icons": "0.0.1-alpha.20",
+    "fs-extra": "^7.0.1",
+    "prettier": "^1.15.2",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.67.3"
   }
 }

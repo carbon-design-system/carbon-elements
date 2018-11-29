@@ -1,12 +1,14 @@
+import { withOptions } from '@storybook/addon-options';
 import { addDecorator, configure } from '@storybook/vue';
 // import { withInfo } from '@storybook/addon-info';
-// import { withOptions } from '@storybook/addon-options';
 
-// withOptions({
-// name: `@carbon/icons-react`,
-// url:
-// 'https://github.com/IBM/carbon-elements/tree/master/packages/icons-react',
-// });
+addDecorator(
+  withOptions({
+    name: '@carbon/icons-vue',
+    url:
+      'https://github.com/IBM/carbon-elements/tree/master/packages/icons-vue',
+  })
+);
 
 // addDecorator(withInfo);
 
