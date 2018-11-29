@@ -14,12 +14,21 @@ import { getAttributes } from '@carbon/icon-helpers';
 `;
 
 function createEntrypointFromMeta(meta) {
+  const install = `export const CarbonComponentsVue = {
+  install(Vue, options) {
+    const { components } = options;
+    Object.keys(components).forEach(key => {
+      Vue.component(key, components[key]);
+    });
+  },
+}`;
   const components = meta.map(info => {
     const source = createComponentFromInfo(info);
-    return `export const ${info.moduleName} = ${source}`;
+    return `export const Cv${info.moduleName} = ${source}`;
   });
   const source = `${MODULE_IMPORTS}
-${components.join('\n')}`;
+${components.join('\n')}
+${install}`;
 
   return prettier.format(source, prettierOptions);
 }
