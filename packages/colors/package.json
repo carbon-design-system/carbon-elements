@@ -1,24 +1,39 @@
 {
   "name": "@carbon/colors",
-  "version": "0.0.1-alpha.4",
-  "main": "src/index.js",
+  "version": "0.0.1-alpha.20",
   "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/colors",
   "bugs": "https://github.com/IBM/carbon-elements/issues",
+  "files": [
+    "es",
+    "lib",
+    "scss",
+    "umd"
+  ],
   "keywords": [
-    "eyeglass-module"
+    "eyeglass-module",
+    "ibm",
+    "elements",
+    "carbon",
+    "carbon-elements",
+    "carbon-design-system"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "node tasks/build.js"
+    "build": "yarn clean && bundler bundle src/index.js --name CarbonColors && node tasks/build.js",
+    "clean": "rimraf es lib umd scss"
   },
   "devDependencies": {
-    "@carbon/cli-reporter": "0.0.1-alpha.4",
+    "@carbon/bundler": "0.0.1-alpha.20",
+    "@carbon/cli-reporter": "0.0.1-alpha.20",
     "fs-extra": "^7.0.0",
     "node-sass": "^4.9.4",
-    "prettier": "^1.14.3"
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2"
   },
   "eyeglass": {
     "exports": false,
