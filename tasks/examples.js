@@ -59,50 +59,60 @@ async function main() {
 
   const packagesWithExamples = packages.filter(pkg => !!pkg.examples);
 
-  for (const pkg of packagesWithExamples) {
-    const { examples, filepath, name } = pkg;
-    const packageDir = path.join(BUILD_DIR, name, 'examples');
+  console.log('Building examples...');
+  await Promise.all(
+    packagesWithExamples.map(async pkg => {
+      console.log('Starting pkg', pkg.name);
+      const { examples, filepath, name } = pkg;
+      const packageDir = path.join(BUILD_DIR, name, 'examples');
 
-    await fs.ensureDir(packageDir);
+      await fs.ensureDir(packageDir);
 
-    for (const example of examples) {
-      const exampleDir = path.join(packageDir, example.name);
-      const exampleBuildDir = path.join(example.filepath, 'build');
-      const packageJsonPath = path.join(example.filepath, 'package.json');
-      const packageJson = await fs.readJson(packageJsonPath);
+      await Promise.all(
+        examples.map(async example => {
+          console.log('Start example:', example.name);
+          const exampleDir = path.join(packageDir, example.name);
+          const exampleBuildDir = path.join(example.filepath, 'build');
+          const packageJsonPath = path.join(example.filepath, 'package.json');
+          const packageJson = await fs.readJson(packageJsonPath);
 
-      await fs.ensureDir(exampleDir);
+          await fs.ensureDir(exampleDir);
 
-      if (packageJson.scripts.build) {
-        spawn.sync('yarn', ['install'], {
-          stdio: 'inherit',
-          cwd: example.filepath,
-        });
-        spawn.sync('yarn', ['build'], {
-          stdio: 'inherit',
-          cwd: example.filepath,
-        });
-      }
-
-      if (await fs.pathExists(exampleBuildDir)) {
-        await fs.copy(exampleBuildDir, exampleDir);
-        continue;
-      }
-
-      await fs.copy(example.filepath, exampleDir, {
-        filter(src, dest) {
-          const relativePath = path.relative(example.filepath, src);
-          if (relativePath.includes('node_modules')) {
-            return false;
+          if (packageJson.scripts.build) {
+            spawn.sync('yarn', ['install'], {
+              stdio: 'ignore',
+              cwd: example.filepath,
+            });
+            spawn.sync('yarn', ['build'], {
+              stdio: 'ignore',
+              cwd: example.filepath,
+            });
           }
-          if (relativePath[0] === '.') {
-            return false;
+
+          if (await fs.pathExists(exampleBuildDir)) {
+            await fs.copy(exampleBuildDir, exampleDir);
+            return;
           }
-          return true;
-        },
-      });
-    }
-  }
+
+          await fs.copy(example.filepath, exampleDir, {
+            filter(src, dest) {
+              const relativePath = path.relative(example.filepath, src);
+              if (relativePath.includes('node_modules')) {
+                return false;
+              }
+              if (relativePath[0] === '.') {
+                return false;
+              }
+              return true;
+            },
+          });
+          console.log('End example:', example.name);
+        })
+      );
+
+      console.log('Ending pkg', pkg.name);
+    })
+  );
 
   const links = packagesWithExamples.reduce((html, pkg) => {
     const links = pkg.examples.reduce((acc, example) => {
