@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <div><cv-bee-32></cv-bee-32></div>
+    <div><Bee32 /></div>
     <HelloWorld msg="Welcome to Your Vue.js App with @carbon/icons-vue" />
   </div>
 </template>

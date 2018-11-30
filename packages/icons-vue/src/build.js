@@ -40,7 +40,7 @@ async function build({ cwd }) {
         BUNDLE_FORMATS.map(async ({ format, directory }) => {
           const bundle = await rollup({
             input: jsFilepath,
-            external: ['@carbon/icon-helpers', 'prop-types', 'react'],
+            external: ['@carbon/icon-helpers'],
           });
           const outputOptions = {
             format,

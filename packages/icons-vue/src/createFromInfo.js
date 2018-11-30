@@ -24,7 +24,7 @@ function createEntrypointFromMeta(meta) {
 }`;
   const components = meta.map(info => {
     const source = createComponentFromInfo(info);
-    return `export const Cv${info.moduleName} = ${source}`;
+    return `export const ${info.moduleName} = ${source}`;
   });
   const source = `${MODULE_IMPORTS}
 ${components.join('\n')}
@@ -43,47 +43,48 @@ function createComponentFromInfo(info) {
   const { descriptor, moduleName, size } = info;
   const { attrs, content } = descriptor;
   return `{
-  name: 'Cv${moduleName}',
-  props: {
-    ariaLabel: String,
-    ariaLabelledBy: String,
-    height: {
-      type: String,
-      default: '${attrs.height}',
-    },
-    title: String,
-    viewBox: {
-      type: String,
-      default: '${attrs.viewBox}',
-    },
-    width: {
-      type: String,
-      default: '${attrs.width}',
-    },
-    preserveAspectRatio: {
-      type: String,
-      default: 'xMidYMid meet',
-    },
-    tabindex: String,
-    xmlns: {
-      type: String,
-      default: 'http://www.w3.org/2000/svg',
-    },
-  },
-  render(createElement) {
-    const { ariaLabel, ariaLabelledBy, ...rest } = this.$props;
+  name: '${moduleName}',
+  functional: true,
+  props: [
+    'ariaLabel',
+    'ariaLabelledBy',
+    'height',
+    'title',
+    'viewBox',
+    'width',
+    'preserveAspectRatio',
+    'tabindex',
+    'xmlns',
+  ],
+  render(createElement, context) {
+    const { props, listeners, slots } = context;
+    const {
+      ariaLabel,
+      ariaLabelledBy,
+      width = '${attrs.width}',
+      height = '${attrs.height}',
+      viewBox = '${attrs.viewBox}',
+      preserveAspectRatio = 'xMidYMid meet',
+      xmlns = 'http://www.w3.org/2000/svg',
+      ...rest
+    } = props;
     const attrs = getAttributes({
       ...rest,
       'aria-label': ariaLabel,
       'aria-labelledby': ariaLabelledBy,
+      width,
+      height,
+      viewBox,
+      preserveAspectRatio,
+      xmlns,
     });
     return createElement('svg', {
       attrs,
-      on: this.$listeners,
+      on: listeners,
     }, [
-      this.$slots.title,
+      slots.title,
       ${content.map(toString).join(', ')},
-      this.$slots.default,
+      slots.default,
     ]);
   },
 };`;
