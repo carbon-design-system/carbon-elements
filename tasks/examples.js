@@ -145,20 +145,20 @@ async function main() {
     path.join(BUILD_DIR, 'icons/svg')
   );
 
-  const publishOptions = {
-    remote: GH_REMOTE,
-    message: 'Auto-generated commit',
-  };
+  // const publishOptions = {
+  // remote: GH_REMOTE,
+  // message: 'Auto-generated commit',
+  // };
 
-  ghpages.publish(BUILD_DIR, publishOptions, error => {
-    if (error) {
-      console.log(error);
-      process.exit(1);
-      return;
-    }
+  // ghpages.publish(BUILD_DIR, publishOptions, error => {
+  // if (error) {
+  // console.log(error);
+  // process.exit(1);
+  // return;
+  // }
 
-    console.log('Done!');
-  });
+  // console.log('Done!');
+  // });
 }
 
 main().catch(error => {
