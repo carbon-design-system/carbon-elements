@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "build-storybook",
+    "build": "build-storybook -o build",
     "develop": "start-storybook -p 3000 -c .storybook"
   },
   "dependencies": {
