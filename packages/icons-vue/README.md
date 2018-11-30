@@ -26,13 +26,13 @@ You can install these components from `@carbon/icons-vue` through two ways. The
 first is to install them when you're initializing your Vue app. For example:
 
 ```js
-import { CarbonComponentsVue, CvBee32 } from '@carbon/icons-vue';
+import { CarbonComponentsVue, Bee32 } from '@carbon/icons-vue';
 import Vue from 'vue';
 import App from './App.vue';
 
 Vue.use(CarbonComponentsVue, {
   components: {
-    CvBee32,
+    Bee32,
   },
 });
 
@@ -46,7 +46,16 @@ like to use. In our application, we can then use them by doing:
 
 ```vue
 <template>
-  <cv-bee-32></cv-bee-32>
+  <Bee32 />
+</template>
+```
+
+You can pass in props to any icon component for things like accessibility
+labels, custom classes, event handlers, and more. For example:
+
+```vue
+<template>
+  <Bee32 aria-label="Bee" class="custom-class" v-on:click="handler" />
 </template>
 ```
 
