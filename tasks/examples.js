@@ -1,13 +1,12 @@
 'use strict';
 
+const { reporter } = require('@carbon/cli-reporter');
 const fs = require('fs-extra');
 const path = require('path');
-const ghpages = require('gh-pages');
 const spawn = require('cross-spawn');
 
 const PACKAGES_DIR = path.resolve(__dirname, '../packages');
 const BUILD_DIR = path.resolve(__dirname, '../build');
-const GH_REMOTE = process.env.GH_REMOTE || 'origin';
 
 /**
  * The goal here is to create a top-level `build` folder with content to be
@@ -16,6 +15,8 @@ const GH_REMOTE = process.env.GH_REMOTE || 'origin';
  * the `build` folder at: `build/<package-name>/examples/<example-name>`.
  */
 async function main() {
+  reporter.info('Building examples...');
+
   await fs.remove(BUILD_DIR);
   await fs.ensureDir(BUILD_DIR);
 
@@ -59,10 +60,10 @@ async function main() {
 
   const packagesWithExamples = packages.filter(pkg => !!pkg.examples);
 
-  console.log('Building examples...');
   await Promise.all(
     packagesWithExamples.map(async pkg => {
-      console.log('Starting pkg', pkg.name);
+      reporter.info(`Building examples in package \`${pkg.name}\``);
+
       const { examples, filepath, name } = pkg;
       const packageDir = path.join(BUILD_DIR, name, 'examples');
 
@@ -70,7 +71,10 @@ async function main() {
 
       await Promise.all(
         examples.map(async example => {
-          console.log('Start example:', example.name);
+          reporter.info(
+            `Building example \`${example.name}\` in package \`${pkg.name}\``
+          );
+
           const exampleDir = path.join(packageDir, example.name);
           const exampleBuildDir = path.join(example.filepath, 'build');
           const packageJsonPath = path.join(example.filepath, 'package.json');
@@ -106,11 +110,13 @@ async function main() {
               return true;
             },
           });
-          console.log('End example:', example.name);
+          reporter.success(
+            `Built example \`${example.name}\` in package \`${pkg.name}\``
+          );
         })
       );
 
-      console.log('Ending pkg', pkg.name);
+      reporter.success(`Built examples in package \`${pkg.name}\``);
     })
   );
 
@@ -154,21 +160,6 @@ async function main() {
     path.resolve(__dirname, '../packages/icons/svg'),
     path.join(BUILD_DIR, 'icons/svg')
   );
-
-  // const publishOptions = {
-  // remote: GH_REMOTE,
-  // message: 'Auto-generated commit',
-  // };
-
-  // ghpages.publish(BUILD_DIR, publishOptions, error => {
-  // if (error) {
-  // console.log(error);
-  // process.exit(1);
-  // return;
-  // }
-
-  // console.log('Done!');
-  // });
 }
 
 main().catch(error => {
