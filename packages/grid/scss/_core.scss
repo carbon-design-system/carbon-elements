@@ -7,8 +7,6 @@
 //----------------------------------------------------------------------------
 .#{$prefix}--grid {
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
 
   @each $name, $value in $breakpoints {
     @include breakpoint($name) {
