@@ -124,7 +124,7 @@ export const tokens = {
 
   ui01: colors.gray10,
   ui02: colors.white,
-  ui03: colors.gray30,
+  ui03: colors.gray20,
   ui04: colors.gray40,
   ui05: colors.gray100,
 
@@ -163,6 +163,10 @@ export const tokens = {
   hoverDanger: '#ba1b23',
   hoverPrimary: '#1a73ff',
   hoverSecondary: '#2c2c2c',
+  hoverRow: '#e5e5e5',
+
+  selectedUI: colors.gray20,
+
   overlay01: 'rgba(255, 255, 255, 0.6)',
   overlay02: 'rgba(243, 243, 243, 0.7)',
 };
