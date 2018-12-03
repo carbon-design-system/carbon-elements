@@ -1,6 +1,7 @@
 @import 'convert';
 
 $cell-padding: 1rem;
+$gutter: rem(16px);
 
 // Initial map of our breakpoints and their values
 $breakpoints: (

@@ -42,9 +42,6 @@ export default function ExamplesPage() {
               <li>
                 <Link to={`${PATH_PREFIX}/aspect-ratio`}>Aspect Ratio</Link>
               </li>
-              <li>
-                <Link to={`${PATH_PREFIX}/nested`}>Nested</Link>
-              </li>
             </ul>
           </Column>
         </Row>
