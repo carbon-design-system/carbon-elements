@@ -125,7 +125,7 @@ export const tokens = {
   ui01: colors.gray10,
   ui02: colors.white,
   ui03: colors.gray20,
-  ui04: colors.gray60,
+  ui04: colors.gray50,
   ui05: colors.gray100,
 
   text01: colors.gray100,
