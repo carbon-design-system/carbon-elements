@@ -2,44 +2,12 @@
 @import 'font-family';
 @import 'scale';
 
-$component-01: (
+$caption-01: (
   font-family: font-family('sans'),
-  font-size: type-scale(2),
+  font-size: type-scale(1),
   font-weight: font-weight('regular'),
-  line-height: rem(18px),
-  letter-spacing: 0.16px,
-);
-
-$component-body-01: (
-  font-family: font-family('sans'),
-  font-size: type-scale(2),
-  font-weight: font-weight('regular'),
-  line-height: rem(20px),
-  letter-spacing: 0.16px,
-);
-
-$component-header-01: (
-  font-family: font-family('sans'),
-  font-size: type-scale(2),
-  font-weight: font-weight('semibold'),
-  line-height: rem(18px),
-  letter-spacing: 0.16px,
-);
-
-$component-02: (
-  font-family: font-family('sans'),
-  font-size: type-scale(3),
-  font-weight: font-weight('regular'),
-  line-height: rem(22px),
-  letter-spacing: 0,
-);
-
-$component-body-02: (
-  font-family: font-family('sans'),
-  font-size: type-scale(3),
-  font-weight: font-weight('regular'),
-  line-height: rem(24px),
-  letter-spacing: 0,
+  line-height: rem(16px),
+  letter-spacing: 0.32px,
 );
 
 $label-01: (
@@ -53,98 +21,439 @@ $label-01: (
 $helper-text-01: (
   font-family: font-family('sans'),
   font-size: type-scale(1),
-  font-weight: font-weight('regular'),
   font-style: italic,
   line-height: rem(16px),
   letter-spacing: 0.32px,
 );
 
+$body-short-01: (
+  font-family: font-family('sans'),
+  font-size: type-scale(2),
+  font-weight: font-weight('regular'),
+  line-height: rem(18px),
+  letter-spacing: 0.16px,
+);
+
+$body-long-01: (
+  font-family: font-family('sans'),
+  font-size: type-scale(2),
+  font-weight: font-weight('regular'),
+  line-height: rem(20px),
+  letter-spacing: 0.16px,
+);
+
+$body-short-02: (
+  font-family: font-family('sans'),
+  font-size: type-scale(3),
+  font-weight: font-weight('regular'),
+  line-height: rem(22px),
+  letter-spacing: 0,
+);
+
+$body-long-02: (
+  font-family: font-family('sans'),
+  font-size: type-scale(3),
+  font-weight: font-weight('regular'),
+  line-height: rem(24px),
+  letter-spacing: 0,
+);
+
 $code-01: (
   font-family: font-family('mono'),
-  font-weight: font-weight('regular'),
   font-size: type-scale(1),
+  font-weight: font-weight('regular'),
   line-height: rem(16px),
   letter-spacing: 0.32px,
-) !default;
+);
 
 $code-02: (
   font-family: font-family('mono'),
-  font-weight: font-weight('regular'),
   font-size: type-scale(2),
+  font-weight: font-weight('regular'),
   line-height: rem(20px),
   letter-spacing: 0.32px,
-) !default;
+);
 
 $heading-01: (
+  font-family: font-family('sans'),
+  font-size: type-scale(2),
+  font-weight: font-weight('semibold'),
+  line-height: rem(18px),
+  letter-spacing: 0.16px,
+);
+
+$heading-02: (
+  font-family: font-family('sans'),
+  font-size: type-scale(3),
+  font-weight: font-weight('semibold'),
+  line-height: rem(22px),
+  letter-spacing: 0,
+);
+
+$heading-03: (
   font-family: font-family('sans'),
   font-size: type-scale(5),
   font-weight: font-weight('regular'),
   line-height: rem(26px),
   letter-spacing: 0,
-) !default;
+);
 
-$heading-02: (
+$productive-heading-04: (
   font-family: font-family('sans'),
   font-size: type-scale(6),
   font-weight: font-weight('regular'),
   line-height: rem(30px),
   letter-spacing: 0,
-) !default;
+);
 
-$heading-03: (
+$productive-heading-05: (
   font-family: font-family('sans'),
   font-size: type-scale(8),
   font-weight: font-weight('regular'),
   line-height: rem(40px),
   letter-spacing: 0,
-) !default;
-
-$body-01: (
-  font-family: font-family('sans'),
-  font-weight: font-weight('regular'),
-  font-size: type-scale(1),
-  line-height: rem(16px),
-  letter-spacing: 0.02rem,
 );
 
-$body-02: (
+$expressive-heading-04: (
   font-family: font-family('sans'),
+  font-size: type-scale(5),
   font-weight: font-weight('regular'),
-  font-size: type-scale(2),
-  line-height: rem(20px),
-  letter-spacing: 0.01rem,
-);
-
-$body-03: (
-  font-family: font-family('sans'),
-  font-weight: font-weight('regular'),
-  font-size: type-scale(3),
-  line-height: rem(24px),
+  line-height: rem(26px),
   letter-spacing: 0,
+  breakpoints: (
+    md: (
+      font-size: type-scale(5),
+      font-family: font-family('sans'),
+      font-weight: font-weight('regular'),
+      line-height: rem(26px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(6),
+      font-family: font-family('sans'),
+      font-weight: font-weight('regular'),
+      line-height: rem(30px),
+      letter-spacing: 0,
+    ),
+    xlg: (
+      font-size: type-scale(7),
+      font-family: font-family('sans'),
+      font-weight: font-weight('regular'),
+      line-height: rem(36px),
+      letter-spacing: 0,
+    ),
+    max: (
+      font-size: type-scale(8),
+      font-family: font-family('sans'),
+      font-weight: font-weight('regular'),
+      line-height: rem(40px),
+      letter-spacing: 0,
+    ),
+  ),
+);
+
+$expressive-heading-05: (
+  font-family: font-family('sans'),
+  font-size: type-scale(7),
+  font-weight: font-weight('light'),
+  line-height: rem(36px),
+  letter-spacing: 0rem,
+  breakpoints: (
+    md: (
+      font-size: type-scale(9),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(44px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(10),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(50px),
+      letter-spacing: 0,
+    ),
+    xlg: (
+      font-size: type-scale(11),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(56px),
+      letter-spacing: 0,
+    ),
+    max: (
+      font-size: type-scale(13),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(70px),
+      letter-spacing: 0,
+    ),
+  ),
+);
+
+$quotation-01: (
+  font-family: font-family('serif'),
+  font-size: type-scale(5),
+  font-weight: font-weight('regular'),
+  line-height: rem(26px),
+  letter-spacing: 0,
+  breakpoints: (
+    md: (
+      font-size: type-scale(5),
+      font-family: font-family('serif'),
+      font-weight: font-weight('regular'),
+      line-height: rem(26px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(6),
+      font-family: font-family('serif'),
+      font-weight: font-weight('regular'),
+      line-height: rem(30px),
+      letter-spacing: 0,
+    ),
+    xlg: (
+      font-size: type-scale(7),
+      font-family: font-family('serif'),
+      font-weight: font-weight('regular'),
+      line-height: rem(36px),
+      letter-spacing: 0,
+    ),
+    max: (
+      font-size: type-scale(8),
+      font-family: font-family('serif'),
+      font-weight: font-weight('regular'),
+      line-height: rem(40px),
+      letter-spacing: 0,
+    ),
+  ),
+);
+
+$quotation-02: (
+  font-family: font-family('serif'),
+  font-size: type-scale(7),
+  font-weight: font-weight('light'),
+  line-height: rem(36px),
+  letter-spacing: 0rem,
+  breakpoints: (
+    md: (
+      font-size: type-scale(9),
+      font-family: font-family('serif'),
+      font-weight: font-weight('light'),
+      line-height: rem(44px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(10),
+      font-family: font-family('serif'),
+      font-weight: font-weight('light'),
+      line-height: rem(50px),
+      letter-spacing: 0,
+    ),
+    xlg: (
+      font-size: type-scale(11),
+      font-family: font-family('serif'),
+      font-weight: font-weight('light'),
+      line-height: rem(56px),
+      letter-spacing: 0,
+    ),
+    max: (
+      font-size: type-scale(13),
+      font-family: font-family('serif'),
+      font-weight: font-weight('light'),
+      line-height: rem(70px),
+      letter-spacing: 0,
+    ),
+  ),
+);
+
+$display-01: (
+  font-family: font-family('sans'),
+  font-size: type-scale(10),
+  font-weight: font-weight('light'),
+  line-height: rem(50px),
+  letter-spacing: 0,
+  breakpoints: (
+    md: (
+      font-size: type-scale(10),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(50px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(12),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(64px),
+      letter-spacing: 0,
+    ),
+    xlg: (
+      font-size: type-scale(13),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(70px),
+      letter-spacing: 0,
+    ),
+    max: (
+      font-size: type-scale(15),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(86px),
+      letter-spacing: 0,
+    ),
+  ),
+);
+
+$display-02: (
+  font-family: font-family('sans'),
+  font-size: type-scale(10),
+  font-weight: font-weight('semibold'),
+  line-height: rem(50px),
+  letter-spacing: 0,
+  breakpoints: (
+    md: (
+      font-size: type-scale(10),
+      font-family: font-family('sans'),
+      font-weight: font-weight('semibold'),
+      line-height: rem(50px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(12),
+      font-family: font-family('sans'),
+      font-weight: font-weight('semibold'),
+      line-height: rem(64px),
+      letter-spacing: 0,
+    ),
+    xlg: (
+      font-size: type-scale(13),
+      font-family: font-family('sans'),
+      font-weight: font-weight('emiBold'),
+      line-height: rem(70px),
+      letter-spacing: 0,
+    ),
+    max: (
+      font-size: type-scale(15),
+      font-family: font-family('sans'),
+      font-weight: font-weight('semibold'),
+      line-height: rem(86px),
+      letter-spacing: 0,
+    ),
+  ),
+);
+
+$display-03: (
+  font-family: font-family('sans'),
+  font-size: type-scale(10),
+  font-weight: font-weight('light'),
+  line-height: rem(50px),
+  letter-spacing: 0,
+  breakpoints: (
+    md: (
+      font-size: type-scale(14),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(78px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(17),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(102px),
+      letter-spacing: -0.64px,
+    ),
+    xlg: (
+      font-size: type-scale(20),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(130px),
+      letter-spacing: -0.64px,
+    ),
+    max: (
+      font-size: type-scale(23),
+      font-family: font-family('sans'),
+      font-weight: font-weight('light'),
+      line-height: rem(164px),
+      letter-spacing: -0.96px,
+    ),
+  ),
+);
+
+$display-04: (
+  font-family: font-family('sans'),
+  font-size: type-scale(10),
+  font-weight: font-weight('semibold'),
+  line-height: rem(50px),
+  letter-spacing: 0,
+  breakpoints: (
+    md: (
+      font-size: type-scale(14),
+      font-family: font-family('sans'),
+      font-weight: font-weight('semibold'),
+      line-height: rem(78px),
+      letter-spacing: 0,
+    ),
+    lg: (
+      font-size: type-scale(17),
+      font-family: font-family('sans'),
+      font-weight: font-weight('semibold'),
+      line-height: rem(102px),
+      letter-spacing: -0.64px,
+    ),
+    xlg: (
+      font-size: type-scale(20),
+      font-family: font-family('sans'),
+      font-weight: font-weight('semibold'),
+      line-height: rem(130px),
+      letter-spacing: -0.64px,
+    ),
+    max: (
+      font-size: type-scale(23),
+      font-family: font-family('sans'),
+      font-weight: font-weight('semibold'),
+      line-height: rem(164px),
+      letter-spacing: -0.96px,
+    ),
+  ),
 );
 
 // prettier-ignore
 $tokens: (
-  component-01: $component-01,
-  component-body-01: $component-body-01,
-  component-header-01: $component-header-01,
+  // Universal tokens
+  caption-01: $caption-01,
+  label-01: $label-01,
 
-  component-02: $component-02,
-  component-body-02: $component-body-02,
+  helper-text-01: $helper-text-01,
 
-  // Code styles
+  body-short-01: $body-short-01,
+  body-short-02: $body-short-02,
+
+  body-long-01: $body-long-01,
+  body-long-02: $body-long-02,
+
   code-01: $code-01,
   code-02: $code-02,
 
-  // Heading styles
   heading-01: $heading-01,
   heading-02: $heading-02,
   heading-03: $heading-03,
 
-  // Body styles
-  body-01: $body-01,
-  body-02: $body-02,
-  body-03: $body-03,
+  // Product layout, fixed
+  productive-heading-04: $productive-heading-04,
+  productive-heading-05: $productive-heading-05,
+
+  // Editorial layout, fluid
+  expressive-heading-04: $expressive-heading-04,
+  expressive-heading-05: $expressive-heading-05,
+
+  quotation-01: $quotation-01,
+  quotation-02: $quotation-02,
+
+  display-01: $display-01,
+  display-02: $display-02,
+  display-03: $display-03,
+  display-04: $display-04,
 );
 
 @mixin properties($map) {
