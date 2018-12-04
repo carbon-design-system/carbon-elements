@@ -36,22 +36,7 @@ export default function AspectRatioPage() {
           </Column>
         </Row>
         <Row>
-          <Column auto>
-            <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--1x1">
-              <RatioObject />
-            </div>
-          </Column>
-          <Column auto>
-            <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--1x1">
-              <RatioObject />
-            </div>
-          </Column>
-          <Column auto>
-            <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--1x1">
-              <RatioObject />
-            </div>
-          </Column>
-          <Column auto>
+          <Column breakpoint="md" span={2}>
             <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--1x1">
               <RatioObject />
             </div>
@@ -63,12 +48,7 @@ export default function AspectRatioPage() {
           </Column>
         </Row>
         <Row>
-          <Column auto>
-            <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--4x3">
-              <RatioObject />
-            </div>
-          </Column>
-          <Column auto>
+          <Column breakpoint="md" span={2}>
             <div className="bx--aspect-ratio bx--aspect-ratio--align bx--aspect-ratio--4x3">
               <RatioObject />
             </div>

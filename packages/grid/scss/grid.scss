@@ -1,28 +1,23 @@
 @import '@carbon/layout/scss/breakpoint';
 @import 'prefix';
-@import 'core';
+@import 'container';
+@import 'row';
+@import 'col';
 
-// https://github.com/twbs/bootstrap/blob/v4-dev/scss/mixins/_grid.scss
-
-@mixin make-container() {
-  width: 100%;
-  padding-right: $gutter;
-  padding-left: $gutter;
-  margin-right: auto;
-  margin-left: auto;
+// Default container class for a grid. Includes max-width for each breakpoint
+.#{$prefix}--grid {
+  @include make-container();
+  @include make-container-max-widths();
 }
 
-@mixin make-container-max-widths() {
-  // @include break() {
-  // max-width: 100%;
-  // }
+// Fluid variant of the grid. Will not set max-width for breakpoints and will
+// full-bleed across the page.
+.#{$prefix}--fluid-grid {
+  @include make-container();
 }
 
-// .grid {
-// @include make-container();
-// @include make-container-make-widths();
-// }
+.#{$prefix}--row {
+  @include make-row();
+}
 
-// .grid-fluid {
-// // @include make-container();
-// }
+@include make-grid-columns($grid-breakpoints, $grid-gutter);

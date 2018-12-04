@@ -1,4 +1,5 @@
 @import '@carbon/layout/scss/breakpoint';
+@import 'prefix';
 
 $breakpoints: map-merge(
   (
@@ -12,8 +13,23 @@ $breakpoints: map-merge(
       columns: 12,
     ),
   ),
-  $breakpoints
+  $grid-breakpoints
 );
 
-@import 'prefix';
-@import 'core';
+// Default container class for a grid. Includes max-width for each breakpoint
+.#{$prefix}--grid {
+  @include make-container($breakpoints);
+  @include make-container-max-widths($breakpoints);
+}
+
+// Fluid variant of the grid. Will not set max-width for breakpoints and will
+// full-bleed across the page.
+.#{$prefix}--fluid-grid {
+  @include make-container($breakpoints);
+}
+
+.#{$prefix}--row {
+  @include make-row($breakpoints);
+}
+
+@include make-grid-columns($breakpoints, $grid-gutter);

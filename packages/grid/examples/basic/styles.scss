@@ -1,15 +1,12 @@
-@import '@carbon/layout/scss/breakpoint';
-@import '@carbon/layout/scss/utilities';
 @import '../../scss/grid';
-@import '../../scss/alignment';
 @import '../../scss/aspect-ratio';
-@import '../../scss/order';
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 html,
 body {
   width: 100%;
