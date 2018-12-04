@@ -1,5 +1,8 @@
 @import '@carbon/layout/scss/breakpoint';
 @import 'prefix';
+@import 'container';
+@import 'row';
+@import 'col';
 
 $breakpoints: map-merge(
   (
@@ -29,7 +32,7 @@ $breakpoints: map-merge(
 }
 
 .#{$prefix}--row {
-  @include make-row($breakpoints);
+  @include make-row();
 }
 
 @include make-grid-columns($breakpoints, $grid-gutter);
