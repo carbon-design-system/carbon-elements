@@ -8,6 +8,7 @@ import BleedPage from './BleedPage';
 import CondensedPage from './CondensedPage';
 import HangPage from './HangPage';
 import AspectRatioPage from './AspectRatioPage';
+import FullBleedPage from './FullBleedPage';
 import NotFound from './NotFound';
 
 const { PATH_PREFIX = '' } = process.env;
@@ -23,6 +24,7 @@ export default function App() {
       <CondensedPage path={`${PATH_PREFIX}/condensed`} />
       <HangPage path={`${PATH_PREFIX}/hang`} />
       <AspectRatioPage path={`${PATH_PREFIX}/aspect-ratio`} />
+      <FullBleedPage path={`${PATH_PREFIX}/full-bleed`} />
       <NotFound default />
     </Router>
   );

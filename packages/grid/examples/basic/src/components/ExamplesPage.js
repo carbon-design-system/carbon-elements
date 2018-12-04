@@ -42,6 +42,9 @@ export default function ExamplesPage() {
               <li>
                 <Link to={`${PATH_PREFIX}/aspect-ratio`}>Aspect Ratio</Link>
               </li>
+              <li>
+                <Link to={`${PATH_PREFIX}/full-bleed`}>Full bleed</Link>
+              </li>
             </ul>
           </Column>
         </Row>

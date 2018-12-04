@@ -80,15 +80,25 @@
       }
     }
 
-    .#{$prefix}--col#{$infix} {
+    .#{$prefix}--col#{$infix},
+    .#{$prefix}--col#{$infix}--auto {
       @include make-col-ready();
     }
 
     @include breakpoint($breakpoint, $breakpoints) {
       // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .#{$prefix}--col,
       .#{$prefix}--col#{$infix} {
         flex-basis: 0;
         flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .#{$prefix}--col--auto,
+      .#{$prefix}--col#{$infix}--auto {
+        flex: 1 0 0%;
+        width: auto;
+        // Reset earlier grid tiers
         max-width: 100%;
       }
 
