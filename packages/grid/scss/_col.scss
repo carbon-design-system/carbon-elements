@@ -115,20 +115,6 @@
           }
         }
       }
-
-      .#{$prefix}--order#{$infix}-first {
-        order: -1;
-      }
-
-      .#{$prefix}--order#{$infix}-last {
-        order: $columns + 1;
-      }
-
-      @for $i from 0 through $columns {
-        .#{$prefix}--order#{$infix}-#{$i} {
-          order: $i;
-        }
-      }
     }
   }
 }

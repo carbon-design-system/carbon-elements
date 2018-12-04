@@ -38,8 +38,8 @@
   {
     "filename": "12.scss",
     "package": "@carbon/grid",
-    "size": 43979,
-    "gzip": 3029
+    "size": 43187,
+    "gzip": 2730
   },
   {
     "filename": "aspect-ratio.scss",
@@ -50,8 +50,8 @@
   {
     "filename": "grid.scss",
     "package": "@carbon/grid",
-    "size": 44111,
-    "gzip": 2882
+    "size": 43187,
+    "gzip": 2730
   },
   {
     "filename": "import-once.scss",

@@ -6,6 +6,12 @@
 
 $breakpoints: map-merge(
   (
+    sm: (
+      columns: 12,
+    ),
+    md: (
+      columns: 12,
+    ),
     lg: (
       columns: 12,
     ),
