@@ -51,6 +51,7 @@ async function bundle(entrypoint, { cwd, globals, name } = {}) {
             },
           ],
         ],
+        plugins: ['macros'],
       }),
       nodeResolve({
         jsnext: true,
