@@ -1,10 +1,22 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+## Table of Contents
+
+- [Publishing](#publishing)
+  - [Pre-release](#pre-release)
+  - [FAQ](#faq)
+    - [How do I fix the repo state if I cancel during a publish?](#how-do-i-fix-the-repo-state-if-i-cancel-during-a-publish)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Publishing
 
 > Steps for publishing the monorepo
 
 1. Make sure your local branch is up-to-date by running `git pull upstream master`
 2. Make sure your git status is clean (will also be checked in our publish task)
-3. Make sure dependencies are up-to-date by doing `yarn clean && `yarn install`
+3. Make sure dependencies are up-to-date by doing `yarn clean &&`yarn install`
 4. Run `yarn build` to build all package assets
 5. Run `./tasks/publish.sh` with the appropriate flags (see release steps below)
 
