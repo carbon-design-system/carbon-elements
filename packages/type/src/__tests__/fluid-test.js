@@ -38,29 +38,29 @@ describe('fluid', () => {
     expect(fluid(display04)).toMatchInlineSnapshot(`
 Object {
   "@media (min-width: 42rem)": Object {
-    "fontSize": "calc(4.25rem + (5.75rem - 4.25rem) * ((100vw - 42rem) / (66rem - 42rem))",
-    "lineHeight": "4.875rem",
+    "fontSize": "calc(4.25rem + 1.5 * ((100vw - 42rem) / 24))",
+    "lineHeight": "115%",
   },
   "@media (min-width: 66rem)": Object {
-    "fontSize": "calc(5.75rem + (7.625rem - 5.75rem) * ((100vw - 66rem) / (82rem - 66rem))",
+    "fontSize": "calc(5.75rem + 1.875 * ((100vw - 66rem) / 16))",
     "letterSpacing": "-0.64px",
-    "lineHeight": "6.375rem",
+    "lineHeight": "111%",
   },
   "@media (min-width: 82rem)": Object {
-    "fontSize": "calc(7.625rem + (9.75rem - 7.625rem) * ((100vw - 82rem) / (99rem - 82rem))",
+    "fontSize": "calc(7.625rem + 2.125 * ((100vw - 82rem) / 17))",
     "letterSpacing": "-0.64px",
-    "lineHeight": "8.125rem",
+    "lineHeight": "107%",
   },
   "@media (min-width: 99rem)": Object {
     "fontSize": "9.75rem",
     "letterSpacing": "-0.96px",
-    "lineHeight": "10.25rem",
+    "lineHeight": "105%",
   },
   "fontFamily": "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif",
-  "fontSize": "calc(2.625rem + (4.25rem - 2.625rem) * ((100vw - 20rem) / (42rem - 20rem))",
+  "fontSize": "calc(2.625rem + 1.625 * ((100vw - 20rem) / 22))",
   "fontWeight": 600,
   "letterSpacing": 0,
-  "lineHeight": "3.125rem",
+  "lineHeight": "119%",
 }
 `);
   });
