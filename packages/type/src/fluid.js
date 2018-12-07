@@ -1,0 +1,69 @@
+import { breakpoint as bp, breakpoints, rem } from '@carbon/layout';
+
+const breakpointNames = Object.keys(breakpoints);
+
+function next(name) {
+  return breakpointNames[breakpointNames.indexOf(name) + 1];
+}
+
+export function fluid(selector) {
+  const { breakpoints: fluidBreakpoints, ...styles } = selector;
+
+  if (typeof fluidBreakpoints !== 'object') {
+    return styles;
+  }
+
+  const fluidBreakpointNames = Object.keys(fluidBreakpoints);
+  if (fluidBreakpointNames.length === 0) {
+    return styles;
+  }
+
+  styles.fontSize = fluidTypeSize(styles, 'sm', fluidBreakpoints);
+
+  fluidBreakpointNames.forEach(name => {
+    styles[bp(name)] = {
+      ...fluidBreakpoints[name],
+      fontSize: fluidTypeSize(styles, name, fluidBreakpoints),
+    };
+  });
+
+  return styles;
+}
+
+function fluidTypeSize(defaultStyles, fluidBreakpointName, fluidBreakpoints) {
+  const breakpoint = breakpoints[fluidBreakpointName];
+  const fluidBreakpoint =
+    fluidBreakpointName === 'sm'
+      ? defaultStyles
+      : fluidBreakpoints[fluidBreakpointName];
+
+  let maxFontSize = defaultStyles.fontSize;
+  let minFontSize = defaultStyles.fontSize;
+  if (fluidBreakpoint.fontSize) {
+    minFontSize = fluidBreakpoint.fontSize;
+  }
+
+  let maxViewportWidth = breakpoint.width;
+  let minViewportWidth = breakpoint.width;
+
+  let nextBreakpointAvailable = next(fluidBreakpointName);
+  let nextFluidBreakpointName = null;
+
+  while (nextBreakpointAvailable) {
+    if (fluidBreakpoints[nextBreakpointAvailable]) {
+      nextFluidBreakpointName = nextBreakpointAvailable;
+      break;
+    }
+    nextBreakpointAvailable = next(nextBreakpointAvailable);
+  }
+
+  if (nextFluidBreakpointName) {
+    const nextFluidBreakpoint = breakpoints[nextFluidBreakpointName];
+    maxFontSize = fluidBreakpoints[nextFluidBreakpointName].fontSize;
+    maxViewportWidth = nextFluidBreakpoint.width;
+
+    return `calc(${minFontSize} + (${maxFontSize} - ${minFontSize}) * ((100vw - ${minViewportWidth}) / (${maxViewportWidth} - ${minViewportWidth}))`;
+  }
+
+  return minFontSize;
+}
