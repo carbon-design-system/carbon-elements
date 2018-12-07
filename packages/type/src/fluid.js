@@ -62,8 +62,18 @@ function fluidTypeSize(defaultStyles, fluidBreakpointName, fluidBreakpoints) {
     maxFontSize = fluidBreakpoints[nextFluidBreakpointName].fontSize;
     maxViewportWidth = nextFluidBreakpoint.width;
 
-    return `calc(${minFontSize} + (${maxFontSize} - ${minFontSize}) * ((100vw - ${minViewportWidth}) / (${maxViewportWidth} - ${minViewportWidth}))`;
+    return `calc(${minFontSize} + ${subtract(
+      maxFontSize,
+      minFontSize
+    )} * ((100vw - ${minViewportWidth}) / ${subtract(
+      maxViewportWidth,
+      minViewportWidth
+    )}))`;
   }
 
   return minFontSize;
+}
+
+function subtract(a, b) {
+  return parseFloat(a, 10) - parseFloat(b, 10);
 }
