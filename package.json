@@ -62,6 +62,9 @@
             "default",
             "jest-junit"
           ],
+          "testPathIgnorePatterns": [
+            "examples"
+          ],
           "testRunner": "jest-circus/runner"
         }
       ],
