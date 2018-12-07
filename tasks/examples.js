@@ -65,7 +65,7 @@ async function main() {
   );
 
   const packagesWithExamples = packages.filter(
-    pkg => !!pkg.examples || pkg.examples.length === 0
+    pkg => Array.isArray(pkg.examples) && pkg.examples.length !== 0
   );
 
   await Promise.all(
