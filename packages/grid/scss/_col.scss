@@ -62,7 +62,7 @@
 }
 
 @mixin make-grid-columns(
-  $breakpoints: $grid-breakpoints,
+  $breakpoints: $carbon-grid-breakpoints,
   $gutter: $grid-gutter
 ) {
   .#{$prefix}--col {
