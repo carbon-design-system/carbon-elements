@@ -45,7 +45,7 @@ new Vue({
 }).$mount('#app');
 ```
 
-Using `CarbonComponentsVue` we can pass in any of the icon components
+Using `CarbonIconsVue` we can pass in any of the icon components
 that we'd like to use. In our application, we can then use them by
 doing:
 
