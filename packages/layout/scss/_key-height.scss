@@ -7,7 +7,7 @@
 /// @return rem
 @function get-column-width(
   $breakpoint,
-  $breakpoints: $carbon-grid-breakpoints
+  $breakpoints: $grid-element-breakpoints
 ) {
   @if map-has-key($breakpoints, $breakpoint) {
     $values: map-get($breakpoints, $breakpoint);

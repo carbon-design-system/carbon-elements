@@ -382,7 +382,7 @@ $tokens: (
 ///
 /// @param {Map} $type-styles - the value of a given type token
 /// @param {?Map} $breakpoints - custom breakpoints to use
-@mixin fluid-type($type-styles, $breakpoints: $carbon-grid-breakpoints) {
+@mixin fluid-type($type-styles, $breakpoints: $grid-element-breakpoints) {
   & {
     // Include the initial styles for the given token by default without any
     // media query guard. This includes `font-size` as a fallback in the case
@@ -412,7 +412,7 @@ $tokens: (
 @mixin fluid-type-size(
   $type-styles,
   $name,
-  $breakpoints: $carbon-grid-breakpoints
+  $breakpoints: $grid-element-breakpoints
 ) {
   // Get the information about the breakpoint we're currently working in. Useful
   // for getting initial width information
@@ -497,7 +497,7 @@ $tokens: (
 @mixin type-style(
   $name,
   $fluid: false,
-  $breakpoints: $carbon-grid-breakpoints
+  $breakpoints: $grid-element-breakpoints
 ) {
   @if not map-has-key($tokens, $name) {
     @error 'Unable to find a token with the name: `#{$name}`';

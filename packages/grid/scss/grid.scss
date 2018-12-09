@@ -20,4 +20,4 @@
   @include make-row();
 }
 
-@include make-grid-columns($carbon-grid-breakpoints, $grid-gutter);
+@include make-grid-columns($grid-element-breakpoints, $grid-gutter);
