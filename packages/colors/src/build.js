@@ -25,6 +25,10 @@ async function build() {
 
   reporter.info('Building scss file for colors...');
   const colorsByValue = {};
+  const colorsArray = [];
+  const uniqueColors = [];
+  let colorMap = '';
+
   const colorsSource = Object.keys(colors).reduce((acc, key) => {
     const parts = getPartsFromKey(key);
     const value = colors[key];
@@ -32,6 +36,7 @@ async function build() {
     if (parts.length === 1) {
       const variable = `$${PREFIX}-colors__${key}`;
       colorsByValue[value] = variable;
+
       return acc + '\n' + `${variable}: ${value};`;
     }
 
@@ -40,13 +45,42 @@ async function build() {
     const variable = `$${PREFIX}-colors__${name}--${grade}`;
     colorsByValue[value] = variable;
 
+    // Collect color names and formatted scss color variables with grades.
+    colorsArray.push({
+      name,
+      grade: `${grade}: $${PREFIX}-colors__${name}--${grade}`,
+    });
+
+    // Create an array of unique colors.
+    if (!uniqueColors.includes(name)) {
+      uniqueColors.push(name);
+    }
+
     return acc + '\n' + `${variable}: ${value};`;
   }, '');
+
+  // Generate a map, organized by each unique color.
+  uniqueColors.forEach(color => {
+    const colorEntry = colorsArray
+      .filter(entry => entry.name === color)
+      .map(entry => {
+        return '\n' + entry.grade;
+      });
+
+    // Format each color map entry.
+    colorMap += `\n'${color}': (` + colorEntry + '\n),';
+  });
+
+  // Format the entire color map.
+  const formattedColorMap = `$ibm-color-map: (\n` + colorMap + `\n)`;
 
   await fs.ensureDir(SCSS_DIR);
   await fs.writeFile(
     SCSS_ENTRYPOINT,
-    prettier.format(GENERATED_COMMENT + '\n' + colorsSource, prettierOptions)
+    prettier.format(
+      GENERATED_COMMENT + '\n' + (colorsSource + '\n\n' + formattedColorMap),
+      prettierOptions
+    )
   );
 
   reporter.info('Building scss file for tokens...');
