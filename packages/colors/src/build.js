@@ -64,15 +64,15 @@ async function build() {
     const colorEntry = colorsArray
       .filter(entry => entry.name === color)
       .map(entry => {
-        return '\n' + entry.grade;
+        return entry.grade;
       });
 
     // Format each color map entry.
-    colorMap += `\n'${color}': (` + colorEntry + '\n),';
+    colorMap += `'${color}': (` + colorEntry + '),';
   });
 
   // Format the entire color map.
-  const formattedColorMap = `$ibm-color-map: (\n` + colorMap + `\n)`;
+  const formattedColorMap = `$ibm-color-map: (` + colorMap + `)`;
 
   await fs.ensureDir(SCSS_DIR);
   await fs.writeFile(
