@@ -57,7 +57,6 @@ async function build() {
       grade: `${grade}: ${variable}`,
     });
 
-    // Create an array of unique colors.
     if (!uniqueColors.includes(name)) {
       uniqueColors.push(name);
     }
@@ -69,11 +68,9 @@ async function build() {
   uniqueColors.forEach(color => {
     const colorEntry = colorsArray
       .filter(entry => entry.name === color)
-      .map(entry => {
-        return entry.grade;
-      });
+      .map(entry => entry.grade);
 
-    // Convert array entry to string & format.
+    // Convert array entry to string & format it.
     colorMap += `'${color}': (` + colorEntry.join(',') + '),';
   });
 
