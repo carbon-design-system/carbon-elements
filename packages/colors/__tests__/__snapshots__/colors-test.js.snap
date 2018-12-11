@@ -3,6 +3,7 @@
 exports[`colors 1`] = `
 Object {
   "black": "#000000",
+  "black100": "#000000",
   "blue10": "#edf4ff",
   "blue100": "#051243",
   "blue20": "#c9deff",
@@ -104,6 +105,7 @@ Object {
   "warmGray80": "#403c3c",
   "warmGray90": "#2b2828",
   "white": "#ffffff",
+  "white0": "#ffffff",
   "yellow": "#fdd13a",
 }
 `;
