@@ -6,13 +6,11 @@ Today, we're excited to introduce a new project to the Carbon Design System call
 
 We built this project to accompany upcoming updates to the [IBM Design Language](https://w3.ibm.com/design/language/), including:
 
-- [An updated color palette](https://w3.ibm.com/design/language/elements/color-ui/)
+- [An updated color palette](https://w3.ibm.com/design/language/elements/color/)
 - [A brand new icon library](https://w3.ibm.com/design/language/elements/icon-library/)
 - [An updated set of typography using IBM Plex](https://w3.ibm.com/design/language/elements/typeface/)
 - [A new take on layout using the Mini Unit and 2x Grid](https://w3.ibm.com/design/language/elements/2x-grid-ui/)
 - [An updated set of motion guidance](https://w3.ibm.com/design/language/elements/motion/)
-
-
 
 The Carbon Elements project will be the code companion to these updates, allowing you to use any aspect of the IBM Design Language in code. In fact, we're starting to use this work in our own [experimental components](https://www.carbondesignsystem.com/experimental/about/overview) and [site](http://next.carbondesignsystem.com/). Over time, we're expecting all of this work to be fully integrated into Carbon components.
 
@@ -47,7 +45,7 @@ instead:
 yarn add @carbon/type@alpha
 ```
 
-During this Technical Preview, we are using the `alpha.X` pattern to version our packages. This means that we do not respect [Semantic Versioning](https://semver.org/) (semver) during these updates, although we will try our best in order to follow it and cause minimal disrution.
+During this Technical Preview, we are using the `alpha.X` pattern to version our packages. This means that we do not respect [Semantic Versioning](https://semver.org/) (semver) during these updates, although we will try our best in order to follow it and cause minimal disruption.
 
 When Carbon Elements is officially released, we will respect semver for each release.
 
@@ -57,7 +55,7 @@ We really appreciate any and all feedback during this Technical Preview! If you 
 
 ## What's next
 
-We're incredibly excited to be releasing this effort as a companion piece to the IBM Design Language! One of the most important reasons why we are decoupling ourselves from the language is allow other design systems to build on top of these elements.
+We're incredibly excited to be releasing this effort as a companion piece to the IBM Design Language! One of the most important reasons why we are decoupling ourselves from the language is to allow other design systems to build on top of these elements.
 
 Over time, you can expect additional focus from Carbon in the following areas:
 
