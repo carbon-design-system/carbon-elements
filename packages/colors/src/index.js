@@ -3,6 +3,9 @@ export const colors = {
   white: '#ffffff',
   yellow: '#fdd13a',
 
+  black100: '#000000',
+  white0: '#ffffff',
+
   red10: '#fff0f1',
   red20: '#fcd0d3',
   red30: '#ffa4a9',
