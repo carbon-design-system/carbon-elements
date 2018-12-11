@@ -36,7 +36,6 @@ async function build() {
     if (parts.length === 1) {
       const variable = `$${PREFIX}-colors__${key}`;
       colorsByValue[value] = variable;
-
       return acc + '\n' + `${variable}: ${value};`;
     }
 
@@ -48,7 +47,7 @@ async function build() {
     // Collect color names and formatted scss color variables with grades.
     colorsArray.push({
       name,
-      grade: `${grade}: $${PREFIX}-colors__${name}--${grade}`,
+      grade: `${grade}: ${variable}`,
     });
 
     // Create an array of unique colors.
@@ -59,7 +58,7 @@ async function build() {
     return acc + '\n' + `${variable}: ${value};`;
   }, '');
 
-  // Generate a map, organized by each unique color.
+  // Create a color map entry for each unique color.
   uniqueColors.forEach(color => {
     const colorEntry = colorsArray
       .filter(entry => entry.name === color)
@@ -67,8 +66,8 @@ async function build() {
         return entry.grade;
       });
 
-    // Format each color map entry.
-    colorMap += `'${color}': (` + colorEntry + '),';
+    // Convert array entry to string & format.
+    colorMap += `'${color}': (` + colorEntry.join(',') + '),';
   });
 
   // Format the entire color map.
