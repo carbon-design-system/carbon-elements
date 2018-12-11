@@ -1,10 +1,24 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
 const fs = require('fs-extra');
 const monorepo = require('./remark/remark-monorepo');
 const path = require('path');
+const prettier = require('prettier');
 const remark = require('remark');
 const lerna = require('../lerna.json');
+const packageJson = require('../package.json');
+
+const prettierOptions = {
+  ...packageJson.prettier,
+  parser: 'markdown',
+};
 
 const PACKAGES_DIR = path.resolve(__dirname, '../packages');
 const REPO_URL_BASE =
@@ -123,7 +137,10 @@ async function sync() {
 
       const readme = await fs.readFile(README_PATH, 'utf8');
       const file = await process(packagePath, readme);
-      await fs.writeFile(README_PATH, String(file));
+      await fs.writeFile(
+        README_PATH,
+        prettier.format(String(file), prettierOptions)
+      );
     })
   );
 }

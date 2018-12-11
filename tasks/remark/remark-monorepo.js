@@ -1,3 +1,10 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
 const fs = require('fs-extra');
@@ -187,10 +194,16 @@ async function createExamples(name, examplesDir) {
   if (!(await fs.pathExists(examplesDir))) {
     return [];
   }
+
   const examples = (await fs.readdir(examplesDir)).filter(name => {
-    // Ignore dotfiles and special case `codesandbox`
-    return name[0] !== '.' || name === 'codesandbox' || name === 'storybook';
+    // Ignore dotfiles and special cases `codesandbox` and `storybook`
+    return !(name[0] === '.' || name === 'codesandbox' || name === 'storybook');
   });
+
+  if (examples.length === 0) {
+    return [];
+  }
+
   return [
     {
       type: 'heading',
