@@ -7,6 +7,7 @@
 
 'use strict';
 
+const { defaultAttributes } = require('@carbon/icon-helpers');
 const { camelCase } = require('change-case');
 const prettier = require('prettier');
 
@@ -21,6 +22,10 @@ const MODULE_IMPORTS = `
 import { getAttributes } from '@carbon/icon-helpers';
 import PropTypes from 'prop-types';
 import React from 'react';
+
+const defaultStyle = ${JSON.stringify(
+  transformStyleIntoObject(defaultAttributes.style)
+)};
 `;
 
 function createEntrypointFromMeta(meta) {
@@ -64,7 +69,7 @@ function iconToString(descriptor) {
 
 function createComponentFromInfo({ descriptor, moduleName }) {
   const source = `
-function ${moduleName}({ className, children, tabIndex, ...rest }) {
+function ${moduleName}({ className, children, style, tabIndex, ...rest }) {
   const { tabindex, ...props } = getAttributes({
     ...rest,
     tabindex: tabIndex,
@@ -76,6 +81,15 @@ function ${moduleName}({ className, children, tabIndex, ...rest }) {
 
   if (tabindex !== undefined && tabindex !== null) {
     props.tabIndex = tabindex;
+  }
+
+  if (typeof style === 'object') {
+    props.style = {
+      ...defaultStyle,
+      ...style,
+    };
+  } else {
+    props.style = defaultStyle;
   }
 
   return React.createElement(
@@ -109,6 +123,16 @@ ${moduleName}.defaultProps = {
   preserveAspectRatio: 'xMidYMid meet',
 };`;
   return prettier.format(source, prettierOptions);
+}
+
+function transformStyleIntoObject(string) {
+  return string.split(';').reduce((acc, declaration) => {
+    const [property, value] = declaration.split(':').map(s => s.trim());
+    return {
+      ...acc,
+      [property]: value,
+    };
+  }, {});
 }
 
 module.exports = {
