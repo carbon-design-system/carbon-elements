@@ -7,7 +7,7 @@
 
 @import '@carbon/import-once/scss/import-once';
 
-@include exports('font-face-serif') {
+@mixin font-face-serif {
   // .woff support for IE11
   @font-face {
     font-family: 'IBM Plex Serif';

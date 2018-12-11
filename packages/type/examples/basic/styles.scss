@@ -4,6 +4,10 @@
 @import '../../scss/font-face/mono';
 @import '../../scss/classes';
 
+@include font-face-mono;
+@include font-face-sans;
+@include font-face-serif;
+
 //------------------------------------------------------------------------------
 // Font-face
 //------------------------------------------------------------------------------
