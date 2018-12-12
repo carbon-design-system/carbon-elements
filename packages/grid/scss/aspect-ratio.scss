@@ -31,6 +31,10 @@
     padding-bottom: 56.25%;
   }
 
+  .#{$prefix}--aspect-ratio--2x1 {
+    padding-bottom: 50%;
+  }
+
   .#{$prefix}--aspect-ratio--4x3 {
     padding-bottom: 75%;
   }
