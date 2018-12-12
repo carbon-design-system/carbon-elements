@@ -1,3 +1,10 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
 const fs = require('fs-extra');
@@ -7,7 +14,7 @@ const babel = require('rollup-plugin-babel');
 const commonjs = require('rollup-plugin-commonjs');
 const nodeResolve = require('rollup-plugin-node-resolve');
 
-async function bundle(entrypoint, { cwd, name } = {}) {
+async function bundle(entrypoint, { cwd, globals, name } = {}) {
   const outputFolders = [
     {
       format: 'esm',
@@ -29,8 +36,13 @@ async function bundle(entrypoint, { cwd, name } = {}) {
     outputFolders.find(folder => folder.format === 'esm').directory,
     'index.js'
   );
+  const packageJsonPath = path.join(cwd, 'package.json');
+  const packageJson = await fs.readJson(packageJsonPath);
+  const { dependencies = {} } = packageJson;
+
   const bundle = await rollup({
     input: entrypoint,
+    external: Object.keys(dependencies),
     plugins: [
       babel({
         exclude: 'node_modules/**',
@@ -46,6 +58,7 @@ async function bundle(entrypoint, { cwd, name } = {}) {
             },
           ],
         ],
+        plugins: ['macros'],
       }),
       nodeResolve({
         jsnext: true,
@@ -74,6 +87,7 @@ async function bundle(entrypoint, { cwd, name } = {}) {
 
         if (format === 'umd') {
           outputOptions.name = name;
+          outputOptions.globals = globals;
         }
 
         return bundle.write(outputOptions);

@@ -1,6 +1,7 @@
 {
   "name": "@carbon/icons-react",
-  "version": "0.0.1-alpha.17",
+  "description": "React components for icons in digital and software products using the Carbon Design System",
+  "version": "0.0.1-alpha.25",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -26,18 +27,20 @@
     "clean": "rimraf es lib umd"
   },
   "dependencies": {
-    "@carbon/icon-helpers": "0.0.1-alpha.17",
+    "@carbon/icon-helpers": "0.0.1-alpha.25",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
-    "@carbon/cli-reporter": "0.0.1-alpha.17",
-    "@carbon/icons": "0.0.1-alpha.17",
+    "@carbon/cli-reporter": "0.0.1-alpha.25",
+    "@carbon/icons": "0.0.1-alpha.25",
     "change-case": "^3.0.2",
     "fs-extra": "^7.0.0",
     "prettier": "^1.14.3",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "rimraf": "^2.6.2",
-    "rollup": "^0.66.6"
-  }
+    "rollup": "^0.66.6",
+    "rollup-plugin-virtual": "^1.0.1"
+  },
+  "sideEffects": false
 }

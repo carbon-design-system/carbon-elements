@@ -1,3 +1,10 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
 const SVGO = require('svgo');
@@ -16,6 +23,12 @@ const plugins = [
         // what is contained inside.
         if (item.isElem('g') && item.attr('id', 'Transparent_Rectangle')) {
           return item.content;
+        }
+
+        if (item.hasAttr('id')) {
+          if (item.attr('id').value.includes('Transparent_Rectangle')) {
+            return !item;
+          }
         }
 
         if (

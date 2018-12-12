@@ -1,5 +1,13 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
+const { defaultAttributes } = require('@carbon/icon-helpers');
 const { camelCase } = require('change-case');
 const prettier = require('prettier');
 
@@ -14,6 +22,10 @@ const MODULE_IMPORTS = `
 import { getAttributes } from '@carbon/icon-helpers';
 import PropTypes from 'prop-types';
 import React from 'react';
+
+const defaultStyle = ${JSON.stringify(
+  transformStyleIntoObject(defaultAttributes.style)
+)};
 `;
 
 function createEntrypointFromMeta(meta) {
@@ -57,10 +69,32 @@ function iconToString(descriptor) {
 
 function createComponentFromInfo({ descriptor, moduleName }) {
   const source = `
-function ${moduleName}({ children, ...rest }) {
+function ${moduleName}({ className, children, style, tabIndex, ...rest }) {
+  const { tabindex, ...props } = getAttributes({
+    ...rest,
+    tabindex: tabIndex,
+  });
+
+  if (className) {
+    props.className = className;
+  }
+
+  if (tabindex !== undefined && tabindex !== null) {
+    props.tabIndex = tabindex;
+  }
+
+  if (typeof style === 'object') {
+    props.style = {
+      ...defaultStyle,
+      ...style,
+    };
+  } else {
+    props.style = defaultStyle;
+  }
+
   return React.createElement(
     'svg',
-    getAttributes(rest),
+    props,
     children,
     ${descriptor.content.map(iconToString).join(', ')}
   );
@@ -71,10 +105,11 @@ ${moduleName}.propTypes = {
   'aria-hidden': PropTypes.bool,
   'aria-label': PropTypes.string,
   'aria-labelledby': PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node,
-  focusable: PropTypes.bool,
   height: PropTypes.number,
   preserveAspectRatio: PropTypes.string,
+  tabIndex: PropTypes.string,
   title: PropTypes.string,
   viewBox: PropTypes.string,
   width: PropTypes.number,
@@ -84,14 +119,20 @@ ${moduleName}.defaultProps = {
   width: ${descriptor.attrs.width},
   height: ${descriptor.attrs.height},
   viewBox: '${descriptor.attrs.viewBox}',
-  xmlns: '${descriptor.attrs.xmlns}',
-  // Reference:
-  // https://github.com/IBM/carbon-components-react/issues/1392
-  // https://github.com/PolymerElements/iron-iconset-svg/pull/47
-  focusable: false,
+  xmlns: 'http://www.w3.org/2000/svg',
   preserveAspectRatio: 'xMidYMid meet',
 };`;
   return prettier.format(source, prettierOptions);
+}
+
+function transformStyleIntoObject(string) {
+  return string.split(';').reduce((acc, declaration) => {
+    const [property, value] = declaration.split(':').map(s => s.trim());
+    return {
+      ...acc,
+      [property]: value,
+    };
+  }, {});
 }
 
 module.exports = {
