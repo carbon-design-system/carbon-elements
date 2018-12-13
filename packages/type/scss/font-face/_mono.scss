@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+@import '@carbon/import-once/scss/import-once';
+
 @mixin font-face-mono {
   // .woff support for IE11
   @font-face {
