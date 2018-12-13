@@ -21,16 +21,16 @@ yarn add @carbon/motion
 
 ## Usage
 
-`@carbon/motion` supports standard, entrance, and exit easing curves in two
-motion modes: productive and expressive. You can access these curves using
-either Sass or JavaScript.
+`@carbon/motion` supports standard, entrance, and exit easing curves in
+two motion modes: productive and expressive. You can access these
+curves using either Sass or JavaScript.
 
 ### Sass
 
-`@carbon/motion` exports a `motion` function and `motion` mixin that you can use
-to access the value of a motion curve or include that curve as the
-`transition-property` for a selector. To use these helpers, you can do the
-following in your project:
+`@carbon/motion` exports a `motion` function and `motion` mixin that
+you can use to access the value of a motion curve or include that
+curve as the `transition-property` for a selector. To use these
+helpers, you can do the following in your project:
 
 ```scss
 @import '@carbon/motion';
@@ -47,8 +47,8 @@ following in your project:
 }
 ```
 
-Both the `motion` function and mixin support passing in the name of the motion
-curve and the mode you want to work in.
+Both the `motion` function and mixin support passing in the name of
+the motion curve and the mode you want to work in.
 
 ### JavaScript
 

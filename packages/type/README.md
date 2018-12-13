@@ -21,9 +21,9 @@ yarn add @carbon/type
 
 ## Usage
 
-`@carbon/type` provides a variety of ways to work with typography from the IBM
-Design Language. You can use all of these features either in JavaScript or Sass.
-These features include:
+`@carbon/type` provides a variety of ways to work with typography from
+the IBM Design Language. You can use all of these features either in
+JavaScript or Sass. These features include:
 
 | Feature      | Description                                                                                                  |
 | ------------ | ------------------------------------------------------------------------------------------------------------ |
