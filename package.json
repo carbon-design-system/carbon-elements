@@ -63,19 +63,6 @@
     "plugins": [
       "@carbon/cli-plugin-eslint",
       "@carbon/cli-plugin-stylelint",
-      [
-        "@carbon/cli-plugin-jest",
-        {
-          "reporters": [
-            "default",
-            "jest-junit"
-          ],
-          "testPathIgnorePatterns": [
-            "examples"
-          ],
-          "testRunner": "jest-circus/runner"
-        }
-      ],
       "@carbon/cli-plugin-github-files",
       "@carbon/cli-plugin-editorconfig"
     ]
