@@ -197,3 +197,13 @@
       U+2215, U+FEFF, U+FFFD;
   }
 }
+
+@include exports('font-face-serif') {
+  @if global-variable-exists('font-face-serif') ==
+    false or
+    $font-face-serif ==
+    true
+  {
+    @include font-face-serif;
+  }
+}

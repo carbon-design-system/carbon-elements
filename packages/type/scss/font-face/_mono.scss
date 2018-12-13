@@ -195,3 +195,13 @@
       U+2215, U+FEFF, U+FFFD;
   }
 }
+
+@include exports('font-face-mono') {
+  @if global-variable-exists('font-face-mono') ==
+    false or
+    $font-face-mono ==
+    true
+  {
+    @include font-face-mono;
+  }
+}

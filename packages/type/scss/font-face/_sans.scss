@@ -259,3 +259,13 @@
       U+2215, U+FEFF, U+FFFD;
   }
 }
+
+@include exports('font-face-sans') {
+  @if global-variable-exists('font-face-sans') ==
+    false or
+    $font-face-sans ==
+    true
+  {
+    @include font-face-sans;
+  }
+}
