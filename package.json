@@ -32,6 +32,7 @@
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
     "@carbon/cli-plugin-editorconfig": "^0.0.23",
     "@carbon/cli-plugin-eslint": "^0.0.23",
     "@carbon/cli-plugin-github-files": "^0.0.23",
