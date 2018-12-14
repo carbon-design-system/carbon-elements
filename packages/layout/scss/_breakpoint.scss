@@ -151,7 +151,7 @@ $grid-breakpoints: (
 /// Generate a media query for a given breakpoint
 /// @param {string} $breakpoint
 /// @content
-@mixin breakpoint($name, $breakpoints: $grid-breakpoints) {
+@mixin breakpoint-default($name, $breakpoints: $grid-breakpoints) {
   @include breakpoint-up($name, $breakpoints) {
     @content;
   }

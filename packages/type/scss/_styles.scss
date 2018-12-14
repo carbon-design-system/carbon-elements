@@ -403,7 +403,7 @@ $tokens: (
     // token and apply the properties and fluid type size for that given
     // breakpoint
     @each $name, $values in map-get($type-styles, breakpoints) {
-      @include breakpoint($name) {
+      @include breakpoint-default($name) {
         @include properties($values);
         @include fluid-type-size($type-styles, $name, $breakpoints);
       }

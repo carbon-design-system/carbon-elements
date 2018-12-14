@@ -37,9 +37,3 @@ $type-scale: ();
 @mixin type-scale($step) {
   font-size: type-scale($step);
 }
-
-/// Alias of `type-scale` mixin.
-/// @param {Number} $step
-@mixin font-size($step) {
-  font-size: type-scale($step);
-}

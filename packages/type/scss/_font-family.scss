@@ -32,7 +32,7 @@ $font-families: (
 
 /// Include the `font-family` definition for the given name in your selector.
 /// @param {String} $name
-@mixin font-family($name) {
+@mixin use-font-family($name) {
   font-family: font-family($name);
 }
 

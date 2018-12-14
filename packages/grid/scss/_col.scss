@@ -92,7 +92,7 @@
       @include make-col-ready();
     }
 
-    @include breakpoint($breakpoint, $breakpoints) {
+    @include breakpoint-default($breakpoint, $breakpoints) {
       // Provide basic `.col-{bp}` classes for equal-width flexbox columns
       .#{$prefix}--col,
       .#{$prefix}--col#{$infix} {

@@ -58,7 +58,7 @@ body {
 }
 
 @each $breakpoint, $scale in $key-height-scales {
-  @include breakpoint($breakpoint) {
+  @include breakpoint-default($breakpoint) {
     @each $value in $scale {
       $index: index($scale, $value);
 

@@ -17,7 +17,7 @@
   }
 
   body {
-    @include font-family('sans');
+    @include use-font-family('sans');
     @include font-weight('regular');
 
     text-rendering: optimizeLegibility;
