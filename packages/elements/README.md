@@ -1,6 +1,6 @@
 # @carbon/elements
 
-> Elements used for building using the IBM Design Language
+> A collection of design elements in code for the IBM Design Language
 
 ## Getting started
 
