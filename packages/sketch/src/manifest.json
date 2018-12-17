@@ -1,0 +1,21 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Add Grid",
+      "identifier": "carbon.elements.add-grid-to-layout",
+      "script": "./add-grid-to-layout.js",
+      "shortcut": "ctrl shift g"
+    }
+  ],
+  "menu": {
+    "isRoot": true,
+    "items": [
+      {
+        "title": "Elements 🎨",
+        "items": ["carbon.elements.add-grid-to-layout"]
+      }
+    ]
+  }
+}

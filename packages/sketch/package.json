@@ -1,0 +1,40 @@
+{
+  "name": "@carbon/sketch",
+  "private": true,
+  "description": "Sketch helpers for working with the Carbon Design System",
+  "version": "0.0.1-alpha.26",
+  "license": "Apache-2.0",
+  "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/sketch",
+  "bugs": "https://github.com/IBM/carbon-elements/issues",
+  "skpm": {
+    "name": "Carbon Elements",
+    "manifest": "src/manifest.json",
+    "main": "carbon-elements.sketchplugin",
+    "assets": []
+  },
+  "keywords": [
+    "ibm",
+    "elements",
+    "carbon",
+    "carbon-elements",
+    "carbon-design-system"
+  ],
+  "files": [
+    "carbon-elements.sketchplugin",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "develop": "skpm-build --watch --run",
+    "skpm:link": "skpm-link",
+    "watch": "skpm-build --watch"
+  },
+  "devDependencies": {
+    "@carbon/layout": "0.0.1-alpha.26",
+    "@skpm/builder": "^0.5.13",
+    "skpm": "^1.1.10"
+  }
+}
