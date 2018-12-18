@@ -1,3 +1,10 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import getAttributes from './getAttributes';
 
 /**
@@ -6,8 +13,9 @@ import getAttributes from './getAttributes';
 export default function toSVG(descriptor) {
   const { elem = 'svg', attrs = {}, content = [] } = descriptor;
   const node = document.createElementNS('http://www.w3.org/2000/svg', elem);
+  const attributes = elem !== 'svg' ? attrs : getAttributes(attrs);
 
-  Object.keys(elem !== 'svg' ? attrs : getAttributes(attrs)).forEach(key => {
+  Object.keys(attributes).forEach(key => {
     node.setAttribute(key, attrs[key]);
   });
 

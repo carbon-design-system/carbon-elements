@@ -1,3 +1,10 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
 const { reporter } = require('@carbon/cli-reporter');
@@ -7,6 +14,12 @@ const spawn = require('cross-spawn');
 
 const PACKAGES_DIR = path.resolve(__dirname, '../packages');
 const BUILD_DIR = path.resolve(__dirname, '../build');
+
+const IGNORE_EXAMPLE_DIRS = new Set([
+  'styled-components',
+  'vue-cli',
+  'storybook',
+]);
 
 /**
  * The goal here is to create a top-level `build` folder with content to be
@@ -45,7 +58,7 @@ async function main() {
       }
 
       const examples = (await fs.readdir(examplesDir)).filter(example => {
-        return example !== '.yarnrc';
+        return example !== '.yarnrc' && !IGNORE_EXAMPLE_DIRS.has(example);
       });
 
       return {
@@ -58,7 +71,9 @@ async function main() {
     })
   );
 
-  const packagesWithExamples = packages.filter(pkg => !!pkg.examples);
+  const packagesWithExamples = packages.filter(
+    pkg => Array.isArray(pkg.examples) && pkg.examples.length !== 0
+  );
 
   await Promise.all(
     packagesWithExamples.map(async pkg => {

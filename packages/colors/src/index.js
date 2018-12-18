@@ -1,7 +1,19 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 export const colors = {
   black: '#000000',
   white: '#ffffff',
   yellow: '#fdd13a',
+
+  black100: '#000000',
+  orange40: '#fc7b1e',
+  white0: '#ffffff',
+  yellow20: '#fdd13a',
 
   red10: '#fff0f1',
   red20: '#fcd0d3',

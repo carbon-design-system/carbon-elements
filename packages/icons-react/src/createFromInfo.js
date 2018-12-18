@@ -1,8 +1,28 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
+const { defaultAttributes } = require('@carbon/icon-helpers');
+const babel = require('@babel/core');
 const { camelCase } = require('change-case');
 const prettier = require('prettier');
 
+const babelOptions = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        modules: false,
+        targets: ['last 1 version', 'ie >= 11', 'Firefox ESR'],
+      },
+    ],
+  ],
+};
 const prettierOptions = {
   parser: 'babylon',
   printWidth: 80,
@@ -14,6 +34,10 @@ const MODULE_IMPORTS = `
 import { getAttributes } from '@carbon/icon-helpers';
 import PropTypes from 'prop-types';
 import React from 'react';
+
+const defaultStyle = ${JSON.stringify(
+  transformStyleIntoObject(defaultAttributes.style)
+)};
 `;
 
 function createEntrypointFromMeta(meta) {
@@ -24,7 +48,7 @@ function createEntrypointFromMeta(meta) {
   const source = `${MODULE_IMPORTS}
 ${components.join('\n')}`;
 
-  return prettier.format(source, prettierOptions);
+  return babel.transformSync(source, babelOptions);
 }
 
 function createModuleFromInfo(info) {
@@ -35,7 +59,7 @@ ${createComponentFromInfo(info)}
 
 export default ${info.moduleName};
 `;
-  return prettier.format(source, prettierOptions);
+  return babel.transformSync(source, babelOptions);
 }
 
 function iconToString(descriptor) {
@@ -57,7 +81,7 @@ function iconToString(descriptor) {
 
 function createComponentFromInfo({ descriptor, moduleName }) {
   const source = `
-function ${moduleName}({ className, children, tabIndex, ...rest }) {
+function ${moduleName}({ className, children, style, tabIndex, ...rest }) {
   const { tabindex, ...props } = getAttributes({
     ...rest,
     tabindex: tabIndex,
@@ -69,6 +93,15 @@ function ${moduleName}({ className, children, tabIndex, ...rest }) {
 
   if (tabindex !== undefined && tabindex !== null) {
     props.tabIndex = tabindex;
+  }
+
+  if (typeof style === 'object') {
+    props.style = {
+      ...defaultStyle,
+      ...style,
+    };
+  } else {
+    props.style = defaultStyle;
   }
 
   return React.createElement(
@@ -102,6 +135,16 @@ ${moduleName}.defaultProps = {
   preserveAspectRatio: 'xMidYMid meet',
 };`;
   return prettier.format(source, prettierOptions);
+}
+
+function transformStyleIntoObject(string) {
+  return string.split(';').reduce((acc, declaration) => {
+    const [property, value] = declaration.split(':').map(s => s.trim());
+    return {
+      ...acc,
+      [camelCase(property)]: value,
+    };
+  }, {});
 }
 
 module.exports = {

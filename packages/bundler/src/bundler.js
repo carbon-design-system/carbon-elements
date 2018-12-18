@@ -1,3 +1,10 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
 const program = require('commander');
@@ -24,9 +31,11 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
     .command('check <glob>')
     .description('check that each file can be compiled')
     .option('-i, --ignore <glob>', 'pass in a glob of files to ignore')
+    .option('-l, --list', 'list all the files that were compiled')
     .action((pattern, cmd) =>
       check(pattern, {
         cwd,
+        list: cmd.list || false,
         ignore: cmd.ignore || [],
       })
     );
@@ -48,14 +57,29 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
     .command('bundle <entrypoint>')
     .description('bundle the given .js entrypoint')
     .option('-n, --name <name>', 'name the module for the UMD build')
+    .option('-g, --globals <options>', 'global module names')
     .action((entrypoint, cmd) =>
       bundle(path.join(cwd, entrypoint), {
         cwd,
+        globals: cmd.globals ? formatGlobals(cmd.globals) : {},
         name: cmd.name,
       })
     );
 
   program.parse(argv);
+}
+
+function formatGlobals(string) {
+  const mappings = string.split(',').map(mapping => {
+    return mapping.split('=');
+  });
+  return mappings.reduce(
+    (acc, [pkg, global]) => ({
+      ...acc,
+      [pkg]: global,
+    }),
+    {}
+  );
 }
 
 module.exports = bundler;
