@@ -13,6 +13,7 @@ const packageJson = require('../package.json');
 const { ConsoleReporter } = require('./reporter');
 const bundle = require('./commands/bundle');
 const check = require('./commands/check');
+const checkTreeShake = require('./commands/check-tree-shake');
 const measure = require('./commands/measure');
 
 const reporter = new ConsoleReporter();
@@ -34,6 +35,19 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
     .option('-l, --list', 'list all the files that were compiled')
     .action((pattern, cmd) =>
       check(pattern, {
+        cwd,
+        list: cmd.list || false,
+        ignore: cmd.ignore || [],
+      })
+    );
+
+  program
+    .command('check-tree-shake <glob>')
+    .description('check that each file can be tree-shakable')
+    .option('-i, --ignore <glob>', 'pass in a glob of files to ignore')
+    .option('-l, --list', 'list all the files that were compiled')
+    .action((pattern, cmd) =>
+      checkTreeShake(pattern, {
         cwd,
         list: cmd.list || false,
         ignore: cmd.ignore || [],
