@@ -3,18 +3,82 @@
   "bundleVersion": 1,
   "commands": [
     {
-      "name": "Add Grid",
-      "identifier": "carbon.elements.add-grid-to-layout",
+      "name": "Add default grid",
+      "identifier": "carbon.elements.grid.default",
       "script": "./add-grid-to-layout.js",
       "shortcut": "ctrl shift g"
+    },
+    {
+      "name": "Add colors",
+      "identifier": "carbon.elements.color",
+      "script": "./colors",
+      "handler": "renderColors"
+    },
+    {
+      "name": "Add color tokens",
+      "identifier": "carbon.elements.color.tokens",
+      "script": "./colors",
+      "handler": "renderTokens"
+    },
+    {
+      "name": "Add type scale",
+      "identifier": "carbon.elements.type.scale",
+      "script": "./type",
+      "handler": "renderScale"
+    },
+    {
+      "name": "Add type styles",
+      "identifier": "carbon.elements.type.styles",
+      "script": "./type",
+      "handler": "renderTokens"
+    },
+    {
+      "name": "Add text styles",
+      "identifier": "carbon.elements.type.text.styles",
+      "script": "./text-styles",
+      "handler": "addTextStyles"
+    },
+    {
+      "name": "Add icon library",
+      "identifier": "carbon.elements.icons",
+      "script": "./icons",
+      "handler": "renderIcons"
     }
   ],
   "menu": {
     "isRoot": true,
     "items": [
       {
-        "title": "Elements 🎨",
-        "items": ["carbon.elements.add-grid-to-layout"]
+        "title": "IBM Elements 🎨",
+        "items": [
+          {
+            "title": "Color",
+            "items": [
+              "carbon.elements.color",
+              "carbon.elements.color.tokens"
+            ]
+          },
+          {
+            "title": "Grid",
+            "items": [
+              "carbon.elements.grid.default"
+            ]
+          },
+          {
+            "title": "Iconography",
+            "items": [
+              "carbon.elements.icons"
+            ]
+          },
+          {
+            "title": "Typography",
+            "items": [
+              "carbon.elements.type.scale",
+              "carbon.elements.type.styles",
+              "carbon.elements.type.text.styles"
+            ]
+          }
+        ]
       }
     ]
   }

@@ -33,8 +33,15 @@
     "watch": "skpm-build --watch"
   },
   "devDependencies": {
+    "@carbon/colors": "0.0.1-alpha.26",
     "@carbon/layout": "0.0.1-alpha.26",
+    "@carbon/type": "0.0.1-alpha.26",
     "@skpm/builder": "^0.5.13",
     "skpm": "^1.1.10"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-sketchapp": "^2.1.2",
+    "react-test-renderer": "^16.7.0"
   }
 }

@@ -5,182 +5,357 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export const colors = {
-  black: '#000000',
-  white: '#ffffff',
-  yellow: '#fdd13a',
+export const black = '#000000';
+export const black100 = black;
 
-  black100: '#000000',
-  orange40: '#fc7b1e',
-  white0: '#ffffff',
-  yellow20: '#fdd13a',
+export const white = '#ffffff';
+export const white0 = white;
 
-  red10: '#fff0f1',
-  red20: '#fcd0d3',
-  red30: '#ffa4a9',
-  red40: '#ff767c',
-  red50: '#fb4b53',
-  red60: '#da1e28',
-  red70: '#a51920',
-  red80: '#750e13',
-  red90: '#570408',
-  red100: '#2c080a',
+export const yellow = '#fdd13a';
+export const yellow20 = yellow;
 
-  magenta10: '#fff0f6',
-  magenta20: '#ffcfe1',
-  magenta30: '#ffa0c2',
-  magenta40: '#fa75a6',
-  magenta50: '#ee538b',
-  magenta60: '#d12765',
-  magenta70: '#a11950',
-  magenta80: '#760a3a',
-  magenta90: '#57002b',
-  magenta100: '#2a0a16',
+export const orange40 = '#fc7b1e';
 
-  purple10: '#f7f1ff',
-  purple20: '#e6d6ff',
-  purple30: '#d0b0ff',
-  purple40: '#bb8eff',
-  purple50: '#a970ff',
-  purple60: '#8a3ffc',
-  purple70: '#6e32c9',
-  purple80: '#4f2196',
-  purple90: '#38146b',
-  purple100: '#1e1033',
-
-  blue10: '#edf4ff',
-  blue20: '#c9deff',
-  blue30: '#97c1ff',
-  blue40: '#6ea6ff',
-  blue50: '#418cff',
-  blue60: '#0062ff',
-  blue70: '#054ada',
-  blue80: '#0530ad',
-  blue90: '#061f80',
-  blue100: '#051243',
-
-  cyan10: '#e3f6ff',
-  cyan20: '#b3e6ff',
-  cyan30: '#6ccaff',
-  cyan40: '#30b0ff',
-  cyan50: '#1193e8',
-  cyan60: '#0072c3',
-  cyan70: '#0058a1',
-  cyan80: '#003d73',
-  cyan90: '#002b50',
-  cyan100: '#07192b',
-
-  teal10: '#dbfbfb',
-  teal20: '#87eded',
-  teal30: '#20d5d2',
-  teal40: '#00bab6',
-  teal50: '#009e9a',
-  teal60: '#007d79',
-  teal70: '#006161',
-  teal80: '#004548',
-  teal90: '#003137',
-  teal100: '#081a1c',
-
-  green10: '#dafbe4',
-  green20: '#9deeb2',
-  green30: '#56d679',
-  green40: '#3dbb61',
-  green50: '#24a249',
-  green60: '#198038',
-  green70: '#10642a',
-  green80: '#054719',
-  green90: '#01330f',
-  green100: '#081b09',
-
-  coolGray10: '#f2f4f8',
-  coolGray20: '#d5d9e0',
-  coolGray30: '#b9bfc7',
-  coolGray40: '#9fa5ad',
-  coolGray50: '#868d95',
-  coolGray60: '#697077',
-  coolGray70: '#50565b',
-  coolGray80: '#373d42',
-  coolGray90: '#242a2e',
-  coolGray100: '#13171a',
-
-  gray10: '#f3f3f3',
-  gray20: '#dcdcdc',
-  gray30: '#bebebe',
-  gray40: '#a4a4a4',
-  gray50: '#8c8c8c',
-  gray60: '#6f6f6f',
-  gray70: '#565656',
-  gray80: '#3d3d3d',
-  gray90: '#282828',
-  gray100: '#171717',
-
-  warmGray10: '#f7f3f1',
-  warmGray20: '#e0dbda',
-  warmGray30: '#c1bcbb',
-  warmGray40: '#a7a2a2',
-  warmGray50: '#8f8b8b',
-  warmGray60: '#726e6e',
-  warmGray70: '#595555',
-  warmGray80: '#403c3c',
-  warmGray90: '#2b2828',
-  warmGray100: '#1a1717',
+export const red10 = '#fff0f1';
+export const red20 = '#fcd0d3';
+export const red30 = '#ffa4a9';
+export const red40 = '#ff767c';
+export const red50 = '#fb4b53';
+export const red60 = '#da1e28';
+export const red70 = '#a51920';
+export const red80 = '#750e13';
+export const red90 = '#570408';
+export const red100 = '#2c080a';
+export const red = {
+  10: red10,
+  20: red20,
+  30: red30,
+  40: red40,
+  50: red50,
+  60: red60,
+  70: red70,
+  80: red80,
+  90: red90,
+  100: red100,
 };
 
+export const magenta10 = '#fff0f6';
+export const magenta20 = '#ffcfe1';
+export const magenta30 = '#ffa0c2';
+export const magenta40 = '#fa75a6';
+export const magenta50 = '#ee538b';
+export const magenta60 = '#d12765';
+export const magenta70 = '#a11950';
+export const magenta80 = '#760a3a';
+export const magenta90 = '#57002b';
+export const magenta100 = '#2a0a16';
+export const magenta = {
+  10: magenta10,
+  20: magenta20,
+  30: magenta30,
+  40: magenta40,
+  50: magenta50,
+  60: magenta60,
+  70: magenta70,
+  80: magenta80,
+  90: magenta90,
+  100: magenta100,
+};
+
+export const purple10 = '#f7f1ff';
+export const purple20 = '#e6d6ff';
+export const purple30 = '#d0b0ff';
+export const purple40 = '#bb8eff';
+export const purple50 = '#a970ff';
+export const purple60 = '#8a3ffc';
+export const purple70 = '#6e32c9';
+export const purple80 = '#4f2196';
+export const purple90 = '#38146b';
+export const purple100 = '#1e1033';
+export const purple = {
+  10: purple10,
+  20: purple20,
+  30: purple30,
+  40: purple40,
+  50: purple50,
+  60: purple60,
+  70: purple70,
+  80: purple80,
+  90: purple90,
+  100: purple100,
+};
+
+export const blue10 = '#edf4ff';
+export const blue20 = '#c9deff';
+export const blue30 = '#97c1ff';
+export const blue40 = '#6ea6ff';
+export const blue50 = '#418cff';
+export const blue60 = '#0062ff';
+export const blue70 = '#054ada';
+export const blue80 = '#0530ad';
+export const blue90 = '#061f80';
+export const blue100 = '#051243';
+export const blue = {
+  10: blue10,
+  20: blue20,
+  30: blue30,
+  40: blue40,
+  50: blue50,
+  60: blue60,
+  70: blue70,
+  80: blue80,
+  90: blue90,
+  100: blue100,
+};
+
+export const cyan10 = '#e3f6ff';
+export const cyan20 = '#b3e6ff';
+export const cyan30 = '#6ccaff';
+export const cyan40 = '#30b0ff';
+export const cyan50 = '#1193e8';
+export const cyan60 = '#0072c3';
+export const cyan70 = '#0058a1';
+export const cyan80 = '#003d73';
+export const cyan90 = '#002b50';
+export const cyan100 = '#07192b';
+export const cyan = {
+  10: cyan10,
+  20: cyan20,
+  30: cyan30,
+  40: cyan40,
+  50: cyan50,
+  60: cyan60,
+  70: cyan70,
+  80: cyan80,
+  90: cyan90,
+  100: cyan100,
+};
+
+export const teal10 = '#dbfbfb';
+export const teal20 = '#87eded';
+export const teal30 = '#20d5d2';
+export const teal40 = '#00bab6';
+export const teal50 = '#009e9a';
+export const teal60 = '#007d79';
+export const teal70 = '#006161';
+export const teal80 = '#004548';
+export const teal90 = '#003137';
+export const teal100 = '#081a1c';
+export const teal = {
+  10: teal10,
+  20: teal20,
+  30: teal30,
+  40: teal40,
+  50: teal50,
+  60: teal60,
+  70: teal70,
+  80: teal80,
+  90: teal90,
+  100: teal100,
+};
+
+export const green10 = '#dafbe4';
+export const green20 = '#9deeb2';
+export const green30 = '#56d679';
+export const green40 = '#3dbb61';
+export const green50 = '#24a249';
+export const green60 = '#198038';
+export const green70 = '#10642a';
+export const green80 = '#054719';
+export const green90 = '#01330f';
+export const green100 = '#081b09';
+export const green = {
+  10: green10,
+  20: green20,
+  30: green30,
+  40: green40,
+  50: green50,
+  60: green60,
+  70: green70,
+  80: green80,
+  90: green90,
+  100: green100,
+};
+
+export const coolGray10 = '#f2f4f8';
+export const coolGray20 = '#d5d9e0';
+export const coolGray30 = '#b9bfc7';
+export const coolGray40 = '#9fa5ad';
+export const coolGray50 = '#868d95';
+export const coolGray60 = '#697077';
+export const coolGray70 = '#50565b';
+export const coolGray80 = '#373d42';
+export const coolGray90 = '#242a2e';
+export const coolGray100 = '#13171a';
+export const coolGray = {
+  10: coolGray10,
+  20: coolGray20,
+  30: coolGray30,
+  40: coolGray40,
+  50: coolGray50,
+  60: coolGray60,
+  70: coolGray70,
+  80: coolGray80,
+  90: coolGray90,
+  100: coolGray100,
+};
+
+export const gray10 = '#f3f3f3';
+export const gray20 = '#dcdcdc';
+export const gray30 = '#bebebe';
+export const gray40 = '#a4a4a4';
+export const gray50 = '#8c8c8c';
+export const gray60 = '#6f6f6f';
+export const gray70 = '#565656';
+export const gray80 = '#3d3d3d';
+export const gray90 = '#282828';
+export const gray100 = '#171717';
+export const gray = {
+  10: gray10,
+  20: gray20,
+  30: gray30,
+  40: gray40,
+  50: gray50,
+  60: gray60,
+  70: gray70,
+  80: gray80,
+  90: gray90,
+  100: gray100,
+};
+
+export const warmGray10 = '#f7f3f1';
+export const warmGray20 = '#e0dbda';
+export const warmGray30 = '#c1bcbb';
+export const warmGray40 = '#a7a2a2';
+export const warmGray50 = '#8f8b8b';
+export const warmGray60 = '#726e6e';
+export const warmGray70 = '#595555';
+export const warmGray80 = '#403c3c';
+export const warmGray90 = '#2b2828';
+export const warmGray100 = '#1a1717';
+export const warmGray = {
+  10: warmGray10,
+  20: warmGray20,
+  30: warmGray30,
+  40: warmGray40,
+  50: warmGray50,
+  60: warmGray60,
+  70: warmGray70,
+  80: warmGray80,
+  90: warmGray90,
+  100: warmGray100,
+};
+
+export const colors = {
+  red,
+  magenta,
+  purple,
+  blue,
+  cyan,
+  teal,
+  green,
+  coolGray,
+  gray,
+  warmGray,
+};
+
+export const brand01 = blue60;
+export const brand02 = blue60;
+export const brand03 = blue60;
+
+export const interactive01 = blue60;
+export const interactive02 = blue60;
+
+export const ui01 = gray10;
+export const ui02 = white;
+export const ui03 = gray20;
+export const ui04 = gray50;
+export const ui05 = gray100;
+
+export const text01 = gray100;
+export const text02 = gray70;
+export const text03 = gray50;
+
+export const icon01 = gray100;
+export const icon02 = gray70;
+
+export const field01 = gray10;
+export const field02 = white;
+
+export const inverse01 = white;
+export const inverse02 = gray80;
+
+export const support01 = red60;
+export const support02 = green60;
+export const support03 = yellow;
+export const support04 = blue70;
+
+// Interaction states
+export const focus = blue60;
+
+export const activePrimary = blue80;
+export const activeSecondary = gray60;
+export const activeUI = gray30;
+export const activeDanger = red80;
+
+export const disabled01 = gray10;
+export const disabled02 = gray30;
+export const disabled03 = gray50;
+
+export const hoverUI = '#e5e5e5';
+export const hoverDanger = '#ba1b23';
+export const hoverPrimary = '#0353e9';
+export const hoverPrimaryText = blue70;
+export const hoverSecondary = '#4c4c4c';
+export const hoverRow = '#e5e5e5';
+
+export const selectedUI = gray20;
+
+export const overlay01 = 'rgba(255, 255, 255, 0.6)';
+export const overlay02 = 'rgba(243, 243, 243, 0.7)';
+
+export const visitedLink = purple60;
+
 export const tokens = {
-  brand01: colors.blue60,
-  brand02: colors.blue60,
-  brand03: colors.blue60,
-
-  interactive01: colors.blue60,
-  interactive02: colors.blue60,
-
-  ui01: colors.gray10,
-  ui02: colors.white,
-  ui03: colors.gray20,
-  ui04: colors.gray50,
-  ui05: colors.gray100,
-
-  text01: colors.gray100,
-  text02: colors.gray70,
-  text03: colors.gray50,
-
-  icon01: colors.gray100,
-  icon02: colors.gray70,
-
-  field01: colors.gray10,
-  field02: colors.white,
-
-  inverse01: colors.white,
-  inverse02: colors.gray80,
-
-  support01: colors.red60,
-  support02: colors.green60,
-  support03: colors.yellow,
-  support04: colors.blue70,
-
-  // Interaction states
-  focus: colors.blue60,
-
-  activePrimary: colors.blue80,
-  activeSecondary: colors.gray60,
-  activeUI: colors.gray30,
-  activeDanger: colors.red80,
-
-  disabled01: colors.gray10,
-  disabled02: colors.gray30,
-  disabled03: colors.gray50,
-
-  hoverUI: '#e5e5e5',
-  hoverDanger: '#ba1b23',
-  hoverPrimary: '#0353e9',
-  hoverPrimaryText: colors.blue70,
-  hoverSecondary: '#4c4c4c',
-  hoverRow: '#e5e5e5',
-
-  selectedUI: colors.gray20,
-
-  overlay01: 'rgba(255, 255, 255, 0.6)',
-  overlay02: 'rgba(243, 243, 243, 0.7)',
-
-  visitedLink: colors.purple60,
+  brand01,
+  brand02,
+  brand03,
+  interactive01,
+  interactive02,
+  ui01,
+  ui02,
+  ui03,
+  ui04,
+  ui05,
+  text01,
+  text02,
+  text03,
+  icon01,
+  icon02,
+  field01,
+  field02,
+  inverse01,
+  inverse02,
+  support01,
+  support02,
+  support03,
+  support04,
+  focus,
+  activePrimary,
+  activeSecondary,
+  activeUI,
+  activeDanger,
+  disabled01,
+  disabled02,
+  disabled03,
+  hoverUI,
+  hoverDanger,
+  hoverPrimary,
+  hoverPrimaryText,
+  hoverSecondary,
+  hoverRow,
+  selectedUI,
+  overlay01,
+  overlay02,
+  visitedLink,
 };

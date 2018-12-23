@@ -31,83 +31,84 @@ async function build() {
   await fs.remove(SCSS_DIR);
 
   reporter.info('Building scss file for colors...');
-  const colorsByValue = {};
-  const colorsArray = [];
-  const uniqueColors = [];
-  let colorMap = '';
+  return;
+  // const colorsByValue = {};
+  // const colorsArray = [];
+  // const uniqueColors = [];
+  // let colorMap = '';
 
-  const colorsSource = Object.keys(colors).reduce((acc, key) => {
-    const parts = getPartsFromKey(key);
-    const value = colors[key];
-    // We're working in a color without a grade
-    if (parts.length === 1) {
-      const variable = `$${PREFIX}-colors__${key}`;
-      colorsByValue[value] = variable;
-      return acc + '\n' + `${variable}: ${value};`;
-    }
+  // const colorsSource = Object.keys(colors).reduce((acc, key) => {
+  // const parts = getPartsFromKey(key);
+  // const value = colors[key];
+  // // We're working in a color without a grade
+  // if (parts.length === 1) {
+  // const variable = `$${PREFIX}-colors__${key}`;
+  // colorsByValue[value] = variable;
+  // return acc + '\n' + `${variable}: ${value};`;
+  // }
 
-    const name = parts.slice(0, -1).join('-');
-    const grade = parts[parts.length - 1];
-    const variable = `$${PREFIX}-colors__${name}--${grade}`;
-    colorsByValue[value] = variable;
+  // const name = parts.slice(0, -1).join('-');
+  // const grade = parts[parts.length - 1];
+  // const variable = `$${PREFIX}-colors__${name}--${grade}`;
+  // colorsByValue[value] = variable;
 
-    // Collect color names and formatted scss color variables with grades.
-    colorsArray.push({
-      name,
-      grade: `${grade}: ${variable}`,
-    });
+  // // Collect color names and formatted scss color variables with grades.
+  // colorsArray.push({
+  // name,
+  // grade: `${grade}: ${variable}`,
+  // });
 
-    if (!uniqueColors.includes(name)) {
-      uniqueColors.push(name);
-    }
+  // if (!uniqueColors.includes(name)) {
+  // uniqueColors.push(name);
+  // }
 
-    return acc + '\n' + `${variable}: ${value};`;
-  }, '');
+  // return acc + '\n' + `${variable}: ${value};`;
+  // }, '');
 
-  // Create a color map entry for each unique color.
-  uniqueColors.forEach(color => {
-    const colorEntry = colorsArray
-      .filter(entry => entry.name === color)
-      .map(entry => entry.grade);
+  // // Create a color map entry for each unique color.
+  // uniqueColors.forEach(color => {
+  // const colorEntry = colorsArray
+  // .filter(entry => entry.name === color)
+  // .map(entry => entry.grade);
 
-    // Convert array entry to string & format it.
-    colorMap += `'${color}': (` + colorEntry.join(',') + '),';
-  });
+  // // Convert array entry to string & format it.
+  // colorMap += `'${color}': (` + colorEntry.join(',') + '),';
+  // });
 
-  // Format the entire color map.
-  const formattedColorMap = `$${PREFIX}-colors-map: (` + colorMap + `)`;
+  // // Format the entire color map.
+  // const formattedColorMap = `$${PREFIX}-colors-map: (` + colorMap + `)`;
 
-  await fs.ensureDir(SCSS_DIR);
-  await fs.writeFile(
-    SCSS_ENTRYPOINT,
-    prettier.format(
-      GENERATED_COMMENT + '\n' + (colorsSource + '\n\n' + formattedColorMap),
-      prettierOptions
-    )
-  );
+  // await fs.ensureDir(SCSS_DIR);
+  // await fs.writeFile(
+  // SCSS_ENTRYPOINT,
+  // prettier.format(
+  // GENERATED_COMMENT + '\n' + (colorsSource + '\n\n' + formattedColorMap),
+  // prettierOptions
+  // )
+  // );
 
-  reporter.info('Building scss file for tokens...');
-  const tokenSource = Object.keys(tokens).reduce((acc, key) => {
-    const parts = getPartsFromKey(key);
-    const name = parts.join('-');
-    const value = tokens[key];
+  // reporter.info('Building scss file for tokens...');
+  // const tokenSource = Object.keys(tokens).reduce((acc, key) => {
+  // const parts = getPartsFromKey(key);
+  // const name = parts.join('-');
+  // const value = tokens[key];
 
-    if (colorsByValue[value]) {
-      return acc + '\n' + `$${name}: ${colorsByValue[value]};`;
-    }
+  // if (colorsByValue[value]) {
+  // return acc + '\n' + `$${name}: ${colorsByValue[value]};`;
+  // }
 
-    return acc + '\n' + `$${name}: ${value};`;
-  }, '');
+  // return acc + '\n' + `$${name}: ${value};`;
+  // }, '');
 
-  const COLOR_IMPORT = `@import 'colors';`;
+  // const COLOR_IMPORT = `@import 'colors';`;
 
-  await fs.writeFile(
-    TOKEN_ENTRYPOINT,
-    prettier.format(
-      GENERATED_COMMENT + '\n' + COLOR_IMPORT + '\n' + tokenSource,
-      prettierOptions
-    )
-  );
+  // await fs.writeFile(
+  // TOKEN_ENTRYPOINT,
+  // prettier.format(
+  // GENERATED_COMMENT + '\n' + COLOR_IMPORT + '\n' + tokenSource,
+  // prettierOptions
+  // )
+  // );
 
   reporter.success('Done! 🎉');
 }

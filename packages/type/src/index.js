@@ -36,6 +36,31 @@ import {
   display04,
 } from './styles';
 
+const tokens = {
+  caption01,
+  label01,
+  helperText01,
+  bodyShort01,
+  bodyLong01,
+  bodyShort02,
+  bodyLong02,
+  code01,
+  code02,
+  heading01,
+  heading02,
+  heading03,
+  productiveHeading04,
+  productiveHeading05,
+  expressiveHeading04,
+  expressiveHeading05,
+  quotation01,
+  quotation02,
+  display01,
+  display02,
+  display03,
+  display04,
+};
+
 export {
   fontFamilies,
   fontFamily,
@@ -69,4 +94,6 @@ export {
   display02,
   display03,
   display04,
+  // Tokens shortcut
+  tokens,
 };

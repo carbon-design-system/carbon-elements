@@ -19,7 +19,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && bundler bundle src/index.js --name CarbonType --globals @carbon/layout=CarbonLayout",
+    "build": "yarn clean && bundler bundle src/index.js --name CarbonType",
     "clean": "rimraf es lib umd"
   },
   "dependencies": {
