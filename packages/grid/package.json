@@ -6,6 +6,7 @@
   "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/grid",
   "bugs": "https://github.com/IBM/carbon-elements/issues",
   "files": [
+    "css",
     "scss"
   ],
   "keywords": [
