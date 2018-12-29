@@ -45,10 +45,6 @@ export function renderTokens() {
   );
 }
 
-export function addTextStyles() {
-  sketch.UI.message('Hi 👋 We are still working on this!! 🚧');
-}
-
 function sanitize(fontFamily) {
   const plex = fontFamily.split(', ')[0].trim();
   return plex.replace(/'/g, '');

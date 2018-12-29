@@ -49,7 +49,7 @@
     "isRoot": true,
     "items": [
       {
-        "title": "IBM Elements 🎨",
+        "title": "Carbon Elements 🎨",
         "items": [
           {
             "title": "Color",
@@ -62,12 +62,6 @@
             "title": "Grid",
             "items": [
               "carbon.elements.grid.default"
-            ]
-          },
-          {
-            "title": "Iconography",
-            "items": [
-              "carbon.elements.icons"
             ]
           },
           {
