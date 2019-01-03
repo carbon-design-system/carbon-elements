@@ -129,7 +129,7 @@ function createVariable(name, value) {
     name: variable,
     value,
     toString() {
-      return `${variable}: ${value} !default;`;
+      return `${variable}: ${value} !default !global;`;
     },
   };
 }
