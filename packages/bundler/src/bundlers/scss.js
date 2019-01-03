@@ -21,41 +21,52 @@ const autoprefixerOptions = {
 };
 
 async function bundle(entrypoint, options, info) {
-  const basename = path.basename(entrypoint, '.scss');
-  const packageFolder = await findPackageFolder(entrypoint);
-  const outputFolder = path.join(packageFolder, 'css');
+  reporter.info(`Bundling ${entrypoint}...`);
 
+  const basename = options.name || path.basename(entrypoint, '.scss');
+  const packageFolder = await findPackageFolder(entrypoint);
+  const outputFolder = path.join(packageFolder, options.output);
+
+  await fs.remove(outputFolder);
   await fs.ensureDir(outputFolder);
 
   const [uncompressed] = await Promise.all(compile([entrypoint]));
+  const processedUncompressed = await postcss([
+    autoprefixer(autoprefixerOptions),
+    cssnano({
+      preset: {
+        plugins: [require('postcss-discard-comments')],
+      },
+    }),
+  ]).process(uncompressed.result.css, {
+    from: entrypoint,
+    to: path.join(outputFolder, `${basename}.css`),
+  });
+
+  await fs.writeFile(
+    path.join(outputFolder, `${basename}.css`),
+    processedUncompressed.css
+  );
+
   const [compressed] = await Promise.all(
     compile([entrypoint], {
       outputStyle: 'compressed',
     })
   );
+  const processedCompressed = await postcss([
+    autoprefixer(autoprefixerOptions),
+    cssnano({
+      preset: 'default',
+    }),
+  ]).process(compressed.result.css, {
+    from: entrypoint,
+    to: path.join(outputFolder, `${basename}.min.css`),
+  });
 
-  await Promise.all([
-    fs.writeFile(
-      path.join(outputFolder, `${basename}.css`),
-      await process(
-        uncompressed.result.css,
-        [autoprefixer(autoprefixerOptions)],
-        {
-          from: entrypoint,
-          to: path.join(outputFolder, `${basename}.css`),
-        }
-      )
-    ),
-    fs.writeFile(
-      path.join(outputFolder, `${basename}.min.css`),
-      compressed.result.css
-    ),
-  ]);
-}
-
-async function process(css, plugins, options) {
-  const result = await postcss(plugins).process(css, options);
-  return result.css;
+  await fs.writeFile(
+    path.join(outputFolder, `${basename}.min.css`),
+    processedCompressed.css
+  );
 }
 
 module.exports = bundle;
