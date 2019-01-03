@@ -118,7 +118,7 @@ export const productiveHeading04 = {
 export const productiveHeading05 = {
   fontFamily: fontFamilies.sans,
   fontSize: rem(scale[7]),
-  fontWeight: fontWeights.regular,
+  fontWeight: fontWeights.light,
   lineHeight: rem(40),
   letterSpacing: 0,
 };
@@ -140,21 +140,21 @@ export const expressiveHeading04 = fluid({
     lg: {
       fontSize: rem(scale[6]),
       fontFamily: fontFamilies.sans,
-      fontWeight: fontWeights.regular,
+      fontWeight: fontWeights.light,
       lineHeight: '125%',
       letterSpacing: 0,
     },
     xlg: {
       fontSize: rem(scale[6]),
       fontFamily: fontFamilies.sans,
-      fontWeight: fontWeights.regular,
+      fontWeight: fontWeights.light,
       lineHeight: '129%',
       letterSpacing: 0,
     },
     max: {
       fontSize: rem(scale[7]),
       fontFamily: fontFamilies.sans,
-      fontWeight: fontWeights.regular,
+      fontWeight: fontWeights.light,
       lineHeight: '125%',
       letterSpacing: 0,
     },
