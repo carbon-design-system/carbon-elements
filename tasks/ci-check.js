@@ -12,7 +12,7 @@ async function main() {
   const tasks = [
     'yarn toolkit format:diff',
     `yarn bundler check --ignore '**/@(node_modules|examples)/**' 'packages/**/*.scss'`,
-    `yarn test --ci --reporters=default --reporters=jest-junit --testPathIgnorePatterns='es,lib,umd,examples'`,
+    `yarn test --ci --reporters=default --reporters=jest-junit --testPathIgnorePatterns='examples'`,
   ];
 
   reporter.info('Running the following tasks:');
@@ -25,12 +25,14 @@ async function main() {
     process.stdout.write('.');
   }, 1000);
 
-  await promise;
-
-  clearInterval(interval);
-  console.log();
-
-  reporter.success('Done! ✨');
+  try {
+    await promise;
+    clearInterval(interval);
+    console.log();
+    reporter.success('Done! ✨');
+  } catch (error) {
+    clearInterval(interval);
+  }
 }
 
 main().catch(error => {
