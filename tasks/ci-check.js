@@ -12,7 +12,7 @@ async function main() {
   const tasks = [
     'yarn toolkit format:diff',
     `yarn bundler check --ignore '**/@(node_modules|examples)/**' 'packages/**/*.scss'`,
-    'yarn jest --ci --reporters=default --reporters=jest-junit',
+    `yarn test --ci --reporters=default --reporters=jest-junit --testPathIgnorePatterns='es,lib,umd,examples'`,
   ];
 
   reporter.info('Running the following tasks:');
