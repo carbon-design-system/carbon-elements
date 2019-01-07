@@ -133,7 +133,6 @@ describe('createFromInfo', () => {
         svg = node;
       });
       ReactDOM.render(<MockIconComponent ref={ref} />, mountNode);
-      expect(() => <MockIconComponent ref={ref} />).not.toThrow();
       expect(svg === document.querySelector('svg'));
     });
 
