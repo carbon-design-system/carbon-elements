@@ -10,7 +10,7 @@
 @import 'styles';
 @import 'font-family';
 
-@include exports('@carbon/type/scss/_classes.scss') {
+@mixin type--css-classes {
   // Font families
   @each $name, $value in $font-families {
     .#{$prefix}--type-#{$name} {
@@ -35,5 +35,15 @@
     .#{$prefix}--type-#{$name} {
       @include type-style($name, map-has-key($value, breakpoints));
     }
+  }
+}
+
+@include exports('@carbon/type/scss/_classes.scss') {
+  @if global-variable-exists('type--css-classes') ==
+    false or
+    $type--css-classes ==
+    true
+  {
+    @include type--css-classes;
   }
 }
