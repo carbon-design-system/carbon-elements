@@ -125,7 +125,7 @@ describe('createFromInfo', () => {
       }
     });
 
-    fit('should forward refs to rendered DOM element', async () => {
+    it('should forward refs to rendered DOM element', async () => {
       const moduleSource = createModuleFromInfo(info);
       const MockIconComponent = await getModuleFromString(moduleSource);
       let svg;
