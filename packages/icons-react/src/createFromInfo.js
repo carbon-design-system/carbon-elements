@@ -81,7 +81,13 @@ function iconToString(descriptor) {
 
 function createComponentFromInfo({ descriptor, moduleName }) {
   const source = `
-    const ${moduleName} = React.forwardRef(({ className, children, style, tabIndex, ...rest }, ref) => {
+    const ${moduleName} = React.forwardRef(({
+      className,
+      children,
+      style,
+      tabIndex,
+      ...rest,
+    }, ref) => {
       const { tabindex, ...props } = getAttributes({
         ...rest,
         tabindex: tabIndex,
@@ -114,7 +120,7 @@ function createComponentFromInfo({ descriptor, moduleName }) {
         children,
         ${descriptor.content.map(iconToString).join(', ')}
       );
-    })
+    });
     ${moduleName}.displayName = '${moduleName}';
     ${moduleName}.propTypes = {
       'aria-hidden': PropTypes.bool,
