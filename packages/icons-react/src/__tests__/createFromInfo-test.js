@@ -125,6 +125,18 @@ describe('createFromInfo', () => {
       }
     });
 
+    fit('should forward refs to rendered DOM element', async () => {
+      const moduleSource = createModuleFromInfo(info);
+      const MockIconComponent = await getModuleFromString(moduleSource);
+      let svg;
+      const ref = jest.fn(node => {
+        svg = node;
+      });
+      ReactDOM.render(<MockIconComponent ref={ref} />, mountNode);
+      expect(() => <MockIconComponent ref={ref} />).not.toThrow();
+      expect(svg === document.querySelector('svg'));
+    });
+
     it('should be focusable if an aria label and tab index is used', async () => {
       const moduleSource = createModuleFromInfo(info);
       const MockIconComponent = await getModuleFromString(moduleSource);
