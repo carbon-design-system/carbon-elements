@@ -1,14 +1,20 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
+const { reporter } = require('@carbon/cli-reporter');
 const program = require('commander');
 const path = require('path');
 const packageJson = require('../package.json');
-const { ConsoleReporter } = require('./reporter');
+const bundlers = require('./bundlers');
 const bundle = require('./commands/bundle');
 const check = require('./commands/check');
 const measure = require('./commands/measure');
-
-const reporter = new ConsoleReporter();
 
 async function bundler({ argv, cwd: getWorkingDirectory }) {
   const cwd = getWorkingDirectory();
@@ -24,9 +30,11 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
     .command('check <glob>')
     .description('check that each file can be compiled')
     .option('-i, --ignore <glob>', 'pass in a glob of files to ignore')
+    .option('-l, --list', 'list all the files that were compiled')
     .action((pattern, cmd) =>
       check(pattern, {
         cwd,
+        list: cmd.list || false,
         ignore: cmd.ignore || [],
       })
     );
@@ -48,14 +56,59 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
     .command('bundle <entrypoint>')
     .description('bundle the given .js entrypoint')
     .option('-n, --name <name>', 'name the module for the UMD build')
+    .option('-g, --globals <options>', 'global module names')
     .action((entrypoint, cmd) =>
-      bundle(path.join(cwd, entrypoint), {
+      bundle(entrypoint, cleanArgs(cmd), {
         cwd,
-        name: cmd.name,
+      })
+    );
+
+  program
+    .command('bundle:scss <entrypoint>')
+    .description('bundle the given .scss entrypoint')
+    .option('-n, --name <name>', 'name the output file')
+    .option(
+      '-o, --output <dir>',
+      'specify the directory to output the files',
+      'css'
+    )
+    .action((entrypoint, cmd) =>
+      bundle(entrypoint, cleanArgs(cmd), {
+        cwd,
       })
     );
 
   program.parse(argv);
+}
+
+// Inspired by Vue CLI:
+// https://github.com/vuejs/vue-cli/blob/31e1b4995edef3d2079da654deedffe002a1d689/packages/%40vue/cli/bin/vue.js#L172
+function cleanArgs(command) {
+  return command.options.reduce((acc, option) => {
+    // TODO: add case for reserved words from commander, like options
+
+    // Add case for mapping `--foo-bar` to `fooBar`
+    const key = option.long
+      .replace(/^--/, '')
+      .split('-')
+      .map((word, i) => {
+        if (i === 0) {
+          return word;
+        }
+        return word[0].toUpperCase() + word.slice(1);
+      })
+      .join('');
+
+    // If an option is not present and Command has a method with the same name
+    // it should not be copied
+    if (typeof command[key] !== 'function') {
+      return {
+        ...acc,
+        [key]: command[key],
+      };
+    }
+    return acc;
+  }, {});
 }
 
 module.exports = bundler;

@@ -1,84 +1,30 @@
 'use strict';
 
-const fs = require('fs-extra');
+const { reporter } = require('@carbon/cli-reporter');
+const bundlers = require('../bundlers');
 const path = require('path');
-const rollup = require('rollup').rollup;
-const babel = require('rollup-plugin-babel');
-const commonjs = require('rollup-plugin-commonjs');
-const nodeResolve = require('rollup-plugin-node-resolve');
 
-async function bundle(entrypoint, { cwd, name } = {}) {
-  const outputFolders = [
-    {
-      format: 'esm',
-      directory: path.join(cwd, 'es'),
-    },
-    {
-      format: 'cjs',
-      directory: path.join(cwd, 'lib'),
-    },
-    {
-      format: 'umd',
-      directory: path.join(cwd, 'umd'),
-    },
-  ];
+async function bundle(entrypoint, options, info) {
+  const { cwd } = info;
+  const extension = path.extname(entrypoint);
 
-  await Promise.all(outputFolders.map(({ directory }) => fs.remove(directory)));
+  if (!bundlers.has(extension)) {
+    reporter.error(
+      `Invalid extension: \`${extension}\` on entrypoint: \`${entrypoint}\``
+    );
+    process.exit(1);
+  }
 
-  const jsEntrypoint = path.join(
-    outputFolders.find(folder => folder.format === 'esm').directory,
-    'index.js'
-  );
-  const bundle = await rollup({
-    input: entrypoint,
-    plugins: [
-      babel({
-        exclude: 'node_modules/**',
-        babelrc: false,
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              modules: false,
-              targets: {
-                browsers: ['last 1 version', 'ie >= 11', 'Firefox ESR'],
-              },
-            },
-          ],
-        ],
-      }),
-      nodeResolve({
-        jsnext: true,
-        main: true,
-        module: true,
-      }),
-      commonjs({
-        include: ['node_modules/**'],
-        extensions: ['.js'],
-      }),
-    ],
-  });
-  await bundle.write({
-    format: 'esm',
-    file: jsEntrypoint,
-  });
+  try {
+    const bundle = bundlers.get(extension);
+    await bundle(path.join(cwd, entrypoint), options, info);
+  } catch (error) {
+    reporter.error(`Unexpected error occurred while bundling ${entrypoint}:`);
+    console.log(error);
+    process.exit(1);
+  }
 
-  await Promise.all(
-    outputFolders
-      .filter(folder => folder.type !== 'esm')
-      .map(({ format, directory }) => {
-        const outputOptions = {
-          format,
-          file: jsEntrypoint.replace(/\/es\//, `/${path.basename(directory)}/`),
-        };
-
-        if (format === 'umd') {
-          outputOptions.name = name;
-        }
-
-        return bundle.write(outputOptions);
-      })
-  );
+  reporter.success('Done! ✨');
 }
 
 module.exports = bundle;

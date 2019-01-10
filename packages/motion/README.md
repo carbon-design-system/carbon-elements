@@ -1,17 +1,19 @@
-# `@carbon/motion`
+# @carbon/motion
 
-> Motion helpers for digital and software products using the Carbon Design System.
+> Motion helpers for digital and software products using the Carbon
+> Design System
 
-## Getting Started
+## Getting started
 
-Run the following command using [npm](https://www.npmjs.com/):
+To install `@carbon/motion` in your project, you will need to run the
+following command using [npm](https://www.npmjs.com/):
 
 ```bash
 npm install -S @carbon/motion
 ```
 
-If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
-instead:
+If you prefer [Yarn](https://yarnpkg.com/en/), use the following
+command instead:
 
 ```bash
 yarn add @carbon/motion
@@ -19,10 +21,40 @@ yarn add @carbon/motion
 
 ## Usage
 
+`@carbon/motion` supports standard, entrance, and exit easing curves in
+two motion modes: productive and expressive. You can access these
+curves using either Sass or JavaScript.
+
+### Sass
+
+`@carbon/motion` exports a `motion` function and `motion` mixin that
+you can use to access the value of a motion curve or include that
+curve as the `transition-property` for a selector. To use these
+helpers, you can do the following in your project:
+
+```scss
+@import '@carbon/motion';
+
+.my-custom-selector {
+  // Supplies the standard easing curve, using the productive mode by default
+  transition-property: motion(standard);
+}
+
+.my-custom-selector-v2 {
+  // Supplies the standard easing curve, but with the expressive mode, on the
+  // transition-property property for this selector
+  @include motion(standard, expressive);
+}
+```
+
+Both the `motion` function and mixin support passing in the name of
+the motion curve and the mode you want to work in.
+
 ### JavaScript
 
-If you're using `@carbon/motion` as a JavaScript dependency, we export our
-easings and a function called `motion` that you can use. For example:
+If you're using `@carbon/motion` as a JavaScript dependency, we export
+our easings and a function called `motion` that you can use. For
+example:
 
 ```js
 // CommonJS
@@ -38,29 +70,13 @@ import { easings, motion } from '@carbon/motion';
 motion('standard', 'productive'); // Returns a string `cubic-bezier()` function
 ```
 
-### Styles
+## 🙌 Contributing
 
-If you're using `@carbon/motion` as a Sass dependency, we export a function and
-mixin called `motion` that you can use to get the correct `transition-property`
-for your styles.
+We're always looking for contributors to help us fix bugs, build new
+features, or help us improve the project documentation. If you're
+interested, definitely check out our [Contributing Guide](/.github/CONTRIBUTING.md)
+! 👀
 
-You can import `@carbon/motion` by including it at the top of your file like so:
+## 📝 License
 
-```scss
-@import '@carbon/motion/scss/motion.scss';
-
-.my-custom-selector {
-  // Function for `motion`
-  transition-property: motion(standard, productive);
-}
-
-.my-other-custom-selector {
-  // Shortcut for above, sets `transition-property` with the value for the
-  // standard easing curve in productive mode.
-  @include motion(standard, productive);
-}
-```
-
-## 🤲 Contributing
-
-To learn more about how to contribute, look [here](/.github/CONTRIBUTING.md)!
+Licensed under the [Apache 2.0 License](/LICENSE).

@@ -1,3 +1,10 @@
+/**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 'use strict';
 
 const { reporter } = require('@carbon/cli-reporter');
@@ -50,12 +57,36 @@ async function build(source, { cwd } = {}) {
 
   reporter.info('Building module source...');
 
+  // Build up icon index. Useful for looking up size info for a particular icon.
+  const index = optimized.reduce((acc, icon) => {
+    const { basename, prefix, size } = icon;
+    const key = getIndexName(basename, prefix);
+    if (acc[key]) {
+      return {
+        ...acc,
+        [key]: {
+          sizes: acc[key].sizes.concat(icon.size).sort(),
+        },
+      };
+    }
+    return {
+      ...acc,
+      [key]: {
+        sizes: [icon.size],
+      },
+    };
+  }, {});
+
   const files = await flatMapAsync(optimized, async file => {
-    const { size } = file;
+    const { basename, size, prefix } = file;
+
     if (size === 32) {
+      const key = getIndexName(basename, prefix);
+      const { sizes } = index[key];
       const defaultIcon = await createDescriptorFromFile(file);
       const scaledIcons = await Promise.all(
-        SCALED_SIZES.map(size =>
+        // Only scale down for sizes we don't have icons for
+        SCALED_SIZES.filter(size => sizes.indexOf(size) === -1).map(size =>
           createDescriptorFromFile({
             ...file,
             size,
@@ -144,6 +175,7 @@ async function build(source, { cwd } = {}) {
       prefix,
       descriptor,
       moduleName,
+      original,
       outputOptions,
     } = icon;
     return {
@@ -153,6 +185,7 @@ async function build(source, { cwd } = {}) {
       prefix,
       descriptor,
       moduleName,
+      original,
       outputOptions,
     };
   });
@@ -228,6 +261,13 @@ async function createDescriptorFromFile(file) {
     source,
     moduleName,
   };
+}
+
+function getIndexName(basename, prefix, size) {
+  return prefix
+    .filter(part => isNaN(part))
+    .concat(basename)
+    .join('/');
 }
 
 async function findPackageJsonFor(filepath) {

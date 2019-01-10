@@ -1,4 +1,9 @@
 /**
+ * Copyright IBM Corp. 2018, 2018
+ *
+ * This source code is licensed under the Apache-2.0 license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
  * @jest-environment jsdom
  */
 
@@ -118,6 +123,17 @@ describe('createFromInfo', () => {
         // We do i + 1 here since 0 is used for title above
         expect(children[i + 1].tagName).toBe(descriptor.content[i].elem);
       }
+    });
+
+    it('should forward refs to rendered DOM element', async () => {
+      const moduleSource = createModuleFromInfo(info);
+      const MockIconComponent = await getModuleFromString(moduleSource);
+      let svg;
+      const ref = jest.fn(node => {
+        svg = node;
+      });
+      ReactDOM.render(<MockIconComponent ref={ref} />, mountNode);
+      expect(svg === document.querySelector('svg'));
     });
 
     it('should be focusable if an aria label and tab index is used', async () => {
