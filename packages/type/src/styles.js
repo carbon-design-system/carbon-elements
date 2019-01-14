@@ -123,23 +123,6 @@ export const productiveHeading05 = {
   letterSpacing: 0,
 };
 
-export const expressiveParagraph01 = fluid({
-  fontFamily: fontFamilies.sans,
-  fontSize: rem(scale[5]),
-  fontWeight: fontWeights.regular,
-  lineHeight: '125%',
-  letterSpacing: 0,
-  lg: {
-    fontSize: rem(scale[6]),
-    lineHeight: '129%',
-  },
-  max: {
-    fontSize: rem(scale[7]),
-    fontWeight: fontWeights.light,
-    lineHeight: '125%',
-  },
-});
-
 export const expressiveHeading04 = fluid({
   fontFamily: fontFamilies.sans,
   fontSize: rem(scale[6]),
@@ -192,6 +175,22 @@ export const expressiveHeading05 = fluid({
       lineHeight: rem(70),
       letterSpacing: 0,
     },
+  },
+});
+
+export const expressiveParagraph01 = fluid({
+  fontFamily: fontFamilies.sans,
+  fontSize: rem(scale[5]),
+  fontWeight: fontWeights.regular,
+  lineHeight: '125%',
+  letterSpacing: 0,
+  lg: {
+    fontSize: rem(scale[6]),
+    lineHeight: '129%',
+  },
+  max: {
+    fontSize: rem(scale[7]),
+    lineHeight: '125%',
   },
 });
 
