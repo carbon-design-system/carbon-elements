@@ -136,5 +136,3 @@ Object {
   },
 }
 `;
-
-exports[`tokens 1`] = `undefined`;
