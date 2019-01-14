@@ -127,14 +127,16 @@ $expressive-paragraph-01: (
   font-weight: font-weight('regular'),
   line-height: 125%,
   letter-spacing: 0,
-  lg: (
-    font-size: type-scale(7),
-    line-height: 129%,
-  ),
-  max: (
-    font-size: type-scale(8),
-    font-weight: font-weight('light'),
-    line-height: 125%,
+  breakpoints: (
+    lg: (
+      font-size: type-scale(7),
+      line-height: 129%,
+    ),
+    max: (
+      font-size: type-scale(8),
+      font-weight: font-weight('light'),
+      line-height: 125%,
+    ),
   ),
 );
 
@@ -363,6 +365,7 @@ $tokens: (
   productive-heading-05: $productive-heading-05,
 
   // Editorial layout, fluid
+  expressive-paragraph-01: $expressive-paragraph-01,
   expressive-heading-04: $expressive-heading-04,
   expressive-heading-05: $expressive-heading-05,
 
