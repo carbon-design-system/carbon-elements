@@ -30,12 +30,13 @@ async function main() {
     clearInterval(interval);
     console.log();
     reporter.success('Done! ✨');
-  } catch (error) {
+  } finally {
     clearInterval(interval);
   }
 }
 
 main().catch(error => {
+  console.log();
   reporter.error(error.message);
   if (error.stdout !== '') {
     console.error(error.stdout);
@@ -43,4 +44,5 @@ main().catch(error => {
   if (error.stderr !== '') {
     console.error(error.stderr);
   }
+  process.exit(1);
 });

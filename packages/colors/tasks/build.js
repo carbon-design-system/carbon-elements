@@ -50,9 +50,34 @@ async function build() {
     return acc.concat(...values);
   }, []);
 
-  const mixins = `${GENERATED_COMMENT}
+  const colorMapValues = Object.keys(colors).map(swatch => {
+    return {
+      swatch,
+      value: Object.keys(colors[swatch]).reduce((acc, grade, index) => {
+        const property = `'${grade}': ${colors[swatch][grade]},`;
+        if (index === 0) {
+          return property;
+        }
+        return acc + '\n' + property;
+      }, ''),
+    };
+  });
+  const colorMap = `$ibm-colors: (
+  ${colorMapValues
+    .map(
+      ({ swatch, value }) => `'${paramCase(swatch)}': (
+  ${value}
+),\n`
+    )
+    .join('\n')}
+) !default !global;
+// Deprecated, use $ibm-colors
+$ibm-color-map: $ibm-colors !default !global;
+`;
 
-@mixin color-values {
+  const mixins = `${GENERATED_COMMENT}
+@mixin ibm-colors {
+  ${colorMap}
   ${colorVariables.map(variable => '' + variable).join('\n  ')}
 }`;
 
@@ -66,7 +91,7 @@ async function build() {
 
 @import './mixins';
 
-@include color-values();
+@include ibm-colors();
 `;
 
   await fs.writeFile(
