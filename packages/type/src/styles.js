@@ -133,8 +133,15 @@ export const expressiveHeading04 = fluid({
     md: {
       lineHeight: '129%',
     },
+    lg: {
+      // ...
+    },
     xlg: {
-      fontSize: rem(scale[7]),
+      fontSize: rem(scale[6]),
+      lineHeight: '125%',
+    },
+    max: {
+        fontSize: rem(scale[7]),
       lineHeight: '125%',
     },
   },
