@@ -34,8 +34,6 @@ async function build() {
     })
   );
 
-  return;
-
   // Replace `@carbon` imports with relative paths
   const paths = klaw(BUNDLE_DIR, {
     nodir: true,
