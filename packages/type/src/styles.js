@@ -130,12 +130,12 @@ export const expressiveHeading04 = fluid({
   lineHeight: '107%',
   letterSpacing: 0,
   breakpoints: {
-    md: {
-      lineHeight: '129%',
-    },
     xlg: {
-      fontSize: rem(scale[7]),
+      fontSize: rem(scale[6]),
       lineHeight: '125%',
+    },
+    max: {
+      fontSize: rem(scale[7]),
     },
   },
 });
@@ -181,7 +181,7 @@ export const expressiveHeading05 = fluid({
 export const expressiveParagraph01 = fluid({
   fontFamily: fontFamilies.sans,
   fontSize: rem(scale[5]),
-  fontWeight: fontWeights.regular,
+  fontWeight: fontWeights.light,
   lineHeight: '125%',
   letterSpacing: 0,
   lg: {
