@@ -40,7 +40,7 @@ JavaScript or Sass. These features include:
 If you're looking for more examples on how to use `@carbon/type`, we
 have some examples that you can check out:
 
-- [Basic](./examples/basic)
+- [Basic](./examples/preview)
 - [Styled-components](./examples/styled-components)
 
 ## 🙌 Contributing
