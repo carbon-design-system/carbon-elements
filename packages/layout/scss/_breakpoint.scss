@@ -86,7 +86,7 @@ $carbon--grid-breakpoints: (
   $breakpoints: $carbon--grid-breakpoints
 ) {
   $total-breakpoints: length($breakpoints);
-  @return key-by-index($breakpoints, $total-breakpoints);
+  @return carbon--key-by-index($breakpoints, $total-breakpoints);
 }
 
 /// Get the infix for a given breakpoint in a list of breakpoints. Usesful for
