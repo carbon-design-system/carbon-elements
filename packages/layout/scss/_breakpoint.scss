@@ -169,8 +169,8 @@ $carbon--grid-breakpoints: (
 /// generate media query for the largest breakpoint
 /// @param {string} $breakpoint
 /// @content
-@mixin largest-breakpoint($breakpoints: $carbon--grid-breakpoints) {
-  @include carbon--breakpoint(largest-breakpoint-name()) {
+@mixin carbon--largest-breakpoint($breakpoints: $carbon--grid-breakpoints) {
+  @include carbon--breakpoint(carbon--largest-breakpoint-name()) {
     @content;
   }
 }
