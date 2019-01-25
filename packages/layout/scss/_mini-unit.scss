@@ -14,5 +14,5 @@ $mini-unit-size: 8px !default;
 /// @param {number} $count the number of units to get the value for
 /// @return rem
 @function mini-units($count) {
-  @return rem($mini-unit-size * $count);
+  @return carbon--rem($mini-unit-size * $count);
 }
