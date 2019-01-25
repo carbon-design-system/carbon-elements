@@ -47,7 +47,7 @@ $carbon--grid-breakpoints: (
 /// of the breakpoint and the value is the values for the breakpoint
 /// @param {List} $breakpoint-names - a list of names from the $breakpoints map
 /// @returns {String}
-@function breakpoint-next(
+@function carbon--breakpoint-next(
   $name,
   $breakpoints: $carbon--grid-breakpoints,
   $breakpoint-names: map-keys($breakpoints)
@@ -59,7 +59,7 @@ $carbon--grid-breakpoints: (
   @return null;
 }
 
-@function breakpoint-prev(
+@function carbon--breakpoint-prev(
   $name,
   $breakpoints: $carbon--grid-breakpoints,
   $breakpoint-names: map-keys($breakpoints)

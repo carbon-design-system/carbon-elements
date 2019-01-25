@@ -12,7 +12,7 @@
 /// heights
 /// @param {string} $breakpoint
 /// @return rem
-@function get-column-width(
+@function carbon--get-column-width(
   $breakpoint,
   $breakpoints: $carbon--grid-breakpoints
 ) {
