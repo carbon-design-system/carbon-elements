@@ -32,4 +32,7 @@
   @include make-row();
 }
 
-@include make-grid-columns($carbon--grid-breakpoints, $carbon--grid-gutter);
+@include carbon--make-grid-columns(
+  $carbon--grid-breakpoints,
+  $carbon--grid-gutter
+);
