@@ -12,7 +12,7 @@
 /// consistent rendering
 @mixin type-reset {
   html {
-    font-size: $base-font-size;
+    font-size: $carbon--base-font-size;
   }
 
   body {
