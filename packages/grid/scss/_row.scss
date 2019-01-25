@@ -16,6 +16,6 @@
 @mixin make-row() {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -1 * $grid-gutter / 2;
-  margin-left: -1 * $grid-gutter / 2;
+  margin-right: -1 * $carbon--grid-gutter / 2;
+  margin-left: -1 * $carbon--grid-gutter / 2;
 }

@@ -29,7 +29,7 @@ $breakpoints: map-merge(
       columns: 12,
     ),
   ),
-  $grid-breakpoints
+  $carbon--grid-breakpoints
 );
 
 // Default container class for a grid. Includes max-width for each breakpoint
@@ -48,4 +48,4 @@ $breakpoints: map-merge(
   @include make-row();
 }
 
-@include make-grid-columns($breakpoints, $grid-gutter);
+@include make-grid-columns($breakpoints, $carbon--grid-gutter);

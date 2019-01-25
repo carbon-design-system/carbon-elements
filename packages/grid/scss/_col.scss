@@ -13,7 +13,7 @@
 @import '@carbon/layout/scss/breakpoint';
 @import 'prefix';
 
-@mixin make-col-ready($gutter: $grid-gutter) {
+@mixin make-col-ready($gutter: $carbon--grid-gutter) {
   // Prevent columns from becoming too narrow when at smaller grid tiers by
   // always setting `width: 100%;`. This works because we use `flex` values
   // later on to override this initial width.
@@ -24,7 +24,7 @@
   // Support the padding use-case for each columns. Idea is that each child in a
   // cell selector should have the default padding applied.
   .#{$prefix}--grid--padding & > * {
-    padding: $grid-cell-padding;
+    padding: $carbon--grid-cell-padding;
   }
 
   // When in a bleed grid, we collapse all gutters so each column is flat with
@@ -69,15 +69,15 @@
 }
 
 @mixin make-grid-columns(
-  $breakpoints: $grid-breakpoints,
-  $gutter: $grid-gutter
+  $breakpoints: $carbon--grid-breakpoints,
+  $gutter: $carbon--grid-gutter
 ) {
   .#{$prefix}--col {
     @include make-col-ready();
   }
 
   @each $breakpoint in map-keys($breakpoints) {
-    $infix: breakpoint-infix($breakpoint);
+    $infix: carbon--breakpoint-infix($breakpoint);
     $columns: map-get(map-get($breakpoints, $breakpoint), columns);
 
     // Allow columns to stretch full width below their breakpoints
@@ -92,7 +92,7 @@
       @include make-col-ready();
     }
 
-    @include breakpoint($breakpoint, $breakpoints) {
+    @include carbon--breakpoint($breakpoint, $breakpoints) {
       // Provide basic `.col-{bp}` classes for equal-width flexbox columns
       .#{$prefix}--col,
       .#{$prefix}--col#{$infix} {
