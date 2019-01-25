@@ -16,8 +16,8 @@
   }
 
   body {
-    @include font-family('sans');
-    @include font-weight('regular');
+    @include carbon--font-family('sans');
+    @include carbon--font-weight('regular');
 
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

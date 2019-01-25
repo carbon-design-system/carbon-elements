@@ -11,14 +11,14 @@
 
 @mixin type-classes {
   // Font families
-  @each $name, $value in $font-families {
+  @each $name, $value in $carbon--font-families {
     .#{$prefix}--type-#{$name} {
       font-family: $value;
     }
   }
 
   // Font weights
-  @each $name, $value in $font-weights {
+  @each $name, $value in $carbon--font-weights {
     .#{$prefix}--type-#{$name} {
       font-weight: $value;
     }
