@@ -22,14 +22,14 @@
   @include carbon--make-container-max-widths();
 
   &--full-width {
-    @include largest-breakpoint() {
+    @include carbon--largest-breakpoint() {
       max-width: 100%;
     }
   }
 }
 
 .#{$prefix}--row {
-  @include make-row();
+  @include carbon--make-row();
 }
 
 @include carbon--make-grid-columns(

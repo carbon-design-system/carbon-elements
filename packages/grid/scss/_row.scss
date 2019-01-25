@@ -13,7 +13,7 @@
 @import '@carbon/layout/scss/breakpoint';
 
 /// Used to build a row inside of a grid
-@mixin make-row() {
+@mixin carbon--make-row() {
   display: flex;
   flex-wrap: wrap;
   margin-right: -1 * $carbon--grid-gutter / 2;

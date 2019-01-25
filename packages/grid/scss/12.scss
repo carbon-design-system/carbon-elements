@@ -45,7 +45,7 @@ $breakpoints: map-merge(
 }
 
 .#{$prefix}--row {
-  @include make-row();
+  @include carbon--make-row();
 }
 
 @include carbon--make-grid-columns($breakpoints, $carbon--grid-gutter);
