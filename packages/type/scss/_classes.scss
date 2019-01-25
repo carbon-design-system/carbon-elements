@@ -9,7 +9,7 @@
 @import 'styles';
 @import 'font-family';
 
-@mixin type-classes {
+@mixin carbon--type-classes {
   // Font families
   @each $name, $value in $carbon--font-families {
     .#{$prefix}--type-#{$name} {
@@ -32,7 +32,7 @@
   // Type styles
   @each $name, $value in $tokens {
     .#{$prefix}--type-#{$name} {
-      @include type-style($name, map-has-key($value, breakpoints));
+      @include carbon--type-style($name, map-has-key($value, breakpoints));
     }
   }
 }

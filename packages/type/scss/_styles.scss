@@ -512,7 +512,7 @@ $tokens: (
 /// @param {?Boolean} $fluid - specify whether to include fluid styles for the
 /// @param {?Map} $breakpoints - provide a custom breakpoint map to use
 /// token
-@mixin type-style(
+@mixin carbon--type-style(
   $name,
   $fluid: false,
   $breakpoints: $carbon--grid-breakpoints

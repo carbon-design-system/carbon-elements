@@ -10,7 +10,7 @@
 
 /// Include a type reset that individuals can use in their projects for
 /// consistent rendering
-@mixin type-reset {
+@mixin carbon--type-reset() {
   html {
     font-size: $carbon--base-font-size;
   }
