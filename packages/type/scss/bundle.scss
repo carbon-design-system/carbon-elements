@@ -10,8 +10,7 @@
 @import 'scale';
 @import 'spacing';
 @import 'styles';
-@import 'font-face/mono';
-@import 'font-face/sans';
+@import 'font-face';
 @import 'classes';
 
 @include type-reset();

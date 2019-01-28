@@ -1,7 +1,5 @@
 @import '../../scss/type';
-@import '../../scss/font-face/sans';
-@import '../../scss/font-face/serif';
-@import '../../scss/font-face/mono';
+@import '../../scss/font-face';
 @import '../../scss/classes';
 
 @include type-reset();
