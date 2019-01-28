@@ -115,7 +115,7 @@
         }
       }
 
-      @for $i from 1 through ($columns - 1) {
+      @for $i from 0 through ($columns - 1) {
         @if not($infix == '' and $i == 0) {
           .#{$prefix}--offset#{$infix}-#{$i} {
             @include make-col-offset($i, $columns);
