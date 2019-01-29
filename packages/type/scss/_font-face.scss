@@ -1,2 +1,13 @@
 $font-prefix: 'https://plex-cdn.now.sh/fonts' !default;
-@import '@ibm/plex/scss/ibm-plex.scss';
+
+@import '@ibm/plex/scss/mono/semibold/index';
+@import '@ibm/plex/scss/mono/regular/index';
+@import '@ibm/plex/scss/mono/light/index';
+
+@import '@ibm/plex/scss/sans/semibold/index';
+@import '@ibm/plex/scss/sans/regular/index';
+@import '@ibm/plex/scss/sans/light/index';
+
+@import '@ibm/plex/scss/serif/semibold/index';
+@import '@ibm/plex/scss/serif/regular/index';
+@import '@ibm/plex/scss/serif/light/index';
