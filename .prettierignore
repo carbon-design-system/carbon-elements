@@ -10,7 +10,8 @@ ts
 **/storybook/stories/**
 
 # Package-specific
-packages/colors/scss
-packages/elements/scss/
+packages/colors/scss/*
+packages/elements/scss/*
 !packages/elements/scss/elements.scss
 !packages/elements/scss/index.scss
+packages/themes/scss/*
