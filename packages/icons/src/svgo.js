@@ -156,7 +156,9 @@ const plugins = [
     mergePaths: true,
   },
   {
-    convertShapeToPath: true,
+    convertShapeToPath: {
+      convertArcs: true,
+    },
   },
   {
     sortAttrs: true,
