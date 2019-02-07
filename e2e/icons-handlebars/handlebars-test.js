@@ -6,7 +6,7 @@
 
 const CarbonIcons = require('@carbon/icons');
 const handlebars = require('handlebars');
-const helper = require('../');
+const helper = require('../../packages/icons-handlebars');
 
 describe('icons-handlebars', () => {
   let hbs;
