@@ -4,8 +4,8 @@
 
 'use strict';
 
-const CarbonIcons = require('@carbon/icons');
 const handlebars = require('handlebars');
+const CarbonIcons = require('../../packages/icons');
 const helper = require('../../packages/icons-handlebars');
 
 describe('icons-handlebars', () => {
