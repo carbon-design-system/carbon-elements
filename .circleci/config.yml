@@ -27,5 +27,7 @@ jobs:
           path: reports
 
 workflows:
+  version: 2
   main:
-    - test
+    jobs:
+      - test
