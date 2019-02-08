@@ -1,10 +1,15 @@
-<!-- Please fill out all the sections below and format the issue tittle as `App icon approval: icon name`. Thanks!-->
+---
+name: App Icon Approval
+about: Looking to get an App Icon Approved? Here is the right place to submit.
+---
+
+<!-- Please fill out all the sections below and format the issue title as `App icon approval: icon name`. -->
 
 #### 1. Team name
 
 #### 2. Designer name
 
-#### 3. Product/service Name
+#### 3. Product/service name
 
 #### 4. Please provide a brief description of the product or service
 
@@ -12,7 +17,7 @@
 
 Add in a box link (or other cloud) link to your completed App Icon Bulder and App Icon Template files. Please make sure the permissions are set so anyone can view the icon.
 
-#### 6. Screen Shot
+#### 6. Screenshot
 
 Please add the following screen shots to this issue:
 
