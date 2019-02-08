@@ -21,6 +21,8 @@ yarn add @carbon/colors
 
 ## Usage
 
+I'm adding more examples of this package.
+
 You can use the `@carbon/colors` module in your JavaScript, in
 addition to your Sass.
 
