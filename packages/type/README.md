@@ -21,6 +21,30 @@ yarn add @carbon/type
 
 ## Usage
 
+<!-- prettier-ignore-start -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+### Table of Contents
+
+  - [Font-face](#font-face)
+    - [Elements](#elements)
+  - [Type classes](#type-classes)
+    - [Elements](#elements-1)
+  - [Font family](#font-family)
+    - [Elements](#elements-2)
+  - [Reset](#reset)
+    - [Elements](#elements-3)
+  - [Type scale](#type-scale)
+    - [Elements](#elements-4)
+  - [Type styles](#type-styles)
+    - [Elements](#elements-5)
+- [📚 Examples](#-examples)
+- [🙌 Contributing](#-contributing)
+- [📝 License](#-license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- prettier-ignore-end -->
+
 `@carbon/type` provides a variety of ways to work with typography from
 the IBM Design Language. You can use all of these features either in
 JavaScript or Sass. These features include:
