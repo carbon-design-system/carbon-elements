@@ -63,6 +63,22 @@ For example:
 @import '@carbon/elements/scss/type/styles';
 ```
 
+In addition, you will need to setup `node-sass` so that `node_modules` is
+included in the `includePaths` option. Often times, the tool that you are using
+to build Sass files in your project should expose this option for you to set.
+
+For example, if you are using Webpack you would use `node-sass` and
+`sass-loader` with the following configuration for `includePaths`:
+
+```js
+{
+  loader: 'sass-loader',
+  options: {
+    includePaths: ['node_modules'],
+  },
+}
+```
+
 ### Type styles
 
 Instead of using a type scale, `@carbon/type` provides tokens that represent
