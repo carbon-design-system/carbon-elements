@@ -10,9 +10,9 @@ Design and produce app icons with the [App Icon builder and template](https://gi
 
 ## Approval process
 
-App icons should go through this design review process to ensure consistency and proper representation of the IBM brand across all environments. 
+App icons should go through this design review process to ensure consistency and proper representation of the IBM brand across all environments.
 
-Please submit new icons here for approval by [creating an issue](https://github.com/IBM/carbon-elements/issues/new?template=app-icon-approval-request.md). 
+Please submit new icons here for approval by [creating an issue](https://github.com/IBM/carbon-elements/issues/new?template=app-icon-approval-request.md).
 
 ## License
 
