@@ -31,8 +31,8 @@ JavaScript or Sass. These features include:
 | [Type classes](#type-classes) | Helpers to use type styles directly. Not included by default                                                 |
 | [Font family](#font-family)   | Defines the font stack for IBM Plex™ in your application, provides helpers for working with font definitions |
 | [Reset](#reset)               | Provides a high-level CSS Reset to use in your project                                                       |
-| [Scale](#type-scale)          | Provides the type scale. Can access the size at any given step                                               |
-| [Styles](#type-styles)        | Provides type styles for your application                                                                    |
+| [Scale](#type-scale)          | Provides the type scale. Can access the size at any given step (step 1, 2, 3, etc)                           |
+| [Styles](#type-styles)        | Provides type styles for your application (heading-01, body-long-01, etc)                                    |
 
 To include `@carbon/type` in your project, you can write the following in your
 Sass file:
@@ -50,6 +50,45 @@ Sass file:
 This should include the default type reset from the project, in addition to
 font-face definitions for IBM Plex Mono and IBM Plex Sans that come from Google
 Fonts.
+
+If you are using `@carbon/elements`, the import paths become:
+
+```scss
+@import '@carbon/elements/scss/type/path-to-import';
+```
+
+For example:
+
+```scss
+@import '@carbon/elements/scss/type/styles';
+```
+
+### Type styles
+
+Instead of using a type scale, `@carbon/type` provides tokens that represent
+what we call type styles. These tokens have a variety of properties for styling
+how text is rendered on a page.
+
+You can find a full reference of the type styles that are available
+[here](https://next.carbondesignsystem.com/guidelines/typography/productive).
+
+You can include a token in your Sass file by writing:
+
+```scss
+@import '@carbon/type/scss/styles';
+
+@include carbon--type-style('token-name');
+```
+
+In addition, if the type style you are using has a fluid style then you can pass
+in `true` as the second argument to `carbon--type-style` to enable fluid styles.
+For example:
+
+```scss
+@import '@carbon/type/scss/styles';
+
+@include carbon--type-style('token-name', true);
+```
 
 ### Font-face
 
@@ -91,14 +130,6 @@ Similarly, you can include IBM Plex Sans and IBM Plex Serif by writing:
 @include carbon--font-face-serif();
 ```
 
-#### Elements
-
-If you are using `@carbon/elements`, the import paths become:
-
-```scss
-@import '@carbon/elements/scss/type/font-face/mono';
-```
-
 ### Type classes
 
 The recommended way to style your application will be to use our [type styles](#type-styles).
@@ -112,24 +143,16 @@ Sass file:
 @import '@carbon/type/scss/classes';
 ```
 
-| Selector                 | Description                             |
-| ------------------------ | --------------------------------------- |
-| `.bx--type-mono`         | Specify the font face as IBM Plex Mono  |
-| `.bx--type-sans`         | Specify the font face as IBM Plex Sans  |
-| `.bx--type-serif`        | Specify the font face as IBM Plex Serif |
-| `.bx--type-light`        | Specify the font weight as light        |
-| `.bx--type-regular`      | Specify the font weight as regular      |
-| `.bx--type-semibold`     | Specify the font weight as semibold     |
-| `.bx--type-italic`       | Specify the font style as italic        |
-| `.bx--type-<type-style>` | Set styles for the given type style     |
-
-#### Elements
-
-If you are using `@carbon/elements`, the import paths become:
-
-```scss
-@import '@carbon/elements/scss/type/classes';
-```
+| Selector                 | Description                               |
+| ------------------------ | ----------------------------------------- |
+| `.bx--type-mono`         | Specify the font face as IBM Plex Mono    |
+| `.bx--type-sans`         | Specify the font face as IBM Plex Sans    |
+| `.bx--type-serif`        | Specify the font face as IBM Plex Serif   |
+| `.bx--type-light`        | Specify the font weight as light (300)    |
+| `.bx--type-regular`      | Specify the font weight as regular (400)  |
+| `.bx--type-semibold`     | Specify the font weight as semibold (600) |
+| `.bx--type-italic`       | Specify the font style as italic          |
+| `.bx--type-<type-style>` | Set styles for the given type style       |
 
 ### Font family
 
@@ -162,14 +185,6 @@ You can also use the `carbon--font-family` mixin to automatically set the
 
 You can see all the available font families in `$carbon--font-families`.
 
-#### Elements
-
-If you are using `@carbon/elements`, the import paths become:
-
-```scss
-@import '@carbon/elements/scss/type/font-family';
-```
-
 ### Reset
 
 An optional type reset is provided under the `carbon--type-reset` mixin. You can
@@ -184,14 +199,6 @@ include this mixin by writing the following in your Sass file:
 This reset sets some top-level properties on `html` and `body`, namely
 `font-size`, `font-family`, and some `text-rendering` options. We also map the
 `strong` tag to the semibold font weight.
-
-#### Elements
-
-If you are using `@carbon/elements`, the import paths become:
-
-```scss
-@import '@carbon/elements/scss/type/reset';
-```
 
 ### Type scale
 
@@ -225,49 +232,6 @@ There is also a `type-scale` mixin that will set `font-size` for your directly:
 .my-selector {
   @include carbon--type-scale(1);
 }
-```
-
-#### Elements
-
-If you are using `@carbon/elements`, the import paths become:
-
-```scss
-@import '@carbon/elements/scss/type/scale';
-```
-
-### Type styles
-
-Instead of using a type scale, `@carbon/type` provides tokens that represent
-what we call type styles. These tokens have a variety of properties for styling
-how text is rendered on a page.
-
-You can find a full reference of the type styles that are available
-[here](https://next.carbondesignsystem.com/guidelines/typography/productive).
-
-You can include a token in your Sass file by writing:
-
-```scss
-@import '@carbon/type/scss/styles';
-
-@include carbon--type-style('token-name');
-```
-
-In addition, if the type style you are using has a fluid style then you can pass
-in `true` as the second argument to `carbon--type-style` to enable fluid styles.
-For example:
-
-```scss
-@import '@carbon/type/scss/styles';
-
-@include carbon--type-style('token-name', true);
-```
-
-#### Elements
-
-If you are using `@carbon/elements`, the import paths become:
-
-```scss
-@import '@carbon/elements/scss/type/styles';
 ```
 
 ## 📚 Examples
