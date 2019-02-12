@@ -79,7 +79,7 @@ the following:
 $carbon--colors: (
   'blue': (
     10: #edf4ff,
-    // ...,,,,
+    // ...,,,,,,
   ),
   // ...,
 );
