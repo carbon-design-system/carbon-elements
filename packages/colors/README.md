@@ -69,6 +69,25 @@ the `carbon--colors` mixin directly by importing the following file:
 @include carbon--colors();
 ```
 
+Alongside the color variables detailed above, we also provide a map of colors so
+that you can programmatically use these values. This map is called
+`$carbon--colors` and each key is the name of a swatch. The value of these
+swatches is also a map, but each key is now the grade. In code, this looks like
+the following:
+
+```scss
+$carbon--colors: (
+  'blue': (
+    10: #edf4ff,
+    // ...,,,,
+  ),
+  // ...,
+);
+```
+
+You can include this variable by including `@carbon/colors/scss/colors` or
+calling the `carbon--colors()` mixin directly.
+
 #### Migrating from previous versions
 
 If you were originally using a project that had color variables defined as

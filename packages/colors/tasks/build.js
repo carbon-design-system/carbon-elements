@@ -81,6 +81,18 @@ async function build() {
   }
   deprecatedColorMap += ') !default !global;';
 
+  let colorMap = `$carbon--colors: (\n`;
+  for (const swatch of Object.keys(colors)) {
+    colorMap += `  '${swatch}': (\n`;
+
+    for (const grade of Object.keys(colors[swatch])) {
+      colorMap += `    ${grade}: ${colors[swatch][grade]},\n`;
+    }
+
+    colorMap += `  ),\n`;
+  }
+  colorMap += ') !default !global;';
+
   const mixins = `${GENERATED_COMMENT}
 
 // Deprecated ☠️
@@ -93,6 +105,7 @@ async function build() {
 @mixin ${NAMESPACE}--colors {
 ${namespacedColorVariables.join('\n')}
 ${colorVariables.join('\n')}
+${colorMap}
 }
 `;
 
