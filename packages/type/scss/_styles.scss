@@ -97,7 +97,7 @@ $heading-02: (
   letter-spacing: 0,
 ) !default;
 
-$heading-03: (
+$productive-heading-03: (
   font-family: carbon--font-family('sans'),
   font-size: carbon--type-scale(5),
   font-weight: carbon--font-weight('regular'),
@@ -119,6 +119,23 @@ $productive-heading-05: (
   font-weight: carbon--font-weight('regular'),
   line-height: carbon--rem(40px),
   letter-spacing: 0,
+) !default;
+
+$expressive-heading-03: (
+  font-family: carbon--font-family('sans'),
+  font-size: carbon--type-scale(5),
+  font-weight: carbon--font-weight('regular'),
+  line-height: 130%,
+  letter-spacing: 0,
+  breakpoints: (
+    xlg: (
+      font-size: carbon--type-scale(5),
+      line-height: 125%,
+    ),
+    max: (
+      font-size: carbon--type-scale(6),
+    ),
+  ),
 ) !default;
 
 $expressive-heading-04: (
