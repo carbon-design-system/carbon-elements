@@ -21,7 +21,6 @@ Array [
   "reset",
   "getTypeSize",
   "scale",
-  "spacing",
   "styles",
   "caption01",
   "label01",
