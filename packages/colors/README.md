@@ -75,15 +75,16 @@ that you can programmatically use these values. This map is called
 swatches is also a map, but each key is now the grade. In code, this looks like
 the following:
 
+<!-- prettier-ignore-start -->
 ```scss
 $carbon--colors: (
   'blue': (
     10: #edf4ff,
-    // ...,,,,,,
-  ),
-  // ...,
+    // ...
+  )
 );
 ```
+<!-- prettier-ignore-end -->
 
 You can include this variable by including `@carbon/colors/scss/colors` or
 calling the `carbon--colors()` mixin directly.
