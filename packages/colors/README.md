@@ -117,8 +117,6 @@ blue[50]; // Using the `blue` object.
 warmGray100; // Using the `warmGray100` variable.
 ```
 
-## Reference
-
 ## 🙌 Contributing
 
 We're always looking for contributors to help us fix bugs, build new
