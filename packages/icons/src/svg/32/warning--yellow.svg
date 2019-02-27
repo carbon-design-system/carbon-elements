@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-<title>warning--yellow</title>
-<desc>Created with Sketch.</desc>
-<g fill="none" fill-rule="evenodd">
-<g transform="translate(2 2)" fill-rule="nonzero">
-<path d="m14 8.8818e-16c-7.732-1.3323e-15 -14 6.268-14 14s6.268 14 14 14 14-6.268 14-14c0-3.713-1.475-7.274-4.1005-9.8995-2.6255-2.6255-6.1865-4.1005-9.8995-4.1005z" fill="#FDD13A"/>
-<polygon points="12.87 6 15.12 6 15.12 17 12.87 17" fill="#000"/>
-<path d="m14 23c-0.60669 0-1.1536-0.36546-1.3858-0.92597-0.23217-0.56051-0.10384-1.2057 0.32516-1.6347s1.0742-0.55733 1.6347-0.32516c0.56051 0.23217 0.92597 0.77913 0.92597 1.3858 0 0.82843-0.67157 1.5-1.5 1.5z" fill="#000"/>
-</g>
-</g>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:#fdd13a;}</style></defs><title>Artboard 1</title><path class="cls-1" d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z"/><rect x="15" y="8" width="2" height="11"/><circle cx="16" cy="23.5" r="1.5"/></svg>
