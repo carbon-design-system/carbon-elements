@@ -6,10 +6,9 @@
 	.st0{fill:none;}
 	.st1{fill:#FFFFFF;}
 </style>
-<rect class="st0" width="16" height="16"/>
+<rect x="0" class="st0" width="16" height="16"/>
 <g>
 	<circle cx="8" cy="8" r="7"/>
-	<path class="st1" d="M7,12.1v-0.2C7,11.4,7.3,11,8,11s1,0.4,1,0.9v0.2C9,12.6,8.7,13,8,13S7,12.6,7,12.1z M7.5,10L7.2,6.4V4h1.5
-		v2.4L8.5,10H7.5z"/>
+	<path class="st1" d="M7,11.5c0-0.5,0.5-1,1-1c0.5,0,1,0.5,1,1s-0.5,1-1,1C7.6,12.5,7,12,7,11.5z M7,9V5.6V4h2v1.6V9H7z"/>
 </g>
 </svg>
