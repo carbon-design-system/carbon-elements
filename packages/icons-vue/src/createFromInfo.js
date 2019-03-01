@@ -63,8 +63,6 @@ function createComponentFromInfo(info) {
       ...rest
     } = props;
 
-    console.dir(context);
-    console.dir(slots());
     const attrs = getAttributes({
       ...rest,
       width,
