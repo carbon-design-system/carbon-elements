@@ -53,7 +53,7 @@ function createComponentFromInfo(info) {
   name: '${moduleName}',
   functional: true,
   render(createElement, context) {
-    const { props, listeners, children, data, slots } = context;
+    const { props, listeners, slots, data } = context;
     const {
       width = '${attrs.width}',
       height = '${attrs.height}',
