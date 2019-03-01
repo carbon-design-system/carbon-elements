@@ -53,7 +53,7 @@ function createComponentFromInfo(info) {
   name: '${moduleName}',
   functional: true,
   render(createElement, context) {
-    const { props, listeners, slots, data } = context;
+    const { props, listeners, children, data, slots } = context;
     const {
       width = '${attrs.width}',
       height = '${attrs.height}',
@@ -63,6 +63,8 @@ function createComponentFromInfo(info) {
       ...rest
     } = props;
 
+    console.dir(context);
+    console.dir(slots());
     const attrs = getAttributes({
       ...rest,
       width,
@@ -77,12 +79,9 @@ function createComponentFromInfo(info) {
       style: { ...data.staticStyle, ...data.style },
       on: listeners,
     }, [
-      props.title ? createElement('title', {
-        props: {
-          title: props.title,
-        }
-      }, [props.title]) : '',
+      slots().title,
       ${content.map(toString).join(', ')},
+      slots().default,
     ]);
   },
 };`;
