@@ -47,27 +47,14 @@ export default ${createComponentFromInfo(info)};`;
 }
 
 function createComponentFromInfo(info) {
-  const { descriptor, moduleName, size } = info;
+  const { descriptor, moduleName } = info;
   const { attrs, content } = descriptor;
   return `{
   name: '${moduleName}',
   functional: true,
-  props: [
-    'ariaLabel',
-    'ariaLabelledBy',
-    'height',
-    'title',
-    'viewBox',
-    'width',
-    'preserveAspectRatio',
-    'tabindex',
-    'xmlns',
-  ],
   render(createElement, context) {
-    const { props, listeners, slots } = context;
+    const { props, listeners, slots, data } = context;
     const {
-      ariaLabel,
-      ariaLabelledBy,
       width = '${attrs.width}',
       height = '${attrs.height}',
       viewBox = '${attrs.viewBox}',
@@ -75,23 +62,27 @@ function createComponentFromInfo(info) {
       xmlns = 'http://www.w3.org/2000/svg',
       ...rest
     } = props;
+
     const attrs = getAttributes({
       ...rest,
-      'aria-label': ariaLabel,
-      'aria-labelledby': ariaLabelledBy,
       width,
       height,
       viewBox,
       preserveAspectRatio,
-      xmlns,
+      xmlns
     });
     return createElement('svg', {
       attrs,
+      class: ((data.staticClass || '') + ' ' + (data.class || '')).trim(),
+      style: { ...data.staticStyle, ...data.style },
       on: listeners,
     }, [
-      slots.title,
+      props.title ? createElement('title', {
+        props: {
+          title: props.title,
+        }
+      }, [props.title]) : '',
       ${content.map(toString).join(', ')},
-      slots.default,
     ]);
   },
 };`;

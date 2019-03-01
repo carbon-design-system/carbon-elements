@@ -33,7 +33,7 @@ storiesOf('${moduleName}', module)
     components: {
       icon: ${moduleName},
     },
-    template: \`<icon><title slot="title">${moduleName}</title></icon>\`,
+    template: \`<icon title="${moduleName}"></icon>\`,
   }))
   .add('with aria-label and tabindex', () => ({
     components: {
@@ -50,11 +50,17 @@ storiesOf('${moduleName}', module)
       action: action('clicked'),
     },
   }))
-  .add('with custom class', () => ({
+  .add('with custom classes', () => ({
     components: {
       icon: ${moduleName},
     },
-    template: \`<icon class="custom class"></icon>\`,
+    template: \`<icon class="custom classes" :class="'dynamic classes_2'"></icon>\`,
+  }))
+  .add('with custom styles', () => ({
+    components: {
+      icon: ${moduleName},
+    },
+    template: \`<icon :style="{boxShadow: '0 0 5px blue'}" style="fill: red"></icon>\`,
   }));`;
 }
 
