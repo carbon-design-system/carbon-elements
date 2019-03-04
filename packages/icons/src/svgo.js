@@ -10,6 +10,19 @@
 const SVGO = require('svgo');
 const svg2js = require('svgo/lib/svgo/svg2js');
 
+/**
+ * Our SVGO plugin options differ a bit from the defaults, namely in the
+ * following areas:
+ *
+ * 1) We remove the transparent rectangle used for artboard sizes
+ * 2) In order to support styling paths inside of an SVG, we offer SVGs that
+ *    "punch out" the inner path and include the path as a distinct `<path>`
+ *    node. This defaults to `opacity="0"` so that the background color will
+ *    bleed through by default. As a result, we disable the opacity rule of
+ *    `removeHiddenElems`
+ * 3) In order to support consistent inner styling, we let specific ids through
+ *    in our `cleanupIDs` plugin so that we can target them in CSS
+ */
 const plugins = [
   {
     removeTransparentRectangle: {
@@ -24,15 +37,12 @@ const plugins = [
         if (item.isElem('g') && item.attr('id', 'Transparent_Rectangle')) {
           return item.content;
         }
-
         if (item.hasAttr('id')) {
           if (item.attr('id').value.includes('Transparent_Rectangle')) {
             return !item;
           }
         }
-
         const sizes = ['16', '20', '24', '32'];
-
         for (const size of sizes) {
           if (
             item.isElem('rect') &&
@@ -42,7 +52,6 @@ const plugins = [
             return !item;
           }
         }
-
         return item;
       },
     },
@@ -92,7 +101,26 @@ const plugins = [
     removeEmptyAttrs: true,
   },
   {
-    removeHiddenElems: true,
+    removeHiddenElems: {
+      // Special case where we don't want to ignore nodes with `opacity="0"`
+      opacity0: false,
+
+      // Default options
+      isHidden: true,
+      displayNone: true,
+      circleR0: true,
+      ellipseRX0: true,
+      ellipseRY0: true,
+      rectWidth0: true,
+      rectHeight0: true,
+      patternWidth0: true,
+      patternHeight0: true,
+      imageWidth0: true,
+      imageHeight0: true,
+      pathEmptyD: true,
+      polylineEmptyPoints: true,
+      polygonEmptyPoints: true,
+    },
   },
   {
     removeEmptyText: true,
@@ -131,7 +159,9 @@ const plugins = [
     removeUnusedNS: true,
   },
   {
-    cleanupIDs: true,
+    cleanupIDs: {
+      preserve: [],
+    },
   },
   {
     cleanupNumericValues: true,
@@ -163,7 +193,7 @@ const plugins = [
   {
     // Remove any ids or data attributes that are included in SVG source files.
     removeAttrs: {
-      attrs: ['class', 'data-name', 'fill', 'id'],
+      attrs: ['class', 'data-name', 'fill'],
     },
   },
 ];
