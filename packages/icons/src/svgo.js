@@ -147,7 +147,7 @@ const plugins = [
   },
   {
     cleanupIDs: {
-      preserve: [],
+      preserve: ['inner-path'],
     },
   },
   {
