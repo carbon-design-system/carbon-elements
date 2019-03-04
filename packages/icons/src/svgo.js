@@ -37,12 +37,15 @@ const plugins = [
         if (item.isElem('g') && item.attr('id', 'Transparent_Rectangle')) {
           return item.content;
         }
+
         if (item.hasAttr('id')) {
           if (item.attr('id').value.includes('Transparent_Rectangle')) {
             return !item;
           }
         }
+
         const sizes = ['16', '20', '24', '32'];
+
         for (const size of sizes) {
           if (
             item.isElem('rect') &&
