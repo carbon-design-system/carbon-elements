@@ -107,22 +107,6 @@ const plugins = [
     removeHiddenElems: {
       // Special case where we don't want to ignore nodes with `opacity="0"`
       opacity0: false,
-
-      // Default options
-      isHidden: true,
-      displayNone: true,
-      circleR0: true,
-      ellipseRX0: true,
-      ellipseRY0: true,
-      rectWidth0: true,
-      rectHeight0: true,
-      patternWidth0: true,
-      patternHeight0: true,
-      imageWidth0: true,
-      imageHeight0: true,
-      pathEmptyD: true,
-      polylineEmptyPoints: true,
-      polygonEmptyPoints: true,
     },
   },
   {
