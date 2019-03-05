@@ -43,8 +43,6 @@ async function getModuleFromString(
   return sandbox.module.exports;
 }
 
-const mockIconDescriptor = {};
-
 describe('createFromInfo', () => {
   describe('createModuleFromInfo', () => {
     let createModuleFromInfo;
