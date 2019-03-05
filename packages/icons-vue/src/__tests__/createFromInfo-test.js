@@ -43,15 +43,20 @@ async function getModuleFromString(
   return sandbox.module.exports;
 }
 
+const mockIconDescriptor = {};
+
 describe('createFromInfo', () => {
   describe('createModuleFromInfo', () => {
     let createModuleFromInfo;
     let descriptor;
     let info;
     let mountNode;
+    let MockIconComponent;
+    let render;
 
-    beforeEach(() => {
+    beforeEach(async () => {
       createModuleFromInfo = require('../createFromInfo').createModuleFromInfo;
+
       descriptor = {
         attrs: {
           width: 16,
@@ -69,12 +74,32 @@ describe('createFromInfo', () => {
           },
         ],
       };
+
       info = {
         descriptor,
         moduleName: 'MockIcon',
       };
+
       mountNode = document.createElement('div');
       document.body.appendChild(mountNode);
+
+      MockIconComponent = await getModuleFromString(createModuleFromInfo(info));
+
+      render = ({ components, template, ...rest }) => {
+        const rootNode = mountNode.appendChild(document.createElement('div'));
+
+        new Vue({
+          el: rootNode,
+          components,
+          template,
+          ...rest,
+        });
+
+        // Vue ends up replacing `rootNode` so we need to use the `mountNode` to
+        // look for the last `<MockIcon />` added to the DOM, most likely this
+        // is the last <svg> node that has been inserted
+        return mountNode.querySelector('svg:last-of-type');
+      };
     });
 
     afterEach(() => {
@@ -82,15 +107,10 @@ describe('createFromInfo', () => {
     });
 
     it('should create a renderable component', async () => {
-      const moduleSource = createModuleFromInfo(info);
-      const MockIconComponent = await getModuleFromString(moduleSource);
-      const rootNode = mountNode.appendChild(document.createElement('div'));
       const originalConsoleError = console.error;
-
       console.error = jest.fn();
 
-      new Vue({
-        el: rootNode,
+      render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
@@ -104,68 +124,32 @@ describe('createFromInfo', () => {
     });
 
     it('should treat focusable as a string', async () => {
-      const moduleSource = createModuleFromInfo(info);
-      const MockIconComponent = await getModuleFromString(moduleSource);
-
-      const defaultNode = mountNode.appendChild(document.createElement('div'));
-      const defaultTestId = 'default';
-
-      const focusableNode = mountNode.appendChild(
-        document.createElement('div')
-      );
-      const focusableTestId = 'focusable';
-
-      const getContainer = testId =>
-        document.querySelector(`[data-test-id="${testId}"] > svg`);
-
-      new Vue({
-        el: defaultNode,
+      const defaultNode = render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
-        template: `<div data-test-id="${defaultTestId}"><MockIcon /></div>`,
+        template: `<MockIcon />`,
       });
-
-      expect(getContainer(defaultTestId).getAttribute('focusable')).toBeFalsy();
-
-      new Vue({
-        el: focusableNode,
+      const focusableNode = render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
-        template: `<div data-test-id="${focusableTestId}"><MockIcon focusable="true" /></div>`,
+        template: `<MockIcon focusable="true" />`,
       });
 
-      expect(getContainer(focusableTestId).getAttribute('focusable')).toBe(
-        'true'
-      );
+      expect(defaultNode.getAttribute('focusable')).toBe('false');
+      expect(focusableNode.getAttribute('focusable')).toBe('true');
     });
 
     it('should support rendering a title in the SVG markup', async () => {
-      const moduleSource = createModuleFromInfo(info);
-      const MockIconComponent = await getModuleFromString(moduleSource);
-      const node = mountNode.appendChild(document.createElement('div'));
-      const testId = 'title';
-
-      new Vue({
-        el: node,
+      const node = render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
-        template: `
-<div data-test-id="${testId}">
-  <MockIcon>
-    <template v-slot:title>
-      <title>Title</title>
-    </template>
-  </MockIcon>
-</div>
-`,
+        template: `<MockIcon tabindex="0" title="Custom title" />`,
       });
 
-      const children = Array.from(
-        document.querySelector(`[data-test-id="${testId}"] svg`).children
-      );
+      const children = Array.from(node.children);
       expect(children[0].tagName).toBe('title');
 
       for (let i = 1; i < descriptor.content.length; i++) {
@@ -174,126 +158,48 @@ describe('createFromInfo', () => {
       }
     });
 
-    it('should support custom class names and styles', async () => {
-      const moduleSource = createModuleFromInfo(info);
-      const MockIconComponent = await getModuleFromString(moduleSource);
-      const node = mountNode.appendChild(document.createElement('div'));
-      const testId = 'custom-styles';
-
-      const getContainer = () =>
-        document.querySelector(`[data-test-id="${testId}"] > svg`);
-
-      new Vue({
-        el: node,
+    it('should support custom class names', async () => {
+      const customClass = 'foo';
+      const node = render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
-        template: `
-<div data-test-id="${testId}">
-  <MockIcon class="foo" v-bind:style="{ background: 'black' }" />
-</div>
-`,
+        template: `<MockIcon class="${customClass}" v-bind:style="{ background: 'black' }" />`,
       });
 
-      // TODO: custom style should not override `style` from icon-helpers
-      expect(
-        getContainer()
-          .getAttribute('style')
-          .split(';')
-      ).toContain('background: black');
-
-      expect(getContainer().classList.contains('foo')).toBeTruthy();
+      expect(node.classList.contains(customClass)).toBe(true);
     });
 
-    it('should be focusable if an aria label and tab index is used', async () => {
-      const moduleSource = createModuleFromInfo(info);
-      const MockIconComponent = await getModuleFromString(moduleSource);
-      let testId = 'aria-label-only';
-
-      const getContainer = () =>
-        document.querySelector(`[data-test-id="${testId}"] > svg`);
-
-      const node = mountNode.appendChild(document.createElement('div'));
-      new Vue({
-        el: node,
+    it('should be focusable if aria-label and tabindex is used', async () => {
+      const label = 'custom-label';
+      const node = render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
-        template: `
-<div data-test-id="${testId}">
-  <MockIcon aria-label="Moci icon" />
-</div>
-`,
+        template: `<MockIcon aria-label="${label}" tabindex="0" />`,
       });
 
-      const ariaOnlyContainer = getContainer();
-      console.log(
-        'tab-only-container',
-        ariaOnlyContainer.getAttribute('aria-label')
-      );
-      expect(ariaOnlyContainer.getAttribute('aria-label')).toBeDefined();
-      ariaOnlyContainer.focus();
-      expect(document.activeElement === ariaOnlyContainer).toBe(false);
-
-      const node2 = mountNode.appendChild(document.createElement('div'));
-      testId = 'tab-index-only';
-      new Vue({
-        el: node2,
-        components: {
-          [MockIconComponent.name]: MockIconComponent,
-        },
-        template: `
-<div data-test-id="${testId}">
-  <MockIcon tabIndex="0" />
-</div>
-`,
-      });
-
-      const tabOnlyContainer = getContainer();
-      expect(tabOnlyContainer.getAttribute('aria-label')).toBeNull();
-      tabOnlyContainer.focus();
-      expect(document.activeElement === tabOnlyContainer).toBe(false);
-
-      const node3 = mountNode.appendChild(document.createElement('div'));
-      testId = 'tab-index-and-aria';
-      new Vue({
-        el: node3,
-        components: {
-          [MockIconComponent.name]: MockIconComponent,
-        },
-        template: `
-<div data-test-id="${testId}">
-  <MockIcon aria-label="Mock icon 2" tabIndex="0" />
-</div>
-`,
-      });
-
-      const tabAriaContainer = getContainer();
-      expect(tabAriaContainer.getAttribute('aria-label')).toBeDefined();
-      tabAriaContainer.focus();
-      expect(document.activeElement === tabAriaContainer).toBe(true);
+      expect(node.getAttribute('aria-label')).toBe(label);
+      expect(node.getAttribute('role')).toBe('img');
+      expect(node.getAttribute('tabindex')).toBe('0');
+      expect(node.getAttribute('focusable')).toBe('true');
     });
 
     it('should create a clickable component', async () => {
-      const moduleSource = createModuleFromInfo(info);
-      const MockIconComponent = await getModuleFromString(moduleSource);
-      const rootNode = mountNode.appendChild(document.createElement('div'));
       const onClick = jest.fn();
-      const testId = 'click-test';
-
-      new Vue({
-        el: rootNode,
+      const node = render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
-        template: `<MockIcon v-on:click="onClick" data-test-id="${testId}"/>`,
+        data: {
+          onClick,
+        },
+        template: `<MockIcon aria-label="custom-label" tabindex="0" v-on:click="onClick" />`,
       });
 
-      const container = document.querySelector(`[data-test-id="${testId}"]`);
-      const evObj = new Event('click');
-      container.dispatchEvent(evObj);
+      node.dispatchEvent(new MouseEvent('click'));
 
-      expect(onClick).toBeCalledTimes(1);
+      expect(onClick).toHaveBeenCalledTimes(1);
     });
   });
 });

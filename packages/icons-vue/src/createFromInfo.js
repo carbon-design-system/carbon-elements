@@ -52,31 +52,31 @@ function createComponentFromInfo(info) {
   return `{
   name: '${moduleName}',
   functional: true,
+  // We use title as the prop name as it is not a valid attribute for an SVG
+  // HTML element
+  props: ['title'],
   render(createElement, context) {
-    const { listeners, slots, data } = context;
-
+    const { children, data, listeners, props } = context;
     const attrs = getAttributes({
-      ...data.attrs,
       width: '${attrs.width}',
       height: '${attrs.height}',
       viewBox: '${attrs.viewBox}',
       preserveAspectRatio: 'xMidYMid meet',
-      xmlns: 'http://www.w3.org/2000/svg'
+      xmlns: 'http://www.w3.org/2000/svg',
+      // Special case here, we need to coordinate that we are using title,
+      // potentially, to get the right focus attributes
+      title: props.title,
+      ...data.attrs,
     });
     const svgData = {
       attrs,
       on: listeners,
-      class: {},
-      style: {
-        ...data.staticStyle,
-        ...data.style,
-      },
     };
 
-    const { title: titleSlot, default: defaultSlot } = slots();
-
     if (data.staticClass) {
-      svgData.class[data.staticClass] = true;
+      svgData.class = {
+        [data.staticClass]: true,
+      };
     }
 
     if (data.class) {
@@ -84,9 +84,9 @@ function createComponentFromInfo(info) {
     }
 
     return createElement('svg', svgData, [
-      titleSlot,
+      props.title && createElement('title', null, props.title),
       ${content.map(toString).join(', ')},
-      defaultSlot,
+      children,
     ]);
   },
 };`;
