@@ -126,9 +126,7 @@ describe('createFromInfo', () => {
         template: `<div data-test-id="${defaultTestId}"><MockIcon /></div>`,
       });
 
-      expect(getContainer(defaultTestId).getAttribute('focusable')).toBe(
-        'false'
-      );
+      expect(getContainer(defaultTestId).getAttribute('focusable')).toBeFalsy();
 
       new Vue({
         el: focusableNode,
@@ -182,6 +180,9 @@ describe('createFromInfo', () => {
       const node = mountNode.appendChild(document.createElement('div'));
       const testId = 'custom-styles';
 
+      const getContainer = () =>
+        document.querySelector(`[data-test-id="${testId}"] > svg`);
+
       new Vue({
         el: node,
         components: {
@@ -195,8 +196,104 @@ describe('createFromInfo', () => {
       });
 
       // TODO: custom style should not override `style` from icon-helpers
+      expect(
+        getContainer()
+          .getAttribute('style')
+          .split(';')
+      ).toContain('background: black');
+
+      expect(getContainer().classList.contains('foo')).toBeTruthy();
     });
 
-    it.todo('should be focusable if an aria label and tab index is used');
+    it('should be focusable if an aria label and tab index is used', async () => {
+      const moduleSource = createModuleFromInfo(info);
+      const MockIconComponent = await getModuleFromString(moduleSource);
+      let testId = 'aria-label-only';
+
+      const getContainer = () =>
+        document.querySelector(`[data-test-id="${testId}"] > svg`);
+
+      const node = mountNode.appendChild(document.createElement('div'));
+      new Vue({
+        el: node,
+        components: {
+          [MockIconComponent.name]: MockIconComponent,
+        },
+        template: `
+<div data-test-id="${testId}">
+  <MockIcon aria-label="Moci icon" />
+</div>
+`,
+      });
+
+      const ariaOnlyContainer = getContainer();
+      console.log(
+        'tab-only-container',
+        ariaOnlyContainer.getAttribute('aria-label')
+      );
+      expect(ariaOnlyContainer.getAttribute('aria-label')).toBeDefined();
+      ariaOnlyContainer.focus();
+      expect(document.activeElement === ariaOnlyContainer).toBe(false);
+
+      const node2 = mountNode.appendChild(document.createElement('div'));
+      testId = 'tab-index-only';
+      new Vue({
+        el: node2,
+        components: {
+          [MockIconComponent.name]: MockIconComponent,
+        },
+        template: `
+<div data-test-id="${testId}">
+  <MockIcon tabIndex="0" />
+</div>
+`,
+      });
+
+      const tabOnlyContainer = getContainer();
+      expect(tabOnlyContainer.getAttribute('aria-label')).toBeNull();
+      tabOnlyContainer.focus();
+      expect(document.activeElement === tabOnlyContainer).toBe(false);
+
+      const node3 = mountNode.appendChild(document.createElement('div'));
+      testId = 'tab-index-and-aria';
+      new Vue({
+        el: node3,
+        components: {
+          [MockIconComponent.name]: MockIconComponent,
+        },
+        template: `
+<div data-test-id="${testId}">
+  <MockIcon aria-label="Mock icon 2" tabIndex="0" />
+</div>
+`,
+      });
+
+      const tabAriaContainer = getContainer();
+      expect(tabAriaContainer.getAttribute('aria-label')).toBeDefined();
+      tabAriaContainer.focus();
+      expect(document.activeElement === tabAriaContainer).toBe(true);
+    });
+
+    it('should create a clickable component', async () => {
+      const moduleSource = createModuleFromInfo(info);
+      const MockIconComponent = await getModuleFromString(moduleSource);
+      const rootNode = mountNode.appendChild(document.createElement('div'));
+      const onClick = jest.fn();
+      const testId = 'click-test';
+
+      new Vue({
+        el: rootNode,
+        components: {
+          [MockIconComponent.name]: MockIconComponent,
+        },
+        template: `<MockIcon v-on:click="onClick" data-test-id="${testId}"/>`,
+      });
+
+      const container = document.querySelector(`[data-test-id="${testId}"]`);
+      const evObj = new Event('click');
+      container.dispatchEvent(evObj);
+
+      expect(onClick).toBeCalledTimes(1);
+    });
   });
 });

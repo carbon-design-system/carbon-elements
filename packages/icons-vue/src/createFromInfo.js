@@ -53,23 +53,15 @@ function createComponentFromInfo(info) {
   name: '${moduleName}',
   functional: true,
   render(createElement, context) {
-    const { props, listeners, slots, data } = context;
-    const {
-      width = '${attrs.width}',
-      height = '${attrs.height}',
-      viewBox = '${attrs.viewBox}',
-      preserveAspectRatio = 'xMidYMid meet',
-      xmlns = 'http://www.w3.org/2000/svg',
-      ...rest
-    } = props;
+    const { listeners, slots, data } = context;
 
     const attrs = getAttributes({
-      ...rest,
-      width,
-      height,
-      viewBox,
-      preserveAspectRatio,
-      xmlns
+      ...data.attrs,
+      width: '${attrs.width}',
+      height: '${attrs.height}',
+      viewBox: '${attrs.viewBox}',
+      preserveAspectRatio: 'xMidYMid meet',
+      xmlns: 'http://www.w3.org/2000/svg'
     });
     const svgData = {
       attrs,
