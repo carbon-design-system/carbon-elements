@@ -158,14 +158,21 @@ describe('createFromInfo', () => {
 
     it('should support custom class names', async () => {
       const customClass = 'foo';
+      const dynamicClass = 'bar';
       const node = render({
         components: {
           [MockIconComponent.name]: MockIconComponent,
         },
-        template: `<MockIcon class="${customClass}" v-bind:style="{ background: 'black' }" />`,
+        data() {
+          return {
+            myDynamicClass: dynamicClass,
+          };
+        },
+        template: `<MockIcon class="${customClass}" v-bind:class="myDynamicClass" />`,
       });
 
       expect(node.classList.contains(customClass)).toBe(true);
+      expect(node.classList.contains(dynamicClass)).toBe(true);
     });
 
     it('should be focusable if aria-label and tabindex is used', async () => {

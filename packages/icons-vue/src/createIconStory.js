@@ -55,12 +55,6 @@ storiesOf('${moduleName}', module)
       icon: ${moduleName},
     },
     template: \`<icon class="custom classes" :class="'dynamic classes_2'"></icon>\`,
-  }))
-  .add('with custom styles', () => ({
-    components: {
-      icon: ${moduleName},
-    },
-    template: \`<icon :style="{boxShadow: '0 0 5px blue'}" style="fill: red"></icon>\`,
   }));`;
 }
 
