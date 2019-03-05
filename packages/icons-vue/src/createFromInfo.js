@@ -71,15 +71,30 @@ function createComponentFromInfo(info) {
       preserveAspectRatio,
       xmlns
     });
-    return createElement('svg', {
+    const svgData = {
       attrs,
-      class: ((data.staticClass || '') + ' ' + (data.class || '')).trim(),
-      style: { ...data.staticStyle, ...data.style },
       on: listeners,
-    }, [
-      slots().title,
+      class: {},
+      style: {
+        ...data.staticStyle,
+        ...data.style,
+      },
+    };
+
+    const { title: titleSlot, default: defaultSlot } = slots();
+
+    if (data.staticClass) {
+      svgData.class[data.staticClass] = true;
+    }
+
+    if (data.class) {
+      svgData.class[data.class] = true;
+    }
+
+    return createElement('svg', svgData, [
+      titleSlot,
       ${content.map(toString).join(', ')},
-      slots().default,
+      defaultSlot,
     ]);
   },
 };`;
