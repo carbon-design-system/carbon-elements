@@ -18,6 +18,8 @@ command instead:
 yarn add @carbon/icons
 ```
 
+## Usage
+
 ## 🙌 Contributing
 
 We're always looking for contributors to help us fix bugs, build new
