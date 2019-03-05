@@ -4,12 +4,13 @@
 	 width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
-	.st1{fill:#FFFFFF;}
+	.st1{opacity:0;fill:#FFFFFF;}
 </style>
-<rect x="0" class="st0" width="24" height="24"/>
+<rect class="st0" width="24" height="24"/>
 <g>
-	<circle cx="12" cy="12" r="11"/>
-	<path class="st1" d="M10.6,17.5c0-0.7,0.7-1.4,1.3-1.4c0.7,0,1.4,0.7,1.4,1.4s-0.7,1.4-1.4,1.4C11.4,18.9,10.6,18.2,10.6,17.5z
-		 M11,14V8V5h2v3v6H11z"/>
+	<path d="M12,1C5.9,1,1,5.9,1,12s4.9,11,11,11s11-4.9,11-11S18.1,1,12,1z M11,8V5h2v3v6h-2V8z M11.9,18.9c-0.5,0-1.3-0.7-1.3-1.4
+		s0.7-1.4,1.3-1.4c0.7,0,1.4,0.7,1.4,1.4S12.6,18.9,11.9,18.9z"/>
+	<path id="inner-path" class="st1" d="M10.6,17.5c0-0.7,0.7-1.4,1.3-1.4c0.7,0,1.4,0.7,1.4,1.4s-0.7,1.4-1.4,1.4
+		C11.4,18.9,10.6,18.2,10.6,17.5z M11,14V8V5h2v3v6H11z"/>
 </g>
 </svg>
