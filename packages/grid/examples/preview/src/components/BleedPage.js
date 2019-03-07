@@ -6,20 +6,61 @@ import ExampleContent from './ExampleContent';
 export default function BleedPage() {
   return (
     <Main>
-      <Grid bleed padding>
-        <Row>
-          <Column breakpoint="md" span={4}>
-            <h1>Bleed example</h1>
-            <p>
-              This example shows how to apply the <code>.bx--grid--bleed</code>{' '}
-              class to collapse the gutters on each of the columns in the grid
-              context. We also apply <code>.bx--grid--padding</code> so that the
-              contents of each column have a set padding amount.
-            </p>
-          </Column>
-        </Row>
-        <ExampleContent />
-      </Grid>
+      <p>Default grid</p>
+      <div className="bx--grid">
+        <div className="bx--row">
+          <div className="bx--col">
+            <div className="outside">
+              <div className="inside">1/4</div>
+            </div>
+          </div>
+          <div className="bx--col">
+            <div className="outside">
+              <div className="inside">1/4</div>
+            </div>
+          </div>
+          <div className="bx--col">
+            <div className="outside">
+              <div className="inside">1/4</div>
+            </div>
+          </div>
+          <div className="bx--col">
+            <div className="outside">
+              <div className="inside">1/4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p>Grid with no gutter on left and text hang</p>
+      <div className="bx--grid">
+        <div className="bx--row bx--no-gutter--left">
+          <div className="bx--col">
+            <div style={{ backgroundColor: 'violet', height: '240px' }} />
+            <div className="outside">
+              <div className="bx--hang inside">1/4</div>
+            </div>
+          </div>
+          <div className="bx--col">
+            <div style={{ backgroundColor: 'violet', height: '240px' }} />
+            <div className="outside">
+              <div className="bx--hang inside">1/4</div>
+            </div>
+          </div>
+          <div className="bx--col">
+            <div style={{ backgroundColor: 'violet', height: '240px' }} />
+            <div className="outside">
+              <div className="bx--hang inside">1/4</div>
+            </div>
+          </div>
+          <div className="bx--col">
+            <div style={{ backgroundColor: 'violet', height: '240px' }} />
+            <div className="outside">
+              <div className="bx--hang inside">1/4</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </Main>
   );
 }

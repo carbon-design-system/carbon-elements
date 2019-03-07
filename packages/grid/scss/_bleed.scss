@@ -1,0 +1,33 @@
+//
+// Copyright IBM Corp. 2018, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@import '@carbon/layout/scss/breakpoint';
+@import 'prefix';
+
+.#{$prefix}--row.#{$prefix}--no-gutter [class*='#{$prefix}--col'] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.#{$prefix}--no-gutter--left,
+.#{$prefix}--row.#{$prefix}--no-gutter--left [class*='#{$prefix}--col'] {
+  padding-left: 0;
+}
+
+.#{$prefix}--no-gutter--right,
+.#{$prefix}--row.#{$prefix}--no-gutter--right [class*='#{$prefix}--col'] {
+  padding-right: 0;
+}
+
+.#{$prefix}--hang {
+  padding-left: ($carbon--grid-gutter / 2);
+}
+
+[dir='rtl'] .#{$prefix}--hang {
+  padding-left: initial;
+  padding-right: ($carbon--grid-gutter / 2);
+}

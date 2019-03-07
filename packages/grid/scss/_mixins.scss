@@ -1,0 +1,29 @@
+@import '@carbon/layout/scss/breakpoint';
+@import 'prefix';
+@import 'container';
+@import 'row';
+@import 'col';
+
+@mixin carbon--grid(
+  $breakpoints: $carbon--grid-breakpoints,
+  $grid-gutter: $carbon--grid-gutter
+) {
+  .#{$prefix}--grid {
+    @include carbon--make-container();
+  }
+
+  @include carbon--largest-breakpoint() {
+    .#{$prefix}--grid--full-width {
+      max-width: 100%;
+    }
+  }
+
+  .#{$prefix}--row {
+    @include carbon--make-row();
+  }
+
+  @include carbon--make-grid-columns(
+    $carbon--grid-breakpoints,
+    $carbon--grid-gutter
+  );
+}

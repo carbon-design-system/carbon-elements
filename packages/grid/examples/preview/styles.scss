@@ -29,17 +29,18 @@ h6 {
 }
 
 .outside {
-  background-color: #dbeaff;
+  // background-color: #dbeaff;
   outline: 1px solid #97c1ff;
-  height: 80px;
+  min-height: 80px;
 }
 
 .inside {
   background-color: #edf4ff;
-  height: 100%;
+  min-height: 80px;
 }
 
 [class*='col'] {
+  background-color: #dbeaff;
   outline: 1px dashed #97c1ff;
 }
 

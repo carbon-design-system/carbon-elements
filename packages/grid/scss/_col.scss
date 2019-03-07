@@ -21,32 +21,32 @@
 
   // Support the padding use-case for each columns. Idea is that each child in a
   // cell selector should have the default padding applied.
-  .#{$prefix}--grid--padding & > * {
-    padding: $carbon--grid-cell-padding;
-  }
+  // .#{$prefix}--grid--padding & > * {
+  // padding: $carbon--grid-cell-padding;
+  // }
 
   // When in a bleed grid, we collapse all gutters so each column is flat with
   // the each other.
-  .#{$prefix}--grid--bleed & {
-    padding-right: 0;
-    padding-left: 0;
-  }
+  // .#{$prefix}--grid--bleed & {
+  // padding-right: 0;
+  // padding-left: 0;
+  // }
 
   // For our condensed use-case, our gutters collapse to 2px solid, 1px on each
   // side.
-  .#{$prefix}--grid--condensed & {
-    padding-right: 1px;
-    padding-left: 1px;
-  }
+  // .#{$prefix}--grid--condensed & {
+  // padding-right: 1px;
+  // padding-left: 1px;
+  // }
 
-  .#{$prefix}--grid--padding.#{$prefix}--grid--hang & {
-    padding-left: 0;
-  }
+  // .#{$prefix}--grid--padding.#{$prefix}--grid--hang & {
+  // padding-left: 0;
+  // }
 
-  [dir='rtl'] .#{$prefix}--grid--padding.#{$prefix}--grid--hang & {
-    padding-right: 0;
-    padding-left: initial;
-  }
+  // [dir='rtl'] .#{$prefix}--grid--padding.#{$prefix}--grid--hang & {
+  // padding-right: 0;
+  // padding-left: initial;
+  // }
 }
 
 @mixin carbon--make-col($span, $columns) {
