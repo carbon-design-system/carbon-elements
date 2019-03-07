@@ -2,11 +2,10 @@ import prettify from 'prettify-xml';
 import Prism from 'prismjs';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
-import Main from './Main';
 
 export default function App() {
   return (
-    <Main>
+    <main>
       <div className="bx--grid">
         <div className="bx--row">
           <div className="bx--col">
@@ -77,7 +76,7 @@ export default function App() {
           ))}
         </section>
       ))}
-    </Main>
+    </main>
   );
 }
 
@@ -521,23 +520,43 @@ const sections = [
             </div>
             <div className="bx--row bx--no-gutter--left">
               <div className="bx--col">
-                <div className="outside">
-                  <div className="inside bx--hang--left">1/4</div>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <div className="bx--aspect-ratio--object image-example">
+                    Full width image
+                  </div>
+                </div>
+                <div className="outside bx--hang--left">
+                  <div className="inside">1/4</div>
                 </div>
               </div>
               <div className="bx--col">
-                <div className="outside">
-                  <div className="inside bx--hang--left">1/4</div>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <div className="bx--aspect-ratio--object image-example">
+                    Full width image
+                  </div>
+                </div>
+                <div className="outside bx--hang--left">
+                  <div className="inside">1/4</div>
                 </div>
               </div>
               <div className="bx--col">
-                <div className="outside">
-                  <div className="inside bx--hang--left">1/4</div>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <div className="bx--aspect-ratio--object image-example">
+                    Full width image
+                  </div>
+                </div>
+                <div className="outside bx--hang--left">
+                  <div className="inside">1/4</div>
                 </div>
               </div>
               <div className="bx--col">
-                <div className="outside">
-                  <div className="inside bx--hang--left">1/4</div>
+                <div className="bx--aspect-ratio bx--aspect-ratio--1x1">
+                  <div className="bx--aspect-ratio--object image-example">
+                    Full width image
+                  </div>
+                </div>
+                <div className="outside bx--hang--left">
+                  <div className="inside">1/4</div>
                 </div>
               </div>
             </div>

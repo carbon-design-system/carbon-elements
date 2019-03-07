@@ -62,6 +62,16 @@ article {
   background-color: #171717;
 }
 
+// Hang
+.image-example {
+  background-color: #171717;
+  color: white;
+}
+
+.bx--aspect-ratio + .outside {
+  height: initial;
+}
+
 // Prismjs highlight CSS
 code[class*='language-'],
 pre[class*='language-'] {
