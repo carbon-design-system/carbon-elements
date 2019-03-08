@@ -134,22 +134,22 @@ const sections = [
             <div className="bx--row">
               <div className="bx--col-sm-1 bx--col-md-2 bx--col-lg-4">
                 <div className="outside">
-                  <div className="inside">1</div>
+                  <div className="inside">Content</div>
                 </div>
               </div>
               <div className="bx--col-sm-1 bx--col-md-2 bx--col-lg-6">
                 <div className="outside">
-                  <div className="inside">1</div>
+                  <div className="inside">Content</div>
                 </div>
               </div>
               <div className="bx--col-sm-1 bx--col-md-2 bx--col-lg-4">
                 <div className="outside">
-                  <div className="inside">1</div>
+                  <div className="inside">Content</div>
                 </div>
               </div>
               <div className="bx--col-sm-1 bx--col-md-2 bx--col-lg-2">
                 <div className="outside">
-                  <div className="inside">1</div>
+                  <div className="inside">Content</div>
                 </div>
               </div>
             </div>
@@ -336,17 +336,17 @@ const sections = [
                   <div className="inside">1</div>
                 </div>
               </div>
-              <div className="bx--col">
+              <div className="bx--col bx--no-gutter">
                 <div className="outside">
                   <div className="inside">1</div>
                 </div>
               </div>
-              <div className="bx--col">
+              <div className="bx--col bx--no-gutter">
                 <div className="outside">
                   <div className="inside">1</div>
                 </div>
               </div>
-              <div className="bx--col">
+              <div className="bx--col bx--no-gutter">
                 <div className="outside">
                   <div className="inside">1</div>
                 </div>
