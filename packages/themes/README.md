@@ -41,7 +41,7 @@ By default, the white theme will be initialized. If you would like to include
 another theme, you can do so by calling our mixin. For example:
 
 ```scss
-@import '@carbon/themes/scss/themes';
+@import '@carbon/themes/scss/mixins';
 
 // Call the gray 10 theme
 @include carbon--theme('g10');
@@ -59,7 +59,7 @@ passing in a theme name.
 ```scss
 $carbon--theme: 'g10';
 
-@import '@carbon/themes/scss/themes';
+@import '@carbon/themes/scss/mixins';
 
 // Call the gray 10 theme
 @include carbon--theme;
