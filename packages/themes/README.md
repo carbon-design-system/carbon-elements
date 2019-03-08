@@ -23,7 +23,7 @@ yarn add @carbon/themes
 You can use `@carbon/themes` in JavaScript or Sass by including this package in
 your project. By default, `@carbon/themes` provides a set of color tokens that
 are pre-defined for a specific theme. Currently, we offer the following color
-themes: white, gray 10, gray 90, gray 100
+themes: white, gray 10, gray 90, gray 100.
 
 You can preview all of the token values for this on the [Carbon Design System
 website](https://next.carbondesignsystem.com/guidelines/color/usage).
@@ -38,19 +38,47 @@ corresponding default theme by writing the following in your Sass file:
 ```
 
 By default, the white theme will be initialized. If you would like to include
-another theme, you can do so by calling one of our theme mixins. For example:
+another theme, you can do so by calling our mixin. For example:
 
 ```scss
 @import '@carbon/themes/scss/themes';
 
 // Call the gray 10 theme
-@include carbon--theme-g10();
+@include carbon--theme('g10');
 
 // Call the gray 90 theme
-@include carbon--theme-g90();
+@include carbon--theme('g90');
 
 // Call the gray 100 theme
-@include carbon--theme-g100();
+@include carbon--theme('g100');
+```
+
+Alternatively, you can set the global theme variable then call the mixin without
+passing in a theme name.
+
+```scss
+$carbon--theme: 'g10';
+
+@import '@carbon/themes/scss/themes';
+
+// Call the gray 10 theme
+@include carbon--theme;
+```
+
+We also provide an overrides mixin for if you need to reassign theme variables
+after they have been initialized. The variables in the overrides mixin omit the
+`!default` keyword used in the primary mixin. For example:
+
+```scss
+@import '@carbon/themes/scss/themes';
+
+// Use the default white theme here
+
+.my-dark-theme {
+  @include carbon--theme-overrides('g90');
+
+  // Use the dark theme here
+}
 ```
 
 ### JavaScript
