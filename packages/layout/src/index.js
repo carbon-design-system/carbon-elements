@@ -5,33 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+export * from './convert';
+export * from './mini-unit';
 export * from './spacing';
-
-// Convert
-// Default, Use with em() and rem() functions
-export const baseFontSize = 16;
-
-/**
- * Convert a given px unit to a rem unit
- * @param {number} px
- * @returns {string}
- */
-export function rem(px) {
-  return `${px / baseFontSize}rem`;
-}
-
-/**
- * Convert a given px unit to a em unit
- * @param {number} px
- * @returns {string}
- */
-export function em(px) {
-  return `${px / baseFontSize}em`;
-}
-
-export function px(value) {
-  return `${value}px`;
-}
 
 // Breakpoint
 // Initial map of our breakpoints and their values
@@ -62,10 +38,3 @@ export const breakpoints = {
     margin: rem(16),
   },
 };
-
-// Mini-unit
-export const miniUnit = 8;
-
-export function miniUnits(count) {
-  return rem(miniUnit * count);
-}
