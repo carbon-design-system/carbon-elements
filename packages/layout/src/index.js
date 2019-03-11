@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+export * from './spacing';
+
 // Convert
 // Default, Use with em() and rem() functions
 export const baseFontSize = 16;
@@ -61,37 +63,9 @@ export const breakpoints = {
   },
 };
 
-export function breakpointUp(name) {
-  return `@media (min-width: ${breakpoints[name].width})`;
-}
-
-export function breakpointDown(name) {
-  return `@media (max-width: ${breakpoints[name].width})`;
-}
-
-export function breakpoint(...args) {
-  return breakpointUp(...args);
-}
-
 // Mini-unit
 export const miniUnit = 8;
+
 export function miniUnits(count) {
   return rem(miniUnit * count);
 }
-
-// Spacing
-// Supports 0, 2px, 4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px, 80px, 96px
-export const spacing = [
-  0,
-  miniUnits(0.25),
-  miniUnits(0.5),
-  miniUnits(1),
-  miniUnits(1.5),
-  miniUnits(2),
-  miniUnits(3),
-  miniUnits(4),
-  miniUnits(6),
-  miniUnits(8),
-  miniUnits(10),
-  miniUnits(12),
-];
