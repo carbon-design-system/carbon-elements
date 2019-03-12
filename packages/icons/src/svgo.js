@@ -118,9 +118,9 @@ const plugins = [
   {
     removeEditorsNSData: true,
   },
-  // {
-  // removeEmptyAttrs: true,
-  // },
+  {
+    removeEmptyAttrs: true,
+  },
   {
     removeHiddenElems: {
       // Special case where we don't want to ignore nodes with `opacity="0"`
@@ -198,7 +198,7 @@ const plugins = [
   {
     // Remove any ids or data attributes that are included in SVG source files.
     removeAttrs: {
-      attrs: ['class', 'fill'],
+      attrs: ['class', 'data-name', 'fill'],
     },
   },
 ];
