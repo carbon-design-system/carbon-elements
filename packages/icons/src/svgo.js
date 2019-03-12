@@ -67,10 +67,10 @@ const plugins = [
         if (item.attr('id', 'inner-path')) {
           item.removeAttr('id');
           item.addAttr({
-            name: 'data-icon',
+            name: 'data-icon-path',
             value: 'inner-path',
             prefix: '',
-            local: 'data-icon',
+            local: 'data-icon-path',
           });
         }
         return item;
