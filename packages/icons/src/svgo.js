@@ -60,6 +60,24 @@ const plugins = [
     },
   },
   {
+    addInnerPath: {
+      type: 'perItem',
+      description: 'map the inner-path id to a corresponding data attribute',
+      fn(item) {
+        if (item.attr('id', 'inner-path')) {
+          item.removeAttr('id');
+          item.addAttr({
+            name: 'data-icon',
+            value: 'inner-path',
+            prefix: '',
+            local: 'data-icon',
+          });
+        }
+        return item;
+      },
+    },
+  },
+  {
     inlineStyles: {
       onlyMatchedOnce: false,
       removeMatchedSelectors: true,
@@ -100,9 +118,9 @@ const plugins = [
   {
     removeEditorsNSData: true,
   },
-  {
-    removeEmptyAttrs: true,
-  },
+  // {
+  // removeEmptyAttrs: true,
+  // },
   {
     removeHiddenElems: {
       // Special case where we don't want to ignore nodes with `opacity="0"`
@@ -180,7 +198,7 @@ const plugins = [
   {
     // Remove any ids or data attributes that are included in SVG source files.
     removeAttrs: {
-      attrs: ['class', 'data-name', 'fill'],
+      attrs: ['class', 'fill'],
     },
   },
 ];
