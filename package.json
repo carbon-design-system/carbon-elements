@@ -24,7 +24,6 @@
     "format:staged": "prettier --write",
     "lint": "toolkit lint .",
     "lint:styles": "stylelint \"**/*.{css,scss}\" --config ./packages/stylelint-config-elements",
-    "lint:styles:staged": "stylelint --config ./packages/stylelint-config-elements",
     "sync": "node tasks/sync.js",
     "test": "jest",
     "test:e2e": "jest --testPathPattern=e2e --testPathIgnorePatterns=examples"
