@@ -4,11 +4,11 @@
 	 width="16px" height="16px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;}
-	.st1{opacity:0;fill:#FFFFFF;fill-opacity:0;}
+	.st1{fill:#FFFFFF;fill-opacity:0;}
 </style>
 <rect id="Transparent_Rectangle" class="st0" width="16" height="16"/>
-<path id="Compound_Path" d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7C15,4.1,11.9,1,8,1z M7.4,4h1.1v5H7.4V4z M8,12.2
-	c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8S8.4,12.2,8,12.2z"/>
+<path id="Compound_Path" d="M8,1C4.1,1,1,4.1,1,8s3.1,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1V4z M8,12.3c-0.4,0-0.8-0.3-0.8-0.8
+	s0.3-0.8,0.8-0.8c0.5,0,0.8,0.3,0.8,0.8S8.4,12.3,8,12.3z"/>
 <path id="inner-path" class="st1" d="M8.8,11.5c0,0.4-0.3,0.8-0.8,0.8c-0.4,0-0.8-0.3-0.8-0.8s0.3-0.8,0.8-0.8
-	C8.4,10.8,8.8,11.1,8.8,11.5z M8.6,4H7.4v5h1.1V4z"/>
+	C8.5,10.7,8.8,11.1,8.8,11.5z M8.5,4h-1v5h1V4L8.5,4z"/>
 </svg>
