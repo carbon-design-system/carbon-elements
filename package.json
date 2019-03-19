@@ -149,7 +149,12 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ],
     "watchPathIgnorePatterns": [
-      "examples"
+      "/cjs/",
+      "/dist/",
+      "/es/",
+      "/examples/",
+      "/lib/",
+      "/storybook/"
     ]
   }
 }
