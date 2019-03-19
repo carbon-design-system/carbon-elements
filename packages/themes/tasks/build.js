@@ -109,15 +109,11 @@ async function build() {
   themeMixin += '\n';
   themeMixin += '}';
 
-  let themeMixinAlias = `@mixin theme($args...) {`;
-  themeMixinAlias += '\n';
-  themeMixinAlias += '  @include carbon--theme($args...) {';
-  themeMixinAlias += '\n';
-  themeMixinAlias += '    @content;';
-  themeMixinAlias += '\n';
-  themeMixinAlias += '  }';
-  themeMixinAlias += '\n';
-  themeMixinAlias += '}';
+  let themeMixinAlias = `@mixin theme($args...) {
+  @include carbon--theme($args..) {
+    @content;
+  }
+}`;
 
   // Files
   const variables = `${FILE_BANNER}
