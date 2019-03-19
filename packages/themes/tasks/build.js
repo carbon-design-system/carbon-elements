@@ -110,7 +110,7 @@ async function build() {
   themeMixin += '}';
 
   let themeMixinAlias = `@mixin theme($args...) {
-  @include carbon--theme($args..) {
+  @include carbon--theme($args...) {
     @content;
   }
 }`;
