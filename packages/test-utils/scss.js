@@ -174,4 +174,5 @@ module.exports = {
   convert,
   createSassRenderer,
   createImporter,
+  types,
 };
