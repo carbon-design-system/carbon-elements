@@ -59,7 +59,7 @@ async function build() {
 
   const deprecatedColorVariables = colorValues.map(
     ({ grade, swatch, value }) => {
-      return `$ibm-color__${swatch}-${grade}: ${value} !default !global;`;
+      return `$ibm-colors__${swatch}-${grade}: ${value} !default !global;`;
     }
   );
 
