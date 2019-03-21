@@ -6,8 +6,6 @@
 // LICENSE file in the root directory of this source tree.
 //
 
-@import './theme';
-
 $carbon--theme--white: (
   interactive-01: #0062ff,
   interactive-02: #171717,
@@ -62,7 +60,6 @@ $carbon--theme--white: (
   active-01: #bebebe,
   hover-field: #e5e5e5,
 ) !default !global;
-$theme--white: $carbon--theme--white;
 
 $carbon--theme--g10: (
   interactive-01: #0062ff,
@@ -118,7 +115,6 @@ $carbon--theme--g10: (
   active-01: #bebebe,
   hover-field: #e5e5e5,
 ) !default !global;
-$theme--g10: $carbon--theme--g10;
 
 $carbon--theme--g90: (
   interactive-01: #0062ff,
@@ -174,7 +170,6 @@ $carbon--theme--g90: (
   active-01: #6f6f6f,
   hover-field: #353535,
 ) !default !global;
-$theme--g90: $carbon--theme--g90;
 
 $carbon--theme--g100: (
   interactive-01: #0062ff,
@@ -230,56 +225,5 @@ $carbon--theme--g100: (
   active-01: #565656,
   hover-field: #353535,
 ) !default !global;
-$theme--g100: $carbon--theme--g100;
 
-$interactive-01: map-get($carbon--theme, interactive-01) !default !global;
-$interactive-02: map-get($carbon--theme, interactive-02) !default !global;
-$interactive-03: map-get($carbon--theme, interactive-03) !default !global;
-$ui-background: map-get($carbon--theme, ui-background) !default !global;
-$ui-01: map-get($carbon--theme, ui-01) !default !global;
-$ui-02: map-get($carbon--theme, ui-02) !default !global;
-$ui-03: map-get($carbon--theme, ui-03) !default !global;
-$ui-04: map-get($carbon--theme, ui-04) !default !global;
-$ui-05: map-get($carbon--theme, ui-05) !default !global;
-$text-01: map-get($carbon--theme, text-01) !default !global;
-$text-02: map-get($carbon--theme, text-02) !default !global;
-$text-03: map-get($carbon--theme, text-03) !default !global;
-$text-04: map-get($carbon--theme, text-04) !default !global;
-$icon-01: map-get($carbon--theme, icon-01) !default !global;
-$icon-02: map-get($carbon--theme, icon-02) !default !global;
-$field-01: map-get($carbon--theme, field-01) !default !global;
-$field-02: map-get($carbon--theme, field-02) !default !global;
-$inverse-01: map-get($carbon--theme, inverse-01) !default !global;
-$inverse-02: map-get($carbon--theme, inverse-02) !default !global;
-$support-01: map-get($carbon--theme, support-01) !default !global;
-$support-02: map-get($carbon--theme, support-02) !default !global;
-$support-03: map-get($carbon--theme, support-03) !default !global;
-$support-04: map-get($carbon--theme, support-04) !default !global;
-$overlay-01: map-get($carbon--theme, overlay-01) !default !global;
-$focus: map-get($carbon--theme, focus) !default !global;
-$hover-primary: map-get($carbon--theme, hover-primary) !default !global;
-$active-primary: map-get($carbon--theme, active-primary) !default !global;
-$hover-primary-text: map-get(
-  $carbon--theme,
-  hover-primary-text
-) !default !global;
-$hover-secondary: map-get($carbon--theme, hover-secondary) !default !global;
-$active-secondary: map-get($carbon--theme, active-secondary) !default !global;
-$hover-tertiary: map-get($carbon--theme, hover-tertiary) !default !global;
-$active-tertiary: map-get($carbon--theme, active-tertiary) !default !global;
-$hover-ui: map-get($carbon--theme, hover-ui) !default !global;
-$active-ui: map-get($carbon--theme, active-ui) !default !global;
-$selected-ui: map-get($carbon--theme, selected-ui) !default !global;
-$hover-selected-ui: map-get($carbon--theme, hover-selected-ui) !default !global;
-$hover-danger: map-get($carbon--theme, hover-danger) !default !global;
-$active-danger: map-get($carbon--theme, active-danger) !default !global;
-$hover-row: map-get($carbon--theme, hover-row) !default !global;
-$visited-link: map-get($carbon--theme, visited-link) !default !global;
-$disabled-01: map-get($carbon--theme, disabled-01) !default !global;
-$disabled-02: map-get($carbon--theme, disabled-02) !default !global;
-$disabled-03: map-get($carbon--theme, disabled-03) !default !global;
-$brand-01: map-get($carbon--theme, brand-01) !default !global;
-$brand-02: map-get($carbon--theme, brand-02) !default !global;
-$brand-03: map-get($carbon--theme, brand-03) !default !global;
-$active-01: map-get($carbon--theme, active-01) !default !global;
-$hover-field: map-get($carbon--theme, hover-field) !default !global;
+$carbon--theme: $carbon--theme--white !default !global;
