@@ -16,15 +16,15 @@ const { formatTokenName, themes, tokens } = require('../src');
 const render = createSassRenderer(__dirname);
 
 describe('themes.scss', () => {
-  describe('_variables.scss', () => {
+  describe('_maps.scss', () => {
     it('should export all themes as sass maps', async () => {
-      const themeVariableTests = Object.keys(themes).map(theme => {
+      const themeMapsTests = Object.keys(themes).map(theme => {
         return `$t: test(global-variable-exists(carbon--theme--${theme}));`;
       });
       const { calls } = await render(`
-@import '../scss/variables';
+@import '../scss/maps';
 
-${themeVariableTests.join('\n')}
+${themeMapsTests.join('\n')}
 `);
 
       for (const call of calls) {
@@ -49,12 +49,11 @@ ${themeVariableTests.join('\n')}
   });
 
   describe('_mixins.scss', () => {
-    it('should export a carbon--theme mixin and its alias', async () => {
+    it('should export a carbon--theme mixin', async () => {
       const { calls } = await render(`
 @import '../scss/mixins';
 
 $t: test(mixin-exists(carbon--theme));
-$t: test(mixin-exists(theme));
 `);
 
       for (const call of calls) {
@@ -66,7 +65,7 @@ $t: test(mixin-exists(theme));
       const themeTests = Object.keys(themes).map(key => {
         const variable = `$carbon--theme--${key}`;
         const test = `
-@include theme(${variable}) {
+@include carbon--theme(${variable}) {
   $t: test($interactive-01);
 }
 `;
@@ -95,7 +94,7 @@ $custom-theme: map-merge($carbon--theme--white, (
 
 $t: test($interactive-01);
 
-@include theme($custom-theme) {
+@include carbon--theme($custom-theme) {
   $t: test($interactive-01);
 }
 
