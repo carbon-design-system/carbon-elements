@@ -23,8 +23,7 @@ yarn add @carbon/themes
 You can use `@carbon/themes` in JavaScript or Sass by including this
 package in your project. By default, `@carbon/themes` provides a set
 of color tokens that are pre-defined for a specific theme. Currently,
-we offer the following color themes: white, gray 10, gray 90, gray
-100\.
+we offer the following color themes: white, gray 10, gray 90, gray 100.
 
 You can preview all of the token values for this on the [Carbon Design
 System website](https://next.carbondesignsystem.com/guidelines/color/usage)
@@ -45,34 +44,31 @@ include another theme, you can do so by calling our mixin. For
 example:
 
 ```scss
-@import '@carbon/themes/scss/mixins';
+@import '@carbon/themes/scss/themes';
 
-// Call the gray 10 theme
-@include carbon--theme('g10');
+// Use the gray 10 theme
+@include carbon--theme($carbon--theme--g10);
 
-// Call the gray 90 theme
-@include carbon--theme('g90');
+// Use the gray 90 theme
+@include carbon--theme($carbon--theme--g90);
 
-// Call the gray 100 theme
-@include carbon--theme('g100');
+// Use the gray 100 theme
+@include carbon--theme($carbon--theme--g100);
 ```
 
 Alternatively, you can set the global theme variable then call the
 mixin without passing in a theme name.
 
 ```scss
-$carbon--theme: 'g10';
+@import '@carbon/themes/scss/themes';
 
-@import '@carbon/themes/scss/mixins';
+$carbon--theme: $carbon--theme--g10;
 
-// Call the gray 10 theme
-@include carbon--theme;
+// Use the gray 10 theme
+@include carbon--theme();
 ```
 
-We also provide an overrides mixin for if you need to reassign theme
-variables after they have been initialized. The variables in the
-overrides mixin omit the `!default` keyword used in the primary mixin.
-For example:
+Inline theming can be done by using the mixin. For example:
 
 ```scss
 @import '@carbon/themes/scss/themes';
@@ -80,9 +76,15 @@ For example:
 // Use the default white theme here
 
 .my-dark-theme {
-  @include carbon--theme-overrides('g90');
+  @include carbon--theme($carbon--theme--g90) {
+    // Use the dark theme here
+  }
+}
 
-  // Use the dark theme here
+.my-darker-theme {
+  @include carbon--theme($carbon--theme--g100) {
+    // Use the darker theme here
+  }
 }
 ```
 

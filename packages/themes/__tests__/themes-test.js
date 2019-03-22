@@ -16,13 +16,13 @@ const { formatTokenName, themes, tokens } = require('../src');
 const render = createSassRenderer(__dirname);
 
 describe('themes.scss', () => {
-  describe('_maps.scss', () => {
+  describe('_variables.scss', () => {
     it('should export all themes as sass maps', async () => {
       const themeMapsTests = Object.keys(themes).map(theme => {
         return `$t: test(global-variable-exists(carbon--theme--${theme}));`;
       });
       const { calls } = await render(`
-@import '../scss/maps';
+@import '../scss/variables';
 
 ${themeMapsTests.join('\n')}
 `);
