@@ -71,6 +71,12 @@ function createSassRenderer(cwd) {
     const mockError = jest.fn(() => types.Null());
     const log = jest.fn(() => types.Null());
     const debug = jest.fn(() => types.Null());
+    const output = {
+      debug,
+      error: mockError,
+      log,
+      warn,
+    };
     let result;
     let renderError;
 
@@ -103,11 +109,9 @@ function createSassRenderer(cwd) {
       calls,
       result,
       error: renderError,
-      output: {
-        debug,
-        error: mockError,
-        log,
-        warn,
+      output,
+      getOutput(level = 'debug') {
+        return output[level].mock.calls.map(call => convert(call[0])).join('\n');
       },
     };
   };
