@@ -61,6 +61,7 @@ function createImporter(cwd) {
  * Create a sass renderer for the given current working directory. Setting `cwd`
  * is useful so that we can resolve sass files relative to the test file.
  * @param {string} cwd
+ * @param {string} initialData - optional string to prefix each render call
  * @return {Function}
  */
 function createSassRenderer(cwd, initialData = '') {
