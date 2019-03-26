@@ -1,13 +1,10 @@
 {
-  "name": "@carbon/pictograms",
-  "private": true,
-  "description": "Pictograms for digital and software products using the Carbon Design System",
+  "name": "@carbon/test-utils",
   "version": "0.0.1-beta.5",
   "license": "Apache-2.0",
-  "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/pictograms",
+  "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/test-utils",
   "bugs": "https://github.com/IBM/carbon-elements/issues",
   "keywords": [
-    "pictograms",
     "ibm",
     "elements",
     "carbon",
@@ -16,5 +13,11 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
   }
 }
