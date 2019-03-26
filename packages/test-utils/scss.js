@@ -112,7 +112,9 @@ function createSassRenderer(cwd, initialData = '') {
       error: renderError,
       output,
       getOutput(level = 'debug') {
-        return output[level].mock.calls.map(call => convert(call[0])).join('\n');
+        return output[level].mock.calls
+          .map(call => convert(call[0]))
+          .join('\n');
       },
     };
   };
