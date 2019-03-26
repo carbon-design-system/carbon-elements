@@ -63,7 +63,7 @@ function createImporter(cwd) {
  * @param {string} cwd
  * @return {Function}
  */
-function createSassRenderer(cwd) {
+function createSassRenderer(cwd, initialData = '') {
   const importer = createImporter(cwd);
   return async data => {
     const calls = [];
@@ -82,7 +82,7 @@ function createSassRenderer(cwd) {
 
     try {
       result = await sassAsync({
-        data,
+        data: [initialData, data].join('\n'),
         importer,
         functions: {
           '@error': mockError,
