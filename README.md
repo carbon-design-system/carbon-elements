@@ -16,22 +16,15 @@ Carbon elements is a collection of packages that enable developers to use the
 IBM Design Language in code. We current offer the following packages that you
 can start using today:
 
-- [`@carbon/colors`](./packages/colors) for working with colors like Blue 50
-- [`@carbon/grid`](./packages/grid) for building layouts using the new 16 column
-  grid system
-- [`@carbon/icons`](./packages/icons) for working with iconography assets. We also
-  offer support for icons in a variety of frameworks, including:
-  - [React](./packages/icons-react)
-  - [Angular](./packages/icons-angular)
-  - [Vue](./packages/icons-vue)
-- [`@carbon/layout`](./packages/layout) for working with new layout-based units
-  and our spacing scale
-- [`@carbon/motion`](./packages/motion) for working with productive and
-  expressive motion curves
-- [`@carbon/themes`](./packages/themes) for working with the color tokens
-  available in the Carbon Design System, like `$interactive-01`
-- [`@carbon/type`](./packages/type) for working with the new type tokens
-  alongside IBM Plex
+| Package name                          | Description                                                                                                                                         |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@carbon/colors`](./packages/colors) | Working with colors like Blue 50                                                                                                                    |
+| [`@carbon/grid`](./packages/grid)     | Building layouts using the new 16 column grid system                                                                                                |
+| [`@carbon/icons`](./packages/icons)   | Rconography assets. We also offer support in: [React](./packages/icons-react), [Angular](./packages/icons-angular), and [Vue](./packages/icons-vue) |
+| [`@carbon/layout`](./packages/layout) | Layout-based units and spacing scale                                                                                                                |
+| [`@carbon/motion`](./packages/motion) | Productive and expressive motion curves                                                                                                             |
+| [`@carbon/themes`](./packages/themes) | Color tokens available in the Carbon Design System, like `$interactive-01`                                                                          |
+| [`@carbon/type`](./packages/type)     | New type tokens used alongside IBM Plex                                                                                                             |
 
 While you can use each package individually if you would like, we also offer a
 bundled version of these packages in [`@carbon/elements`](./packages/elements).
