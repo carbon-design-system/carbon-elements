@@ -45,8 +45,12 @@ async function build() {
   const themeMaps = Object.keys(themes)
     .map(name => {
       const theme = themes[name];
-      let scssMap = `$carbon--theme--${name}: (`;
-      scssMap += '\n';
+      let scssMap = `/// Carbon's ${name} color theme
+/// @type Map
+/// @access public
+/// @group @carbon/themes
+/// @since v10.0.x
+$carbon--theme--${name}: (\n`;
 
       for (const key of Object.keys(theme)) {
         const name = formatTokenName(key);
@@ -65,9 +69,12 @@ async function build() {
   // Create carbon--theme mixin, takes a theme as input and assigns all theme
   // variables using the `!global` flag before resetting at the end of the
   // function block
-  let themeMixin = `/// Define theme variables
+  let themeMixin = `/// Define theme variables from a map of tokens
 /// @access public
-/// @param {Map} $theme - map of theme tokens
+/// @param {Map} $theme [${defaultThemeMapName}] - map of theme tokens
+/// @content Pass in your custom declaration blocks to be used after the token maps sets theming variables.
+/// @group @carbon/themes
+/// @since v10.0.x
 @mixin carbon--theme($theme: ${defaultThemeMapName}) {\n`;
 
   // Initialize variables in mixin with !default flag
@@ -105,6 +112,12 @@ ${themeMixin}`;
   const themeMapsFile = `${FILE_BANNER}
 ${themeMaps}
 
+/// Carbon's default theme
+/// @type Map
+/// @access public
+/// @alias carbon--theme--${defaultTheme}
+/// @group @carbon/themes
+/// @since v10.0.x
 ${defaultThemeMapName}: $carbon--theme--${defaultTheme} !default;
 `;
 
