@@ -72,7 +72,7 @@ $carbon--theme--${name}: (\n`;
   let themeMixin = `/// Define theme variables from a map of tokens
 /// @access public
 /// @param {Map} $theme [${defaultThemeMapName}] - map of theme tokens
-/// @content Pass in your custom declaration blocks to be used after the token maps sets theming variables.
+/// @content Pass in your custom declaration blocks to be used after the token maps set theming variables.
 /// @group @carbon/themes
 /// @since v10.0.x
 @mixin carbon--theme($theme: ${defaultThemeMapName}) {\n`;

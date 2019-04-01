@@ -69,6 +69,7 @@ $${item.context.name}: ${snippet};
   // Parameters
   if (item.parameter && item.parameter.length) {
     str += `
+**Parameters**:
 
 | Name | Description | Type | Default value |
 | --- | --- | --- | --- |`;
