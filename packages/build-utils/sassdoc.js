@@ -35,6 +35,35 @@ function createJsonFile(source, filename, config) {
 }
 
 /**
+ * Create a unique Sassdoc item name
+ * @param {string} name - Sassdoc name
+ * @param {string} type - Sassdoc type (e.g. `variable`, `mixin`)
+ * @return {string} unique Sassdoc item name
+ */
+function createUniqueName(name, type) {
+  return `${name} [${type}]`;
+}
+
+/**
+ * Create GitHub-flavored markdown anchor link
+ * @param {string} name - anchor value
+ * @param {string} heading - anchor link destination
+ * @return {string} markdown anchor
+ */
+function createAnchorLink(name, heading) {
+  const anchorLink = heading
+    .toLowerCase()
+    .replace(/ /g, '-')
+    .replace(/[`~!@#$%^&*()+=<>?,./:;"'|{}\[\]\\–—]/g, '')
+    .replace(
+      /[　。？！，、；：“”【】（）〔〕［］﹃﹄“”‘’﹁﹂—…－～《》〈〉「」]/g,
+      ''
+    );
+
+  return `[${name}](#${anchorLink})`;
+}
+
+/**
  * Create markdown for Sassdoc item (function, mixin, placeholder, variable)
  * @param {string} item - Sassdoc item
  * @return {string} item in markdown formatting
@@ -44,31 +73,36 @@ function createMarkdownItem(item) {
 
   if (!item.context) return '';
 
-  // Group
-  const group =
-    !item.group[0] || item.group[0] === 'undefined' ? 'general' : item.group[0];
-
   // Name
-  str += `\n\n## ${item.context.name} (${group} ${item.context.type})`;
+  str += `\n\n### ${createUniqueName(item.context.name, item.context.type)}`;
 
   // Description
   if (item.description) {
     str += `\n\n${item.description.trim()}`;
   }
 
-  // Value
-  const snippet = item.context.value ? item.context.value : item.context.code;
-  if (snippet) {
+  // Value (variables)
+  if (item.context.value) {
     str += `
 
 \`\`\`scss
-$${item.context.name}: ${snippet};
+$${item.context.name}: ${item.context.value};
+\`\`\``;
+  }
+
+  // Code (mixins)
+  if (item.context.code) {
+    str += `
+
+\`\`\`scss
+$${item.context.name}: {${item.context.code}}
 \`\`\``;
   }
 
   // Parameters
   if (item.parameter && item.parameter.length) {
     str += `
+
 **Parameters**:
 
 | Name | Description | Type | Default value |
@@ -77,10 +111,25 @@ $${item.context.name}: ${snippet};
     item.parameter.forEach(param => {
       const paramDefault = param.default || '—';
 
-      str += `\n| \`$${param.name}\` | \`${param.description}\` | \`${
+      str += `\n| \`$${param.name}\` | ${param.description} | \`${
         param.type
       }\` | \`${paramDefault}\` |`;
     });
+  }
+
+  // Example
+  if (item.example && item.example.length) {
+    str += `\n\n**Example**:`;
+
+    if (item.example[0].description) {
+      str += ` ${item.example[0].description}`;
+    }
+
+    str += `
+
+\`\`\`${item.example[0].type}
+${item.example[0].code}
+\`\`\``;
   }
 
   // Bullets
@@ -126,7 +175,10 @@ $${item.context.name}: ${snippet};
     let subbullets = '';
 
     item.require.forEach(requires => {
-      subbullets += `\n  - [${requires.type}] ${requires.name}`; // TODO create markdown link
+      subbullets += `\n   - [${requires.type}] ${createAnchorLink(
+        requires.name,
+        createUniqueName(requires.name, requires.type)
+      )}`;
     });
 
     metadata.push({
@@ -135,14 +187,33 @@ $${item.context.name}: ${snippet};
     });
   }
 
-  // Used by
+  if (item.usedBy && item.usedBy.length) {
+    let subbullets = '';
 
-  // Example
+    item.usedBy.forEach(usedBy => {
+      subbullets += `\n   - [${usedBy.context.type}] ${createAnchorLink(
+        usedBy.context.name,
+        createUniqueName(usedBy.context.name, usedBy.context.type)
+      )}`;
+    });
+
+    metadata.push({
+      key: 'Used by',
+      value: subbullets,
+    });
+  }
 
   if (item.since && item.since.length) {
     metadata.push({
       key: 'Since',
       value: item.since[0].version,
+    });
+  }
+
+  if (item.deprecated) {
+    metadata.push({
+      key: 'Deprecated',
+      value: item.deprecated,
     });
   }
 
@@ -184,7 +255,19 @@ function createMarkdownFile(source, filename, config) {
 
 These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.`);
 
+      let currentGroup = '';
+
       currentItems.forEach(item => {
+        const itemGroup =
+          !item.group || !item.group[0] || item.group[0] === 'undefined'
+            ? 'general'
+            : item.group[0];
+
+        if (itemGroup !== currentGroup) {
+          file.write(`\n\n## ${itemGroup}`);
+          currentGroup = itemGroup;
+        }
+
         file.write(createMarkdownItem(item));
       });
 
@@ -192,7 +275,19 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 
 These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.`);
 
+      currentGroup = '';
+
       deprecatedItems.forEach(item => {
+        const itemGroup =
+          !item.group || !item.group[0] || item.group[0] === 'undefined'
+            ? 'general'
+            : item.group[0];
+
+        if (itemGroup !== currentGroup) {
+          file.write(`\n\n## Deprecated ${itemGroup}`);
+          currentGroup = itemGroup;
+        }
+
         file.write(createMarkdownItem(item));
       });
 

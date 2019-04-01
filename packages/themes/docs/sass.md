@@ -2,12 +2,14 @@
 
 These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
 
-## carbon--theme (@carbon/themes mixin)
+## @carbon/themes
+
+### carbon--theme [mixin]
 
 Define theme variables from a map of tokens
 
 ```scss
-$carbon--theme:
+$carbon--theme: {
   $interactive-01: map-get($theme, interactive-01) !global;
   $interactive-02: map-get($theme, interactive-02) !global;
   $interactive-03: map-get($theme, interactive-03) !global;
@@ -67,21 +69,40 @@ $carbon--theme:
   @if $theme != $carbon--theme {
     @include carbon--theme;
   }
-;
+}
 ```
 
 **Parameters**:
 
-| Name     | Description           | Type  | Default value    |
-| -------- | --------------------- | ----- | ---------------- |
-| `$theme` | `map of theme tokens` | `Map` | `$carbon--theme` |
+| Name     | Description         | Type  | Default value    |
+| -------- | ------------------- | ----- | ---------------- |
+| `$theme` | map of theme tokens | `Map` | `$carbon--theme` |
+
+**Example**:
+
+```scss
+// Default usage
+@include carbon--theme();
+
+// Alternate styling (not white theme)
+@include carbon--theme($carbon--theme--g90) {
+  // declarations...
+}
+
+// Inline styling
+@include carbon--theme($carbon--theme--g90) {
+  .my-dark-theme {
+    // declarations...
+  }
+}
+```
 
 - **Content**: Pass in your custom declaration blocks to be used after the token maps set theming variables.
 - **Requires**:
-  - [variable] carbon--theme
+  - [variable][carbon--theme](#carbon--theme-variable)
 - **Since**: v10.0.x
 
-## carbon--theme--white (@carbon/themes variable)
+### carbon--theme--white [variable]
 
 Carbon's white color theme
 
@@ -147,7 +168,7 @@ $carbon--theme--white: (
   - `carbon--theme`
 - **Since**: v10.0.x
 
-## carbon--theme--g10 (@carbon/themes variable)
+### carbon--theme--g10 [variable]
 
 Carbon's g10 color theme
 
@@ -211,7 +232,7 @@ $carbon--theme--g10: (
 - **Type**: `Map`
 - **Since**: v10.0.x
 
-## carbon--theme--g90 (@carbon/themes variable)
+### carbon--theme--g90 [variable]
 
 Carbon's g90 color theme
 
@@ -275,7 +296,7 @@ $carbon--theme--g90: (
 - **Type**: `Map`
 - **Since**: v10.0.x
 
-## carbon--theme--g100 (@carbon/themes variable)
+### carbon--theme--g100 [variable]
 
 Carbon's g100 color theme
 
@@ -339,7 +360,7 @@ $carbon--theme--g100: (
 - **Type**: `Map`
 - **Since**: v10.0.x
 
-## carbon--theme (@carbon/themes variable)
+### carbon--theme [variable]
 
 Carbon's default theme
 
@@ -349,6 +370,8 @@ $carbon--theme: $carbon--theme--white;
 
 - **Type**: `Map`
 - **Alias**: `carbon--theme--white`
+- **Used by**:
+  - [mixin][carbon--theme](#carbon--theme-mixin)
 - **Since**: v10.0.x
 
 # Deprecated functions, mixins, placeholders, variables

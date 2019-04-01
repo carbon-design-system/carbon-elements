@@ -41,7 +41,7 @@ async function build() {
   // Create maps for each theme:
   // $carbon--theme--name: (
   //   token-name: token-value
-  // ) !default !global;
+  // ) !default;
   const themeMaps = Object.keys(themes)
     .map(name => {
       const theme = themes[name];
@@ -73,6 +73,23 @@ $carbon--theme--${name}: (\n`;
 /// @access public
 /// @param {Map} $theme [${defaultThemeMapName}] - map of theme tokens
 /// @content Pass in your custom declaration blocks to be used after the token maps set theming variables.
+///
+/// @example scss
+///   // Default usage
+///   @include carbon--theme();
+///
+///   // Alternate styling (not white theme)
+///   @include carbon--theme($carbon--theme--g90) {
+///     // declarations...
+///   }
+///
+///   // Inline styling
+///   @include carbon--theme($carbon--theme--g90) {
+///     .my-dark-theme {
+///       // declarations...
+///     }
+///   }
+///
 /// @group @carbon/themes
 /// @since v10.0.x
 @mixin carbon--theme($theme: ${defaultThemeMapName}) {\n`;

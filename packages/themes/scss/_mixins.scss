@@ -12,6 +12,23 @@
 /// @access public
 /// @param {Map} $theme [$carbon--theme] - map of theme tokens
 /// @content Pass in your custom declaration blocks to be used after the token maps set theming variables.
+///
+/// @example scss
+///   // Default usage
+///   @include carbon--theme();
+///
+///   // Alternate styling (not white theme)
+///   @include carbon--theme($carbon--theme--g90) {
+///     // declarations...
+///   }
+///
+///   // Inline styling
+///   @include carbon--theme($carbon--theme--g90) {
+///     .my-dark-theme {
+///       // declarations...
+///     }
+///   }
+///
 /// @group @carbon/themes
 /// @since v10.0.x
 @mixin carbon--theme($theme: $carbon--theme) {
