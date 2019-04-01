@@ -23,7 +23,7 @@
         "description": "map of theme tokens"
       }
     ],
-    "content": "Pass in your custom declaration blocks to be used after the token maps sets theming variables.",
+    "content": "Pass in your custom declaration blocks to be used after the token maps set theming variables.",
     "group": [
       "@carbon/themes"
     ],

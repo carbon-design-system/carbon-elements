@@ -70,11 +70,13 @@ $carbon--theme:
 ;
 ```
 
+**Parameters**:
+
 | Name     | Description           | Type  | Default value    |
 | -------- | --------------------- | ----- | ---------------- |
 | `$theme` | `map of theme tokens` | `Map` | `$carbon--theme` |
 
-- **Content**: Pass in your custom declaration blocks to be used after the token maps sets theming variables.
+- **Content**: Pass in your custom declaration blocks to be used after the token maps set theming variables.
 - **Requires**:
   - [variable] carbon--theme
 - **Since**: v10.0.x
