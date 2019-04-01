@@ -20,7 +20,7 @@
   "scripts": {
     "clean": "rimraf es lib umd scss/_mixins.scss scss/_tokens.scss scss/_theme-maps.scss",
     "build": "yarn clean && bundler bundle src/index.js --name CarbonThemes && node tasks/build.js && node tasks/docs.js && bundler check 'scss/*.scss'",
-    "docs": "node tasks/docs.js"
+    "docs": "node tasks/docs.js && doctoc --title '## Table of contents' docs"
   },
   "dependencies": {
     "@carbon/build-utils": "10.0.0-rc.0",
@@ -30,6 +30,7 @@
     "@carbon/cli-reporter": "10.0.0-rc.0",
     "@carbon/test-utils": "10.0.0-rc.0",
     "change-case": "^3.0.2",
+    "doctoc": "^1.4.0",
     "fs-extra": "^7.0.1",
     "node-sass": "^4.11.0",
     "prettier": "^1.15.3",

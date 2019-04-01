@@ -143,7 +143,13 @@ ${defaultThemeMapName}: $carbon--theme--${defaultTheme} !default;
 
     for (const groupToken of groupTokens) {
       const name = formatTokenName(groupToken);
-      tokensFile += `$${name}: map-get(${defaultThemeMapName}, ${name}) !default;\n`;
+      tokensFile += `
+
+/// @type Color
+/// @access public
+/// @group @carbon/themes
+/// @since v10.0.x
+$${name}: map-get(${defaultThemeMapName}, ${name}) !default;\n`;
     }
   });
 

@@ -175,8 +175,8 @@ ${item.example[0].code}
     let subbullets = '';
 
     item.require.forEach(requires => {
-      subbullets += `\n   - [${requires.type}] ${createAnchorLink(
-        requires.name,
+      subbullets += `\n   - ${createAnchorLink(
+        `${requires.name} [${requires.type}]`,
         createUniqueName(requires.name, requires.type)
       )}`;
     });
@@ -191,8 +191,8 @@ ${item.example[0].code}
     let subbullets = '';
 
     item.usedBy.forEach(usedBy => {
-      subbullets += `\n   - [${usedBy.context.type}] ${createAnchorLink(
-        usedBy.context.name,
+      subbullets += `\n   - ${createAnchorLink(
+        `${usedBy.context.name} [${usedBy.context.type}]`,
         createUniqueName(usedBy.context.name, usedBy.context.type)
       )}`;
     });
@@ -251,7 +251,12 @@ function createMarkdownFile(source, filename, config) {
         (item, index) => item.deprecated
       );
 
-      file.write(`# Functions, mixins, placeholders, variables
+      file.write(`# Sass functions, mixins, placeholders, variables
+
+<!-- prettier-ignore-start -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- prettier-ignore-end -->
 
 These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.`);
 

@@ -1,4 +1,9 @@
-# Functions, mixins, placeholders, variables
+# Sass functions, mixins, placeholders, variables
+
+<!-- prettier-ignore-start -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- prettier-ignore-end -->
 
 These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
 
@@ -99,7 +104,59 @@ $carbon--theme: {
 
 - **Content**: Pass in your custom declaration blocks to be used after the token maps set theming variables.
 - **Requires**:
-  - [variable][carbon--theme](#carbon--theme-variable)
+  - [interactive-01 [variable]](#interactive-01-variable)
+  - [interactive-02 [variable]](#interactive-02-variable)
+  - [interactive-03 [variable]](#interactive-03-variable)
+  - [interactive-04 [variable]](#interactive-04-variable)
+  - [ui-background [variable]](#ui-background-variable)
+  - [ui-01 [variable]](#ui-01-variable)
+  - [ui-02 [variable]](#ui-02-variable)
+  - [ui-03 [variable]](#ui-03-variable)
+  - [ui-04 [variable]](#ui-04-variable)
+  - [ui-05 [variable]](#ui-05-variable)
+  - [text-01 [variable]](#text-01-variable)
+  - [text-02 [variable]](#text-02-variable)
+  - [text-03 [variable]](#text-03-variable)
+  - [text-04 [variable]](#text-04-variable)
+  - [icon-01 [variable]](#icon-01-variable)
+  - [icon-02 [variable]](#icon-02-variable)
+  - [icon-03 [variable]](#icon-03-variable)
+  - [link-01 [variable]](#link-01-variable)
+  - [field-01 [variable]](#field-01-variable)
+  - [field-02 [variable]](#field-02-variable)
+  - [inverse-01 [variable]](#inverse-01-variable)
+  - [inverse-02 [variable]](#inverse-02-variable)
+  - [support-01 [variable]](#support-01-variable)
+  - [support-02 [variable]](#support-02-variable)
+  - [support-03 [variable]](#support-03-variable)
+  - [support-04 [variable]](#support-04-variable)
+  - [overlay-01 [variable]](#overlay-01-variable)
+  - [focus [variable]](#focus-variable)
+  - [hover-primary [variable]](#hover-primary-variable)
+  - [active-primary [variable]](#active-primary-variable)
+  - [hover-primary-text [variable]](#hover-primary-text-variable)
+  - [hover-secondary [variable]](#hover-secondary-variable)
+  - [active-secondary [variable]](#active-secondary-variable)
+  - [hover-tertiary [variable]](#hover-tertiary-variable)
+  - [active-tertiary [variable]](#active-tertiary-variable)
+  - [hover-ui [variable]](#hover-ui-variable)
+  - [active-ui [variable]](#active-ui-variable)
+  - [selected-ui [variable]](#selected-ui-variable)
+  - [hover-selected-ui [variable]](#hover-selected-ui-variable)
+  - [hover-danger [variable]](#hover-danger-variable)
+  - [active-danger [variable]](#active-danger-variable)
+  - [hover-row [variable]](#hover-row-variable)
+  - [visited-link [variable]](#visited-link-variable)
+  - [disabled-01 [variable]](#disabled-01-variable)
+  - [disabled-02 [variable]](#disabled-02-variable)
+  - [disabled-03 [variable]](#disabled-03-variable)
+  - [highlight [variable]](#highlight-variable)
+  - [brand-01 [variable]](#brand-01-variable)
+  - [brand-02 [variable]](#brand-02-variable)
+  - [brand-03 [variable]](#brand-03-variable)
+  - [active-01 [variable]](#active-01-variable)
+  - [hover-field [variable]](#hover-field-variable)
+  - [carbon--theme [variable]](#carbon--theme-variable)
 - **Since**: v10.0.x
 
 ### carbon--theme--white [variable]
@@ -371,7 +428,579 @@ $carbon--theme: $carbon--theme--white;
 - **Type**: `Map`
 - **Alias**: `carbon--theme--white`
 - **Used by**:
-  - [mixin][carbon--theme](#carbon--theme-mixin)
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### interactive-01 [variable]
+
+```scss
+$interactive-01: map-get($carbon--theme, interactive-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### interactive-02 [variable]
+
+```scss
+$interactive-02: map-get($carbon--theme, interactive-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### interactive-03 [variable]
+
+```scss
+$interactive-03: map-get($carbon--theme, interactive-03);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### interactive-04 [variable]
+
+```scss
+$interactive-04: map-get($carbon--theme, interactive-04);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### ui-background [variable]
+
+```scss
+$ui-background: map-get($carbon--theme, ui-background);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### ui-01 [variable]
+
+```scss
+$ui-01: map-get($carbon--theme, ui-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### ui-02 [variable]
+
+```scss
+$ui-02: map-get($carbon--theme, ui-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### ui-03 [variable]
+
+```scss
+$ui-03: map-get($carbon--theme, ui-03);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### ui-04 [variable]
+
+```scss
+$ui-04: map-get($carbon--theme, ui-04);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### ui-05 [variable]
+
+```scss
+$ui-05: map-get($carbon--theme, ui-05);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### text-01 [variable]
+
+```scss
+$text-01: map-get($carbon--theme, text-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### text-02 [variable]
+
+```scss
+$text-02: map-get($carbon--theme, text-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### text-03 [variable]
+
+```scss
+$text-03: map-get($carbon--theme, text-03);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### text-04 [variable]
+
+```scss
+$text-04: map-get($carbon--theme, text-04);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### icon-01 [variable]
+
+```scss
+$icon-01: map-get($carbon--theme, icon-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### icon-02 [variable]
+
+```scss
+$icon-02: map-get($carbon--theme, icon-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### icon-03 [variable]
+
+```scss
+$icon-03: map-get($carbon--theme, icon-03);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### link-01 [variable]
+
+```scss
+$link-01: map-get($carbon--theme, link-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### field-01 [variable]
+
+```scss
+$field-01: map-get($carbon--theme, field-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### field-02 [variable]
+
+```scss
+$field-02: map-get($carbon--theme, field-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### inverse-01 [variable]
+
+```scss
+$inverse-01: map-get($carbon--theme, inverse-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### inverse-02 [variable]
+
+```scss
+$inverse-02: map-get($carbon--theme, inverse-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### support-01 [variable]
+
+```scss
+$support-01: map-get($carbon--theme, support-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### support-02 [variable]
+
+```scss
+$support-02: map-get($carbon--theme, support-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### support-03 [variable]
+
+```scss
+$support-03: map-get($carbon--theme, support-03);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### support-04 [variable]
+
+```scss
+$support-04: map-get($carbon--theme, support-04);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### overlay-01 [variable]
+
+```scss
+$overlay-01: map-get($carbon--theme, overlay-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### focus [variable]
+
+```scss
+$focus: map-get($carbon--theme, focus);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-primary [variable]
+
+```scss
+$hover-primary: map-get($carbon--theme, hover-primary);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### active-primary [variable]
+
+```scss
+$active-primary: map-get($carbon--theme, active-primary);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-primary-text [variable]
+
+```scss
+$hover-primary-text: map-get($carbon--theme, hover-primary-text);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-secondary [variable]
+
+```scss
+$hover-secondary: map-get($carbon--theme, hover-secondary);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### active-secondary [variable]
+
+```scss
+$active-secondary: map-get($carbon--theme, active-secondary);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-tertiary [variable]
+
+```scss
+$hover-tertiary: map-get($carbon--theme, hover-tertiary);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### active-tertiary [variable]
+
+```scss
+$active-tertiary: map-get($carbon--theme, active-tertiary);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-ui [variable]
+
+```scss
+$hover-ui: map-get($carbon--theme, hover-ui);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### active-ui [variable]
+
+```scss
+$active-ui: map-get($carbon--theme, active-ui);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### selected-ui [variable]
+
+```scss
+$selected-ui: map-get($carbon--theme, selected-ui);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-selected-ui [variable]
+
+```scss
+$hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-danger [variable]
+
+```scss
+$hover-danger: map-get($carbon--theme, hover-danger);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### active-danger [variable]
+
+```scss
+$active-danger: map-get($carbon--theme, active-danger);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-row [variable]
+
+```scss
+$hover-row: map-get($carbon--theme, hover-row);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### visited-link [variable]
+
+```scss
+$visited-link: map-get($carbon--theme, visited-link);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### disabled-01 [variable]
+
+```scss
+$disabled-01: map-get($carbon--theme, disabled-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### disabled-02 [variable]
+
+```scss
+$disabled-02: map-get($carbon--theme, disabled-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### disabled-03 [variable]
+
+```scss
+$disabled-03: map-get($carbon--theme, disabled-03);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### highlight [variable]
+
+```scss
+$highlight: map-get($carbon--theme, highlight);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### brand-01 [variable]
+
+```scss
+$brand-01: map-get($carbon--theme, brand-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### brand-02 [variable]
+
+```scss
+$brand-02: map-get($carbon--theme, brand-02);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### brand-03 [variable]
+
+```scss
+$brand-03: map-get($carbon--theme, brand-03);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### active-01 [variable]
+
+```scss
+$active-01: map-get($carbon--theme, active-01);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Since**: v10.0.x
+
+### hover-field [variable]
+
+```scss
+$hover-field: map-get($carbon--theme, hover-field);
+```
+
+- **Type**: `Color`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Since**: v10.0.x
 
 # Deprecated functions, mixins, placeholders, variables

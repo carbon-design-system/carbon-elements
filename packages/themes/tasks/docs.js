@@ -7,10 +7,6 @@
 
 'use strict';
 
-const {
-  createJsonFile,
-  createMarkdownFile,
-} = require('@carbon/build-utils/sassdoc');
+const { createMarkdownFile } = require('@carbon/build-utils/sassdoc');
 
-createJsonFile('./scss', './docs/sass.json');
 createMarkdownFile('./scss', './docs/sass.md');
