@@ -19,8 +19,8 @@
   },
   "scripts": {
     "clean": "rimraf es lib umd scss/_mixins.scss scss/_tokens.scss scss/_theme-maps.scss",
-    "build": "yarn clean && bundler bundle src/index.js --name CarbonThemes && node tasks/build.js && yarn docs && bundler check 'scss/*.scss'",
-    "docs": "node tasks/docs.js && doctoc --title '## Table of contents' docs"
+    "build": "yarn clean && bundler bundle src/index.js --name CarbonThemes && node tasks/build.js && bundler check 'scss/*.scss' && yarn build:docs",
+    "build:docs": "bundler sassdoc 'scss' && doctoc --title '## Table of contents' docs"
   },
   "dependencies": {
     "@carbon/colors": "10.0.0"

@@ -167,7 +167,7 @@ $${name}: map-get(${defaultThemeMapName}, ${name}) !default;\n`;
     prettier.format(themeMapsFile, prettierOptions)
   );
 
-  reporter.info('Done! ✨');
+  reporter.success('Done! 🎉');
 }
 
 build().catch(error => {

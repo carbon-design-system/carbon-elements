@@ -1,4 +1,4 @@
-/**
+-/**
  * Copyright IBM Corp. 2018, 2018
  *
  * This source code is licensed under the Apache-2.0 license found in the
@@ -7,26 +7,29 @@
 
 'use strict';
 
-const fs = require('fs');
+const prettier = require('prettier');
 const sassdoc = require('sassdoc');
+
+const prettierOptions = {
+  parser: 'markdown',
+  printWidth: 80,
+  singleQuote: true,
+  trailingComma: 'es5',
+};
 
 /**
  * Create a JSON file of documented Sass items
  * @see {@link http://sassdoc.com/configuration/|Sassdoc configuration}
- * @param {string} source - path to source or glob string/array
- * @param {string} filename - output filename
+ * @param {string} sourceDir - source directory
  * @param {Object} config - configuration object
+ * @return {Object} json object
  */
-function createJsonFile(source, filename, config) {
+async function createJson(sourceDir, config) {
   config = config || {};
 
-  sassdoc.parse(source, config).then(
+  return sassdoc.parse(sourceDir, config).then(
     data => {
-      fs.writeFile(filename, JSON.stringify(data, null, 2), err => {
-        if (err) {
-          return console.error(err);
-        }
-      });
+      return data;
     },
     err => {
       console.error(err);
@@ -231,16 +234,17 @@ ${item.example[0].code}
 /**
  * Create a markdown file of documented Sass items
  * @see {@link http://sassdoc.com/configuration/|Sassdoc configuration}
- * @param {string} source - path to source or glob string/array
- * @param {string} filename - output filename
+ * @param {string} sourceDir - source directory
  * @param {Object} config - configuration object
+ * @return {string} markdown
  */
-function createMarkdownFile(source, filename, config) {
+async function createMarkdown(sourceDir, config) {
   config = config || {};
 
-  sassdoc.parse(source, config).then(
+  return sassdoc.parse(sourceDir, config).then(
     data => {
-      const file = fs.createWriteStream(filename);
+      let markdownFile = '';
+
       const publicItems = data.filter(
         (item, index) => item.access === 'public'
       );
@@ -251,14 +255,14 @@ function createMarkdownFile(source, filename, config) {
         (item, index) => item.deprecated
       );
 
-      file.write(`# Sass functions, mixins, placeholders, variables
+      markdownFile += `# Sass functions, mixins, placeholders, variables
 
 <!-- prettier-ignore-start -->
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <!-- prettier-ignore-end -->
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.`);
+These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.`;
 
       let currentGroup = '';
 
@@ -269,16 +273,16 @@ These public Sass functions, mixins, placeholders, and variables are currently s
             : item.group[0];
 
         if (itemGroup !== currentGroup) {
-          file.write(`\n\n## ${itemGroup}`);
+          markdownFile += `\n\n## ${itemGroup}`;
           currentGroup = itemGroup;
         }
 
-        file.write(createMarkdownItem(item));
+        markdownFile += createMarkdownItem(item);
       });
 
-      file.write(`\n\n# Deprecated functions, mixins, placeholders, variables
+      markdownFile += `\n\n# Deprecated functions, mixins, placeholders, variables
 
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.`);
+These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.`;
 
       currentGroup = '';
 
@@ -289,14 +293,14 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
             : item.group[0];
 
         if (itemGroup !== currentGroup) {
-          file.write(`\n\n## Deprecated ${itemGroup}`);
+          markdownFile += `\n\n## Deprecated ${itemGroup}`;
           currentGroup = itemGroup;
         }
 
-        file.write(createMarkdownItem(item));
+        markdownFile += createMarkdownItem(item);
       });
 
-      file.end();
+      return prettier.format(markdownFile, prettierOptions);
     },
     err => {
       console.error(err);
@@ -305,6 +309,6 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
 }
 
 module.exports = {
-  createJsonFile,
-  createMarkdownFile,
+  createJson,
+  createMarkdown,
 };
