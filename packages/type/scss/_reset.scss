@@ -31,12 +31,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  // IBM Plex Sans uses semibold instead of bold, as a result we need to map
+  // IBM Plex uses semibold instead of bold, as a result we need to map
   // tags that use `font-weight: bold` to the semibold value
-  @if $body-font-family == carbon--font-family('sans') {
-    strong {
-      font-weight: 600;
-    }
+  strong {
+    font-weight: 600;
   }
 
   code {
