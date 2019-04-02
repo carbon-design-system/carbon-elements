@@ -18,30 +18,35 @@ async function sassdoc(entrypoint, { cwd, json, output } = {}) {
   const JSON_FILE = path.resolve(DOCS_DIR, 'sass.json');
   const MARKDOWN_FILE = path.resolve(DOCS_DIR, 'sass.md');
 
-  reporter.info(`Creating sassdoc markdown for: '${SRC_DIR}'`);
-
-  const markdownFile = await createMarkdown(SRC_DIR);
-
-  await fs.ensureDir(DOCS_DIR);
-  await fs.writeFile(MARKDOWN_FILE, markdownFile);
-
-  reporter.success('Done! 🎉');
-
   if (json) {
     reporter.info(`Creating sassdoc json for: '${SRC_DIR}'`);
 
-    const jsonFile = await createJson(SRC_DIR);
-    await fs.writeFile(JSON_FILE, JSON.stringify(jsonFile, null, 2));
+    try {
+      const jsonFile = await createJson(SRC_DIR);
+      await fs.ensureDir(DOCS_DIR);
+      await fs.writeFile(JSON_FILE, JSON.stringify(jsonFile, null, 2));
+    } catch {
+      reporter.error(`Sassdoc error: ${error}`);
+      process.exit(1);
+    }
+
+    reporter.success('Done! 🎉');
+  } else {
+    reporter.info(`Creating sassdoc markdown for: '${SRC_DIR}'`);
+
+    try {
+      const markdownFile = await createMarkdown(SRC_DIR);
+      await fs.ensureDir(DOCS_DIR);
+      await fs.writeFile(MARKDOWN_FILE, markdownFile);
+    } catch (error) {
+      reporter.error(`Sassdoc error: ${error}`);
+      process.exit(1);
+    }
 
     reporter.success('Done! 🎉');
   }
 
   process.exit(0);
 }
-
-// sassdoc().catch(error => {
-//   reporter.error(`Sassdoc error: ${error}`);
-//   process.exit(1);
-// });
 
 module.exports = sassdoc;

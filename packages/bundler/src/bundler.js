@@ -41,8 +41,8 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
 
   program
     .command('sassdoc <entrypoint>')
-    .description('generate sassdoc')
-    .option('-j, --json', 'output json file too')
+    .description('generate sassdoc as markdown')
+    .option('-j, --json', 'output as json file')
     .option('-o, --output <dir>', 'specify the directory to output the files')
     .action((entrypoint, cmd) =>
       sassdoc(entrypoint, {

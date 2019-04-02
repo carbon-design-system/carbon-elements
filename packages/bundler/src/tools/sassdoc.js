@@ -9,6 +9,7 @@
 
 const prettier = require('prettier');
 const sassdoc = require('sassdoc');
+const toc = require('markdown-toc');
 
 const prettierOptions = {
   parser: 'markdown',
@@ -257,10 +258,8 @@ async function createMarkdown(sourceDir, config) {
 
       markdownFile += `# Sass functions, mixins, placeholders, variables
 
-<!-- prettier-ignore-start -->
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-<!-- prettier-ignore-end -->
+<!-- toc -->
+<!-- tocstop -->
 
 These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.`;
 
@@ -300,7 +299,7 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
         markdownFile += createMarkdownItem(item);
       });
 
-      return prettier.format(markdownFile, prettierOptions);
+      return prettier.format(toc.insert(markdownFile), prettierOptions);
     },
     err => {
       console.error(err);
