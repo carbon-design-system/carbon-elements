@@ -27,7 +27,7 @@ typeface. For teams using Carbon, this font is loaded by default through Google
 Fonts if you are using any of our projects, or if you are using
 [`@carbon/type`](../packages/type) directly.
 
-However, the Google Fonts strategy loaded by default is not recommend for
+However, the Google Fonts strategy loaded by default is not recommended for
 production use-cases. Below we offer several alternative ways to include IBM Plex
 in your project for a variety of situations.
 
