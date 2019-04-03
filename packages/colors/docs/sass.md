@@ -17,6 +17,9 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 
 Define color variables
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--colors: {
   $carbon--black-100: #000000 !default !global;
@@ -364,6 +367,8 @@ $carbon--colors: {
 }
 ```
 
+</details>
+
 ## @carbon/colors [deprecated]
 
 These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.
@@ -371,6 +376,9 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
 ### ibm--colors [mixin]
 
 Define color variables
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $ibm--colors: {
@@ -615,5 +623,7 @@ $ibm--colors: {
   ) !default !global;
 }
 ```
+
+</details>
 
 - **Deprecated**: Use `$carbon--colors` going forward

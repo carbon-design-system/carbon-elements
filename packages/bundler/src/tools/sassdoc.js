@@ -112,18 +112,26 @@ function createMarkdownItem(item) {
   if (item.context.value) {
     str += `
 
+<details>
+<summary>Code</summary>
+
 \`\`\`scss
 $${item.context.name}: ${item.context.value};
-\`\`\``;
+\`\`\`
+</details>`;
   }
 
   // Code (mixins)
   if (item.context.code) {
     str += `
 
+<details>
+<summary>Code</summary>
+
 \`\`\`scss
 $${item.context.name}: {${item.context.code}}
-\`\`\``;
+\`\`\`
+</details>`;
   }
 
   // Parameters
@@ -154,9 +162,13 @@ $${item.context.name}: {${item.context.code}}
 
     str += `
 
+<details>
+<summary>Example code</summary>
+
 \`\`\`${item.example[0].type}
 ${item.example[0].code}
-\`\`\``;
+\`\`\`
+</details>`;
   }
 
   // Bullets
@@ -196,8 +208,6 @@ ${item.example[0].code}
     });
   }
 
-  // Returns
-
   if (item.require && item.require.length) {
     let subbullets = '';
 
@@ -236,6 +246,19 @@ ${item.example[0].code}
   //     value: item.since[0].version,
   //   });
   // }
+
+  if (item.link && item.link.length) {
+    let subbullets = '';
+
+    item.link.forEach(link => {
+      subbullets += `\n   - [${link.caption || 'Link'}](${link.url})`;
+    });
+
+    metadata.push({
+      key: 'Links',
+      value: subbullets,
+    });
+  }
 
   if (item.deprecated || item.deprecated === '') {
     metadata.push({

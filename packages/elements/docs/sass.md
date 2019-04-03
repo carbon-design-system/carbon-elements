@@ -11,6 +11,8 @@ These public Sass functions, mixins, placeholders, and variables are currently s
   - [carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
   - [carbon--grid [mixin]](#carbon--grid-mixin)
   - [prefix [variable]](#prefix-variable)
+- [@carbon/icons](#carbonicons)
+  - [carbon--icons [mixin]](#carbon--icons-mixin)
 - [@carbon/themes](#carbonthemes)
   - [carbon--theme [mixin]](#carbon--theme-mixin)
   - [carbon--theme--white [variable]](#carbon--theme--white-variable)
@@ -118,6 +120,9 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 ### carbon--colors [mixin]
 
 Define color variables
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--colors: {
@@ -466,11 +471,16 @@ $carbon--colors: {
 }
 ```
 
+</details>
+
 ## @carbon/grid
 
 ### carbon--12-column-grid [variable]
 
 Overrides `$carbon--grid-breakpoints` to use a 12 column grid instead of the default 16
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--12-column-grid: map-merge(
@@ -498,6 +508,8 @@ $carbon--12-column-grid: map-merge(
 );
 ```
 
+</details>
+
 - **Type**: `Map`
 
 ### carbon--aspect-ratios [variable]
@@ -505,13 +517,21 @@ $carbon--12-column-grid: map-merge(
 The aspect ratios that are used to generate corresponding aspect ratio
 classes in code
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
 ```
 
+</details>
+
 ### carbon--grid [mixin]
 
 Generate the CSS for a grid for the given breakpoints and gutter
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--grid: {
@@ -544,6 +564,8 @@ $carbon--grid: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name                | Description | Type     | Default value |
@@ -566,24 +588,56 @@ $carbon--grid: {
 
 Namespace prefix
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $prefix: 'bx';
 ```
 
+</details>
+
 - **Type**: `String`
 - **Used by**:
-  - [carbon--grid [mixin]](#carbon--grid-mixin)
   - [carbon--make-col-ready [mixin]](#carbon--make-col-ready-mixin)
   - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
   - [carbon--no-gutter [mixin]](#carbon--no-gutter-mixin)
   - [carbon--hang [mixin]](#carbon--hang-mixin)
   - [carbon--aspect-ratio [mixin]](#carbon--aspect-ratio-mixin)
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+
+## @carbon/icons
+
+### carbon--icons [mixin]
+
+Makes SVGs accessible in high contrast mode
+
+<details>
+<summary>Code</summary>
+
+```scss
+$carbon--icons: {
+  @media screen and (-ms-high-contract: active) {
+    svg {
+      fill: ButtonText;
+    }
+  }
+}
+```
+
+</details>
+
+- **Links**:
+  - [Carbon-elements #345](https://github.com/IBM/carbon-elements/issues/345#issuecomment-466577293)
 
 ## @carbon/themes
 
 ### carbon--theme [mixin]
 
 Define theme variables from a map of tokens
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--theme: {
@@ -649,6 +703,8 @@ $carbon--theme: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name     | Description         | Type  | Default value    |
@@ -656,6 +712,9 @@ $carbon--theme: {
 | `$theme` | map of theme tokens | `Map` | `$carbon--theme` |
 
 **Example**:
+
+<details>
+<summary>Example code</summary>
 
 ```scss
 // Default usage
@@ -673,6 +732,8 @@ $carbon--theme: {
   }
 }
 ```
+
+</details>
 
 - **Content**: Pass in your custom declaration blocks to be used after the token maps set theming variables.
 - **Requires**:
@@ -734,6 +795,9 @@ $carbon--theme: {
 
 Carbon's white color theme
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--theme--white: (
   interactive-01: #0062ff,
@@ -791,6 +855,8 @@ $carbon--theme--white: (
 );
 ```
 
+</details>
+
 - **Type**: `Map`
 - **Aliased**:
   - `carbon--theme`
@@ -798,6 +864,9 @@ $carbon--theme--white: (
 ### carbon--theme--g10 [variable]
 
 Carbon's g10 color theme
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--theme--g10: (
@@ -856,11 +925,16 @@ $carbon--theme--g10: (
 );
 ```
 
+</details>
+
 - **Type**: `Map`
 
 ### carbon--theme--g90 [variable]
 
 Carbon's g90 color theme
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--theme--g90: (
@@ -919,11 +993,16 @@ $carbon--theme--g90: (
 );
 ```
 
+</details>
+
 - **Type**: `Map`
 
 ### carbon--theme--g100 [variable]
 
 Carbon's g100 color theme
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--theme--g100: (
@@ -982,15 +1061,22 @@ $carbon--theme--g100: (
 );
 ```
 
+</details>
+
 - **Type**: `Map`
 
 ### carbon--theme [variable]
 
 Carbon's default theme
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--theme: $carbon--theme--white;
 ```
+
+</details>
 
 - **Type**: `Map`
 - **Alias**: `carbon--theme--white`
@@ -1001,9 +1087,14 @@ $carbon--theme: $carbon--theme--white;
 
 Primary interactive color; Primary buttons
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $interactive-01: map-get($carbon--theme, interactive-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Aliased**:
@@ -1015,9 +1106,14 @@ $interactive-01: map-get($carbon--theme, interactive-01);
 
 Secondary interactive color; Secondary button
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $interactive-02: map-get($carbon--theme, interactive-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Aliased**:
@@ -1029,9 +1125,14 @@ $interactive-02: map-get($carbon--theme, interactive-02);
 
 4.5:1 AA contrast; Tertiary button
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $interactive-03: map-get($carbon--theme, interactive-03);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Aliased**:
@@ -1043,9 +1144,14 @@ $interactive-03: map-get($carbon--theme, interactive-03);
 
 3:1 AA contrast; Selected elements; Active elements; Accent icons
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $interactive-04: map-get($carbon--theme, interactive-04);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1055,9 +1161,14 @@ $interactive-04: map-get($carbon--theme, interactive-04);
 
 Default page background
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $ui-background: map-get($carbon--theme, ui-background);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1067,9 +1178,14 @@ $ui-background: map-get($carbon--theme, ui-background);
 
 Primary container background; Secondary page background
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $ui-01: map-get($carbon--theme, ui-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1079,9 +1195,14 @@ $ui-01: map-get($carbon--theme, ui-01);
 
 Primary page background; Secondary container background
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $ui-02: map-get($carbon--theme, ui-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1091,9 +1212,14 @@ $ui-02: map-get($carbon--theme, ui-02);
 
 Subtle border; Tertiary background color
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $ui-03: map-get($carbon--theme, ui-03);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1103,9 +1229,14 @@ $ui-03: map-get($carbon--theme, ui-03);
 
 3:1 AA element contrast; Medium contrast border
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $ui-04: map-get($carbon--theme, ui-04);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1115,9 +1246,14 @@ $ui-04: map-get($carbon--theme, ui-04);
 
 4.5:1 AA element contrast; High contrast border; Emphasis elements
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $ui-05: map-get($carbon--theme, ui-05);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1127,9 +1263,14 @@ $ui-05: map-get($carbon--theme, ui-05);
 
 Primary text; Body copy; Headers; Hover text color for text-02
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $text-01: map-get($carbon--theme, text-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1139,9 +1280,14 @@ $text-01: map-get($carbon--theme, text-01);
 
 Secondary text; Input labels; Help text
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $text-02: map-get($carbon--theme, text-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1151,9 +1297,14 @@ $text-02: map-get($carbon--theme, text-02);
 
 Placeholder text
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $text-03: map-get($carbon--theme, text-03);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1163,9 +1314,14 @@ $text-03: map-get($carbon--theme, text-03);
 
 Text on interactive colors
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $text-04: map-get($carbon--theme, text-04);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1175,9 +1331,14 @@ $text-04: map-get($carbon--theme, text-04);
 
 Primary icons
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $icon-01: map-get($carbon--theme, icon-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1187,9 +1348,14 @@ $icon-01: map-get($carbon--theme, icon-01);
 
 Secondary icons
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $icon-02: map-get($carbon--theme, icon-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1199,9 +1365,14 @@ $icon-02: map-get($carbon--theme, icon-02);
 
 Tertiary icons; Icons on interactive colors; Icons on non-ui colors
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $icon-03: map-get($carbon--theme, icon-03);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1211,9 +1382,14 @@ $icon-03: map-get($carbon--theme, icon-03);
 
 Primary links; Ghost button
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $link-01: map-get($carbon--theme, link-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1223,9 +1399,14 @@ $link-01: map-get($carbon--theme, link-01);
 
 Default input fields; Field color on \$ui-backgrounds
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $field-01: map-get($carbon--theme, field-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1235,9 +1416,14 @@ $field-01: map-get($carbon--theme, field-01);
 
 Input field color on `$ui-02` backgrounds
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $field-02: map-get($carbon--theme, field-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1247,9 +1433,14 @@ $field-02: map-get($carbon--theme, field-02);
 
 Inverse text color; Inverse icon color
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $inverse-01: map-get($carbon--theme, inverse-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1259,9 +1450,14 @@ $inverse-01: map-get($carbon--theme, inverse-01);
 
 High contrast backgrounds; High contrast elements
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $inverse-02: map-get($carbon--theme, inverse-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1271,9 +1467,14 @@ $inverse-02: map-get($carbon--theme, inverse-02);
 
 Error
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $support-01: map-get($carbon--theme, support-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1283,9 +1484,14 @@ $support-01: map-get($carbon--theme, support-01);
 
 Success
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $support-02: map-get($carbon--theme, support-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1295,9 +1501,14 @@ $support-02: map-get($carbon--theme, support-02);
 
 Warning
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $support-03: map-get($carbon--theme, support-03);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1307,9 +1518,14 @@ $support-03: map-get($carbon--theme, support-03);
 
 Information
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $support-04: map-get($carbon--theme, support-04);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1319,9 +1535,14 @@ $support-04: map-get($carbon--theme, support-04);
 
 Background overlay
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $overlay-01: map-get($carbon--theme, overlay-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1331,9 +1552,14 @@ $overlay-01: map-get($carbon--theme, overlay-01);
 
 Focus border; Focus underline
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $focus: map-get($carbon--theme, focus);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1343,9 +1569,14 @@ $focus: map-get($carbon--theme, focus);
 
 `$interactive-01` hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-primary: map-get($carbon--theme, hover-primary);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1355,9 +1586,14 @@ $hover-primary: map-get($carbon--theme, hover-primary);
 
 `$interactive-01` active
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $active-primary: map-get($carbon--theme, active-primary);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1367,9 +1603,14 @@ $active-primary: map-get($carbon--theme, active-primary);
 
 `$interactive-01` text hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-primary-text: map-get($carbon--theme, hover-primary-text);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1379,9 +1620,14 @@ $hover-primary-text: map-get($carbon--theme, hover-primary-text);
 
 `$interactive-02` hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-secondary: map-get($carbon--theme, hover-secondary);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1391,9 +1637,14 @@ $hover-secondary: map-get($carbon--theme, hover-secondary);
 
 `$interactive-02` active; `$inverse-01` active
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $active-secondary: map-get($carbon--theme, active-secondary);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1403,9 +1654,14 @@ $active-secondary: map-get($carbon--theme, active-secondary);
 
 `$interactive-03` hover; `$inverse-01` hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-tertiary: map-get($carbon--theme, hover-tertiary);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1415,9 +1671,14 @@ $hover-tertiary: map-get($carbon--theme, hover-tertiary);
 
 `$interactive-03` active
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $active-tertiary: map-get($carbon--theme, active-tertiary);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1427,9 +1688,14 @@ $active-tertiary: map-get($carbon--theme, active-tertiary);
 
 `$ui-01` hover; `$ui-02` hover; Transparent background hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-ui: map-get($carbon--theme, hover-ui);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Aliased**:
@@ -1441,9 +1707,14 @@ $hover-ui: map-get($carbon--theme, hover-ui);
 
 `$ui-01` active; `$ui-02` active
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $active-ui: map-get($carbon--theme, active-ui);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Aliased**:
@@ -1455,9 +1726,14 @@ $active-ui: map-get($carbon--theme, active-ui);
 
 Selected UI elements
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $selected-ui: map-get($carbon--theme, selected-ui);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1467,9 +1743,14 @@ $selected-ui: map-get($carbon--theme, selected-ui);
 
 Data table selected row hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1479,9 +1760,14 @@ $hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
 
 Danger hover; `$support-01` hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-danger: map-get($carbon--theme, hover-danger);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1491,9 +1777,14 @@ $hover-danger: map-get($carbon--theme, hover-danger);
 
 Danger active; `$support-01` active
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $active-danger: map-get($carbon--theme, active-danger);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1503,9 +1794,14 @@ $active-danger: map-get($carbon--theme, active-danger);
 
 Row hover
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-row: map-get($carbon--theme, hover-row);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1515,9 +1811,14 @@ $hover-row: map-get($carbon--theme, hover-row);
 
 Visited links
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $visited-link: map-get($carbon--theme, visited-link);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1527,9 +1828,14 @@ $visited-link: map-get($carbon--theme, visited-link);
 
 Disabled fields; Disabled backgrounds; Disabled border
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $disabled-01: map-get($carbon--theme, disabled-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1539,9 +1845,14 @@ $disabled-01: map-get($carbon--theme, disabled-01);
 
 Disabled elements on `$disabled-01`; Disabled label; Disabled text on `$disabled-01`; Disabled icons; Disabled border
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $disabled-02: map-get($carbon--theme, disabled-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1551,9 +1862,14 @@ $disabled-02: map-get($carbon--theme, disabled-02);
 
 Disabled text on `$disabled-02`; Disabled icons on `$disabled-02`
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $disabled-03: map-get($carbon--theme, disabled-03);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1563,9 +1879,14 @@ $disabled-03: map-get($carbon--theme, disabled-03);
 
 `$interactive-01` highlight
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $highlight: map-get($carbon--theme, highlight);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Used by**:
@@ -1578,6 +1899,9 @@ $highlight: map-get($carbon--theme, highlight);
 Module export mixin
 This mixin helps making sure a module is imported once and only once.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $exports: {
   @if (index($imported-modules, $name) == null) {
@@ -1588,6 +1912,8 @@ $exports: {
   }
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1600,6 +1926,9 @@ $exports: {
 
 Get the value of the next breakpoint, or null for the last breakpoint.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--breakpoint-next: {
   $n: index($breakpoint-names, $name);
@@ -1609,6 +1938,8 @@ $carbon--breakpoint-next: {
   @return null;
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1626,11 +1957,16 @@ $carbon--breakpoint-next: {
 
 Check to see if the given breakpoint name
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--is-smallest-breakpoint: {
   @return index(map-keys($breakpoints), $name) == 1;
 }
 ```
+
+</details>
 
 - **Used by**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
@@ -1640,12 +1976,17 @@ $carbon--is-smallest-breakpoint: {
 
 returns the largest breakpoint name
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--largest-breakpoint-name: {
   $total-breakpoints: length($breakpoints);
   @return carbon--key-by-index($breakpoints, $total-breakpoints);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1663,11 +2004,16 @@ $carbon--largest-breakpoint-name: {
 Get the infix for a given breakpoint in a list of breakpoints. Usesful for
 generate the size part in a selector, for example: `.prefix--col-sm-2`
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--breakpoint-infix: {
   @return '-#{$name}';
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1681,6 +2027,9 @@ $carbon--breakpoint-infix: {
 ### carbon--breakpoint-up [mixin]
 
 Generate a media query up to the width of the given breakpoint name
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--breakpoint-up: {
@@ -1704,6 +2053,8 @@ $carbon--breakpoint-up: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name           | Description                                    | Type              | Default value               |
@@ -1720,6 +2071,9 @@ $carbon--breakpoint-up: {
 ### carbon--breakpoint-down [mixin]
 
 Generate a media query for the maximum width of the given styles
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--breakpoint-down: {
@@ -1743,6 +2097,8 @@ $carbon--breakpoint-down: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name           | Description                                    | Type              | Default value               |
@@ -1759,6 +2115,9 @@ $carbon--breakpoint-down: {
 
 Generate a media query for the range between the lower and upper
 breakpoints.
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--breakpoint-between: {
@@ -1787,6 +2146,8 @@ $carbon--breakpoint-between: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name     | Description | Type              | Default value |
@@ -1802,6 +2163,9 @@ $carbon--breakpoint-between: {
 
 generate media query for the largest breakpoint
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--largest-breakpoint: {
   @include carbon--breakpoint(carbon--largest-breakpoint-name()) {
@@ -1809,6 +2173,8 @@ $carbon--largest-breakpoint: {
   }
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1826,6 +2192,9 @@ $carbon--largest-breakpoint: {
 
 Generate a media query for a given breakpoint
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--breakpoint: {
   @include carbon--breakpoint-up($name, $breakpoints) {
@@ -1833,6 +2202,8 @@ $carbon--breakpoint: {
   }
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1854,11 +2225,16 @@ $carbon--breakpoint: {
 
 Convert a given px unit to a rem unit
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--rem: {
   @return ($px / $carbon--base-font-size) * 1rem;
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1873,11 +2249,16 @@ $carbon--rem: {
 
 Convert a given px unit to a em unit
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--em: {
   @return ($px / $carbon--base-font-size) * 1em;
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1889,6 +2270,9 @@ $carbon--em: {
 
 Get the column width for a given breakpoint. Useful for figuring out key
 heights
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--get-column-width: {
@@ -1905,6 +2289,8 @@ $carbon--get-column-width: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name          | Description | Type     | Default value |
@@ -1915,6 +2301,9 @@ $carbon--get-column-width: {
 
 Get the value of a key height step at a given breakpoint
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--key-height: {
   @if map-has-key($carbon--key-height-scales, $breakpoint) {
@@ -1924,6 +2313,8 @@ $carbon--key-height: {
   }
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1936,11 +2327,16 @@ $carbon--key-height: {
 
 Get the value of the corresponding number of units
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--mini-units: {
   @return carbon--rem($carbon--mini-unit-size * $count);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1955,6 +2351,9 @@ $carbon--mini-units: {
 
 Map deep get
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $map-deep-get: {
   @each $key in $keys {
@@ -1963,6 +2362,8 @@ $map-deep-get: {
   @return $map;
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -1977,12 +2378,17 @@ Key by Index
 provide a $map, and $index, and get back the relevant
 key value.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--key-by-index: {
   $keys: map-keys($map);
   @return nth($keys, $index);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2000,12 +2406,17 @@ $carbon--key-by-index: {
 Last Map Item
 Pass in a map, and get the last one in the list back.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $last-map-item: {
   $total-length: length($map);
   @return map-get($map, carbon--key-by-index($map, $total-length));
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2021,6 +2432,9 @@ $last-map-item: {
 ### carbon--easings [variable]
 
 Common easings for components in the Carbon Design System
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--easings: (
@@ -2039,11 +2453,16 @@ $carbon--easings: (
 );
 ```
 
+</details>
+
 ### carbon--motion [function]
 
 Get the transition-timing-function for a given easing and motion mode.
 Easings that are currently supported include: standard, entrance, and exit.
 We also offer two modes: productive and expressive.
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--motion: {
@@ -2060,6 +2479,8 @@ $carbon--motion: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name    | Description                           | Type     | Default value |
@@ -2074,11 +2495,16 @@ $carbon--motion: {
 
 Set the transition-timing-function for a given easing and motion mode.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--motion: {
   transition-timing-function: carbon--motion($name, $mode);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2095,6 +2521,9 @@ $carbon--motion: {
 Font family fallbacks for: IBM Plex Mono, IBM Plex Sans, IBM Plex Sans
 Condensed, IBM Plex Sans Hebrew, and IBM Plex Serif
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--font-families: (
   'mono': unquote("'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace"),
@@ -2105,6 +2534,8 @@ $carbon--font-families: (
 );
 ```
 
+</details>
+
 - **Type**: `{Map}`
 - **Used by**:
   - [carbon--font-family [function]](#carbon--font-family-function)
@@ -2113,11 +2544,16 @@ $carbon--font-families: (
 
 Get the font-family for an IBM Plex font.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--font-family: {
   @return map-get($carbon--font-families, $name);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2134,11 +2570,16 @@ $carbon--font-family: {
 
 Include the `font-family` definition for the given name in your selector.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--font-family: {
   font-family: carbon--font-family($name);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2153,6 +2594,9 @@ $carbon--font-family: {
 
 Suggested font weights to be used in product.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--font-weights: (
   'light': 300,
@@ -2161,6 +2605,8 @@ $carbon--font-weights: (
 );
 ```
 
+</details>
+
 - **Used by**:
   - [carbon--font-weight [function]](#carbon--font-weight-function)
 
@@ -2168,11 +2614,16 @@ $carbon--font-weights: (
 
 Retrieve the font-weight value for a given name
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--font-weight: {
   @return map-get($carbon--font-weights, $weight);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2189,11 +2640,16 @@ $carbon--font-weight: {
 
 Set the `font-weight` property with the value for a given name
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--font-weight: {
   font-weight: carbon--font-weight($weight);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2207,6 +2663,9 @@ $carbon--font-weight: {
 ### carbon--type-reset [mixin]
 
 Include a type reset for a given body and mono font family.
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $carbon--type-reset: {
@@ -2234,6 +2693,8 @@ $carbon--type-reset: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name                                        | Description                           | Type     | Default value |
@@ -2248,6 +2709,9 @@ $carbon--type-reset: {
 
 Compute the type size for the given type scale step
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--get-type-size: {
   @if $step == 1 {
@@ -2257,6 +2721,8 @@ $carbon--get-type-size: {
   @return carbon--get-type-size($step - 1) + (floor(($step - 2) / 4) + 1) * 2;
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2269,9 +2735,14 @@ $carbon--get-type-size: {
 Our type scale. Follows a custom formula for determining each step size.
 Supports sizes from 12px to 92px.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--type-scale: ();
 ```
+
+</details>
 
 - **Used by**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
@@ -2280,11 +2751,16 @@ $carbon--type-scale: ();
 
 Get the value of a specific step in the typescale
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--type-scale: {
   @return nth($carbon--type-scale, $step);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2302,11 +2778,16 @@ $carbon--type-scale: {
 
 Set the font-size value of a selector with the value at the given \$step
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--type-scale: {
   font-size: carbon--type-scale($step);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2321,11 +2802,16 @@ $carbon--type-scale: {
 
 Alias of `type-scale` mixin.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--font-size: {
   font-size: carbon--type-scale($step);
 }
 ```
+
+</details>
 
 **Parameters**:
 
@@ -2350,6 +2836,9 @@ each type style is computed correctly due to the dynamic nature of the
 Most of the logic for this work comes from CSS Tricks:
 https://css-tricks.com/snippets/css/fluid-typography/
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $fluid-type: {
   // Include the initial styles for the given token by default without any
@@ -2372,6 +2861,8 @@ $fluid-type: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name           | Description                     | Type   | Default value |
@@ -2388,6 +2879,9 @@ $fluid-type: {
 ### fluid-type-size [mixin]
 
 Computes the fluid `font-size` for a given type style and breakpoint
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $fluid-type-size: {
@@ -2463,6 +2957,8 @@ $fluid-type-size: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name           | Description                                            | Type   | Default value |
@@ -2485,6 +2981,9 @@ styles for the token if they are defined. Fluid styles will cause the
 token's font-size to be computed based on the viewport size. As a result, use
 with caution in fixed contexts.
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $carbon--type-style: {
   @if not map-has-key($tokens, $name) {
@@ -2505,6 +3004,8 @@ $carbon--type-style: {
 }
 ```
 
+</details>
+
 **Parameters**:
 
 | Name           | Description                                     | Type       | Default value |
@@ -2524,6 +3025,9 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
 ### ibm--colors [mixin]
 
 Define color variables
+
+<details>
+<summary>Code</summary>
 
 ```scss
 $ibm--colors: {
@@ -2769,6 +3273,8 @@ $ibm--colors: {
 }
 ```
 
+</details>
+
 - **Deprecated**: Use `$carbon--colors` going forward
 
 ## @carbon/themes [deprecated]
@@ -2777,9 +3283,14 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
 
 ### brand-01 [variable]
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $brand-01: map-get($carbon--theme, brand-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Alias**: `interactive-01`
@@ -2789,9 +3300,14 @@ $brand-01: map-get($carbon--theme, brand-01);
 
 ### brand-02 [variable]
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $brand-02: map-get($carbon--theme, brand-02);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Alias**: `interactive-02`
@@ -2801,9 +3317,14 @@ $brand-02: map-get($carbon--theme, brand-02);
 
 ### brand-03 [variable]
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $brand-03: map-get($carbon--theme, brand-03);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Alias**: `interactive-03`
@@ -2813,9 +3334,14 @@ $brand-03: map-get($carbon--theme, brand-03);
 
 ### active-01 [variable]
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $active-01: map-get($carbon--theme, active-01);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Alias**: `active-ui`
@@ -2825,9 +3351,14 @@ $active-01: map-get($carbon--theme, active-01);
 
 ### hover-field [variable]
 
+<details>
+<summary>Code</summary>
+
 ```scss
 $hover-field: map-get($carbon--theme, hover-field);
 ```
+
+</details>
 
 - **Type**: `Color`
 - **Alias**: `hover-ui`

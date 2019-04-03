@@ -80,6 +80,12 @@ You can view a full reference of our icons [here](https://carbon-elements.netlif
 . This is useful for finding the path information in order to import
 an icon.
 
+## 📖 API Documentation
+
+If you're looking for `@carbon/icons` API documentation, check out:
+
+- [Sass](./docs/sass.md)
+
 ## 🙌 Contributing
 
 We're always looking for contributors to help us fix bugs, build new
