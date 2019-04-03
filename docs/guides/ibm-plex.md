@@ -247,7 +247,7 @@ or `url-loader` in your webpack config.
 #### CDN
 
 If hosting in a CDN, you will need to manually extract the files that you need
-and publish them to your CDN. For an example for how to structure these, you can
+and publish them to your CDN. For an example of how to structure these, you can
 view how Google Fonts does this in [`@carbon/type`](https://github.com/IBM/carbon-elements/blob/master/packages/type/scss/font-face/_sans.scss).
 
 ## FAQ
