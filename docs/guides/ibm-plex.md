@@ -91,7 +91,7 @@ The following are the options for each of these sub-paths:
   - `Thin`
 - `<font-style>`: an optional attribute, used for italicized versions of fonts
   - `Italic`
-- `<font-split>`: an optional attribute for a specific unicode range, only
+- `<font-split>`: an optional attribute for a specific Unicode range, only
   available when `<output>` is `split`
   - `Cyrillic`
   - `Greek`
