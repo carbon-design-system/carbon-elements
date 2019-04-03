@@ -134,7 +134,7 @@ families and formats.
 
 ### `@font-face`
 
-To include IBM Plex in your projects on the web, you will need to use a CSS
+To include IBM Plex in your projects on the web, you need to use a CSS
 feature called the [`@font-face` at-rule.](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
 If you have not used this feature before, an overview is available [here](https://css-tricks.com/snippets/css/using-font-face/).
 
