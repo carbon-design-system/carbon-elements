@@ -41,7 +41,7 @@ The source for this package is available on [GitHub](https://github.com/ibm/plex
 
 This package ships all of the available fonts, and includes files that offer the
 complete typeface in one file. It also ships fonts split up into a variety of
-unicode ranges to offer better performance (this is only available for a handful
+Unicode ranges to offer better performance (this is only available for a handful
 of fonts).
 
 For example, if your team wants to serve a `woff2` file for IBM Plex Sans, they
