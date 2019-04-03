@@ -149,7 +149,7 @@ template:
 }
 ```
 
-Each block will correspond to a given file supplied by the `@ibm/plex` package.
+Each block corresponds to a given file supplied by the `@ibm/plex` package.
 For example, if we want to load IBM Plex Sans with the font weights of light,
 regular, and bold, we would write three separate `@font-face` blocks:
 
