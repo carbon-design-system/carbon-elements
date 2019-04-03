@@ -148,6 +148,11 @@ ${defaultThemeMapName}: $carbon--theme--${defaultTheme} !default;
 /// @group @carbon/themes`;
 
     tokensFile +=
+      tokenDocs[token] && tokenDocs[token].alias
+        ? `\n/// @alias ${tokenDocs[token].alias}`
+        : ``;
+
+    tokensFile +=
       tokenDocs[token] && tokenDocs[token].deprecated
         ? `\n/// @deprecated`
         : ``;

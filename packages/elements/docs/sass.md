@@ -896,6 +896,8 @@ $interactive-01: map-get($carbon--theme, interactive-01);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `brand-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -908,6 +910,8 @@ $interactive-02: map-get($carbon--theme, interactive-02);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `brand-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -920,6 +924,8 @@ $interactive-03: map-get($carbon--theme, interactive-03);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `brand-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1316,6 +1322,8 @@ $hover-ui: map-get($carbon--theme, hover-ui);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `hover-field`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1328,6 +1336,8 @@ $active-ui: map-get($carbon--theme, active-ui);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `active-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -2171,8 +2181,6 @@ $carbon--font-family: {
 
 - **Requires**:
   - [carbon--font-family [function]](#carbon--font-family-function)
-- **Used by**:
-  - [carbon--type-reset [mixin]](#carbon--type-reset-mixin)
 
 ### carbon--font-weights [variable]
 
@@ -2228,38 +2236,46 @@ $carbon--font-weight: {
 
 - **Requires**:
   - [carbon--font-weight [function]](#carbon--font-weight-function)
-- **Used by**:
-  - [carbon--type-reset [mixin]](#carbon--type-reset-mixin)
 
 ### carbon--type-reset [mixin]
 
-Include a type reset that individuals can use in their projects for
-consistent rendering
+Include a type reset for a given body and mono font family.
 
 ```scss
 $carbon--type-reset: {
   html {
-    font-size: $carbon--base-font-size;
+    font-size: $base-font-size;
   }
 
   body {
-    @include carbon--font-family('sans');
-    @include carbon--font-weight('regular');
-
+    font-family: $body-font-family;
+    font-weight: 400;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
+  // IBM Plex uses semibold instead of bold, as a result we need to map
+  // tags that use `font-weight: bold` to the semibold value
   strong {
     font-weight: 600;
+  }
+
+  code {
+    font-family: $mono-font-family;
   }
 }
 ```
 
-- **Requires**:
-  - [carbon--font-family [mixin]](#carbon--font-family-mixin)
-  - [carbon--font-weight [mixin]](#carbon--font-weight-mixin)
+**Parameters**:
+
+| Name                                        | Description                           | Type     | Default value |
+| ------------------------------------------- | ------------------------------------- | -------- | ------------- |
+| `$base-font-size`                           | the base font size for your document  | `Number` | `—`           |
+| `$body-font-family`                         | the font family used on the <body>    |
+| element                                     | `String`                              | `—`      |
+| `$mono-font-family`                         | the font family used on elements that |
+| require mono fonts, like the <code> element | `String`                              | `—`      |
 
 ### carbon--get-type-size [function]
 
@@ -2802,6 +2818,7 @@ $brand-01: map-get($carbon--theme, brand-01);
 ```
 
 - **Type**: `Color`
+- **Alias**: `interactive-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -2813,6 +2830,7 @@ $brand-02: map-get($carbon--theme, brand-02);
 ```
 
 - **Type**: `Color`
+- **Alias**: `interactive-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -2824,6 +2842,7 @@ $brand-03: map-get($carbon--theme, brand-03);
 ```
 
 - **Type**: `Color`
+- **Alias**: `interactive-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -2835,6 +2854,7 @@ $active-01: map-get($carbon--theme, active-01);
 ```
 
 - **Type**: `Color`
+- **Alias**: `active-ui`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -2846,6 +2866,7 @@ $hover-field: map-get($carbon--theme, hover-field);
 ```
 
 - **Type**: `Color`
+- **Alias**: `hover-ui`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases

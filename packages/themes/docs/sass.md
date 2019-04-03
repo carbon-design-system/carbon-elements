@@ -494,6 +494,8 @@ $interactive-01: map-get($carbon--theme, interactive-01);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `brand-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -506,6 +508,8 @@ $interactive-02: map-get($carbon--theme, interactive-02);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `brand-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -518,6 +522,8 @@ $interactive-03: map-get($carbon--theme, interactive-03);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `brand-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -914,6 +920,8 @@ $hover-ui: map-get($carbon--theme, hover-ui);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `hover-field`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -926,6 +934,8 @@ $active-ui: map-get($carbon--theme, active-ui);
 ```
 
 - **Type**: `Color`
+- **Aliased**:
+  - `active-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1060,6 +1070,7 @@ $brand-01: map-get($carbon--theme, brand-01);
 ```
 
 - **Type**: `Color`
+- **Alias**: `interactive-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -1071,6 +1082,7 @@ $brand-02: map-get($carbon--theme, brand-02);
 ```
 
 - **Type**: `Color`
+- **Alias**: `interactive-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -1082,6 +1094,7 @@ $brand-03: map-get($carbon--theme, brand-03);
 ```
 
 - **Type**: `Color`
+- **Alias**: `interactive-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -1093,6 +1106,7 @@ $active-01: map-get($carbon--theme, active-01);
 ```
 
 - **Type**: `Color`
+- **Alias**: `active-ui`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
@@ -1104,6 +1118,7 @@ $hover-field: map-get($carbon--theme, hover-field);
 ```
 
 - **Type**: `Color`
+- **Alias**: `hover-ui`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
