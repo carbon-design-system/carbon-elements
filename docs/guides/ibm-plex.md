@@ -157,19 +157,22 @@ regular, and bold, we would write three separate `@font-face` blocks:
 @font-face {
   font-family: 'IBM Plex Sans';
   font-weight: 300;
-  src: url('<path-to-ibm-plex>/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Light.woff2) format('woff2');
+  src: url('<path-to-ibm-plex>/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Light.woff2')
+    format('woff2');
 }
 
 @font-face {
   font-family: 'IBM Plex Sans';
   font-weight: 400;
-  src: url('<path-to-ibm-plex>/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Regular.woff2) format('woff2');
+  src: url('<path-to-ibm-plex>/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Regular.woff2')
+    format('woff2');
 }
 
 @font-face {
   font-family: 'IBM Plex Sans';
   font-weight: 700;
-  src: url('<path-to-ibm-plex>/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2) format('woff2');
+  src: url('<path-to-ibm-plex>/IBM-Plex-Sans/fonts/complete/woff2/IBMPlexSans-Bold.woff2')
+    format('woff2');
 }
 ```
 
