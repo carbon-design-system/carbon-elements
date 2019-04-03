@@ -100,7 +100,7 @@ The following are the options for each of these sub-paths:
   - `Latin3`
   - `Pi`
 
-To get a hang of things, let's go through a couple of examples for various font
+To get the hang of things, let's go through a couple of examples for various font
 families and formats.
 
 <details>
