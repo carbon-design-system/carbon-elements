@@ -10,7 +10,6 @@
 /// @type Map
 /// @access public
 /// @group @carbon/themes
-/// @since v10.0.x
 $carbon--theme--white: (
   interactive-01: #0062ff,
   interactive-02: #171717,
@@ -70,7 +69,6 @@ $carbon--theme--white: (
 /// @type Map
 /// @access public
 /// @group @carbon/themes
-/// @since v10.0.x
 $carbon--theme--g10: (
   interactive-01: #0062ff,
   interactive-02: #171717,
@@ -130,7 +128,6 @@ $carbon--theme--g10: (
 /// @type Map
 /// @access public
 /// @group @carbon/themes
-/// @since v10.0.x
 $carbon--theme--g90: (
   interactive-01: #0062ff,
   interactive-02: #6f6f6f,
@@ -190,7 +187,6 @@ $carbon--theme--g90: (
 /// @type Map
 /// @access public
 /// @group @carbon/themes
-/// @since v10.0.x
 $carbon--theme--g100: (
   interactive-01: #0062ff,
   interactive-02: #6f6f6f,
@@ -251,5 +247,4 @@ $carbon--theme--g100: (
 /// @access public
 /// @alias carbon--theme--white
 /// @group @carbon/themes
-/// @since v10.0.x
 $carbon--theme: $carbon--theme--white !default;

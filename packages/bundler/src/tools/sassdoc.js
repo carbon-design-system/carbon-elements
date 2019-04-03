@@ -207,17 +207,17 @@ ${item.example[0].code}
     });
   }
 
-  if (item.since && item.since.length) {
-    metadata.push({
-      key: 'Since',
-      value: item.since[0].version,
-    });
-  }
+  // if (item.since && item.since.length) {
+  //   metadata.push({
+  //     key: 'Since',
+  //     value: item.since[0].version,
+  //   });
+  // }
 
-  if (item.deprecated) {
+  if (item.deprecated || item.deprecated === '') {
     metadata.push({
       key: 'Deprecated',
-      value: item.deprecated,
+      value: item.deprecated || 'This may not be available in future releases',
     });
   }
 
@@ -249,19 +249,19 @@ async function createMarkdown(sourceDir, config) {
       const publicItems = data.filter(
         (item, index) => item.access === 'public'
       );
-      const currentItems = publicItems.filter(
-        (item, index) => !item.deprecated
-      );
-      const deprecatedItems = publicItems.filter(
-        (item, index) => item.deprecated
-      );
+      const currentItems = publicItems.filter((item, index) => {
+        return !item.deprecated && item.deprecated !== '';
+      });
+      const deprecatedItems = publicItems.filter((item, index) => {
+        return item.deprecated || item.deprecated === '';
+      });
 
       markdownFile += `# Sass functions, mixins, placeholders, variables
 
-<!-- toc -->
-<!-- tocstop -->
+These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.`;
+<!-- toc -->
+<!-- tocstop -->`;
 
       let currentGroup = '';
 
@@ -279,10 +279,6 @@ These public Sass functions, mixins, placeholders, and variables are currently s
         markdownFile += createMarkdownItem(item);
       });
 
-      markdownFile += `\n\n# Deprecated functions, mixins, placeholders, variables
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.`;
-
       currentGroup = '';
 
       deprecatedItems.forEach(item => {
@@ -292,7 +288,9 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
             : item.group[0];
 
         if (itemGroup !== currentGroup) {
-          markdownFile += `\n\n## Deprecated ${itemGroup}`;
+          markdownFile += `\n\n## ${itemGroup} [deprecated]
+
+These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.`;
           currentGroup = itemGroup;
         }
 
