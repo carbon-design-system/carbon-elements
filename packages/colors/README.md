@@ -139,7 +139,7 @@ blue[50]; // Using the `blue` object.
 warmGray100; // Using the `warmGray100` variable.
 ```
 
-## 💡 API Documentation
+## 📖 API Documentation
 
 If you're looking for `@carbon/colors` API documentation, check out:
 

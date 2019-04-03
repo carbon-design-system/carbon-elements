@@ -212,7 +212,7 @@ async function createAPIDoc(name, docsDir) {
       children: [
         {
           type: 'text',
-          value: '💡 API Documentation',
+          value: '📖 API Documentation',
         },
       ],
     },

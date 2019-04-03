@@ -111,7 +111,7 @@ import {
 } from '@carbon/themes';
 ```
 
-## 💡 API Documentation
+## 📖 API Documentation
 
 If you're looking for `@carbon/themes` API documentation, check out:
 
