@@ -227,7 +227,7 @@ directly. You have a couple of options for getting the right assets, namely:
 #### Self-hosted
 
 If you're using a bundler for your front-end assets, like Webpack, then you can
-reference these assets directly and your project should serve them as intended.
+reference these assets directly, and your project should serve them as intended.
 For example, say we have a CSS file that we included in our webpack-based
 project and wrote:
 
