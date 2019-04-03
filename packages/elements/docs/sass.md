@@ -6,6 +6,11 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 
 - [@carbon/colors](#carboncolors)
   - [carbon--colors [mixin]](#carbon--colors-mixin)
+- [@carbon/grid](#carbongrid)
+  - [carbon--12-column-grid [variable]](#carbon--12-column-grid-variable)
+  - [carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+  - [prefix [variable]](#prefix-variable)
 - [@carbon/themes](#carbonthemes)
   - [carbon--theme [mixin]](#carbon--theme-mixin)
   - [carbon--theme--white [variable]](#carbon--theme--white-variable)
@@ -61,14 +66,6 @@ These public Sass functions, mixins, placeholders, and variables are currently s
   - [disabled-03 [variable]](#disabled-03-variable)
   - [highlight [variable]](#highlight-variable)
 - [general](#general)
-  - [/// Used to intialize the default properties for a column class, most notably](#-used-to-intialize-the-default-properties-for-a-column-class-most-notably)
-  - [/// Define the properties for a selector assigned to a row in the grid system.](#-define-the-properties-for-a-selector-assigned-to-a-row-in-the-grid-system)
-  - [/// Add no-gutter and no-gutter-- [css]](#-add-no-gutter-and-no-gutter---css)
-  - [/// Add hang--left and hang--right classes for a given gutter. These classes are](#-add-hang--left-and-hang--right-classes-for-a-given-gutter-these-classes-are)
-  - [carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
-  - [/// The aspect ratios that are used to generate corresponding aspect ratio](#-the-aspect-ratios-that-are-used-to-generate-corresponding-aspect-ratio)
-  - [/// Create the container for a grid. Will cause full-bleed for the grid unless](#-create-the-container-for-a-grid-will-cause-full-bleed-for-the-grid-unless)
-  - [carbon--grid [mixin]](#carbon--grid-mixin)
   - [exports [mixin]](#exports-mixin)
   - [carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
   - [carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
@@ -468,6 +465,119 @@ $carbon--colors: {
   ) !default !global;
 }
 ```
+
+## @carbon/grid
+
+### carbon--12-column-grid [variable]
+
+Overrides `$carbon--grid-breakpoints` to use a 12 column grid instead of the default 16
+
+```scss
+$carbon--12-column-grid: map-merge(
+  $carbon--grid-breakpoints,
+  (
+    lg: map-merge(
+        map-get($carbon--grid-breakpoints, lg),
+        (
+          columns: 12,
+        )
+      ),
+    xlg: map-merge(
+        map-get($carbon--grid-breakpoints, xlg),
+        (
+          columns: 12,
+        )
+      ),
+    max: map-merge(
+        map-get($carbon--grid-breakpoints, max),
+        (
+          columns: 12,
+        )
+      ),
+  )
+);
+```
+
+- **Type**: `Map`
+
+### carbon--aspect-ratios [variable]
+
+The aspect ratios that are used to generate corresponding aspect ratio
+classes in code
+
+```scss
+$carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
+```
+
+### carbon--grid [mixin]
+
+Generate the CSS for a grid for the given breakpoints and gutter
+
+```scss
+$carbon--grid: {
+  .#{$prefix}--grid {
+    @include carbon--make-container($breakpoints);
+  }
+
+  @include carbon--largest-breakpoint($breakpoints) {
+    .#{$prefix}--grid--full-width {
+      max-width: 100%;
+    }
+  }
+
+  .#{$prefix}--row {
+    @include carbon--make-row();
+  }
+
+  .#{$prefix}--grid--condensed .#{$prefix}--row:not(:last-of-type) {
+    margin-bottom: $condensed-gutter;
+  }
+
+  .#{$prefix}--row--condensed + .#{$prefix}--row--condensed {
+    margin-top: $condensed-gutter;
+  }
+
+  @include carbon--make-grid-columns($breakpoints, $grid-gutter);
+  @include carbon--no-gutter();
+  @include carbon--hang($grid-gutter);
+  @include carbon--aspect-ratio();
+}
+```
+
+**Parameters**:
+
+| Name                | Description | Type     | Default value |
+| ------------------- | ----------- | -------- | ------------- |
+| `$breakpoints`      | —           | `Map`    | —             |
+| `$grid-gutter`      | —           | `Number` | —             |
+| `$condensed-gutter` | —           | `Number` | —             |
+
+- **Requires**:
+  - [carbon--make-container [mixin]](#carbon--make-container-mixin)
+  - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
+  - [carbon--make-row [mixin]](#carbon--make-row-mixin)
+  - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
+  - [carbon--no-gutter [mixin]](#carbon--no-gutter-mixin)
+  - [carbon--hang [mixin]](#carbon--hang-mixin)
+  - [carbon--aspect-ratio [mixin]](#carbon--aspect-ratio-mixin)
+  - [prefix [variable]](#prefix-variable)
+
+### prefix [variable]
+
+Namespace prefix
+
+```scss
+$prefix: 'bx';
+```
+
+- **Type**: `String`
+- **Used by**:
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+  - [carbon--make-col-ready [mixin]](#carbon--make-col-ready-mixin)
+  - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
+  - [carbon--no-gutter [mixin]](#carbon--no-gutter-mixin)
+  - [carbon--hang [mixin]](#carbon--hang-mixin)
+  - [carbon--aspect-ratio [mixin]](#carbon--aspect-ratio-mixin)
 
 ## @carbon/themes
 
@@ -1463,147 +1573,6 @@ $highlight: map-get($carbon--theme, highlight);
 
 ## general
 
-### /// Used to intialize the default properties for a column class, most notably
-
-/// for setting width and default gutters when a column's breakpoint has not been
-/// hit yet.
-/// @param [css]
-
-Columns
-
-```scss
-$/// Used to intialize the default properties for a column class, most notably
-/// for setting width and default gutters when a column's breakpoint has not been
-/// hit yet.
-/// @param: Number;
-```
-
-### /// Define the properties for a selector assigned to a row in the grid system.
-
-/// @param [css]
-
-Rows
-
-```scss
-$/// Define the properties for a selector assigned to a row in the grid system.
-/// @param: Number;
-```
-
-### /// Add no-gutter and no-gutter-- [css]
-
-No gutter
-
-```scss
-$///Addno-gutter and no-gutter--: left, right;
-```
-
-### /// Add hang--left and hang--right classes for a given gutter. These classes are
-
-/// used alongside `no-gutter--left` and `no-gutter--right` to "hang" type.
-/// @param [css]
-
-Hang
-
-```scss
-$/// Add hang--left and hang--right classes for a given gutter. These classes are
-/// used alongside `no-gutter--left` and `no-gutter--right` to "hang" type.
-/// @param: Number;
-```
-
-### carbon--aspect-ratios [variable]
-
-The aspect ratios that are used to generate corresponding aspect ratio
-classes in code
-
-```scss
-$carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
-```
-
-### /// The aspect ratios that are used to generate corresponding aspect ratio
-
-/// classes in code
-/// @access public
-\$carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
-
-/// Output the CSS classes for generating aspect ratio classes
-/// @param [css]
-
-Aspect ratio
-
-```scss
-$///Theaspect ratios that are used to generate corresponding aspect ratio
-/// classes in code
-/// @access public
-$carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
-
-/// Output the CSS classes for generating aspect ratio classes
-/// @param: List;
-```
-
-### /// Create the container for a grid. Will cause full-bleed for the grid unless
-
-/// max-width properties are added with `make-container-max-widths`
-/// @param [css]
-
-Grid
-
-```scss
-$/// Create the container for a grid. Will cause full-bleed for the grid unless
-/// max-width properties are added with `make-container-max-widths`
-/// @param: Map;
-```
-
-### carbon--grid [mixin]
-
-Generate the CSS for a grid for the given breakpoints and gutter
-
-```scss
-$carbon--grid: {
-  .#{$prefix}--grid {
-    @include carbon--make-container($breakpoints);
-  }
-
-  @include carbon--largest-breakpoint($breakpoints) {
-    .#{$prefix}--grid--full-width {
-      max-width: 100%;
-    }
-  }
-
-  .#{$prefix}--row {
-    @include carbon--make-row();
-  }
-
-  .#{$prefix}--grid--condensed .#{$prefix}--row:not(:last-of-type) {
-    margin-bottom: $condensed-gutter;
-  }
-
-  .#{$prefix}--row--condensed + .#{$prefix}--row--condensed {
-    margin-top: $condensed-gutter;
-  }
-
-  @include carbon--make-grid-columns($breakpoints, $grid-gutter);
-  @include carbon--no-gutter();
-  @include carbon--hang($grid-gutter);
-  @include carbon--aspect-ratio();
-}
-```
-
-**Parameters**:
-
-| Name           | Description | Type     | Default value |
-| -------------- | ----------- | -------- | ------------- |
-| `$breakpoints` | undefined   | `Map`    | `—`           |
-| `$grid-gutter` | undefined   | `Number` | `—`           |
-
-- **Requires**:
-  - [carbon--make-container [mixin]](#carbon--make-container-mixin)
-  - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
-  - [carbon--make-row [mixin]](#carbon--make-row-mixin)
-  - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
-  - [carbon--no-gutter [mixin]](#carbon--no-gutter-mixin)
-  - [carbon--hang [mixin]](#carbon--hang-mixin)
-  - [carbon--aspect-ratio [mixin]](#carbon--aspect-ratio-mixin)
-
 ### exports [mixin]
 
 Module export mixin
@@ -1624,7 +1593,7 @@ $exports: {
 
 | Name     | Description                                   | Type     | Default value |
 | -------- | --------------------------------------------- | -------- | ------------- |
-| `$name`  | Name of exported module                       | `String` | `—`           |
+| `$name`  | Name of exported module                       | `String` | —             |
 | `$error` | Error when a module has been already imported | `Bool`   | `false`       |
 
 ### carbon--breakpoint-next [function]
@@ -1645,13 +1614,12 @@ $carbon--breakpoint-next: {
 
 | Name                                                             | Description                                    | Type                        | Default value            |
 | ---------------------------------------------------------------- | ---------------------------------------------- | --------------------------- | ------------------------ |
-| `$name`                                                          | the name of the brekapoint                     | `String`                    | `—`                      |
+| `$name`                                                          | the name of the brekapoint                     | `String`                    | —                        |
 | `$breakpoints`                                                   | a map of breakpoints where the key is the name |
 | of the breakpoint and the value is the values for the breakpoint | `Map`                                          | `$carbon--grid-breakpoints` |
 | `$breakpoint-names`                                              | a list of names from the \$breakpoints map     | `List`                      | `map-keys($breakpoints)` |
 
 - **Used by**:
-  - [fluid-type-size [mixin]](#fluid-type-size-mixin)
   - [fluid-type-size [mixin]](#fluid-type-size-mixin)
 
 ### carbon--is-smallest-breakpoint [function]
@@ -1705,7 +1673,7 @@ $carbon--breakpoint-infix: {
 
 | Name    | Description                | Type     | Default value |
 | ------- | -------------------------- | -------- | ------------- |
-| `$name` | the name of the breakpoint | `String` | `—`           |
+| `$name` | the name of the breakpoint | `String` | —             |
 
 - **Used by**:
   - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
@@ -1740,7 +1708,7 @@ $carbon--breakpoint-up: {
 
 | Name           | Description                                    | Type              | Default value               |
 | -------------- | ---------------------------------------------- | ----------------- | --------------------------- |
-| `$name`        | undefined                                      | `string | number` | `—`                         |
+| `$name`        | —                                              | `string | number` | —                           |
 | `$breakpoints` | a map of breakpoints where the key is the name | `Map`             | `$carbon--grid-breakpoints` |
 
 - **Requires**:
@@ -1779,7 +1747,7 @@ $carbon--breakpoint-down: {
 
 | Name           | Description                                    | Type              | Default value               |
 | -------------- | ---------------------------------------------- | ----------------- | --------------------------- |
-| `$name`        | undefined                                      | `string | number` | `—`                         |
+| `$name`        | —                                              | `string | number` | —                           |
 | `$breakpoints` | a map of breakpoints where the key is the name | `Map`             | `$carbon--grid-breakpoints` |
 
 - **Requires**:
@@ -1823,8 +1791,8 @@ $carbon--breakpoint-between: {
 
 | Name     | Description | Type              | Default value |
 | -------- | ----------- | ----------------- | ------------- |
-| `$lower` | undefined   | `string | number` | `—`           |
-| `$upper` | undefined   | `string | number` | `—`           |
+| `$lower` | —           | `string | number` | —             |
+| `$upper` | —           | `string | number` | —             |
 
 - **Requires**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
@@ -1870,14 +1838,13 @@ $carbon--breakpoint: {
 
 | Name           | Description                                    | Type              | Default value               |
 | -------------- | ---------------------------------------------- | ----------------- | --------------------------- |
-| `$name`        | undefined                                      | `string | number` | `—`                         |
+| `$name`        | —                                              | `string | number` | —                           |
 | `$breakpoints` | a map of breakpoints where the key is the name | `Map`             | `$carbon--grid-breakpoints` |
 
 - **Requires**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
 - **Used by**:
   - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
-  - [carbon--make-container [mixin]](#carbon--make-container-mixin)
   - [carbon--make-container [mixin]](#carbon--make-container-mixin)
   - [carbon--make-container-max-widths [mixin]](#carbon--make-container-max-widths-mixin)
   - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
@@ -1897,7 +1864,7 @@ $carbon--rem: {
 
 | Name  | Description | Type | Default value |
 | ----- | ----------- | ---- | ------------- |
-| `$px` | undefined   | `px` | `—`           |
+| `$px` | —           | `px` | —             |
 
 - **Used by**:
   - [carbon--mini-units [function]](#carbon--mini-units-function)
@@ -1916,7 +1883,7 @@ $carbon--em: {
 
 | Name  | Description | Type | Default value |
 | ----- | ----------- | ---- | ------------- |
-| `$px` | undefined   | `px` | `—`           |
+| `$px` | —           | `px` | —             |
 
 ### carbon--get-column-width [function]
 
@@ -1942,7 +1909,7 @@ $carbon--get-column-width: {
 
 | Name          | Description | Type     | Default value |
 | ------------- | ----------- | -------- | ------------- |
-| `$breakpoint` | undefined   | `string` | `—`           |
+| `$breakpoint` | —           | `string` | —             |
 
 ### carbon--key-height [function]
 
@@ -1962,8 +1929,8 @@ $carbon--key-height: {
 
 | Name          | Description | Type     | Default value |
 | ------------- | ----------- | -------- | ------------- |
-| `$breakpoint` | undefined   | `string` | `—`           |
-| `$step`       | undefined   | `number` | `—`           |
+| `$breakpoint` | —           | `string` | —             |
+| `$step`       | —           | `number` | —             |
 
 ### carbon--mini-units [function]
 
@@ -1979,7 +1946,7 @@ $carbon--mini-units: {
 
 | Name     | Description                              | Type     | Default value |
 | -------- | ---------------------------------------- | -------- | ------------- |
-| `$count` | the number of units to get the value for | `number` | `—`           |
+| `$count` | the number of units to get the value for | `number` | —             |
 
 - **Requires**:
   - [carbon--rem [function]](#carbon--rem-function)
@@ -2001,8 +1968,8 @@ $map-deep-get: {
 
 | Name    | Description | Type      | Default value |
 | ------- | ----------- | --------- | ------------- |
-| `$map`  | Map         | `Map`     | `—`           |
-| `$keys` | Key chain   | `Arglist` | `—`           |
+| `$map`  | Map         | `Map`     | —             |
+| `$keys` | Key chain   | `Arglist` | —             |
 
 ### carbon--key-by-index [function]
 
@@ -2021,8 +1988,8 @@ $carbon--key-by-index: {
 
 | Name     | Description | Type      | Default value |
 | -------- | ----------- | --------- | ------------- |
-| `$map`   | Map         | `Map`     | `—`           |
-| `$index` | Key chain   | `Integer` | `—`           |
+| `$map`   | Map         | `Map`     | —             |
+| `$index` | Key chain   | `Integer` | —             |
 
 - **Used by**:
   - [carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
@@ -2044,7 +2011,7 @@ $last-map-item: {
 
 | Name   | Description | Type  | Default value |
 | ------ | ----------- | ----- | ------------- |
-| `$map` | Map         | `Map` | `—`           |
+| `$map` | Map         | `Map` | —             |
 
 - **Requires**:
   - [carbon--key-by-index [function]](#carbon--key-by-index-function)
@@ -2097,8 +2064,8 @@ $carbon--motion: {
 
 | Name    | Description                           | Type     | Default value |
 | ------- | ------------------------------------- | -------- | ------------- |
-| `$name` | the name of the easing curve to apply | `String` | `—`           |
-| `$mode` | the mode for the easing curve to use  | `String` | `—`           |
+| `$name` | the name of the easing curve to apply | `String` | —             |
+| `$mode` | the mode for the easing curve to use  | `String` | —             |
 
 - **Used by**:
   - [carbon--motion [mixin]](#carbon--motion-mixin)
@@ -2117,8 +2084,8 @@ $carbon--motion: {
 
 | Name    | Description                           | Type     | Default value |
 | ------- | ------------------------------------- | -------- | ------------- |
-| `$name` | the name of the easing curve to apply | `String` | `—`           |
-| `$mode` | the mode for the easing curve to use  | `String` | `—`           |
+| `$name` | the name of the easing curve to apply | `String` | —             |
+| `$mode` | the mode for the easing curve to use  | `String` | —             |
 
 - **Requires**:
   - [carbon--motion [function]](#carbon--motion-function)
@@ -2156,7 +2123,7 @@ $carbon--font-family: {
 
 | Name    | Description | Type     | Default value |
 | ------- | ----------- | -------- | ------------- |
-| `$name` | undefined   | `String` | `—`           |
+| `$name` | —           | `String` | —             |
 
 - **Requires**:
   - [carbon--font-families [variable]](#carbon--font-families-variable)
@@ -2177,7 +2144,7 @@ $carbon--font-family: {
 
 | Name    | Description | Type     | Default value |
 | ------- | ----------- | -------- | ------------- |
-| `$name` | undefined   | `String` | `—`           |
+| `$name` | —           | `String` | —             |
 
 - **Requires**:
   - [carbon--font-family [function]](#carbon--font-family-function)
@@ -2211,7 +2178,7 @@ $carbon--font-weight: {
 
 | Name      | Description | Type     | Default value |
 | --------- | ----------- | -------- | ------------- |
-| `$weight` | undefined   | `String` | `—`           |
+| `$weight` | —           | `String` | —             |
 
 - **Requires**:
   - [carbon--font-weights [variable]](#carbon--font-weights-variable)
@@ -2232,7 +2199,7 @@ $carbon--font-weight: {
 
 | Name      | Description | Type     | Default value |
 | --------- | ----------- | -------- | ------------- |
-| `$weight` | undefined   | `String` | `—`           |
+| `$weight` | —           | `String` | —             |
 
 - **Requires**:
   - [carbon--font-weight [function]](#carbon--font-weight-function)
@@ -2271,11 +2238,11 @@ $carbon--type-reset: {
 
 | Name                                        | Description                           | Type     | Default value |
 | ------------------------------------------- | ------------------------------------- | -------- | ------------- |
-| `$base-font-size`                           | the base font size for your document  | `Number` | `—`           |
+| `$base-font-size`                           | the base font size for your document  | `Number` | —             |
 | `$body-font-family`                         | the font family used on the <body>    |
-| element                                     | `String`                              | `—`      |
+| element                                     | `String`                              | —        |
 | `$mono-font-family`                         | the font family used on elements that |
-| require mono fonts, like the <code> element | `String`                              | `—`      |
+| require mono fonts, like the <code> element | `String`                              | —        |
 
 ### carbon--get-type-size [function]
 
@@ -2295,7 +2262,7 @@ $carbon--get-type-size: {
 
 | Name    | Description | Type     | Default value |
 | ------- | ----------- | -------- | ------------- |
-| `$step` | undefined   | `Number` | `—`           |
+| `$step` | —           | `Number` | —             |
 
 ### carbon--type-scale [variable]
 
@@ -2323,7 +2290,7 @@ $carbon--type-scale: {
 
 | Name    | Description | Type     | Default value |
 | ------- | ----------- | -------- | ------------- |
-| `$step` | undefined   | `Number` | `—`           |
+| `$step` | —           | `Number` | —             |
 
 - **Requires**:
   - [carbon--type-scale [variable]](#carbon--type-scale-variable)
@@ -2345,7 +2312,7 @@ $carbon--type-scale: {
 
 | Name    | Description | Type     | Default value |
 | ------- | ----------- | -------- | ------------- |
-| `$step` | undefined   | `Number` | `—`           |
+| `$step` | —           | `Number` | —             |
 
 - **Requires**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
@@ -2364,7 +2331,7 @@ $carbon--font-size: {
 
 | Name    | Description | Type     | Default value |
 | ------- | ----------- | -------- | ------------- |
-| `$step` | undefined   | `Number` | `—`           |
+| `$step` | —           | `Number` | —             |
 
 - **Requires**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
@@ -2409,13 +2376,12 @@ $fluid-type: {
 
 | Name           | Description                     | Type   | Default value |
 | -------------- | ------------------------------- | ------ | ------------- |
-| `$type-styles` | the value of a given type token | `Map`  | `—`           |
-| `$breakpoints` | custom breakpoints to use       | `?Map` | `—`           |
+| `$type-styles` | the value of a given type token | `Map`  | —             |
+| `$breakpoints` | custom breakpoints to use       | `?Map` | —             |
 
 - **Requires**:
   - [fluid-type-size [mixin]](#fluid-type-size-mixin)
   - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
-  - [fluid-type-size [mixin]](#fluid-type-size-mixin)
 - **Used by**:
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
@@ -2501,16 +2467,14 @@ $fluid-type-size: {
 
 | Name           | Description                                            | Type   | Default value |
 | -------------- | ------------------------------------------------------ | ------ | ------------- |
-| `$type-styles` | the styles for a given token                           | `Map`  | `—`           |
+| `$type-styles` | the styles for a given token                           | `Map`  | —             |
 | `$name`        | the name of the breakpoint to which we apply the fluid |
-| styles         | `String`                                               | `—`    |
-| `$breakpoints` | the breakpoints for the grid system                    | `?Map` | `—`           |
+| styles         | `String`                                               | —      |
+| `$breakpoints` | the breakpoints for the grid system                    | `?Map` | —             |
 
 - **Requires**:
   - [carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
-  - [carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
 - **Used by**:
-  - [fluid-type [mixin]](#fluid-type-mixin)
   - [fluid-type [mixin]](#fluid-type-mixin)
 
 ### carbon--type-style [mixin]
@@ -2545,10 +2509,10 @@ $carbon--type-style: {
 
 | Name           | Description                                     | Type       | Default value |
 | -------------- | ----------------------------------------------- | ---------- | ------------- |
-| `$name`        | the name of the token to get the styles for     | `String`   | `—`           |
-| `$fluid`       | specify whether to include fluid styles for the | `?Boolean` | `—`           |
+| `$name`        | the name of the token to get the styles for     | `String`   | —             |
+| `$fluid`       | specify whether to include fluid styles for the | `?Boolean` | —             |
 | `$breakpoints` | provide a custom breakpoint map to use          |
-| token          | `?Map`                                          | `—`        |
+| token          | `?Map`                                          | —          |
 
 - **Requires**:
   - [fluid-type [mixin]](#fluid-type-mixin)

@@ -39,6 +39,29 @@ async function createJson(sourceDir, config) {
 }
 
 /**
+ * Remove duplicate objects in `require` and `usedBy` arrays. Array objects have
+ * `name` and `type` properties, sometimes nested in a `context` object.
+ * @param {Array} arr - array with potential duplicates
+ * @return {Array} deduped array
+ */
+function dedupeArray(arr) {
+  return arr.reduce(
+    (p, item) => {
+      const type = item.type || item.context.type;
+      const name = item.name || item.context.name;
+      const id = [type, name].join('|');
+
+      if (p.temp.indexOf(id) === -1) {
+        p.out.push(item);
+        p.temp.push(id);
+      }
+      return p;
+    },
+    { temp: [], out: [] }
+  ).out;
+}
+
+/**
  * Create a unique Sassdoc item name
  * @param {string} name - Sassdoc name
  * @param {string} type - Sassdoc type (e.g. `variable`, `mixin`)
@@ -113,11 +136,11 @@ $${item.context.name}: {${item.context.code}}
 | --- | --- | --- | --- |`;
 
     item.parameter.forEach(param => {
-      const paramDefault = param.default || '—';
+      const paramDefault = param.default ? `\`${param.default}\`` : '—';
 
-      str += `\n| \`$${param.name}\` | ${param.description} | \`${
+      str += `\n| \`$${param.name}\` | ${param.description || '—'} | \`${
         param.type
-      }\` | \`${paramDefault}\` |`;
+      }\` | ${paramDefault} |`;
     });
   }
 
@@ -178,7 +201,7 @@ ${item.example[0].code}
   if (item.require && item.require.length) {
     let subbullets = '';
 
-    item.require.forEach(requires => {
+    dedupeArray(item.require).forEach(requires => {
       subbullets += `\n   - ${createAnchorLink(
         `${requires.name} [${requires.type}]`,
         createUniqueName(requires.name, requires.type)
@@ -194,7 +217,7 @@ ${item.example[0].code}
   if (item.usedBy && item.usedBy.length) {
     let subbullets = '';
 
-    item.usedBy.forEach(usedBy => {
+    dedupeArray(item.usedBy).forEach(usedBy => {
       subbullets += `\n   - ${createAnchorLink(
         `${usedBy.context.name} [${usedBy.context.type}]`,
         createUniqueName(usedBy.context.name, usedBy.context.type)
