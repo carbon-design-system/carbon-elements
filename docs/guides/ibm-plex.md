@@ -28,7 +28,7 @@ Fonts if you are using any of our projects, or if you are using
 [`@carbon/type`](../packages/type) directly.
 
 However, the Google Fonts strategy loaded by default is not recommended for
-production use-cases. Below we offer several alternative ways to include IBM Plex
+production use-cases. Below, we offer several alternative ways to include IBM Plex
 in your project for a variety of situations.
 
 If you feel like a situation isn't fully covered, or you have an idea for
