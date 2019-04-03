@@ -70,7 +70,7 @@ The following are the options for each of these sub-paths:
   - `IBM-Plex-Thai`
 - `<output>`: the output format
   - `complete`: includes all characters in one file
-  - `split`: split characters by unicode ranges, optimal for performance
+  - `split`: split characters by Unicode ranges, optimal for performance
 - `<format>`: the file format, only `woff` and `woff2` are available when
   `output` is `split`
   - `eot`
