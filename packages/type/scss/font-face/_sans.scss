@@ -5,6 +5,9 @@
 // LICENSE file in the root directory of this source tree.
 //
 
+/// Sans `@font-face`'s
+/// @access public
+/// @group @carbon/type
 @mixin carbon--font-face-sans {
   // .woff support for IE11
   @font-face {
