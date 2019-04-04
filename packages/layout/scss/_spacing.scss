@@ -39,13 +39,15 @@ $spacing-07: $carbon--spacing-07 !default;
 $spacing-08: $carbon--spacing-08 !default;
 $spacing-09: $carbon--spacing-09 !default;
 
-$carbon--layout-01: carbon--mini-units(2) !default;
-$carbon--layout-02: carbon--mini-units(3) !default;
-$carbon--layout-03: carbon--mini-units(4) !default;
-$carbon--layout-04: carbon--mini-units(6) !default;
-$carbon--layout-05: carbon--mini-units(8) !default;
-$carbon--layout-06: carbon--mini-units(12) !default;
-$carbon--layout-07: carbon--mini-units(20) !default;
+$carbon--layout-01: carbon--mini-units(1) !default;
+$carbon--layout-02: carbon--mini-units(2) !default;
+$carbon--layout-03: carbon--mini-units(3) !default;
+$carbon--layout-04: carbon--mini-units(4) !default;
+$carbon--layout-05: carbon--mini-units(6) !default;
+$carbon--layout-06: carbon--mini-units(8) !default;
+$carbon--layout-07: carbon--mini-units(10) !default;
+$carbon--layout-08: carbon--mini-units(12) !default;
+$carbon--layout-09: carbon--mini-units(15) !default;
 
 $carbon--layout: (
   $carbon--layout-01,
@@ -54,7 +56,9 @@ $carbon--layout: (
   $carbon--layout-04,
   $carbon--layout-05,
   $carbon--layout-06,
-  $carbon--layout-07
+  $carbon--layout-07,
+  $carbon--layout-08,
+  $carbon--layout-09
 ) !default;
 
 $layout-01: $carbon--layout-01 !default;
@@ -64,6 +68,8 @@ $layout-04: $carbon--layout-04 !default;
 $layout-05: $carbon--layout-05 !default;
 $layout-06: $carbon--layout-06 !default;
 $layout-07: $carbon--layout-07 !default;
+$layout-08: $carbon--layout-08 !default;
+$layout-09: $carbon--layout-09 !default;
 
 // fluid spacing
 $carbon--fluid-spacing-01: 0;
