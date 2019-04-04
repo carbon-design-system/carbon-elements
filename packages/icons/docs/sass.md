@@ -16,10 +16,10 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 Makes SVGs accessible in high contrast mode
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
-$carbon--icons: {
+@mixin carbon--icons() {
   @media screen and (-ms-high-contract: active) {
     svg {
       fill: ButtonText;

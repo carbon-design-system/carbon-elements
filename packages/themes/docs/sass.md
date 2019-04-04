@@ -74,10 +74,10 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 Define theme variables from a map of tokens
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
-$carbon--theme: {
+@mixin carbon--theme($theme: $carbon--theme) {
   $interactive-01: map-get($theme, interactive-01) !global;
   $interactive-02: map-get($theme, interactive-02) !global;
   $interactive-03: map-get($theme, interactive-03) !global;
@@ -142,13 +142,16 @@ $carbon--theme: {
 
 </details>
 
-**Parameters**:
+- **Parameters**:
 
 | Name     | Description         | Type  | Default value    |
 | -------- | ------------------- | ----- | ---------------- |
-| `$theme` | map of theme tokens | `Map` | `$carbon--theme` |
+| `$theme` | Map of theme tokens | `Map` | `$carbon--theme` |
 
 **Example**:
+
+<details>
+<summary>Example code</summary>
 
 ```scss
 // Default usage
@@ -166,6 +169,8 @@ $carbon--theme: {
   }
 }
 ```
+
+</details>
 
 - **Content**: Pass in your custom declaration blocks to be used after the token maps set theming variables.
 - **Requires**:
@@ -228,7 +233,7 @@ $carbon--theme: {
 Carbon's white color theme
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $carbon--theme--white: (
@@ -298,7 +303,7 @@ $carbon--theme--white: (
 Carbon's g10 color theme
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $carbon--theme--g10: (
@@ -366,7 +371,7 @@ $carbon--theme--g10: (
 Carbon's g90 color theme
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $carbon--theme--g90: (
@@ -434,7 +439,7 @@ $carbon--theme--g90: (
 Carbon's g100 color theme
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $carbon--theme--g100: (
@@ -502,7 +507,7 @@ $carbon--theme--g100: (
 Carbon's default theme
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $carbon--theme: $carbon--theme--white;
@@ -520,7 +525,7 @@ $carbon--theme: $carbon--theme--white;
 Primary interactive color; Primary buttons
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $interactive-01: map-get($carbon--theme, interactive-01);
@@ -528,7 +533,7 @@ $interactive-01: map-get($carbon--theme, interactive-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Aliased**:
   - `brand-01`
 - **Used by**:
@@ -539,7 +544,7 @@ $interactive-01: map-get($carbon--theme, interactive-01);
 Secondary interactive color; Secondary button
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $interactive-02: map-get($carbon--theme, interactive-02);
@@ -547,7 +552,7 @@ $interactive-02: map-get($carbon--theme, interactive-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Aliased**:
   - `brand-02`
 - **Used by**:
@@ -558,7 +563,7 @@ $interactive-02: map-get($carbon--theme, interactive-02);
 4.5:1 AA contrast; Tertiary button
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $interactive-03: map-get($carbon--theme, interactive-03);
@@ -566,7 +571,7 @@ $interactive-03: map-get($carbon--theme, interactive-03);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Aliased**:
   - `brand-03`
 - **Used by**:
@@ -577,7 +582,7 @@ $interactive-03: map-get($carbon--theme, interactive-03);
 3:1 AA contrast; Selected elements; Active elements; Accent icons
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $interactive-04: map-get($carbon--theme, interactive-04);
@@ -585,7 +590,7 @@ $interactive-04: map-get($carbon--theme, interactive-04);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -594,7 +599,7 @@ $interactive-04: map-get($carbon--theme, interactive-04);
 Default page background
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $ui-background: map-get($carbon--theme, ui-background);
@@ -602,7 +607,7 @@ $ui-background: map-get($carbon--theme, ui-background);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -611,7 +616,7 @@ $ui-background: map-get($carbon--theme, ui-background);
 Primary container background; Secondary page background
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $ui-01: map-get($carbon--theme, ui-01);
@@ -619,7 +624,7 @@ $ui-01: map-get($carbon--theme, ui-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -628,7 +633,7 @@ $ui-01: map-get($carbon--theme, ui-01);
 Primary page background; Secondary container background
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $ui-02: map-get($carbon--theme, ui-02);
@@ -636,7 +641,7 @@ $ui-02: map-get($carbon--theme, ui-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -645,7 +650,7 @@ $ui-02: map-get($carbon--theme, ui-02);
 Subtle border; Tertiary background color
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $ui-03: map-get($carbon--theme, ui-03);
@@ -653,7 +658,7 @@ $ui-03: map-get($carbon--theme, ui-03);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -662,7 +667,7 @@ $ui-03: map-get($carbon--theme, ui-03);
 3:1 AA element contrast; Medium contrast border
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $ui-04: map-get($carbon--theme, ui-04);
@@ -670,7 +675,7 @@ $ui-04: map-get($carbon--theme, ui-04);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -679,7 +684,7 @@ $ui-04: map-get($carbon--theme, ui-04);
 4.5:1 AA element contrast; High contrast border; Emphasis elements
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $ui-05: map-get($carbon--theme, ui-05);
@@ -687,7 +692,7 @@ $ui-05: map-get($carbon--theme, ui-05);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -696,7 +701,7 @@ $ui-05: map-get($carbon--theme, ui-05);
 Primary text; Body copy; Headers; Hover text color for text-02
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $text-01: map-get($carbon--theme, text-01);
@@ -704,7 +709,7 @@ $text-01: map-get($carbon--theme, text-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -713,7 +718,7 @@ $text-01: map-get($carbon--theme, text-01);
 Secondary text; Input labels; Help text
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $text-02: map-get($carbon--theme, text-02);
@@ -721,7 +726,7 @@ $text-02: map-get($carbon--theme, text-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -730,7 +735,7 @@ $text-02: map-get($carbon--theme, text-02);
 Placeholder text
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $text-03: map-get($carbon--theme, text-03);
@@ -738,7 +743,7 @@ $text-03: map-get($carbon--theme, text-03);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -747,7 +752,7 @@ $text-03: map-get($carbon--theme, text-03);
 Text on interactive colors
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $text-04: map-get($carbon--theme, text-04);
@@ -755,7 +760,7 @@ $text-04: map-get($carbon--theme, text-04);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -764,7 +769,7 @@ $text-04: map-get($carbon--theme, text-04);
 Primary icons
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $icon-01: map-get($carbon--theme, icon-01);
@@ -772,7 +777,7 @@ $icon-01: map-get($carbon--theme, icon-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -781,7 +786,7 @@ $icon-01: map-get($carbon--theme, icon-01);
 Secondary icons
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $icon-02: map-get($carbon--theme, icon-02);
@@ -789,7 +794,7 @@ $icon-02: map-get($carbon--theme, icon-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -798,7 +803,7 @@ $icon-02: map-get($carbon--theme, icon-02);
 Tertiary icons; Icons on interactive colors; Icons on non-ui colors
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $icon-03: map-get($carbon--theme, icon-03);
@@ -806,7 +811,7 @@ $icon-03: map-get($carbon--theme, icon-03);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -815,7 +820,7 @@ $icon-03: map-get($carbon--theme, icon-03);
 Primary links; Ghost button
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $link-01: map-get($carbon--theme, link-01);
@@ -823,7 +828,7 @@ $link-01: map-get($carbon--theme, link-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -832,7 +837,7 @@ $link-01: map-get($carbon--theme, link-01);
 Default input fields; Field color on \$ui-backgrounds
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $field-01: map-get($carbon--theme, field-01);
@@ -840,7 +845,7 @@ $field-01: map-get($carbon--theme, field-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -849,7 +854,7 @@ $field-01: map-get($carbon--theme, field-01);
 Input field color on `$ui-02` backgrounds
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $field-02: map-get($carbon--theme, field-02);
@@ -857,7 +862,7 @@ $field-02: map-get($carbon--theme, field-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -866,7 +871,7 @@ $field-02: map-get($carbon--theme, field-02);
 Inverse text color; Inverse icon color
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $inverse-01: map-get($carbon--theme, inverse-01);
@@ -874,7 +879,7 @@ $inverse-01: map-get($carbon--theme, inverse-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -883,7 +888,7 @@ $inverse-01: map-get($carbon--theme, inverse-01);
 High contrast backgrounds; High contrast elements
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $inverse-02: map-get($carbon--theme, inverse-02);
@@ -891,7 +896,7 @@ $inverse-02: map-get($carbon--theme, inverse-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -900,7 +905,7 @@ $inverse-02: map-get($carbon--theme, inverse-02);
 Error
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $support-01: map-get($carbon--theme, support-01);
@@ -908,7 +913,7 @@ $support-01: map-get($carbon--theme, support-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -917,7 +922,7 @@ $support-01: map-get($carbon--theme, support-01);
 Success
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $support-02: map-get($carbon--theme, support-02);
@@ -925,7 +930,7 @@ $support-02: map-get($carbon--theme, support-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -934,7 +939,7 @@ $support-02: map-get($carbon--theme, support-02);
 Warning
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $support-03: map-get($carbon--theme, support-03);
@@ -942,7 +947,7 @@ $support-03: map-get($carbon--theme, support-03);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -951,7 +956,7 @@ $support-03: map-get($carbon--theme, support-03);
 Information
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $support-04: map-get($carbon--theme, support-04);
@@ -959,7 +964,7 @@ $support-04: map-get($carbon--theme, support-04);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -968,7 +973,7 @@ $support-04: map-get($carbon--theme, support-04);
 Background overlay
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $overlay-01: map-get($carbon--theme, overlay-01);
@@ -976,7 +981,7 @@ $overlay-01: map-get($carbon--theme, overlay-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -985,7 +990,7 @@ $overlay-01: map-get($carbon--theme, overlay-01);
 Focus border; Focus underline
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $focus: map-get($carbon--theme, focus);
@@ -993,7 +998,7 @@ $focus: map-get($carbon--theme, focus);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1002,7 +1007,7 @@ $focus: map-get($carbon--theme, focus);
 `$interactive-01` hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-primary: map-get($carbon--theme, hover-primary);
@@ -1010,7 +1015,7 @@ $hover-primary: map-get($carbon--theme, hover-primary);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1019,7 +1024,7 @@ $hover-primary: map-get($carbon--theme, hover-primary);
 `$interactive-01` active
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $active-primary: map-get($carbon--theme, active-primary);
@@ -1027,7 +1032,7 @@ $active-primary: map-get($carbon--theme, active-primary);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1036,7 +1041,7 @@ $active-primary: map-get($carbon--theme, active-primary);
 `$interactive-01` text hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-primary-text: map-get($carbon--theme, hover-primary-text);
@@ -1044,7 +1049,7 @@ $hover-primary-text: map-get($carbon--theme, hover-primary-text);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1053,7 +1058,7 @@ $hover-primary-text: map-get($carbon--theme, hover-primary-text);
 `$interactive-02` hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-secondary: map-get($carbon--theme, hover-secondary);
@@ -1061,7 +1066,7 @@ $hover-secondary: map-get($carbon--theme, hover-secondary);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1070,7 +1075,7 @@ $hover-secondary: map-get($carbon--theme, hover-secondary);
 `$interactive-02` active; `$inverse-01` active
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $active-secondary: map-get($carbon--theme, active-secondary);
@@ -1078,7 +1083,7 @@ $active-secondary: map-get($carbon--theme, active-secondary);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1087,7 +1092,7 @@ $active-secondary: map-get($carbon--theme, active-secondary);
 `$interactive-03` hover; `$inverse-01` hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-tertiary: map-get($carbon--theme, hover-tertiary);
@@ -1095,7 +1100,7 @@ $hover-tertiary: map-get($carbon--theme, hover-tertiary);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1104,7 +1109,7 @@ $hover-tertiary: map-get($carbon--theme, hover-tertiary);
 `$interactive-03` active
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $active-tertiary: map-get($carbon--theme, active-tertiary);
@@ -1112,7 +1117,7 @@ $active-tertiary: map-get($carbon--theme, active-tertiary);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1121,7 +1126,7 @@ $active-tertiary: map-get($carbon--theme, active-tertiary);
 `$ui-01` hover; `$ui-02` hover; Transparent background hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-ui: map-get($carbon--theme, hover-ui);
@@ -1129,7 +1134,7 @@ $hover-ui: map-get($carbon--theme, hover-ui);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Aliased**:
   - `hover-field`
 - **Used by**:
@@ -1140,7 +1145,7 @@ $hover-ui: map-get($carbon--theme, hover-ui);
 `$ui-01` active; `$ui-02` active
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $active-ui: map-get($carbon--theme, active-ui);
@@ -1148,7 +1153,7 @@ $active-ui: map-get($carbon--theme, active-ui);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Aliased**:
   - `active-01`
 - **Used by**:
@@ -1159,7 +1164,7 @@ $active-ui: map-get($carbon--theme, active-ui);
 Selected UI elements
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $selected-ui: map-get($carbon--theme, selected-ui);
@@ -1167,7 +1172,7 @@ $selected-ui: map-get($carbon--theme, selected-ui);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1176,7 +1181,7 @@ $selected-ui: map-get($carbon--theme, selected-ui);
 Data table selected row hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
@@ -1184,7 +1189,7 @@ $hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1193,7 +1198,7 @@ $hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
 Danger hover; `$support-01` hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-danger: map-get($carbon--theme, hover-danger);
@@ -1201,7 +1206,7 @@ $hover-danger: map-get($carbon--theme, hover-danger);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1210,7 +1215,7 @@ $hover-danger: map-get($carbon--theme, hover-danger);
 Danger active; `$support-01` active
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $active-danger: map-get($carbon--theme, active-danger);
@@ -1218,7 +1223,7 @@ $active-danger: map-get($carbon--theme, active-danger);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1227,7 +1232,7 @@ $active-danger: map-get($carbon--theme, active-danger);
 Row hover
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-row: map-get($carbon--theme, hover-row);
@@ -1235,7 +1240,7 @@ $hover-row: map-get($carbon--theme, hover-row);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1244,7 +1249,7 @@ $hover-row: map-get($carbon--theme, hover-row);
 Visited links
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $visited-link: map-get($carbon--theme, visited-link);
@@ -1252,7 +1257,7 @@ $visited-link: map-get($carbon--theme, visited-link);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1261,7 +1266,7 @@ $visited-link: map-get($carbon--theme, visited-link);
 Disabled fields; Disabled backgrounds; Disabled border
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $disabled-01: map-get($carbon--theme, disabled-01);
@@ -1269,7 +1274,7 @@ $disabled-01: map-get($carbon--theme, disabled-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1278,7 +1283,7 @@ $disabled-01: map-get($carbon--theme, disabled-01);
 Disabled elements on `$disabled-01`; Disabled label; Disabled text on `$disabled-01`; Disabled icons; Disabled border
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $disabled-02: map-get($carbon--theme, disabled-02);
@@ -1286,7 +1291,7 @@ $disabled-02: map-get($carbon--theme, disabled-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1295,7 +1300,7 @@ $disabled-02: map-get($carbon--theme, disabled-02);
 Disabled text on `$disabled-02`; Disabled icons on `$disabled-02`
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $disabled-03: map-get($carbon--theme, disabled-03);
@@ -1303,7 +1308,7 @@ $disabled-03: map-get($carbon--theme, disabled-03);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1312,7 +1317,7 @@ $disabled-03: map-get($carbon--theme, disabled-03);
 `$interactive-01` highlight
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $highlight: map-get($carbon--theme, highlight);
@@ -1320,7 +1325,7 @@ $highlight: map-get($carbon--theme, highlight);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
@@ -1331,7 +1336,7 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
 ### brand-01 [variable]
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $brand-01: map-get($carbon--theme, brand-01);
@@ -1339,7 +1344,7 @@ $brand-01: map-get($carbon--theme, brand-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Alias**: `interactive-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
@@ -1348,7 +1353,7 @@ $brand-01: map-get($carbon--theme, brand-01);
 ### brand-02 [variable]
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $brand-02: map-get($carbon--theme, brand-02);
@@ -1356,7 +1361,7 @@ $brand-02: map-get($carbon--theme, brand-02);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Alias**: `interactive-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
@@ -1365,7 +1370,7 @@ $brand-02: map-get($carbon--theme, brand-02);
 ### brand-03 [variable]
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $brand-03: map-get($carbon--theme, brand-03);
@@ -1373,7 +1378,7 @@ $brand-03: map-get($carbon--theme, brand-03);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Alias**: `interactive-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
@@ -1382,7 +1387,7 @@ $brand-03: map-get($carbon--theme, brand-03);
 ### active-01 [variable]
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $active-01: map-get($carbon--theme, active-01);
@@ -1390,7 +1395,7 @@ $active-01: map-get($carbon--theme, active-01);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Alias**: `active-ui`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
@@ -1399,7 +1404,7 @@ $active-01: map-get($carbon--theme, active-01);
 ### hover-field [variable]
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $hover-field: map-get($carbon--theme, hover-field);
@@ -1407,7 +1412,7 @@ $hover-field: map-get($carbon--theme, hover-field);
 
 </details>
 
-- **Type**: `Color`
+- **Type**: `color`
 - **Alias**: `hover-ui`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)

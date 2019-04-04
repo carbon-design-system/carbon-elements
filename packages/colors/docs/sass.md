@@ -18,10 +18,10 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 Define color variables
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
-$carbon--colors: {
+@mixin carbon--colors() {
   $carbon--black-100: #000000 !default !global;
   $carbon--blue-10: #edf4ff !default !global;
   $carbon--blue-20: #c9deff !default !global;
@@ -378,10 +378,10 @@ These public Sass functions, mixins, placeholders, and variables are deprecated 
 Define color variables
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
-$ibm--colors: {
+@mixin ibm--colors() {
   $ibm-color__black-100: #000000 !default !global;
   $ibm-color__blue-10: #edf4ff !default !global;
   $ibm-color__blue-20: #c9deff !default !global;

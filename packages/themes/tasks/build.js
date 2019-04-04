@@ -72,7 +72,7 @@ $carbon--theme--${name}: (\n`;
   // function block
   let themeMixin = `/// Define theme variables from a map of tokens
 /// @access public
-/// @param {Map} $theme [${defaultThemeMapName}] - map of theme tokens
+/// @param {Map} $theme [${defaultThemeMapName}] - Map of theme tokens
 /// @content Pass in your custom declaration blocks to be used after the token maps set theming variables.
 ///
 /// @example scss
@@ -143,7 +143,7 @@ ${defaultThemeMapName}: $carbon--theme--${defaultTheme} !default;
         ? `\n\n/// ${tokenDocs[token].description}\n`
         : `\n\n`;
 
-    tokensFile += `/// @type Color
+    tokensFile += `/// @type color
 /// @access public
 /// @group @carbon/themes`;
 

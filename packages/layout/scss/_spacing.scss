@@ -7,16 +7,54 @@
 
 @import 'mini-unit';
 
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-01: carbon--mini-units(0.25) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-02: carbon--mini-units(0.5) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-03: carbon--mini-units(1) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-04: carbon--mini-units(1.5) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-05: carbon--mini-units(2) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-06: carbon--mini-units(3) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-07: carbon--mini-units(4) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-08: carbon--mini-units(5) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing-09: carbon--mini-units(6) !default;
 
+/// @type Map
+/// @access public
+/// @group @carbon/layout
 $carbon--spacing: (
   $carbon--spacing-01,
   $carbon--spacing-02,
@@ -29,24 +67,107 @@ $carbon--spacing: (
   $carbon--spacing-09
 ) !default;
 
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-01
+/// @deprecated
 $spacing-01: $carbon--spacing-01 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-02
+/// @deprecated
 $spacing-02: $carbon--spacing-02 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-03
+/// @deprecated
 $spacing-03: $carbon--spacing-03 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-04
+/// @deprecated
 $spacing-04: $carbon--spacing-04 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-05
+/// @deprecated
 $spacing-05: $carbon--spacing-05 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-06
+/// @deprecated
 $spacing-06: $carbon--spacing-06 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-07
+/// @deprecated
 $spacing-07: $carbon--spacing-07 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-08
+/// @deprecated
 $spacing-08: $carbon--spacing-08 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--spacing-09
+/// @deprecated
 $spacing-09: $carbon--spacing-09 !default;
 
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--layout-01: carbon--mini-units(2) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--layout-02: carbon--mini-units(3) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--layout-03: carbon--mini-units(4) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--layout-04: carbon--mini-units(6) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--layout-05: carbon--mini-units(8) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--layout-06: carbon--mini-units(12) !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--layout-07: carbon--mini-units(20) !default;
 
+/// @type Map
+/// @access public
+/// @group @carbon/layout
 $carbon--layout: (
   $carbon--layout-01,
   $carbon--layout-02,
@@ -57,20 +178,78 @@ $carbon--layout: (
   $carbon--layout-07
 ) !default;
 
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--layout-01
+/// @deprecated
 $layout-01: $carbon--layout-01 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--layout-02
+/// @deprecated
 $layout-02: $carbon--layout-02 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--layout-03
+/// @deprecated
 $layout-03: $carbon--layout-03 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--layout-04
+/// @deprecated
 $layout-04: $carbon--layout-04 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--layout-05
+/// @deprecated
 $layout-05: $carbon--layout-05 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--layout-06
+/// @deprecated
 $layout-06: $carbon--layout-06 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--layout-07
+/// @deprecated
 $layout-07: $carbon--layout-07 !default;
 
-// fluid spacing
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--fluid-spacing-01: 0;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--fluid-spacing-02: 2vw;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--fluid-spacing-03: 5vw;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
 $carbon--fluid-spacing-04: 10vw;
 
+/// @type Map
+/// @access public
+/// @group @carbon/layout
 $carbon--fluid-spacing: (
   $carbon--fluid-spacing-01,
   $carbon--fluid-spacing-02,
@@ -78,7 +257,30 @@ $carbon--fluid-spacing: (
   $carbon--fluid-spacing-04
 ) !default;
 
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--fluid-spacing-01
+/// @deprecated
 $fluid-spacing-01: $carbon--fluid-spacing-01 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--fluid-spacing-02
+/// @deprecated
 $fluid-spacing-02: $carbon--fluid-spacing-02 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--fluid-spacing-03
+/// @deprecated
 $fluid-spacing-03: $carbon--fluid-spacing-03 !default;
+
+/// @type Number
+/// @access public
+/// @group @carbon/layout
+/// @alias carbon--fluid-spacing-04
+/// @deprecated
 $fluid-spacing-04: $carbon--fluid-spacing-04 !default;

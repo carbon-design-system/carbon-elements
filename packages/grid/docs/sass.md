@@ -19,7 +19,7 @@ These public Sass functions, mixins, placeholders, and variables are currently s
 Overrides `$carbon--grid-breakpoints` to use a 12 column grid instead of the default 16
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $carbon--12-column-grid: map-merge(
@@ -57,7 +57,7 @@ The aspect ratios that are used to generate corresponding aspect ratio
 classes in code
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
@@ -65,15 +65,17 @@ $carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
 
 </details>
 
+- **Type**: `List`
+
 ### carbon--grid [mixin]
 
 Generate the CSS for a grid for the given breakpoints and gutter
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
-$carbon--grid: {
+@mixin carbon--grid($breakpoints, $grid-gutter, $condensed-gutter) {
   .#{$prefix}--grid {
     @include carbon--make-container($breakpoints);
   }
@@ -105,7 +107,7 @@ $carbon--grid: {
 
 </details>
 
-**Parameters**:
+- **Parameters**:
 
 | Name                | Description | Type     | Default value |
 | ------------------- | ----------- | -------- | ------------- |
@@ -127,7 +129,7 @@ $carbon--grid: {
 Namespace prefix
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 ```scss
 $prefix: 'bx';

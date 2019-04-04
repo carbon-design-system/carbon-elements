@@ -113,7 +113,7 @@ function createMarkdownItem(item) {
     str += `
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 \`\`\`scss
 $${item.context.name}: ${item.context.value};
@@ -123,13 +123,23 @@ $${item.context.name}: ${item.context.value};
 
   // Code (mixins)
   if (item.context.code) {
+    let paramStr = '';
+
+    if (item.parameter) {
+      item.parameter.forEach(param => {
+        if (paramStr) paramStr += `, `;
+        paramStr += `$${param.name}`;
+        if (param.default) paramStr += `: ${param.default}`;
+      });
+    }
+
     str += `
 
 <details>
-<summary>Code</summary>
+<summary>Source code</summary>
 
 \`\`\`scss
-$${item.context.name}: {${item.context.code}}
+@${item.context.type} ${item.context.name}(${paramStr}) {${item.context.code}}
 \`\`\`
 </details>`;
   }
@@ -138,17 +148,21 @@ $${item.context.name}: {${item.context.code}}
   if (item.parameter && item.parameter.length) {
     str += `
 
-**Parameters**:
+- **Parameters**:
 
 | Name | Description | Type | Default value |
 | --- | --- | --- | --- |`;
 
     item.parameter.forEach(param => {
+      const paramType = param.type
+        ? `\`${param.type.replace(/\|/g, `\\|`)}\``
+        : '—';
       const paramDefault = param.default ? `\`${param.default}\`` : '—';
 
-      str += `\n| \`$${param.name}\` | ${param.description || '—'} | \`${
-        param.type
-      }\` | ${paramDefault} |`;
+      const row = `\n| \`$${param.name}\` | ${param.description ||
+        '—'} | ${paramType} | ${paramDefault} |`;
+
+      str += row;
     });
   }
 
@@ -173,6 +187,13 @@ ${item.example[0].code}
 
   // Bullets
   const metadata = [];
+
+  if (item.return) {
+    metadata.push({
+      key: 'Returns',
+      value: `\`${item.return.type}\` ${item.return.description || ''}`,
+    });
+  }
 
   if (item.type) {
     metadata.push({
