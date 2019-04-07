@@ -1,0 +1,21 @@
+{
+  "name": "@carbon/scss",
+  "version": "10.0.0",
+  "license": "Apache-2.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/scss",
+  "bugs": "https://github.com/IBM/carbon-elements/issues",
+  "keywords": [
+    "ibm",
+    "elements",
+    "carbon",
+    "carbon-elements",
+    "carbon-design-system"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "prettier": "^1.16.4"
+  }
+}
