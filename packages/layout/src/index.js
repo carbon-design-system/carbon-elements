@@ -114,15 +114,13 @@ export const spacing = [
 ];
 
 // Layout
-export const layout01 = miniUnits(1);
-export const layout02 = miniUnits(2);
-export const layout03 = miniUnits(3);
-export const layout04 = miniUnits(4);
-export const layout05 = miniUnits(6);
-export const layout06 = miniUnits(8);
-export const layout07 = miniUnits(10);
-export const layout08 = miniUnits(12);
-export const layout09 = miniUnits(15);
+export const layout01 = miniUnits(2);
+export const layout02 = miniUnits(3);
+export const layout03 = miniUnits(4);
+export const layout04 = miniUnits(6);
+export const layout05 = miniUnits(8);
+export const layout06 = miniUnits(12);
+export const layout07 = miniUnits(20);
 export const layout = [
   layout01,
   layout02,
@@ -131,5 +129,4 @@ export const layout = [
   layout05,
   layout06,
   layout07,
-  layout09,
 ];
