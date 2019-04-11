@@ -19,6 +19,19 @@ const prettierOptions = {
 };
 
 /**
+ * Custom slugify for markdown-toc to not include escaped emoji characters
+ * @param {string} title - the anchor link
+ */
+const slugify = title => {
+  return [...toc.slugify(title)].reduce((acc, ch) => {
+    if (ch.charCodeAt(0) > 255) {
+      return acc;
+    }
+    return acc + ch;
+  }, '');
+};
+
+/**
  * Create a JSON file of documented Sass items
  * @see {@link http://sassdoc.com/configuration/|Sassdoc configuration}
  * @param {string} sourceDir - source directory
@@ -72,6 +85,15 @@ function createUniqueName(name, type) {
 }
 
 /**
+ * Create a standardized group name
+ * @param {Array} group - Item's group
+ * @return {string} group name
+ */
+function createGroupName(group) {
+  return !group || !group[0] || group[0] === 'undefined' ? 'general' : group[0];
+}
+
+/**
  * Create GitHub-flavored markdown anchor link
  * @param {string} name - anchor value
  * @param {string} heading - anchor link destination
@@ -100,8 +122,13 @@ function createMarkdownItem(item) {
 
   if (!item.context) return '';
 
+  const status = item.deprecated || item.deprecated === '' ? '❌' : '✅';
+
   // Name
-  str += `\n\n### ${createUniqueName(item.context.name, item.context.type)}`;
+  str += `\n\n### ${status}${createUniqueName(
+    item.context.name,
+    item.context.type
+  )}`;
 
   // Description
   if (item.description) {
@@ -187,6 +214,13 @@ ${item.example[0].code}
 
   // Bullets
   const metadata = [];
+
+  const groupName = createGroupName(item.group);
+
+  metadata.push({
+    key: 'Group',
+    value: createAnchorLink(groupName, groupName),
+  });
 
   if (item.return) {
     metadata.push({
@@ -316,27 +350,21 @@ async function createMarkdown(sourceDir, config) {
       const publicItems = data.filter(
         (item, index) => item.access === 'public'
       );
-      const currentItems = publicItems.filter((item, index) => {
-        return !item.deprecated && item.deprecated !== '';
-      });
-      const deprecatedItems = publicItems.filter((item, index) => {
-        return item.deprecated || item.deprecated === '';
-      });
 
-      markdownFile += `# Sass functions, mixins, placeholders, variables
+      markdownFile += `# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description |
+| --- | --- |
+| ✅ | Currently supported functions, mixins, placeholders, and variables |
+| ❌ | Deprecated items that may not be available in future releases |
 
 <!-- toc -->
 <!-- tocstop -->`;
 
       let currentGroup = '';
 
-      currentItems.forEach(item => {
-        const itemGroup =
-          !item.group || !item.group[0] || item.group[0] === 'undefined'
-            ? 'general'
-            : item.group[0];
+      publicItems.forEach(item => {
+        const itemGroup = createGroupName(item.group);
 
         if (itemGroup !== currentGroup) {
           markdownFile += `\n\n## ${itemGroup}`;
@@ -346,25 +374,10 @@ These public Sass functions, mixins, placeholders, and variables are currently s
         markdownFile += createMarkdownItem(item);
       });
 
-      currentGroup = '';
-
-      deprecatedItems.forEach(item => {
-        const itemGroup =
-          !item.group || !item.group[0] || item.group[0] === 'undefined'
-            ? 'general'
-            : item.group[0];
-
-        if (itemGroup !== currentGroup) {
-          markdownFile += `\n\n## ${itemGroup} [deprecated]
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.`;
-          currentGroup = itemGroup;
-        }
-
-        markdownFile += createMarkdownItem(item);
-      });
-
-      return prettier.format(toc.insert(markdownFile), prettierOptions);
+      return prettier.format(
+        toc.insert(markdownFile, { slugify }),
+        prettierOptions
+      );
     },
     err => {
       console.error(err);

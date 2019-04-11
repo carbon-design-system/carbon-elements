@@ -1,17 +1,20 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/icons](#carbonicons)
-  - [carbon--icons [mixin]](#carbon--icons-mixin)
+  - [✅carbon--icons [mixin]](#carbon--icons-mixin)
 
 <!-- tocstop -->
 
 ## @carbon/icons
 
-### carbon--icons [mixin]
+### ✅carbon--icons [mixin]
 
 Makes SVGs accessible in high contrast mode
 
@@ -30,5 +33,6 @@ Makes SVGs accessible in high contrast mode
 
 </details>
 
+- **Group**: [@carbon/icons](#carbonicons)
 - **Links**:
   - [Carbon-elements #345](https://github.com/IBM/carbon-elements/issues/345#issuecomment-466577293)

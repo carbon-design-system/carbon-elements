@@ -1,20 +1,23 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/grid](#carbongrid)
-  - [carbon--12-column-grid [variable]](#carbon--12-column-grid-variable)
-  - [carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
-  - [carbon--grid [mixin]](#carbon--grid-mixin)
-  - [prefix [variable]](#prefix-variable)
+  - [✅carbon--12-column-grid [variable]](#carbon--12-column-grid-variable)
+  - [✅carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
+  - [✅carbon--grid [mixin]](#carbon--grid-mixin)
+  - [✅prefix [variable]](#prefix-variable)
 
 <!-- tocstop -->
 
 ## @carbon/grid
 
-### carbon--12-column-grid [variable]
+### ✅carbon--12-column-grid [variable]
 
 Overrides `$carbon--grid-breakpoints` to use a 12 column grid instead of the default 16
 
@@ -49,9 +52,10 @@ $carbon--12-column-grid: map-merge(
 
 </details>
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `Map`
 
-### carbon--aspect-ratios [variable]
+### ✅carbon--aspect-ratios [variable]
 
 The aspect ratios that are used to generate corresponding aspect ratio
 classes in code
@@ -65,9 +69,10 @@ $carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
 
 </details>
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `List`
 
-### carbon--grid [mixin]
+### ✅carbon--grid [mixin]
 
 Generate the CSS for a grid for the given breakpoints and gutter
 
@@ -115,6 +120,7 @@ Generate the CSS for a grid for the given breakpoints and gutter
 | `$grid-gutter`      | —           | `Number` | —             |
 | `$condensed-gutter` | —           | `Number` | —             |
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Requires**:
   - [carbon--make-container [mixin]](#carbon--make-container-mixin)
   - [carbon--make-row [mixin]](#carbon--make-row-mixin)
@@ -124,7 +130,7 @@ Generate the CSS for a grid for the given breakpoints and gutter
   - [carbon--aspect-ratio [mixin]](#carbon--aspect-ratio-mixin)
   - [prefix [variable]](#prefix-variable)
 
-### prefix [variable]
+### ✅prefix [variable]
 
 Namespace prefix
 
@@ -137,6 +143,7 @@ $prefix: 'bx';
 
 </details>
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `String`
 - **Used by**:
   - [carbon--make-col-ready [mixin]](#carbon--make-col-ready-mixin)

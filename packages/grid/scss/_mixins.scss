@@ -16,7 +16,7 @@
 // Columns
 // -----------------------------------------------------------------------------
 
-/// Used to intialize the default properties for a column class, most notably
+/// Used to initialize the default properties for a column class, most notably
 /// for setting width and default gutters when a column's breakpoint has not been
 /// hit yet.
 /// @param {Number} $gutter - the default gutter used in the grid system
@@ -241,7 +241,7 @@ $carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
 
 /// Create the container for a grid. Will cause full-bleed for the grid unless
 /// max-width properties are added with `make-container-max-widths`
-/// @param {Map} $breakpoints
+/// @param {Map} $breakpoints [$carbon--grid-breakpoints] - A map of breakpoints where the key is the name
 /// @access private
 /// @group @carbon/grid
 @mixin carbon--make-container($breakpoints: $carbon--grid-breakpoints) {

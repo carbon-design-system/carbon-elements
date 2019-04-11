@@ -1,211 +1,467 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/colors](#carboncolors)
-  - [carbon--colors [mixin]](#carbon--colors-mixin)
+  - [❌ibm--colors [mixin]](#ibm--colors-mixin)
+  - [✅carbon--colors [mixin]](#carbon--colors-mixin)
 - [@carbon/grid](#carbongrid)
-  - [carbon--12-column-grid [variable]](#carbon--12-column-grid-variable)
-  - [carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
-  - [carbon--grid [mixin]](#carbon--grid-mixin)
-  - [prefix [variable]](#prefix-variable)
+  - [✅carbon--12-column-grid [variable]](#carbon--12-column-grid-variable)
+  - [✅carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
+  - [✅carbon--grid [mixin]](#carbon--grid-mixin)
+  - [✅prefix [variable]](#prefix-variable)
 - [@carbon/icons](#carbonicons)
-  - [carbon--icons [mixin]](#carbon--icons-mixin)
+  - [✅carbon--icons [mixin]](#carbon--icons-mixin)
 - [@carbon/import-once](#carbonimport-once)
-  - [imported-modules [variable]](#imported-modules-variable)
-  - [exports [mixin]](#exports-mixin)
+  - [✅imported-modules [variable]](#imported-modules-variable)
+  - [✅exports [mixin]](#exports-mixin)
 - [@carbon/layout](#carbonlayout)
-  - [carbon--grid-gutter [variable]](#carbon--grid-gutter-variable)
-  - [carbon--grid-gutter--condensed [variable]](#carbon--grid-gutter--condensed-variable)
-  - [carbon--grid-breakpoints [variable]](#carbon--grid-breakpoints-variable)
-  - [carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
-  - [carbon--breakpoint-prev [function]](#carbon--breakpoint-prev-function)
-  - [carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
-  - [carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
-  - [carbon--breakpoint-infix [function]](#carbon--breakpoint-infix-function)
-  - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
-  - [carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
-  - [carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
-  - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
-  - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
-  - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
-  - [carbon--rem [function]](#carbon--rem-function)
-  - [carbon--em [function]](#carbon--em-function)
-  - [carbon--get-column-width [function]](#carbon--get-column-width-function)
-  - [carbon--key-height-scales [variable]](#carbon--key-height-scales-variable)
-  - [carbon--key-height [function]](#carbon--key-height-function)
-  - [carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
-  - [carbon--mini-units [function]](#carbon--mini-units-function)
-  - [carbon--spacing-01 [variable]](#carbon--spacing-01-variable)
-  - [carbon--spacing-02 [variable]](#carbon--spacing-02-variable)
-  - [carbon--spacing-03 [variable]](#carbon--spacing-03-variable)
-  - [carbon--spacing-04 [variable]](#carbon--spacing-04-variable)
-  - [carbon--spacing-05 [variable]](#carbon--spacing-05-variable)
-  - [carbon--spacing-06 [variable]](#carbon--spacing-06-variable)
-  - [carbon--spacing-07 [variable]](#carbon--spacing-07-variable)
-  - [carbon--spacing-08 [variable]](#carbon--spacing-08-variable)
-  - [carbon--spacing-09 [variable]](#carbon--spacing-09-variable)
-  - [carbon--spacing [variable]](#carbon--spacing-variable)
-  - [carbon--layout-01 [variable]](#carbon--layout-01-variable)
-  - [carbon--layout-02 [variable]](#carbon--layout-02-variable)
-  - [carbon--layout-03 [variable]](#carbon--layout-03-variable)
-  - [carbon--layout-04 [variable]](#carbon--layout-04-variable)
-  - [carbon--layout-05 [variable]](#carbon--layout-05-variable)
-  - [carbon--layout-06 [variable]](#carbon--layout-06-variable)
-  - [carbon--layout-07 [variable]](#carbon--layout-07-variable)
-  - [carbon--layout [variable]](#carbon--layout-variable)
-  - [carbon--fluid-spacing-01 [variable]](#carbon--fluid-spacing-01-variable)
-  - [carbon--fluid-spacing-02 [variable]](#carbon--fluid-spacing-02-variable)
-  - [carbon--fluid-spacing-03 [variable]](#carbon--fluid-spacing-03-variable)
-  - [carbon--fluid-spacing-04 [variable]](#carbon--fluid-spacing-04-variable)
-  - [carbon--fluid-spacing [variable]](#carbon--fluid-spacing-variable)
-  - [map-deep-get [function]](#map-deep-get-function)
-  - [carbon--key-by-index [function]](#carbon--key-by-index-function)
-  - [last-map-item [function]](#last-map-item-function)
+  - [✅carbon--grid-gutter [variable]](#carbon--grid-gutter-variable)
+  - [✅carbon--grid-gutter--condensed [variable]](#carbon--grid-gutter--condensed-variable)
+  - [✅carbon--grid-breakpoints [variable]](#carbon--grid-breakpoints-variable)
+  - [✅carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
+  - [✅carbon--breakpoint-prev [function]](#carbon--breakpoint-prev-function)
+  - [✅carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
+  - [✅carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
+  - [✅carbon--breakpoint-infix [function]](#carbon--breakpoint-infix-function)
+  - [✅carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
+  - [✅carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
+  - [✅carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
+  - [✅carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
+  - [✅carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
+  - [✅carbon--base-font-size [variable]](#carbon--base-font-size-variable)
+  - [✅carbon--rem [function]](#carbon--rem-function)
+  - [✅carbon--em [function]](#carbon--em-function)
+  - [✅carbon--get-column-width [function]](#carbon--get-column-width-function)
+  - [✅carbon--key-height-scales [variable]](#carbon--key-height-scales-variable)
+  - [✅carbon--key-height [function]](#carbon--key-height-function)
+  - [✅carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
+  - [✅carbon--mini-units [function]](#carbon--mini-units-function)
+  - [✅carbon--spacing-01 [variable]](#carbon--spacing-01-variable)
+  - [✅carbon--spacing-02 [variable]](#carbon--spacing-02-variable)
+  - [✅carbon--spacing-03 [variable]](#carbon--spacing-03-variable)
+  - [✅carbon--spacing-04 [variable]](#carbon--spacing-04-variable)
+  - [✅carbon--spacing-05 [variable]](#carbon--spacing-05-variable)
+  - [✅carbon--spacing-06 [variable]](#carbon--spacing-06-variable)
+  - [✅carbon--spacing-07 [variable]](#carbon--spacing-07-variable)
+  - [✅carbon--spacing-08 [variable]](#carbon--spacing-08-variable)
+  - [✅carbon--spacing-09 [variable]](#carbon--spacing-09-variable)
+  - [✅carbon--spacing [variable]](#carbon--spacing-variable)
+  - [✅spacing-01 [variable]](#spacing-01-variable)
+  - [✅spacing-02 [variable]](#spacing-02-variable)
+  - [✅spacing-03 [variable]](#spacing-03-variable)
+  - [✅spacing-04 [variable]](#spacing-04-variable)
+  - [✅spacing-05 [variable]](#spacing-05-variable)
+  - [✅spacing-06 [variable]](#spacing-06-variable)
+  - [✅spacing-07 [variable]](#spacing-07-variable)
+  - [✅spacing-08 [variable]](#spacing-08-variable)
+  - [✅spacing-09 [variable]](#spacing-09-variable)
+  - [✅carbon--layout-01 [variable]](#carbon--layout-01-variable)
+  - [✅carbon--layout-02 [variable]](#carbon--layout-02-variable)
+  - [✅carbon--layout-03 [variable]](#carbon--layout-03-variable)
+  - [✅carbon--layout-04 [variable]](#carbon--layout-04-variable)
+  - [✅carbon--layout-05 [variable]](#carbon--layout-05-variable)
+  - [✅carbon--layout-06 [variable]](#carbon--layout-06-variable)
+  - [✅carbon--layout-07 [variable]](#carbon--layout-07-variable)
+  - [✅carbon--layout [variable]](#carbon--layout-variable)
+  - [✅layout-01 [variable]](#layout-01-variable)
+  - [✅layout-02 [variable]](#layout-02-variable)
+  - [✅layout-03 [variable]](#layout-03-variable)
+  - [✅layout-04 [variable]](#layout-04-variable)
+  - [✅layout-05 [variable]](#layout-05-variable)
+  - [✅layout-06 [variable]](#layout-06-variable)
+  - [✅layout-07 [variable]](#layout-07-variable)
+  - [✅carbon--fluid-spacing-01 [variable]](#carbon--fluid-spacing-01-variable)
+  - [✅carbon--fluid-spacing-02 [variable]](#carbon--fluid-spacing-02-variable)
+  - [✅carbon--fluid-spacing-03 [variable]](#carbon--fluid-spacing-03-variable)
+  - [✅carbon--fluid-spacing-04 [variable]](#carbon--fluid-spacing-04-variable)
+  - [✅carbon--fluid-spacing [variable]](#carbon--fluid-spacing-variable)
+  - [✅fluid-spacing-01 [variable]](#fluid-spacing-01-variable)
+  - [✅fluid-spacing-02 [variable]](#fluid-spacing-02-variable)
+  - [✅fluid-spacing-03 [variable]](#fluid-spacing-03-variable)
+  - [✅fluid-spacing-04 [variable]](#fluid-spacing-04-variable)
+  - [✅map-deep-get [function]](#map-deep-get-function)
+  - [✅carbon--key-by-index [function]](#carbon--key-by-index-function)
+  - [✅last-map-item [function]](#last-map-item-function)
 - [@carbon/motion](#carbonmotion)
-  - [carbon--easings [variable]](#carbon--easings-variable)
-  - [carbon--motion [function]](#carbon--motion-function)
-  - [carbon--motion [mixin]](#carbon--motion-mixin)
+  - [✅carbon--easings [variable]](#carbon--easings-variable)
+  - [✅carbon--motion [function]](#carbon--motion-function)
+  - [✅carbon--motion [mixin]](#carbon--motion-mixin)
 - [@carbon/themes](#carbonthemes)
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-  - [carbon--theme--white [variable]](#carbon--theme--white-variable)
-  - [carbon--theme--g10 [variable]](#carbon--theme--g10-variable)
-  - [carbon--theme--g90 [variable]](#carbon--theme--g90-variable)
-  - [carbon--theme--g100 [variable]](#carbon--theme--g100-variable)
-  - [carbon--theme [variable]](#carbon--theme-variable)
-  - [interactive-01 [variable]](#interactive-01-variable)
-  - [interactive-02 [variable]](#interactive-02-variable)
-  - [interactive-03 [variable]](#interactive-03-variable)
-  - [interactive-04 [variable]](#interactive-04-variable)
-  - [ui-background [variable]](#ui-background-variable)
-  - [ui-01 [variable]](#ui-01-variable)
-  - [ui-02 [variable]](#ui-02-variable)
-  - [ui-03 [variable]](#ui-03-variable)
-  - [ui-04 [variable]](#ui-04-variable)
-  - [ui-05 [variable]](#ui-05-variable)
-  - [text-01 [variable]](#text-01-variable)
-  - [text-02 [variable]](#text-02-variable)
-  - [text-03 [variable]](#text-03-variable)
-  - [text-04 [variable]](#text-04-variable)
-  - [icon-01 [variable]](#icon-01-variable)
-  - [icon-02 [variable]](#icon-02-variable)
-  - [icon-03 [variable]](#icon-03-variable)
-  - [link-01 [variable]](#link-01-variable)
-  - [field-01 [variable]](#field-01-variable)
-  - [field-02 [variable]](#field-02-variable)
-  - [inverse-01 [variable]](#inverse-01-variable)
-  - [inverse-02 [variable]](#inverse-02-variable)
-  - [support-01 [variable]](#support-01-variable)
-  - [support-02 [variable]](#support-02-variable)
-  - [support-03 [variable]](#support-03-variable)
-  - [support-04 [variable]](#support-04-variable)
-  - [overlay-01 [variable]](#overlay-01-variable)
-  - [focus [variable]](#focus-variable)
-  - [hover-primary [variable]](#hover-primary-variable)
-  - [active-primary [variable]](#active-primary-variable)
-  - [hover-primary-text [variable]](#hover-primary-text-variable)
-  - [hover-secondary [variable]](#hover-secondary-variable)
-  - [active-secondary [variable]](#active-secondary-variable)
-  - [hover-tertiary [variable]](#hover-tertiary-variable)
-  - [active-tertiary [variable]](#active-tertiary-variable)
-  - [hover-ui [variable]](#hover-ui-variable)
-  - [active-ui [variable]](#active-ui-variable)
-  - [selected-ui [variable]](#selected-ui-variable)
-  - [hover-selected-ui [variable]](#hover-selected-ui-variable)
-  - [hover-danger [variable]](#hover-danger-variable)
-  - [active-danger [variable]](#active-danger-variable)
-  - [hover-row [variable]](#hover-row-variable)
-  - [visited-link [variable]](#visited-link-variable)
-  - [disabled-01 [variable]](#disabled-01-variable)
-  - [disabled-02 [variable]](#disabled-02-variable)
-  - [disabled-03 [variable]](#disabled-03-variable)
-  - [highlight [variable]](#highlight-variable)
+  - [✅carbon--theme [mixin]](#carbon--theme-mixin)
+  - [✅carbon--theme--white [variable]](#carbon--theme--white-variable)
+  - [✅carbon--theme--g10 [variable]](#carbon--theme--g10-variable)
+  - [✅carbon--theme--g90 [variable]](#carbon--theme--g90-variable)
+  - [✅carbon--theme--g100 [variable]](#carbon--theme--g100-variable)
+  - [✅carbon--theme [variable]](#carbon--theme-variable)
+  - [✅interactive-01 [variable]](#interactive-01-variable)
+  - [✅interactive-02 [variable]](#interactive-02-variable)
+  - [✅interactive-03 [variable]](#interactive-03-variable)
+  - [✅interactive-04 [variable]](#interactive-04-variable)
+  - [✅ui-background [variable]](#ui-background-variable)
+  - [✅ui-01 [variable]](#ui-01-variable)
+  - [✅ui-02 [variable]](#ui-02-variable)
+  - [✅ui-03 [variable]](#ui-03-variable)
+  - [✅ui-04 [variable]](#ui-04-variable)
+  - [✅ui-05 [variable]](#ui-05-variable)
+  - [✅text-01 [variable]](#text-01-variable)
+  - [✅text-02 [variable]](#text-02-variable)
+  - [✅text-03 [variable]](#text-03-variable)
+  - [✅text-04 [variable]](#text-04-variable)
+  - [✅icon-01 [variable]](#icon-01-variable)
+  - [✅icon-02 [variable]](#icon-02-variable)
+  - [✅icon-03 [variable]](#icon-03-variable)
+  - [✅link-01 [variable]](#link-01-variable)
+  - [✅field-01 [variable]](#field-01-variable)
+  - [✅field-02 [variable]](#field-02-variable)
+  - [✅inverse-01 [variable]](#inverse-01-variable)
+  - [✅inverse-02 [variable]](#inverse-02-variable)
+  - [✅support-01 [variable]](#support-01-variable)
+  - [✅support-02 [variable]](#support-02-variable)
+  - [✅support-03 [variable]](#support-03-variable)
+  - [✅support-04 [variable]](#support-04-variable)
+  - [✅overlay-01 [variable]](#overlay-01-variable)
+  - [✅focus [variable]](#focus-variable)
+  - [✅hover-primary [variable]](#hover-primary-variable)
+  - [✅active-primary [variable]](#active-primary-variable)
+  - [✅hover-primary-text [variable]](#hover-primary-text-variable)
+  - [✅hover-secondary [variable]](#hover-secondary-variable)
+  - [✅active-secondary [variable]](#active-secondary-variable)
+  - [✅hover-tertiary [variable]](#hover-tertiary-variable)
+  - [✅active-tertiary [variable]](#active-tertiary-variable)
+  - [✅hover-ui [variable]](#hover-ui-variable)
+  - [✅active-ui [variable]](#active-ui-variable)
+  - [✅selected-ui [variable]](#selected-ui-variable)
+  - [✅hover-selected-ui [variable]](#hover-selected-ui-variable)
+  - [✅hover-danger [variable]](#hover-danger-variable)
+  - [✅active-danger [variable]](#active-danger-variable)
+  - [✅hover-row [variable]](#hover-row-variable)
+  - [✅visited-link [variable]](#visited-link-variable)
+  - [✅disabled-01 [variable]](#disabled-01-variable)
+  - [✅disabled-02 [variable]](#disabled-02-variable)
+  - [✅disabled-03 [variable]](#disabled-03-variable)
+  - [✅highlight [variable]](#highlight-variable)
+  - [❌brand-01 [variable]](#brand-01-variable)
+  - [❌brand-02 [variable]](#brand-02-variable)
+  - [❌brand-03 [variable]](#brand-03-variable)
+  - [❌active-01 [variable]](#active-01-variable)
+  - [❌hover-field [variable]](#hover-field-variable)
 - [@carbon/type](#carbontype)
-  - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
-  - [carbon--font-families [variable]](#carbon--font-families-variable)
-  - [carbon--font-family [function]](#carbon--font-family-function)
-  - [carbon--font-family [mixin]](#carbon--font-family-mixin)
-  - [carbon--font-weights [variable]](#carbon--font-weights-variable)
-  - [carbon--font-weight [function]](#carbon--font-weight-function)
-  - [carbon--font-weight [mixin]](#carbon--font-weight-mixin)
-  - [prefix [variable]](#prefix-variable-1)
-  - [carbon--type-reset [mixin]](#carbon--type-reset-mixin)
-  - [carbon--get-type-size [function]](#carbon--get-type-size-function)
-  - [carbon--type-scale [variable]](#carbon--type-scale-variable)
-  - [carbon--type-scale [function]](#carbon--type-scale-function)
-  - [carbon--type-scale [mixin]](#carbon--type-scale-mixin)
-  - [carbon--font-size [mixin]](#carbon--font-size-mixin)
-  - [caption-01 [variable]](#caption-01-variable)
-  - [label-01 [variable]](#label-01-variable)
-  - [helper-text-01 [variable]](#helper-text-01-variable)
-  - [body-short-01 [variable]](#body-short-01-variable)
-  - [body-long-01 [variable]](#body-long-01-variable)
-  - [body-short-02 [variable]](#body-short-02-variable)
-  - [body-long-02 [variable]](#body-long-02-variable)
-  - [code-01 [variable]](#code-01-variable)
-  - [code-02 [variable]](#code-02-variable)
-  - [heading-01 [variable]](#heading-01-variable)
-  - [heading-02 [variable]](#heading-02-variable)
-  - [productive-heading-03 [variable]](#productive-heading-03-variable)
-  - [productive-heading-04 [variable]](#productive-heading-04-variable)
-  - [productive-heading-05 [variable]](#productive-heading-05-variable)
-  - [expressive-heading-03 [variable]](#expressive-heading-03-variable)
-  - [expressive-heading-04 [variable]](#expressive-heading-04-variable)
-  - [expressive-heading-05 [variable]](#expressive-heading-05-variable)
-  - [expressive-heading-06 [variable]](#expressive-heading-06-variable)
-  - [expressive-paragraph-01 [variable]](#expressive-paragraph-01-variable)
-  - [quotation-01 [variable]](#quotation-01-variable)
-  - [quotation-02 [variable]](#quotation-02-variable)
-  - [display-01 [variable]](#display-01-variable)
-  - [display-02 [variable]](#display-02-variable)
-  - [display-03 [variable]](#display-03-variable)
-  - [display-04 [variable]](#display-04-variable)
-  - [tokens [variable]](#tokens-variable)
-  - [properties [mixin]](#properties-mixin)
-  - [strip-unit [function]](#strip-unit-function)
-  - [fluid-type [mixin]](#fluid-type-mixin)
-  - [fluid-type-size [mixin]](#fluid-type-size-mixin)
-  - [carbon--type-style [mixin]](#carbon--type-style-mixin)
-  - [carbon--font-face-mono [mixin]](#carbon--font-face-mono-mixin)
-  - [carbon--font-face-sans [mixin]](#carbon--font-face-sans-mixin)
-  - [carbon--font-face-serif [mixin]](#carbon--font-face-serif-mixin)
-- [@carbon/colors [deprecated]](#carboncolors-deprecated)
-  - [ibm--colors [mixin]](#ibm--colors-mixin)
-- [@carbon/layout [deprecated]](#carbonlayout-deprecated)
-  - [spacing-01 [variable]](#spacing-01-variable)
-  - [spacing-02 [variable]](#spacing-02-variable)
-  - [spacing-03 [variable]](#spacing-03-variable)
-  - [spacing-04 [variable]](#spacing-04-variable)
-  - [spacing-05 [variable]](#spacing-05-variable)
-  - [spacing-06 [variable]](#spacing-06-variable)
-  - [spacing-07 [variable]](#spacing-07-variable)
-  - [spacing-08 [variable]](#spacing-08-variable)
-  - [spacing-09 [variable]](#spacing-09-variable)
-  - [layout-01 [variable]](#layout-01-variable)
-  - [layout-02 [variable]](#layout-02-variable)
-  - [layout-03 [variable]](#layout-03-variable)
-  - [layout-04 [variable]](#layout-04-variable)
-  - [layout-05 [variable]](#layout-05-variable)
-  - [layout-06 [variable]](#layout-06-variable)
-  - [layout-07 [variable]](#layout-07-variable)
-  - [fluid-spacing-01 [variable]](#fluid-spacing-01-variable)
-  - [fluid-spacing-02 [variable]](#fluid-spacing-02-variable)
-  - [fluid-spacing-03 [variable]](#fluid-spacing-03-variable)
-  - [fluid-spacing-04 [variable]](#fluid-spacing-04-variable)
-- [@carbon/themes [deprecated]](#carbonthemes-deprecated)
-  - [brand-01 [variable]](#brand-01-variable)
-  - [brand-02 [variable]](#brand-02-variable)
-  - [brand-03 [variable]](#brand-03-variable)
-  - [active-01 [variable]](#active-01-variable)
-  - [hover-field [variable]](#hover-field-variable)
+  - [✅carbon--type-classes [mixin]](#carbon--type-classes-mixin)
+  - [✅carbon--font-families [variable]](#carbon--font-families-variable)
+  - [✅carbon--font-family [function]](#carbon--font-family-function)
+  - [✅carbon--font-family [mixin]](#carbon--font-family-mixin)
+  - [✅carbon--font-weights [variable]](#carbon--font-weights-variable)
+  - [✅carbon--font-weight [function]](#carbon--font-weight-function)
+  - [✅carbon--font-weight [mixin]](#carbon--font-weight-mixin)
+  - [✅prefix [variable]](#prefix-variable)
+  - [✅carbon--type-reset [mixin]](#carbon--type-reset-mixin)
+  - [✅carbon--get-type-size [function]](#carbon--get-type-size-function)
+  - [✅carbon--type-scale [variable]](#carbon--type-scale-variable)
+  - [✅carbon--type-scale [function]](#carbon--type-scale-function)
+  - [✅carbon--type-scale [mixin]](#carbon--type-scale-mixin)
+  - [✅carbon--font-size [mixin]](#carbon--font-size-mixin)
+  - [✅caption-01 [variable]](#caption-01-variable)
+  - [✅label-01 [variable]](#label-01-variable)
+  - [✅helper-text-01 [variable]](#helper-text-01-variable)
+  - [✅body-short-01 [variable]](#body-short-01-variable)
+  - [✅body-long-01 [variable]](#body-long-01-variable)
+  - [✅body-short-02 [variable]](#body-short-02-variable)
+  - [✅body-long-02 [variable]](#body-long-02-variable)
+  - [✅code-01 [variable]](#code-01-variable)
+  - [✅code-02 [variable]](#code-02-variable)
+  - [✅heading-01 [variable]](#heading-01-variable)
+  - [✅heading-02 [variable]](#heading-02-variable)
+  - [✅productive-heading-03 [variable]](#productive-heading-03-variable)
+  - [✅productive-heading-04 [variable]](#productive-heading-04-variable)
+  - [✅productive-heading-05 [variable]](#productive-heading-05-variable)
+  - [✅expressive-heading-03 [variable]](#expressive-heading-03-variable)
+  - [✅expressive-heading-04 [variable]](#expressive-heading-04-variable)
+  - [✅expressive-heading-05 [variable]](#expressive-heading-05-variable)
+  - [✅expressive-heading-06 [variable]](#expressive-heading-06-variable)
+  - [✅expressive-paragraph-01 [variable]](#expressive-paragraph-01-variable)
+  - [✅quotation-01 [variable]](#quotation-01-variable)
+  - [✅quotation-02 [variable]](#quotation-02-variable)
+  - [✅display-01 [variable]](#display-01-variable)
+  - [✅display-02 [variable]](#display-02-variable)
+  - [✅display-03 [variable]](#display-03-variable)
+  - [✅display-04 [variable]](#display-04-variable)
+  - [✅tokens [variable]](#tokens-variable)
+  - [✅properties [mixin]](#properties-mixin)
+  - [✅strip-unit [function]](#strip-unit-function)
+  - [✅fluid-type [mixin]](#fluid-type-mixin)
+  - [✅fluid-type-size [mixin]](#fluid-type-size-mixin)
+  - [✅carbon--type-style [mixin]](#carbon--type-style-mixin)
+  - [✅carbon--font-face-mono [mixin]](#carbon--font-face-mono-mixin)
+  - [✅carbon--font-face-sans [mixin]](#carbon--font-face-sans-mixin)
+  - [✅carbon--font-face-serif [mixin]](#carbon--font-face-serif-mixin)
 
 <!-- tocstop -->
 
 ## @carbon/colors
 
-### carbon--colors [mixin]
+### ❌ibm--colors [mixin]
+
+Define color variables
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin ibm--colors() {
+  $ibm-color__black-100: #000000 !default !global;
+  $ibm-color__blue-10: #edf4ff !default !global;
+  $ibm-color__blue-20: #c9deff !default !global;
+  $ibm-color__blue-30: #97c1ff !default !global;
+  $ibm-color__blue-40: #6ea6ff !default !global;
+  $ibm-color__blue-50: #408bfc !default !global;
+  $ibm-color__blue-60: #0062ff !default !global;
+  $ibm-color__blue-70: #054ada !default !global;
+  $ibm-color__blue-80: #0530ad !default !global;
+  $ibm-color__blue-90: #061f80 !default !global;
+  $ibm-color__blue-100: #051243 !default !global;
+  $ibm-color__cool-gray-10: #f2f4f8 !default !global;
+  $ibm-color__cool-gray-20: #d5d9e0 !default !global;
+  $ibm-color__cool-gray-30: #b9bfc7 !default !global;
+  $ibm-color__cool-gray-40: #9fa5ad !default !global;
+  $ibm-color__cool-gray-50: #868d95 !default !global;
+  $ibm-color__cool-gray-60: #697077 !default !global;
+  $ibm-color__cool-gray-70: #50565b !default !global;
+  $ibm-color__cool-gray-80: #373d42 !default !global;
+  $ibm-color__cool-gray-90: #242a2e !default !global;
+  $ibm-color__cool-gray-100: #13171a !default !global;
+  $ibm-color__cyan-10: #e3f6ff !default !global;
+  $ibm-color__cyan-20: #b3e6ff !default !global;
+  $ibm-color__cyan-30: #6ccaff !default !global;
+  $ibm-color__cyan-40: #30b0ff !default !global;
+  $ibm-color__cyan-50: #1191e6 !default !global;
+  $ibm-color__cyan-60: #0072c3 !default !global;
+  $ibm-color__cyan-70: #0058a1 !default !global;
+  $ibm-color__cyan-80: #003d73 !default !global;
+  $ibm-color__cyan-90: #002b50 !default !global;
+  $ibm-color__cyan-100: #07192b !default !global;
+  $ibm-color__gray-10: #f3f3f3 !default !global;
+  $ibm-color__gray-20: #dcdcdc !default !global;
+  $ibm-color__gray-30: #bebebe !default !global;
+  $ibm-color__gray-40: #a4a4a4 !default !global;
+  $ibm-color__gray-50: #8c8c8c !default !global;
+  $ibm-color__gray-60: #6f6f6f !default !global;
+  $ibm-color__gray-70: #565656 !default !global;
+  $ibm-color__gray-80: #3d3d3d !default !global;
+  $ibm-color__gray-90: #282828 !default !global;
+  $ibm-color__gray-100: #171717 !default !global;
+  $ibm-color__green-10: #dafbe4 !default !global;
+  $ibm-color__green-20: #9deeb2 !default !global;
+  $ibm-color__green-30: #56d679 !default !global;
+  $ibm-color__green-40: #3dbb61 !default !global;
+  $ibm-color__green-50: #24a148 !default !global;
+  $ibm-color__green-60: #198038 !default !global;
+  $ibm-color__green-70: #10642a !default !global;
+  $ibm-color__green-80: #054719 !default !global;
+  $ibm-color__green-90: #01330f !default !global;
+  $ibm-color__green-100: #081b09 !default !global;
+  $ibm-color__magenta-10: #fff0f6 !default !global;
+  $ibm-color__magenta-20: #ffcfe1 !default !global;
+  $ibm-color__magenta-30: #ffa0c2 !default !global;
+  $ibm-color__magenta-40: #fa75a6 !default !global;
+  $ibm-color__magenta-50: #ee538b !default !global;
+  $ibm-color__magenta-60: #d12765 !default !global;
+  $ibm-color__magenta-70: #a11950 !default !global;
+  $ibm-color__magenta-80: #760a3a !default !global;
+  $ibm-color__magenta-90: #57002b !default !global;
+  $ibm-color__magenta-100: #2a0a16 !default !global;
+  $ibm-color__orange-40: #fc7b1e !default !global;
+  $ibm-color__purple-10: #f7f1ff !default !global;
+  $ibm-color__purple-20: #e6d6ff !default !global;
+  $ibm-color__purple-30: #d0b0ff !default !global;
+  $ibm-color__purple-40: #bb8eff !default !global;
+  $ibm-color__purple-50: #a66efa !default !global;
+  $ibm-color__purple-60: #8a3ffc !default !global;
+  $ibm-color__purple-70: #6e32c9 !default !global;
+  $ibm-color__purple-80: #4f2196 !default !global;
+  $ibm-color__purple-90: #38146b !default !global;
+  $ibm-color__purple-100: #1e1033 !default !global;
+  $ibm-color__red-10: #fff0f1 !default !global;
+  $ibm-color__red-20: #fcd0d3 !default !global;
+  $ibm-color__red-30: #ffa4a9 !default !global;
+  $ibm-color__red-40: #ff767c !default !global;
+  $ibm-color__red-50: #fb4b53 !default !global;
+  $ibm-color__red-60: #da1e28 !default !global;
+  $ibm-color__red-70: #a51920 !default !global;
+  $ibm-color__red-80: #750e13 !default !global;
+  $ibm-color__red-90: #570408 !default !global;
+  $ibm-color__red-100: #2c080a !default !global;
+  $ibm-color__teal-10: #dbfbfb !default !global;
+  $ibm-color__teal-20: #92eeee !default !global;
+  $ibm-color__teal-30: #20d5d2 !default !global;
+  $ibm-color__teal-40: #00bab6 !default !global;
+  $ibm-color__teal-50: #009c98 !default !global;
+  $ibm-color__teal-60: #007d79 !default !global;
+  $ibm-color__teal-70: #006161 !default !global;
+  $ibm-color__teal-80: #004548 !default !global;
+  $ibm-color__teal-90: #003137 !default !global;
+  $ibm-color__teal-100: #081a1c !default !global;
+  $ibm-color__warm-gray-10: #f7f3f1 !default !global;
+  $ibm-color__warm-gray-20: #e0dbda !default !global;
+  $ibm-color__warm-gray-30: #c1bcbb !default !global;
+  $ibm-color__warm-gray-40: #a7a2a2 !default !global;
+  $ibm-color__warm-gray-50: #8f8b8b !default !global;
+  $ibm-color__warm-gray-60: #726e6e !default !global;
+  $ibm-color__warm-gray-70: #595555 !default !global;
+  $ibm-color__warm-gray-80: #403c3c !default !global;
+  $ibm-color__warm-gray-90: #2b2828 !default !global;
+  $ibm-color__warm-gray-100: #1a1717 !default !global;
+  $ibm-color__white-0: #ffffff !default !global;
+  $ibm-color__yellow-20: #fdd13a !default !global;
+
+  $ibm-color-map: (
+    'black': (
+      100: #000000,
+    ),
+    'blue': (
+      10: #edf4ff,
+      20: #c9deff,
+      30: #97c1ff,
+      40: #6ea6ff,
+      50: #408bfc,
+      60: #0062ff,
+      70: #054ada,
+      80: #0530ad,
+      90: #061f80,
+      100: #051243,
+    ),
+    'coolGray': (
+      10: #f2f4f8,
+      20: #d5d9e0,
+      30: #b9bfc7,
+      40: #9fa5ad,
+      50: #868d95,
+      60: #697077,
+      70: #50565b,
+      80: #373d42,
+      90: #242a2e,
+      100: #13171a,
+    ),
+    'cyan': (
+      10: #e3f6ff,
+      20: #b3e6ff,
+      30: #6ccaff,
+      40: #30b0ff,
+      50: #1191e6,
+      60: #0072c3,
+      70: #0058a1,
+      80: #003d73,
+      90: #002b50,
+      100: #07192b,
+    ),
+    'gray': (
+      10: #f3f3f3,
+      20: #dcdcdc,
+      30: #bebebe,
+      40: #a4a4a4,
+      50: #8c8c8c,
+      60: #6f6f6f,
+      70: #565656,
+      80: #3d3d3d,
+      90: #282828,
+      100: #171717,
+    ),
+    'green': (
+      10: #dafbe4,
+      20: #9deeb2,
+      30: #56d679,
+      40: #3dbb61,
+      50: #24a148,
+      60: #198038,
+      70: #10642a,
+      80: #054719,
+      90: #01330f,
+      100: #081b09,
+    ),
+    'magenta': (
+      10: #fff0f6,
+      20: #ffcfe1,
+      30: #ffa0c2,
+      40: #fa75a6,
+      50: #ee538b,
+      60: #d12765,
+      70: #a11950,
+      80: #760a3a,
+      90: #57002b,
+      100: #2a0a16,
+    ),
+    'orange': (
+      40: #fc7b1e,
+    ),
+    'purple': (
+      10: #f7f1ff,
+      20: #e6d6ff,
+      30: #d0b0ff,
+      40: #bb8eff,
+      50: #a66efa,
+      60: #8a3ffc,
+      70: #6e32c9,
+      80: #4f2196,
+      90: #38146b,
+      100: #1e1033,
+    ),
+    'red': (
+      10: #fff0f1,
+      20: #fcd0d3,
+      30: #ffa4a9,
+      40: #ff767c,
+      50: #fb4b53,
+      60: #da1e28,
+      70: #a51920,
+      80: #750e13,
+      90: #570408,
+      100: #2c080a,
+    ),
+    'teal': (
+      10: #dbfbfb,
+      20: #92eeee,
+      30: #20d5d2,
+      40: #00bab6,
+      50: #009c98,
+      60: #007d79,
+      70: #006161,
+      80: #004548,
+      90: #003137,
+      100: #081a1c,
+    ),
+    'warmGray': (
+      10: #f7f3f1,
+      20: #e0dbda,
+      30: #c1bcbb,
+      40: #a7a2a2,
+      50: #8f8b8b,
+      60: #726e6e,
+      70: #595555,
+      80: #403c3c,
+      90: #2b2828,
+      100: #1a1717,
+    ),
+    'white': (
+      0: #ffffff,
+    ),
+    'yellow': (
+      20: #fdd13a,
+    ),
+  ) !default !global;
+}
+```
+
+</details>
+
+- **Group**: [@carbon/colors](#carboncolors)
+- **Deprecated**: Use `$carbon--colors` going forward
+
+### ✅carbon--colors [mixin]
 
 Define color variables
 
@@ -561,9 +817,11 @@ Define color variables
 
 </details>
 
+- **Group**: [@carbon/colors](#carboncolors)
+
 ## @carbon/grid
 
-### carbon--12-column-grid [variable]
+### ✅carbon--12-column-grid [variable]
 
 Overrides `$carbon--grid-breakpoints` to use a 12 column grid instead of the default 16
 
@@ -598,9 +856,10 @@ $carbon--12-column-grid: map-merge(
 
 </details>
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `Map`
 
-### carbon--aspect-ratios [variable]
+### ✅carbon--aspect-ratios [variable]
 
 The aspect ratios that are used to generate corresponding aspect ratio
 classes in code
@@ -614,9 +873,10 @@ $carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
 
 </details>
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `List`
 
-### carbon--grid [mixin]
+### ✅carbon--grid [mixin]
 
 Generate the CSS for a grid for the given breakpoints and gutter
 
@@ -664,6 +924,7 @@ Generate the CSS for a grid for the given breakpoints and gutter
 | `$grid-gutter`      | —           | `Number` | —             |
 | `$condensed-gutter` | —           | `Number` | —             |
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Requires**:
   - [carbon--make-container [mixin]](#carbon--make-container-mixin)
   - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
@@ -674,7 +935,7 @@ Generate the CSS for a grid for the given breakpoints and gutter
   - [carbon--aspect-ratio [mixin]](#carbon--aspect-ratio-mixin)
   - [prefix [variable]](#prefix-variable)
 
-### prefix [variable]
+### ✅prefix [variable]
 
 Namespace prefix
 
@@ -687,6 +948,7 @@ $prefix: 'bx';
 
 </details>
 
+- **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `String`
 - **Used by**:
   - [carbon--make-col-ready [mixin]](#carbon--make-col-ready-mixin)
@@ -699,7 +961,7 @@ $prefix: 'bx';
 
 ## @carbon/icons
 
-### carbon--icons [mixin]
+### ✅carbon--icons [mixin]
 
 Makes SVGs accessible in high contrast mode
 
@@ -718,12 +980,13 @@ Makes SVGs accessible in high contrast mode
 
 </details>
 
+- **Group**: [@carbon/icons](#carbonicons)
 - **Links**:
   - [Carbon-elements #345](https://github.com/IBM/carbon-elements/issues/345#issuecomment-466577293)
 
 ## @carbon/import-once
 
-### imported-modules [variable]
+### ✅imported-modules [variable]
 
 Used by `exports` mixin to track which modules have been imported
 
@@ -736,11 +999,12 @@ $imported-modules: ();
 
 </details>
 
+- **Group**: [@carbon/import-once](#carbonimport-once)
 - **Type**: `Map`
 - **Used by**:
   - [exports [mixin]](#exports-mixin)
 
-### exports [mixin]
+### ✅exports [mixin]
 
 Module export mixin that helps making sure a module is imported once and only once
 
@@ -764,16 +1028,17 @@ Module export mixin that helps making sure a module is imported once and only on
 
 | Name    | Description                                  | Type     | Default value |
 | ------- | -------------------------------------------- | -------- | ------------- |
-| `$name` | name of exported module                      | `String` | —             |
-| `$warn` | warn when a module has been already imported | `Bool`   | `false`       |
+| `$name` | Name of exported module                      | `String` | —             |
+| `$warn` | Warn when a module has been already imported | `Bool`   | `false`       |
 
+- **Group**: [@carbon/import-once](#carbonimport-once)
 - **Content**: Declaration blocks to be imported
 - **Requires**:
   - [imported-modules [variable]](#imported-modules-variable)
 
 ## @carbon/layout
 
-### carbon--grid-gutter [variable]
+### ✅carbon--grid-gutter [variable]
 
 Carbon gutter size in rem
 
@@ -786,11 +1051,12 @@ $carbon--grid-gutter: carbon--rem(32px);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Used by**:
   - [carbon--make-container [mixin]](#carbon--make-container-mixin)
 
-### carbon--grid-gutter--condensed [variable]
+### ✅carbon--grid-gutter--condensed [variable]
 
 Carbon condensed gutter size in rem
 
@@ -803,9 +1069,10 @@ $carbon--grid-gutter--condensed: carbon--rem(2px);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 
-### carbon--grid-breakpoints [variable]
+### ✅carbon--grid-breakpoints [variable]
 
 <details>
 <summary>Source code</summary>
@@ -842,9 +1109,10 @@ $carbon--grid-breakpoints: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### carbon--breakpoint-next [function]
+### ✅carbon--breakpoint-next [function]
 
 Get the value of the next breakpoint, or null for the last breakpoint
 
@@ -875,11 +1143,12 @@ Get the value of the next breakpoint, or null for the last breakpoint
 | `$breakpoints`      | A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint | `Map`    | `$carbon--grid-breakpoints` |
 | `$breakpoint-names` | A list of names from the `$breakpoints` map                                                                     | `List`   | `map-keys($breakpoints)`    |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 - **Used by**:
   - [fluid-type-size [mixin]](#fluid-type-size-mixin)
 
-### carbon--breakpoint-prev [function]
+### ✅carbon--breakpoint-prev [function]
 
 Get the value of the previous breakpoint, or null for the first breakpoint
 
@@ -910,11 +1179,12 @@ Get the value of the previous breakpoint, or null for the first breakpoint
 | `$breakpoints`      | A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint | `Map`    | `$carbon--grid-breakpoints` |
 | `$breakpoint-names` | A list of names from the `$breakpoints` map                                                                     | `List`   | `map-keys($breakpoints)`    |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 - **Used by**:
   - [carbon--make-container [mixin]](#carbon--make-container-mixin)
 
-### carbon--is-smallest-breakpoint [function]
+### ✅carbon--is-smallest-breakpoint [function]
 
 Check to see if the given breakpoint name
 
@@ -939,12 +1209,13 @@ Check to see if the given breakpoint name
 | `$name`        | The name of the brekapoint                                                                                      | `String` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint | `Map`    | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Bool`
 - **Used by**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
   - [carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
 
-### carbon--largest-breakpoint-name [function]
+### ✅carbon--largest-breakpoint-name [function]
 
 Returns the largest breakpoint name
 
@@ -968,13 +1239,14 @@ Returns the largest breakpoint name
 | -------------- | ---------------------------------------------- | ----- | --------------------------- |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map` | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 - **Requires**:
   - [carbon--key-by-index [function]](#carbon--key-by-index-function)
 - **Used by**:
   - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
 
-### carbon--breakpoint-infix [function]
+### ✅carbon--breakpoint-infix [function]
 
 Get the infix for a given breakpoint in a list of breakpoints. Usesful for generate the size part in a selector, for example: `.prefix--col-sm-2`.
 
@@ -995,11 +1267,12 @@ Get the infix for a given breakpoint in a list of breakpoints. Usesful for gener
 | ------- | -------------------------- | -------- | ------------- |
 | `$name` | The name of the breakpoint | `String` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 - **Used by**:
   - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
 
-### carbon--breakpoint-up [mixin]
+### ✅carbon--breakpoint-up [mixin]
 
 Generate a media query up to the width of the given breakpoint name
 
@@ -1037,13 +1310,14 @@ Generate a media query up to the width of the given breakpoint name
 | `$name`        | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
 - **Used by**:
   - [carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
   - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
 
-### carbon--breakpoint-down [mixin]
+### ✅carbon--breakpoint-down [mixin]
 
 Generate a media query for the maximum width of the given styles
 
@@ -1081,12 +1355,13 @@ Generate a media query for the maximum width of the given styles
 | `$name`        | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
 - **Used by**:
   - [carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
 
-### carbon--breakpoint-between [mixin]
+### ✅carbon--breakpoint-between [mixin]
 
 Generate a media query for the range between the lower and upper breakpoints
 
@@ -1134,11 +1409,12 @@ Generate a media query for the range between the lower and upper breakpoints
 | `$upper`       | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
   - [carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
 
-### carbon--largest-breakpoint [mixin]
+### ✅carbon--largest-breakpoint [mixin]
 
 Generate media query for the largest breakpoint
 
@@ -1161,13 +1437,14 @@ Generate media query for the largest breakpoint
 | -------------- | ---------------------------------------------- | ----- | --------------------------- |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map` | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
   - [carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
 - **Used by**:
   - [carbon--grid [mixin]](#carbon--grid-mixin)
 
-### carbon--breakpoint [mixin]
+### ✅carbon--breakpoint [mixin]
 
 Generate a media query for a given breakpoint
 
@@ -1191,6 +1468,7 @@ Generate a media query for a given breakpoint
 | `$name`        | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
 - **Used by**:
@@ -1200,7 +1478,7 @@ Generate a media query for a given breakpoint
   - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
   - [fluid-type [mixin]](#fluid-type-mixin)
 
-### carbon--base-font-size [variable]
+### ✅carbon--base-font-size [variable]
 
 Default font size
 
@@ -1213,12 +1491,13 @@ $carbon--base-font-size: 16px;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Used by**:
   - [carbon--rem [function]](#carbon--rem-function)
   - [carbon--em [function]](#carbon--em-function)
 
-### carbon--rem [function]
+### ✅carbon--rem [function]
 
 Convert a given px unit to a rem unit
 
@@ -1239,13 +1518,14 @@ Convert a given px unit to a rem unit
 | ----- | ------------------- | -------- | ------------- |
 | `$px` | Number with px unit | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` Number with rem unit
 - **Requires**:
   - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
 - **Used by**:
   - [carbon--mini-units [function]](#carbon--mini-units-function)
 
-### carbon--em [function]
+### ✅carbon--em [function]
 
 Convert a given px unit to a em unit
 
@@ -1266,11 +1546,12 @@ Convert a given px unit to a em unit
 | ----- | ------------------- | -------- | ------------- |
 | `$px` | Number with px unit | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` Number with em unit
 - **Requires**:
   - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
 
-### carbon--get-column-width [function]
+### ✅carbon--get-column-width [function]
 
 Get the column width for a given breakpoint
 
@@ -1304,9 +1585,10 @@ Get the column width for a given breakpoint
 | `$breakpoint`  | —           | `String` | —                           |
 | `$breakpoints` | —           | `Map`    | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` In rem
 
-### carbon--key-height-scales [variable]
+### ✅carbon--key-height-scales [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1364,11 +1646,12 @@ $carbon--key-height-scales: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--key-height [function]](#carbon--key-height-function)
 
-### carbon--key-height [function]
+### ✅carbon--key-height [function]
 
 Get the value of a key height step at a given breakpoint
 
@@ -1394,11 +1677,12 @@ Get the value of a key height step at a given breakpoint
 | `$breakpoint` | —           | `String` | —             |
 | `$step`       | —           | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` In rem
 - **Requires**:
   - [carbon--key-height-scales [variable]](#carbon--key-height-scales-variable)
 
-### carbon--mini-unit-size [variable]
+### ✅carbon--mini-unit-size [variable]
 
 Default mini-unit value
 
@@ -1411,11 +1695,12 @@ $carbon--mini-unit-size: 8px;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Used by**:
   - [carbon--mini-units [function]](#carbon--mini-units-function)
 
-### carbon--mini-units [function]
+### ✅carbon--mini-units [function]
 
 Get the value of the corresponding number of units
 
@@ -1436,12 +1721,13 @@ Get the value of the corresponding number of units
 | -------- | ---------------------------------------- | -------- | ------------- |
 | `$count` | The number of units to get the value for | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` In rem units
 - **Requires**:
   - [carbon--rem [function]](#carbon--rem-function)
   - [carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
 
-### carbon--spacing-01 [variable]
+### ✅carbon--spacing-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1452,11 +1738,12 @@ $carbon--spacing-01: carbon--mini-units(0.25);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-01`
 
-### carbon--spacing-02 [variable]
+### ✅carbon--spacing-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1467,11 +1754,12 @@ $carbon--spacing-02: carbon--mini-units(0.5);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-02`
 
-### carbon--spacing-03 [variable]
+### ✅carbon--spacing-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1482,11 +1770,12 @@ $carbon--spacing-03: carbon--mini-units(1);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-03`
 
-### carbon--spacing-04 [variable]
+### ✅carbon--spacing-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1497,11 +1786,12 @@ $carbon--spacing-04: carbon--mini-units(1.5);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-04`
 
-### carbon--spacing-05 [variable]
+### ✅carbon--spacing-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1512,11 +1802,12 @@ $carbon--spacing-05: carbon--mini-units(2);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-05`
 
-### carbon--spacing-06 [variable]
+### ✅carbon--spacing-06 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1527,11 +1818,12 @@ $carbon--spacing-06: carbon--mini-units(3);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-06`
 
-### carbon--spacing-07 [variable]
+### ✅carbon--spacing-07 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1542,11 +1834,12 @@ $carbon--spacing-07: carbon--mini-units(4);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-07`
 
-### carbon--spacing-08 [variable]
+### ✅carbon--spacing-08 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1557,11 +1850,12 @@ $carbon--spacing-08: carbon--mini-units(5);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-08`
 
-### carbon--spacing-09 [variable]
+### ✅carbon--spacing-09 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1572,11 +1866,12 @@ $carbon--spacing-09: carbon--mini-units(6);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-09`
 
-### carbon--spacing [variable]
+### ✅carbon--spacing [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1597,9 +1892,145 @@ $carbon--spacing: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### carbon--layout-01 [variable]
+### ✅spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-01: $carbon--spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-01`
+
+### ✅spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-02: $carbon--spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-02`
+
+### ✅spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-03: $carbon--spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-03`
+
+### ✅spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-04: $carbon--spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-04`
+
+### ✅spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-05: $carbon--spacing-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-05`
+
+### ✅spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-06: $carbon--spacing-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-06`
+
+### ✅spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-07: $carbon--spacing-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-07`
+
+### ✅spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-08: $carbon--spacing-08;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-08`
+
+### ✅spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-09: $carbon--spacing-09;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-09`
+
+### ✅carbon--layout-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1610,11 +2041,12 @@ $carbon--layout-01: carbon--mini-units(2);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-01`
 
-### carbon--layout-02 [variable]
+### ✅carbon--layout-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1625,11 +2057,12 @@ $carbon--layout-02: carbon--mini-units(3);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-02`
 
-### carbon--layout-03 [variable]
+### ✅carbon--layout-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1640,11 +2073,12 @@ $carbon--layout-03: carbon--mini-units(4);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-03`
 
-### carbon--layout-04 [variable]
+### ✅carbon--layout-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1655,11 +2089,12 @@ $carbon--layout-04: carbon--mini-units(6);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-04`
 
-### carbon--layout-05 [variable]
+### ✅carbon--layout-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1670,11 +2105,12 @@ $carbon--layout-05: carbon--mini-units(8);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-05`
 
-### carbon--layout-06 [variable]
+### ✅carbon--layout-06 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1685,11 +2121,12 @@ $carbon--layout-06: carbon--mini-units(12);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-06`
 
-### carbon--layout-07 [variable]
+### ✅carbon--layout-07 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1700,11 +2137,12 @@ $carbon--layout-07: carbon--mini-units(20);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-07`
 
-### carbon--layout [variable]
+### ✅carbon--layout [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1723,9 +2161,115 @@ $carbon--layout: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### carbon--fluid-spacing-01 [variable]
+### ✅layout-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-01: $carbon--layout-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-01`
+
+### ✅layout-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-02: $carbon--layout-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-02`
+
+### ✅layout-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-03: $carbon--layout-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-03`
+
+### ✅layout-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-04: $carbon--layout-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-04`
+
+### ✅layout-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-05: $carbon--layout-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-05`
+
+### ✅layout-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-06: $carbon--layout-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-06`
+
+### ✅layout-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-07: $carbon--layout-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-07`
+
+### ✅carbon--fluid-spacing-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1736,11 +2280,12 @@ $carbon--fluid-spacing-01: 0;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-01`
 
-### carbon--fluid-spacing-02 [variable]
+### ✅carbon--fluid-spacing-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1751,11 +2296,12 @@ $carbon--fluid-spacing-02: 2vw;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-02`
 
-### carbon--fluid-spacing-03 [variable]
+### ✅carbon--fluid-spacing-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1766,11 +2312,12 @@ $carbon--fluid-spacing-03: 5vw;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-03`
 
-### carbon--fluid-spacing-04 [variable]
+### ✅carbon--fluid-spacing-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1781,11 +2328,12 @@ $carbon--fluid-spacing-04: 10vw;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-04`
 
-### carbon--fluid-spacing [variable]
+### ✅carbon--fluid-spacing [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1801,9 +2349,70 @@ $carbon--fluid-spacing: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### map-deep-get [function]
+### ✅fluid-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-01: $carbon--fluid-spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-01`
+
+### ✅fluid-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-02: $carbon--fluid-spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-02`
+
+### ✅fluid-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-03: $carbon--fluid-spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-03`
+
+### ✅fluid-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-04: $carbon--fluid-spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-04`
+
+### ✅map-deep-get [function]
 
 Map deep get
 
@@ -1828,9 +2437,10 @@ Map deep get
 | `$map`  | Map         | `Map`     | —             |
 | `$keys` | Key chain   | `Arglist` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `*` Desired value
 
-### carbon--key-by-index [function]
+### ✅carbon--key-by-index [function]
 
 Provide a map and index, and get back the relevant key value
 
@@ -1853,12 +2463,13 @@ Provide a map and index, and get back the relevant key value
 | `$map`   | Map         | `Map`     | —             |
 | `$index` | Key chain   | `Integer` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String` Desired value
 - **Used by**:
   - [carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
   - [last-map-item [function]](#last-map-item-function)
 
-### last-map-item [function]
+### ✅last-map-item [function]
 
 Pass in a map, and get the last one in the list back
 
@@ -1880,6 +2491,7 @@ Pass in a map, and get the last one in the list back
 | ------ | ----------- | ----- | ------------- |
 | `$map` | Map         | `Map` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `*` Desired value
 - **Requires**:
   - [carbon--key-by-index [function]](#carbon--key-by-index-function)
@@ -1888,7 +2500,7 @@ Pass in a map, and get the last one in the list back
 
 ## @carbon/motion
 
-### carbon--easings [variable]
+### ✅carbon--easings [variable]
 
 Common component easings
 
@@ -1914,9 +2526,10 @@ $carbon--easings: (
 
 </details>
 
+- **Group**: [@carbon/motion](#carbonmotion)
 - **Type**: `Map`
 
-### carbon--motion [function]
+### ✅carbon--motion [function]
 
 Get the transition-timing-function for a given easing and motion mode
 
@@ -1948,11 +2561,12 @@ Get the transition-timing-function for a given easing and motion mode
 | `$mode`    | Can be `productive` or `expressive`      | `String` | `productive`       |
 | `$easings` | Easings map                              | `Map`    | `$carbon--easings` |
 
+- **Group**: [@carbon/motion](#carbonmotion)
 - **Returns**: `Function` CSS `cubic-bezier()` function
 - **Used by**:
   - [carbon--motion [mixin]](#carbon--motion-mixin)
 
-### carbon--motion [mixin]
+### ✅carbon--motion [mixin]
 
 Set the transition-timing-function for a given easing and motion mode
 
@@ -1974,12 +2588,13 @@ Set the transition-timing-function for a given easing and motion mode
 | `$name` | The name of the easing curve to apply | `String` | —             |
 | `$mode` | The mode for the easing curve to use  | `String` | —             |
 
+- **Group**: [@carbon/motion](#carbonmotion)
 - **Requires**:
   - [carbon--motion [function]](#carbon--motion-function)
 
 ## @carbon/themes
 
-### carbon--theme [mixin]
+### ✅carbon--theme [mixin]
 
 Define theme variables from a map of tokens
 
@@ -2082,6 +2697,7 @@ Define theme variables from a map of tokens
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Content**: Pass in your custom declaration blocks to be used after the token maps set theming variables.
 - **Requires**:
   - [interactive-01 [variable]](#interactive-01-variable)
@@ -2138,7 +2754,7 @@ Define theme variables from a map of tokens
   - [hover-field [variable]](#hover-field-variable)
   - [carbon--theme [variable]](#carbon--theme-variable)
 
-### carbon--theme--white [variable]
+### ✅carbon--theme--white [variable]
 
 Carbon's white color theme
 
@@ -2204,11 +2820,12 @@ $carbon--theme--white: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 - **Aliased**:
   - `carbon--theme`
 
-### carbon--theme--g10 [variable]
+### ✅carbon--theme--g10 [variable]
 
 Carbon's g10 color theme
 
@@ -2274,9 +2891,10 @@ $carbon--theme--g10: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 
-### carbon--theme--g90 [variable]
+### ✅carbon--theme--g90 [variable]
 
 Carbon's g90 color theme
 
@@ -2342,9 +2960,10 @@ $carbon--theme--g90: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 
-### carbon--theme--g100 [variable]
+### ✅carbon--theme--g100 [variable]
 
 Carbon's g100 color theme
 
@@ -2410,9 +3029,10 @@ $carbon--theme--g100: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 
-### carbon--theme [variable]
+### ✅carbon--theme [variable]
 
 Carbon's default theme
 
@@ -2425,12 +3045,13 @@ $carbon--theme: $carbon--theme--white;
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 - **Alias**: `carbon--theme--white`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-01 [variable]
+### ✅interactive-01 [variable]
 
 Primary interactive color; Primary buttons
 
@@ -2443,13 +3064,14 @@ $interactive-01: map-get($carbon--theme, interactive-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `brand-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-02 [variable]
+### ✅interactive-02 [variable]
 
 Secondary interactive color; Secondary button
 
@@ -2462,13 +3084,14 @@ $interactive-02: map-get($carbon--theme, interactive-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `brand-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-03 [variable]
+### ✅interactive-03 [variable]
 
 4.5:1 AA contrast; Tertiary button
 
@@ -2481,13 +3104,14 @@ $interactive-03: map-get($carbon--theme, interactive-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `brand-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-04 [variable]
+### ✅interactive-04 [variable]
 
 3:1 AA contrast; Selected elements; Active elements; Accent icons
 
@@ -2500,11 +3124,12 @@ $interactive-04: map-get($carbon--theme, interactive-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-background [variable]
+### ✅ui-background [variable]
 
 Default page background
 
@@ -2517,11 +3142,12 @@ $ui-background: map-get($carbon--theme, ui-background);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-01 [variable]
+### ✅ui-01 [variable]
 
 Primary container background; Secondary page background
 
@@ -2534,11 +3160,12 @@ $ui-01: map-get($carbon--theme, ui-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-02 [variable]
+### ✅ui-02 [variable]
 
 Primary page background; Secondary container background
 
@@ -2551,11 +3178,12 @@ $ui-02: map-get($carbon--theme, ui-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-03 [variable]
+### ✅ui-03 [variable]
 
 Subtle border; Tertiary background color
 
@@ -2568,11 +3196,12 @@ $ui-03: map-get($carbon--theme, ui-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-04 [variable]
+### ✅ui-04 [variable]
 
 3:1 AA element contrast; Medium contrast border
 
@@ -2585,11 +3214,12 @@ $ui-04: map-get($carbon--theme, ui-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-05 [variable]
+### ✅ui-05 [variable]
 
 4.5:1 AA element contrast; High contrast border; Emphasis elements
 
@@ -2602,11 +3232,12 @@ $ui-05: map-get($carbon--theme, ui-05);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-01 [variable]
+### ✅text-01 [variable]
 
 Primary text; Body copy; Headers; Hover text color for `$text-02`
 
@@ -2619,11 +3250,12 @@ $text-01: map-get($carbon--theme, text-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-02 [variable]
+### ✅text-02 [variable]
 
 Secondary text; Input labels; Help text
 
@@ -2636,11 +3268,12 @@ $text-02: map-get($carbon--theme, text-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-03 [variable]
+### ✅text-03 [variable]
 
 Placeholder text
 
@@ -2653,11 +3286,12 @@ $text-03: map-get($carbon--theme, text-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-04 [variable]
+### ✅text-04 [variable]
 
 Text on interactive colors
 
@@ -2670,11 +3304,12 @@ $text-04: map-get($carbon--theme, text-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### icon-01 [variable]
+### ✅icon-01 [variable]
 
 Primary icons
 
@@ -2687,11 +3322,12 @@ $icon-01: map-get($carbon--theme, icon-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### icon-02 [variable]
+### ✅icon-02 [variable]
 
 Secondary icons
 
@@ -2704,11 +3340,12 @@ $icon-02: map-get($carbon--theme, icon-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### icon-03 [variable]
+### ✅icon-03 [variable]
 
 Tertiary icons; Icons on interactive colors; Icons on non-ui colors
 
@@ -2721,11 +3358,12 @@ $icon-03: map-get($carbon--theme, icon-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### link-01 [variable]
+### ✅link-01 [variable]
 
 Primary links; Ghost button
 
@@ -2738,11 +3376,12 @@ $link-01: map-get($carbon--theme, link-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### field-01 [variable]
+### ✅field-01 [variable]
 
 Default input fields; Field color on \$ui-backgrounds
 
@@ -2755,11 +3394,12 @@ $field-01: map-get($carbon--theme, field-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### field-02 [variable]
+### ✅field-02 [variable]
 
 Input field color on `$ui-02` backgrounds
 
@@ -2772,11 +3412,12 @@ $field-02: map-get($carbon--theme, field-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### inverse-01 [variable]
+### ✅inverse-01 [variable]
 
 Inverse text color; Inverse icon color
 
@@ -2789,11 +3430,12 @@ $inverse-01: map-get($carbon--theme, inverse-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### inverse-02 [variable]
+### ✅inverse-02 [variable]
 
 High contrast backgrounds; High contrast elements
 
@@ -2806,11 +3448,12 @@ $inverse-02: map-get($carbon--theme, inverse-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-01 [variable]
+### ✅support-01 [variable]
 
 Error
 
@@ -2823,11 +3466,12 @@ $support-01: map-get($carbon--theme, support-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-02 [variable]
+### ✅support-02 [variable]
 
 Success
 
@@ -2840,11 +3484,12 @@ $support-02: map-get($carbon--theme, support-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-03 [variable]
+### ✅support-03 [variable]
 
 Warning
 
@@ -2857,11 +3502,12 @@ $support-03: map-get($carbon--theme, support-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-04 [variable]
+### ✅support-04 [variable]
 
 Information
 
@@ -2874,11 +3520,12 @@ $support-04: map-get($carbon--theme, support-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### overlay-01 [variable]
+### ✅overlay-01 [variable]
 
 Background overlay
 
@@ -2891,11 +3538,12 @@ $overlay-01: map-get($carbon--theme, overlay-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### focus [variable]
+### ✅focus [variable]
 
 Focus border; Focus underline
 
@@ -2908,11 +3556,12 @@ $focus: map-get($carbon--theme, focus);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-primary [variable]
+### ✅hover-primary [variable]
 
 `$interactive-01` hover
 
@@ -2925,11 +3574,12 @@ $hover-primary: map-get($carbon--theme, hover-primary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-primary [variable]
+### ✅active-primary [variable]
 
 `$interactive-01` active
 
@@ -2942,11 +3592,12 @@ $active-primary: map-get($carbon--theme, active-primary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-primary-text [variable]
+### ✅hover-primary-text [variable]
 
 `$interactive-01` text hover
 
@@ -2959,11 +3610,12 @@ $hover-primary-text: map-get($carbon--theme, hover-primary-text);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-secondary [variable]
+### ✅hover-secondary [variable]
 
 `$interactive-02` hover
 
@@ -2976,11 +3628,12 @@ $hover-secondary: map-get($carbon--theme, hover-secondary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-secondary [variable]
+### ✅active-secondary [variable]
 
 `$interactive-02` active; `$inverse-01` active
 
@@ -2993,11 +3646,12 @@ $active-secondary: map-get($carbon--theme, active-secondary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-tertiary [variable]
+### ✅hover-tertiary [variable]
 
 `$interactive-03` hover; `$inverse-01` hover
 
@@ -3010,11 +3664,12 @@ $hover-tertiary: map-get($carbon--theme, hover-tertiary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-tertiary [variable]
+### ✅active-tertiary [variable]
 
 `$interactive-03` active
 
@@ -3027,11 +3682,12 @@ $active-tertiary: map-get($carbon--theme, active-tertiary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-ui [variable]
+### ✅hover-ui [variable]
 
 `$ui-01` hover; `$ui-02` hover; Transparent background hover
 
@@ -3044,13 +3700,14 @@ $hover-ui: map-get($carbon--theme, hover-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `hover-field`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-ui [variable]
+### ✅active-ui [variable]
 
 `$ui-01` active; `$ui-02` active
 
@@ -3063,13 +3720,14 @@ $active-ui: map-get($carbon--theme, active-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `active-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### selected-ui [variable]
+### ✅selected-ui [variable]
 
 Selected UI elements
 
@@ -3082,11 +3740,12 @@ $selected-ui: map-get($carbon--theme, selected-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-selected-ui [variable]
+### ✅hover-selected-ui [variable]
 
 Data table selected row hover
 
@@ -3099,11 +3758,12 @@ $hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-danger [variable]
+### ✅hover-danger [variable]
 
 Danger hover; `$support-01` hover
 
@@ -3116,11 +3776,12 @@ $hover-danger: map-get($carbon--theme, hover-danger);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-danger [variable]
+### ✅active-danger [variable]
 
 Danger active; `$support-01` active
 
@@ -3133,11 +3794,12 @@ $active-danger: map-get($carbon--theme, active-danger);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-row [variable]
+### ✅hover-row [variable]
 
 Row hover
 
@@ -3150,11 +3812,12 @@ $hover-row: map-get($carbon--theme, hover-row);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### visited-link [variable]
+### ✅visited-link [variable]
 
 Visited links
 
@@ -3167,11 +3830,12 @@ $visited-link: map-get($carbon--theme, visited-link);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### disabled-01 [variable]
+### ✅disabled-01 [variable]
 
 Disabled fields; Disabled backgrounds; Disabled border
 
@@ -3184,11 +3848,12 @@ $disabled-01: map-get($carbon--theme, disabled-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### disabled-02 [variable]
+### ✅disabled-02 [variable]
 
 Disabled elements on `$disabled-01`; Disabled label; Disabled text on `$disabled-01`; Disabled icons; Disabled border
 
@@ -3201,11 +3866,12 @@ $disabled-02: map-get($carbon--theme, disabled-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### disabled-03 [variable]
+### ✅disabled-03 [variable]
 
 Disabled text on `$disabled-02`; Disabled icons on `$disabled-02`
 
@@ -3218,11 +3884,12 @@ $disabled-03: map-get($carbon--theme, disabled-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### highlight [variable]
+### ✅highlight [variable]
 
 `$interactive-01` high light
 
@@ -3235,13 +3902,104 @@ $highlight: map-get($carbon--theme, highlight);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
+### ❌brand-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$brand-01: map-get($carbon--theme, brand-01);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `Color`
+- **Alias**: `interactive-01`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Deprecated**: This may not be available in future releases
+
+### ❌brand-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$brand-02: map-get($carbon--theme, brand-02);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `Color`
+- **Alias**: `interactive-02`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Deprecated**: This may not be available in future releases
+
+### ❌brand-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$brand-03: map-get($carbon--theme, brand-03);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `Color`
+- **Alias**: `interactive-03`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Deprecated**: This may not be available in future releases
+
+### ❌active-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$active-01: map-get($carbon--theme, active-01);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `Color`
+- **Alias**: `active-ui`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Deprecated**: This may not be available in future releases
+
+### ❌hover-field [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$hover-field: map-get($carbon--theme, hover-field);
+```
+
+</details>
+
+- **Group**: [@carbon/themes](#carbonthemes)
+- **Type**: `Color`
+- **Alias**: `hover-ui`
+- **Used by**:
+  - [carbon--theme [mixin]](#carbon--theme-mixin)
+- **Deprecated**: This may not be available in future releases
+
 ## @carbon/type
 
-### carbon--type-classes [mixin]
+### ✅carbon--type-classes [mixin]
 
 Create type classes for font families, weights, styles
 
@@ -3280,6 +4038,7 @@ Create type classes for font families, weights, styles
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
   - [carbon--font-families [variable]](#carbon--font-families-variable)
@@ -3287,7 +4046,7 @@ Create type classes for font families, weights, styles
   - [carbon--font-weights [variable]](#carbon--font-weights-variable)
   - [tokens [variable]](#tokens-variable)
 
-### carbon--font-families [variable]
+### ✅carbon--font-families [variable]
 
 Font family fallbacks for: IBM Plex Mono, IBM Plex Sans, IBM Plex Sans
 Condensed, IBM Plex Sans Hebrew, and IBM Plex Serif
@@ -3307,12 +4066,13 @@ $carbon--font-families: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--font-family [function]](#carbon--font-family-function)
 
-### carbon--font-family [function]
+### ✅carbon--font-family [function]
 
 Get the font-family for an IBM Plex font
 
@@ -3333,13 +4093,14 @@ Get the font-family for an IBM Plex font
 | ------- | ----------- | -------- | ------------- |
 | `$name` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `String`
 - **Requires**:
   - [carbon--font-families [variable]](#carbon--font-families-variable)
 - **Used by**:
   - [carbon--font-family [mixin]](#carbon--font-family-mixin)
 
-### carbon--font-family [mixin]
+### ✅carbon--font-family [mixin]
 
 Include the `font-family` definition for the given name in your selector
 
@@ -3360,10 +4121,11 @@ Include the `font-family` definition for the given name in your selector
 | ------- | ----------- | -------- | ------------- |
 | `$name` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--font-family [function]](#carbon--font-family-function)
 
-### carbon--font-weights [variable]
+### ✅carbon--font-weights [variable]
 
 Suggested font weights to be used in product
 
@@ -3380,12 +4142,13 @@ $carbon--font-weights: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--font-weight [function]](#carbon--font-weight-function)
 
-### carbon--font-weight [function]
+### ✅carbon--font-weight [function]
 
 Retrieve the font-weight value for a given name
 
@@ -3406,13 +4169,14 @@ Retrieve the font-weight value for a given name
 | --------- | ----------- | -------- | ------------- |
 | `$weight` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number`
 - **Requires**:
   - [carbon--font-weights [variable]](#carbon--font-weights-variable)
 - **Used by**:
   - [carbon--font-weight [mixin]](#carbon--font-weight-mixin)
 
-### carbon--font-weight [mixin]
+### ✅carbon--font-weight [mixin]
 
 Set the `font-weight` property with the value for a given name
 
@@ -3433,10 +4197,11 @@ Set the `font-weight` property with the value for a given name
 | --------- | ----------- | -------- | ------------- |
 | `$weight` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--font-weight [function]](#carbon--font-weight-function)
 
-### prefix [variable]
+### ✅prefix [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3447,9 +4212,10 @@ $prefix: 'bx';
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `String`
 
-### carbon--type-reset [mixin]
+### ✅carbon--type-reset [mixin]
 
 Include a type reset for a given body and mono font family
 
@@ -3496,7 +4262,9 @@ Include a type reset for a given body and mono font family
 | `$body-font-family` | The font family used on the `<body>` element                                        | `String` | `carbon--font-family('sans')` |
 | `$mono-font-family` | The font family used on elements that require mono fonts, like the `<code>` element | `String` | `carbon--font-family('mono')` |
 
-### carbon--get-type-size [function]
+- **Group**: [@carbon/type](#carbontype)
+
+### ✅carbon--get-type-size [function]
 
 Compute the type size for the given type scale step
 
@@ -3521,9 +4289,10 @@ Compute the type size for the given type scale step
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number` In px
 
-### carbon--type-scale [variable]
+### ✅carbon--type-scale [variable]
 
 Type scole follows a custom formula for determining each step size and supports sizes from 12px to 92px
 
@@ -3536,13 +4305,14 @@ $carbon--type-scale: ();
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Aliased**:
   - `carbon--font-size`
 - **Used by**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
 
-### carbon--type-scale [function]
+### ✅carbon--type-scale [function]
 
 Get the value of a specific step in the typescale
 
@@ -3563,6 +4333,7 @@ Get the value of a specific step in the typescale
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number` In rem
 - **Requires**:
   - [carbon--type-scale [variable]](#carbon--type-scale-variable)
@@ -3570,7 +4341,7 @@ Get the value of a specific step in the typescale
   - [carbon--type-scale [mixin]](#carbon--type-scale-mixin)
   - [carbon--font-size [mixin]](#carbon--font-size-mixin)
 
-### carbon--type-scale [mixin]
+### ✅carbon--type-scale [mixin]
 
 Set the font-size value of a selector with the value at the given `$step`
 
@@ -3591,10 +4362,11 @@ Set the font-size value of a selector with the value at the given `$step`
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
 
-### carbon--font-size [mixin]
+### ✅carbon--font-size [mixin]
 
 Alias of `type-scale` mixin.
 
@@ -3615,11 +4387,12 @@ Alias of `type-scale` mixin.
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Alias**: `carbon--type-scale`
 - **Requires**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
 
-### caption-01 [variable]
+### ✅caption-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3635,9 +4408,10 @@ $caption-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### label-01 [variable]
+### ✅label-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3653,9 +4427,10 @@ $label-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### helper-text-01 [variable]
+### ✅helper-text-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3671,9 +4446,10 @@ $helper-text-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-short-01 [variable]
+### ✅body-short-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3689,9 +4465,10 @@ $body-short-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-long-01 [variable]
+### ✅body-long-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3707,9 +4484,10 @@ $body-long-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-short-02 [variable]
+### ✅body-short-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3725,9 +4503,10 @@ $body-short-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-long-02 [variable]
+### ✅body-long-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3743,9 +4522,10 @@ $body-long-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### code-01 [variable]
+### ✅code-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3761,9 +4541,10 @@ $code-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### code-02 [variable]
+### ✅code-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3779,9 +4560,10 @@ $code-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### heading-01 [variable]
+### ✅heading-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3797,9 +4579,10 @@ $heading-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### heading-02 [variable]
+### ✅heading-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3815,9 +4598,10 @@ $heading-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### productive-heading-03 [variable]
+### ✅productive-heading-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3833,9 +4617,10 @@ $productive-heading-03: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### productive-heading-04 [variable]
+### ✅productive-heading-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3851,9 +4636,10 @@ $productive-heading-04: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### productive-heading-05 [variable]
+### ✅productive-heading-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3869,9 +4655,10 @@ $productive-heading-05: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-03 [variable]
+### ✅expressive-heading-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3896,9 +4683,10 @@ $expressive-heading-03: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-04 [variable]
+### ✅expressive-heading-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3923,9 +4711,10 @@ $expressive-heading-04: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-05 [variable]
+### ✅expressive-heading-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3958,9 +4747,10 @@ $expressive-heading-05: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-06 [variable]
+### ✅expressive-heading-06 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3993,9 +4783,10 @@ $expressive-heading-06: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-paragraph-01 [variable]
+### ✅expressive-paragraph-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4021,9 +4812,10 @@ $expressive-paragraph-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### quotation-01 [variable]
+### ✅quotation-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4056,9 +4848,10 @@ $quotation-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### quotation-02 [variable]
+### ✅quotation-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4091,9 +4884,10 @@ $quotation-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-01 [variable]
+### ✅display-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4125,9 +4919,10 @@ $display-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-02 [variable]
+### ✅display-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4159,9 +4954,10 @@ $display-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-03 [variable]
+### ✅display-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4198,9 +4994,10 @@ $display-03: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-04 [variable]
+### ✅display-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4237,9 +5034,10 @@ $display-04: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### tokens [variable]
+### ✅tokens [variable]
 
 <details>
 <summary>Source code</summary>
@@ -4276,12 +5074,13 @@ $tokens: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
-### properties [mixin]
+### ✅properties [mixin]
 
 <details>
 <summary>Source code</summary>
@@ -4302,11 +5101,12 @@ $tokens: (
 | ------ | ----------- | ----- | ------------- |
 | `$map` | —           | `Map` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Used by**:
   - [fluid-type [mixin]](#fluid-type-mixin)
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
-### strip-unit [function]
+### ✅strip-unit [function]
 
 <details>
 <summary>Source code</summary>
@@ -4325,11 +5125,12 @@ $tokens: (
 | -------- | ----------------- | -------- | ------------- |
 | `$value` | Number with units | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number` Without units
 - **Used by**:
   - [fluid-type-size [mixin]](#fluid-type-size-mixin)
 
-### fluid-type [mixin]
+### ✅fluid-type [mixin]
 
 This helper includes fluid type styles for the given token value. Fluid type
 means that the `font-size` is computed using `calc()` in order to be
@@ -4377,6 +5178,7 @@ https://css-tricks.com/snippets/css/fluid-typography/
 | `$type-styles` | The value of a given type token | `Map` | —                           |
 | `$breakpoints` | Custom breakpoints to use       | `Map` | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [properties [mixin]](#properties-mixin)
   - [fluid-type-size [mixin]](#fluid-type-size-mixin)
@@ -4384,7 +5186,7 @@ https://css-tricks.com/snippets/css/fluid-typography/
 - **Used by**:
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
-### fluid-type-size [mixin]
+### ✅fluid-type-size [mixin]
 
 Computes the fluid `font-size` for a given type style and breakpoint
 
@@ -4479,13 +5281,14 @@ Computes the fluid `font-size` for a given type style and breakpoint
 | `$name`        | The name of the breakpoint to which we apply the fluid | `String` | —                           |
 | `$breakpoints` | The breakpoints for the grid system                    | `Map`    | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
   - [strip-unit [function]](#strip-unit-function)
 - **Used by**:
   - [fluid-type [mixin]](#fluid-type-mixin)
 
-### carbon--type-style [mixin]
+### ✅carbon--type-style [mixin]
 
 Helper mixin to include the styles for a given token in any selector in your
 project. Also includes an optional fluid option that will enable fluid
@@ -4530,6 +5333,7 @@ with caution in fixed contexts.
 | `$fluid`       | Specify whether to include fluid styles for the | `Boolean` | `false`                     |
 | `$breakpoints` | Provide a custom breakpoint map to use          | `Map`     | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [fluid-type [mixin]](#fluid-type-mixin)
   - [properties [mixin]](#properties-mixin)
@@ -4537,7 +5341,7 @@ with caution in fixed contexts.
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
 
-### carbon--font-face-mono [mixin]
+### ✅carbon--font-face-mono [mixin]
 
 Mono `@font-face`'s
 
@@ -4937,7 +5741,9 @@ Mono `@font-face`'s
 
 </details>
 
-### carbon--font-face-sans [mixin]
+- **Group**: [@carbon/type](#carbontype)
+
+### ✅carbon--font-face-sans [mixin]
 
 Sans `@font-face`'s
 
@@ -5399,7 +6205,9 @@ Sans `@font-face`'s
 
 </details>
 
-### carbon--font-face-serif [mixin]
+- **Group**: [@carbon/type](#carbontype)
+
+### ✅carbon--font-face-serif [mixin]
 
 Serif `@font-face`'s
 
@@ -5811,654 +6619,4 @@ Serif `@font-face`'s
 
 </details>
 
-## @carbon/colors [deprecated]
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.
-
-### ibm--colors [mixin]
-
-Define color variables
-
-<details>
-<summary>Source code</summary>
-
-```scss
-@mixin ibm--colors() {
-  $ibm-color__black-100: #000000 !default !global;
-  $ibm-color__blue-10: #edf4ff !default !global;
-  $ibm-color__blue-20: #c9deff !default !global;
-  $ibm-color__blue-30: #97c1ff !default !global;
-  $ibm-color__blue-40: #6ea6ff !default !global;
-  $ibm-color__blue-50: #408bfc !default !global;
-  $ibm-color__blue-60: #0062ff !default !global;
-  $ibm-color__blue-70: #054ada !default !global;
-  $ibm-color__blue-80: #0530ad !default !global;
-  $ibm-color__blue-90: #061f80 !default !global;
-  $ibm-color__blue-100: #051243 !default !global;
-  $ibm-color__cool-gray-10: #f2f4f8 !default !global;
-  $ibm-color__cool-gray-20: #d5d9e0 !default !global;
-  $ibm-color__cool-gray-30: #b9bfc7 !default !global;
-  $ibm-color__cool-gray-40: #9fa5ad !default !global;
-  $ibm-color__cool-gray-50: #868d95 !default !global;
-  $ibm-color__cool-gray-60: #697077 !default !global;
-  $ibm-color__cool-gray-70: #50565b !default !global;
-  $ibm-color__cool-gray-80: #373d42 !default !global;
-  $ibm-color__cool-gray-90: #242a2e !default !global;
-  $ibm-color__cool-gray-100: #13171a !default !global;
-  $ibm-color__cyan-10: #e3f6ff !default !global;
-  $ibm-color__cyan-20: #b3e6ff !default !global;
-  $ibm-color__cyan-30: #6ccaff !default !global;
-  $ibm-color__cyan-40: #30b0ff !default !global;
-  $ibm-color__cyan-50: #1191e6 !default !global;
-  $ibm-color__cyan-60: #0072c3 !default !global;
-  $ibm-color__cyan-70: #0058a1 !default !global;
-  $ibm-color__cyan-80: #003d73 !default !global;
-  $ibm-color__cyan-90: #002b50 !default !global;
-  $ibm-color__cyan-100: #07192b !default !global;
-  $ibm-color__gray-10: #f3f3f3 !default !global;
-  $ibm-color__gray-20: #dcdcdc !default !global;
-  $ibm-color__gray-30: #bebebe !default !global;
-  $ibm-color__gray-40: #a4a4a4 !default !global;
-  $ibm-color__gray-50: #8c8c8c !default !global;
-  $ibm-color__gray-60: #6f6f6f !default !global;
-  $ibm-color__gray-70: #565656 !default !global;
-  $ibm-color__gray-80: #3d3d3d !default !global;
-  $ibm-color__gray-90: #282828 !default !global;
-  $ibm-color__gray-100: #171717 !default !global;
-  $ibm-color__green-10: #dafbe4 !default !global;
-  $ibm-color__green-20: #9deeb2 !default !global;
-  $ibm-color__green-30: #56d679 !default !global;
-  $ibm-color__green-40: #3dbb61 !default !global;
-  $ibm-color__green-50: #24a148 !default !global;
-  $ibm-color__green-60: #198038 !default !global;
-  $ibm-color__green-70: #10642a !default !global;
-  $ibm-color__green-80: #054719 !default !global;
-  $ibm-color__green-90: #01330f !default !global;
-  $ibm-color__green-100: #081b09 !default !global;
-  $ibm-color__magenta-10: #fff0f6 !default !global;
-  $ibm-color__magenta-20: #ffcfe1 !default !global;
-  $ibm-color__magenta-30: #ffa0c2 !default !global;
-  $ibm-color__magenta-40: #fa75a6 !default !global;
-  $ibm-color__magenta-50: #ee538b !default !global;
-  $ibm-color__magenta-60: #d12765 !default !global;
-  $ibm-color__magenta-70: #a11950 !default !global;
-  $ibm-color__magenta-80: #760a3a !default !global;
-  $ibm-color__magenta-90: #57002b !default !global;
-  $ibm-color__magenta-100: #2a0a16 !default !global;
-  $ibm-color__orange-40: #fc7b1e !default !global;
-  $ibm-color__purple-10: #f7f1ff !default !global;
-  $ibm-color__purple-20: #e6d6ff !default !global;
-  $ibm-color__purple-30: #d0b0ff !default !global;
-  $ibm-color__purple-40: #bb8eff !default !global;
-  $ibm-color__purple-50: #a66efa !default !global;
-  $ibm-color__purple-60: #8a3ffc !default !global;
-  $ibm-color__purple-70: #6e32c9 !default !global;
-  $ibm-color__purple-80: #4f2196 !default !global;
-  $ibm-color__purple-90: #38146b !default !global;
-  $ibm-color__purple-100: #1e1033 !default !global;
-  $ibm-color__red-10: #fff0f1 !default !global;
-  $ibm-color__red-20: #fcd0d3 !default !global;
-  $ibm-color__red-30: #ffa4a9 !default !global;
-  $ibm-color__red-40: #ff767c !default !global;
-  $ibm-color__red-50: #fb4b53 !default !global;
-  $ibm-color__red-60: #da1e28 !default !global;
-  $ibm-color__red-70: #a51920 !default !global;
-  $ibm-color__red-80: #750e13 !default !global;
-  $ibm-color__red-90: #570408 !default !global;
-  $ibm-color__red-100: #2c080a !default !global;
-  $ibm-color__teal-10: #dbfbfb !default !global;
-  $ibm-color__teal-20: #92eeee !default !global;
-  $ibm-color__teal-30: #20d5d2 !default !global;
-  $ibm-color__teal-40: #00bab6 !default !global;
-  $ibm-color__teal-50: #009c98 !default !global;
-  $ibm-color__teal-60: #007d79 !default !global;
-  $ibm-color__teal-70: #006161 !default !global;
-  $ibm-color__teal-80: #004548 !default !global;
-  $ibm-color__teal-90: #003137 !default !global;
-  $ibm-color__teal-100: #081a1c !default !global;
-  $ibm-color__warm-gray-10: #f7f3f1 !default !global;
-  $ibm-color__warm-gray-20: #e0dbda !default !global;
-  $ibm-color__warm-gray-30: #c1bcbb !default !global;
-  $ibm-color__warm-gray-40: #a7a2a2 !default !global;
-  $ibm-color__warm-gray-50: #8f8b8b !default !global;
-  $ibm-color__warm-gray-60: #726e6e !default !global;
-  $ibm-color__warm-gray-70: #595555 !default !global;
-  $ibm-color__warm-gray-80: #403c3c !default !global;
-  $ibm-color__warm-gray-90: #2b2828 !default !global;
-  $ibm-color__warm-gray-100: #1a1717 !default !global;
-  $ibm-color__white-0: #ffffff !default !global;
-  $ibm-color__yellow-20: #fdd13a !default !global;
-
-  $ibm-color-map: (
-    'black': (
-      100: #000000,
-    ),
-    'blue': (
-      10: #edf4ff,
-      20: #c9deff,
-      30: #97c1ff,
-      40: #6ea6ff,
-      50: #408bfc,
-      60: #0062ff,
-      70: #054ada,
-      80: #0530ad,
-      90: #061f80,
-      100: #051243,
-    ),
-    'coolGray': (
-      10: #f2f4f8,
-      20: #d5d9e0,
-      30: #b9bfc7,
-      40: #9fa5ad,
-      50: #868d95,
-      60: #697077,
-      70: #50565b,
-      80: #373d42,
-      90: #242a2e,
-      100: #13171a,
-    ),
-    'cyan': (
-      10: #e3f6ff,
-      20: #b3e6ff,
-      30: #6ccaff,
-      40: #30b0ff,
-      50: #1191e6,
-      60: #0072c3,
-      70: #0058a1,
-      80: #003d73,
-      90: #002b50,
-      100: #07192b,
-    ),
-    'gray': (
-      10: #f3f3f3,
-      20: #dcdcdc,
-      30: #bebebe,
-      40: #a4a4a4,
-      50: #8c8c8c,
-      60: #6f6f6f,
-      70: #565656,
-      80: #3d3d3d,
-      90: #282828,
-      100: #171717,
-    ),
-    'green': (
-      10: #dafbe4,
-      20: #9deeb2,
-      30: #56d679,
-      40: #3dbb61,
-      50: #24a148,
-      60: #198038,
-      70: #10642a,
-      80: #054719,
-      90: #01330f,
-      100: #081b09,
-    ),
-    'magenta': (
-      10: #fff0f6,
-      20: #ffcfe1,
-      30: #ffa0c2,
-      40: #fa75a6,
-      50: #ee538b,
-      60: #d12765,
-      70: #a11950,
-      80: #760a3a,
-      90: #57002b,
-      100: #2a0a16,
-    ),
-    'orange': (
-      40: #fc7b1e,
-    ),
-    'purple': (
-      10: #f7f1ff,
-      20: #e6d6ff,
-      30: #d0b0ff,
-      40: #bb8eff,
-      50: #a66efa,
-      60: #8a3ffc,
-      70: #6e32c9,
-      80: #4f2196,
-      90: #38146b,
-      100: #1e1033,
-    ),
-    'red': (
-      10: #fff0f1,
-      20: #fcd0d3,
-      30: #ffa4a9,
-      40: #ff767c,
-      50: #fb4b53,
-      60: #da1e28,
-      70: #a51920,
-      80: #750e13,
-      90: #570408,
-      100: #2c080a,
-    ),
-    'teal': (
-      10: #dbfbfb,
-      20: #92eeee,
-      30: #20d5d2,
-      40: #00bab6,
-      50: #009c98,
-      60: #007d79,
-      70: #006161,
-      80: #004548,
-      90: #003137,
-      100: #081a1c,
-    ),
-    'warmGray': (
-      10: #f7f3f1,
-      20: #e0dbda,
-      30: #c1bcbb,
-      40: #a7a2a2,
-      50: #8f8b8b,
-      60: #726e6e,
-      70: #595555,
-      80: #403c3c,
-      90: #2b2828,
-      100: #1a1717,
-    ),
-    'white': (
-      0: #ffffff,
-    ),
-    'yellow': (
-      20: #fdd13a,
-    ),
-  ) !default !global;
-}
-```
-
-</details>
-
-- **Deprecated**: Use `$carbon--colors` going forward
-
-## @carbon/layout [deprecated]
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.
-
-### spacing-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-01: $carbon--spacing-01;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-01`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-02 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-02: $carbon--spacing-02;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-02`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-03 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-03: $carbon--spacing-03;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-03`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-04 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-04: $carbon--spacing-04;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-04`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-05 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-05: $carbon--spacing-05;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-05`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-06 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-06: $carbon--spacing-06;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-06`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-07 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-07: $carbon--spacing-07;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-07`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-08 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-08: $carbon--spacing-08;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-08`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-09 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-09: $carbon--spacing-09;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-09`
-- **Deprecated**: This may not be available in future releases
-
-### layout-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-01: $carbon--layout-01;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-01`
-- **Deprecated**: This may not be available in future releases
-
-### layout-02 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-02: $carbon--layout-02;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-02`
-- **Deprecated**: This may not be available in future releases
-
-### layout-03 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-03: $carbon--layout-03;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-03`
-- **Deprecated**: This may not be available in future releases
-
-### layout-04 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-04: $carbon--layout-04;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-04`
-- **Deprecated**: This may not be available in future releases
-
-### layout-05 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-05: $carbon--layout-05;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-05`
-- **Deprecated**: This may not be available in future releases
-
-### layout-06 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-06: $carbon--layout-06;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-06`
-- **Deprecated**: This may not be available in future releases
-
-### layout-07 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-07: $carbon--layout-07;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-07`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-01: $carbon--fluid-spacing-01;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-01`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-02 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-02: $carbon--fluid-spacing-02;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-02`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-03 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-03: $carbon--fluid-spacing-03;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-03`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-04 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-04: $carbon--fluid-spacing-04;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-04`
-- **Deprecated**: This may not be available in future releases
-
-## @carbon/themes [deprecated]
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.
-
-### brand-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$brand-01: map-get($carbon--theme, brand-01);
-```
-
-</details>
-
-- **Type**: `Color`
-- **Alias**: `interactive-01`
-- **Used by**:
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-- **Deprecated**: This may not be available in future releases
-
-### brand-02 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$brand-02: map-get($carbon--theme, brand-02);
-```
-
-</details>
-
-- **Type**: `Color`
-- **Alias**: `interactive-02`
-- **Used by**:
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-- **Deprecated**: This may not be available in future releases
-
-### brand-03 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$brand-03: map-get($carbon--theme, brand-03);
-```
-
-</details>
-
-- **Type**: `Color`
-- **Alias**: `interactive-03`
-- **Used by**:
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-- **Deprecated**: This may not be available in future releases
-
-### active-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$active-01: map-get($carbon--theme, active-01);
-```
-
-</details>
-
-- **Type**: `Color`
-- **Alias**: `active-ui`
-- **Used by**:
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-- **Deprecated**: This may not be available in future releases
-
-### hover-field [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$hover-field: map-get($carbon--theme, hover-field);
-```
-
-</details>
-
-- **Type**: `Color`
-- **Alias**: `hover-ui`
-- **Used by**:
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-- **Deprecated**: This may not be available in future releases
+- **Group**: [@carbon/type](#carbontype)

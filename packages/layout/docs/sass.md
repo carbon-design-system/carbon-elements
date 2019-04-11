@@ -1,84 +1,86 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/layout](#carbonlayout)
-  - [carbon--grid-gutter [variable]](#carbon--grid-gutter-variable)
-  - [carbon--grid-gutter--condensed [variable]](#carbon--grid-gutter--condensed-variable)
-  - [carbon--grid-breakpoints [variable]](#carbon--grid-breakpoints-variable)
-  - [carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
-  - [carbon--breakpoint-prev [function]](#carbon--breakpoint-prev-function)
-  - [carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
-  - [carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
-  - [carbon--breakpoint-infix [function]](#carbon--breakpoint-infix-function)
-  - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
-  - [carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
-  - [carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
-  - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
-  - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
-  - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
-  - [carbon--rem [function]](#carbon--rem-function)
-  - [carbon--em [function]](#carbon--em-function)
-  - [carbon--get-column-width [function]](#carbon--get-column-width-function)
-  - [carbon--key-height-scales [variable]](#carbon--key-height-scales-variable)
-  - [carbon--key-height [function]](#carbon--key-height-function)
-  - [carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
-  - [carbon--mini-units [function]](#carbon--mini-units-function)
-  - [carbon--spacing-01 [variable]](#carbon--spacing-01-variable)
-  - [carbon--spacing-02 [variable]](#carbon--spacing-02-variable)
-  - [carbon--spacing-03 [variable]](#carbon--spacing-03-variable)
-  - [carbon--spacing-04 [variable]](#carbon--spacing-04-variable)
-  - [carbon--spacing-05 [variable]](#carbon--spacing-05-variable)
-  - [carbon--spacing-06 [variable]](#carbon--spacing-06-variable)
-  - [carbon--spacing-07 [variable]](#carbon--spacing-07-variable)
-  - [carbon--spacing-08 [variable]](#carbon--spacing-08-variable)
-  - [carbon--spacing-09 [variable]](#carbon--spacing-09-variable)
-  - [carbon--spacing [variable]](#carbon--spacing-variable)
-  - [carbon--layout-01 [variable]](#carbon--layout-01-variable)
-  - [carbon--layout-02 [variable]](#carbon--layout-02-variable)
-  - [carbon--layout-03 [variable]](#carbon--layout-03-variable)
-  - [carbon--layout-04 [variable]](#carbon--layout-04-variable)
-  - [carbon--layout-05 [variable]](#carbon--layout-05-variable)
-  - [carbon--layout-06 [variable]](#carbon--layout-06-variable)
-  - [carbon--layout-07 [variable]](#carbon--layout-07-variable)
-  - [carbon--layout [variable]](#carbon--layout-variable)
-  - [carbon--fluid-spacing-01 [variable]](#carbon--fluid-spacing-01-variable)
-  - [carbon--fluid-spacing-02 [variable]](#carbon--fluid-spacing-02-variable)
-  - [carbon--fluid-spacing-03 [variable]](#carbon--fluid-spacing-03-variable)
-  - [carbon--fluid-spacing-04 [variable]](#carbon--fluid-spacing-04-variable)
-  - [carbon--fluid-spacing [variable]](#carbon--fluid-spacing-variable)
-  - [map-deep-get [function]](#map-deep-get-function)
-  - [carbon--key-by-index [function]](#carbon--key-by-index-function)
-  - [last-map-item [function]](#last-map-item-function)
-- [@carbon/layout [deprecated]](#carbonlayout-deprecated)
-  - [spacing-01 [variable]](#spacing-01-variable)
-  - [spacing-02 [variable]](#spacing-02-variable)
-  - [spacing-03 [variable]](#spacing-03-variable)
-  - [spacing-04 [variable]](#spacing-04-variable)
-  - [spacing-05 [variable]](#spacing-05-variable)
-  - [spacing-06 [variable]](#spacing-06-variable)
-  - [spacing-07 [variable]](#spacing-07-variable)
-  - [spacing-08 [variable]](#spacing-08-variable)
-  - [spacing-09 [variable]](#spacing-09-variable)
-  - [layout-01 [variable]](#layout-01-variable)
-  - [layout-02 [variable]](#layout-02-variable)
-  - [layout-03 [variable]](#layout-03-variable)
-  - [layout-04 [variable]](#layout-04-variable)
-  - [layout-05 [variable]](#layout-05-variable)
-  - [layout-06 [variable]](#layout-06-variable)
-  - [layout-07 [variable]](#layout-07-variable)
-  - [fluid-spacing-01 [variable]](#fluid-spacing-01-variable)
-  - [fluid-spacing-02 [variable]](#fluid-spacing-02-variable)
-  - [fluid-spacing-03 [variable]](#fluid-spacing-03-variable)
-  - [fluid-spacing-04 [variable]](#fluid-spacing-04-variable)
+  - [✅carbon--grid-gutter [variable]](#carbon--grid-gutter-variable)
+  - [✅carbon--grid-gutter--condensed [variable]](#carbon--grid-gutter--condensed-variable)
+  - [✅carbon--grid-breakpoints [variable]](#carbon--grid-breakpoints-variable)
+  - [✅carbon--breakpoint-next [function]](#carbon--breakpoint-next-function)
+  - [✅carbon--breakpoint-prev [function]](#carbon--breakpoint-prev-function)
+  - [✅carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
+  - [✅carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
+  - [✅carbon--breakpoint-infix [function]](#carbon--breakpoint-infix-function)
+  - [✅carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
+  - [✅carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
+  - [✅carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
+  - [✅carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
+  - [✅carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
+  - [✅carbon--base-font-size [variable]](#carbon--base-font-size-variable)
+  - [✅carbon--rem [function]](#carbon--rem-function)
+  - [✅carbon--em [function]](#carbon--em-function)
+  - [✅carbon--get-column-width [function]](#carbon--get-column-width-function)
+  - [✅carbon--key-height-scales [variable]](#carbon--key-height-scales-variable)
+  - [✅carbon--key-height [function]](#carbon--key-height-function)
+  - [✅carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
+  - [✅carbon--mini-units [function]](#carbon--mini-units-function)
+  - [✅carbon--spacing-01 [variable]](#carbon--spacing-01-variable)
+  - [✅carbon--spacing-02 [variable]](#carbon--spacing-02-variable)
+  - [✅carbon--spacing-03 [variable]](#carbon--spacing-03-variable)
+  - [✅carbon--spacing-04 [variable]](#carbon--spacing-04-variable)
+  - [✅carbon--spacing-05 [variable]](#carbon--spacing-05-variable)
+  - [✅carbon--spacing-06 [variable]](#carbon--spacing-06-variable)
+  - [✅carbon--spacing-07 [variable]](#carbon--spacing-07-variable)
+  - [✅carbon--spacing-08 [variable]](#carbon--spacing-08-variable)
+  - [✅carbon--spacing-09 [variable]](#carbon--spacing-09-variable)
+  - [✅carbon--spacing [variable]](#carbon--spacing-variable)
+  - [✅spacing-01 [variable]](#spacing-01-variable)
+  - [✅spacing-02 [variable]](#spacing-02-variable)
+  - [✅spacing-03 [variable]](#spacing-03-variable)
+  - [✅spacing-04 [variable]](#spacing-04-variable)
+  - [✅spacing-05 [variable]](#spacing-05-variable)
+  - [✅spacing-06 [variable]](#spacing-06-variable)
+  - [✅spacing-07 [variable]](#spacing-07-variable)
+  - [✅spacing-08 [variable]](#spacing-08-variable)
+  - [✅spacing-09 [variable]](#spacing-09-variable)
+  - [✅carbon--layout-01 [variable]](#carbon--layout-01-variable)
+  - [✅carbon--layout-02 [variable]](#carbon--layout-02-variable)
+  - [✅carbon--layout-03 [variable]](#carbon--layout-03-variable)
+  - [✅carbon--layout-04 [variable]](#carbon--layout-04-variable)
+  - [✅carbon--layout-05 [variable]](#carbon--layout-05-variable)
+  - [✅carbon--layout-06 [variable]](#carbon--layout-06-variable)
+  - [✅carbon--layout-07 [variable]](#carbon--layout-07-variable)
+  - [✅carbon--layout [variable]](#carbon--layout-variable)
+  - [✅layout-01 [variable]](#layout-01-variable)
+  - [✅layout-02 [variable]](#layout-02-variable)
+  - [✅layout-03 [variable]](#layout-03-variable)
+  - [✅layout-04 [variable]](#layout-04-variable)
+  - [✅layout-05 [variable]](#layout-05-variable)
+  - [✅layout-06 [variable]](#layout-06-variable)
+  - [✅layout-07 [variable]](#layout-07-variable)
+  - [✅carbon--fluid-spacing-01 [variable]](#carbon--fluid-spacing-01-variable)
+  - [✅carbon--fluid-spacing-02 [variable]](#carbon--fluid-spacing-02-variable)
+  - [✅carbon--fluid-spacing-03 [variable]](#carbon--fluid-spacing-03-variable)
+  - [✅carbon--fluid-spacing-04 [variable]](#carbon--fluid-spacing-04-variable)
+  - [✅carbon--fluid-spacing [variable]](#carbon--fluid-spacing-variable)
+  - [✅fluid-spacing-01 [variable]](#fluid-spacing-01-variable)
+  - [✅fluid-spacing-02 [variable]](#fluid-spacing-02-variable)
+  - [✅fluid-spacing-03 [variable]](#fluid-spacing-03-variable)
+  - [✅fluid-spacing-04 [variable]](#fluid-spacing-04-variable)
+  - [✅map-deep-get [function]](#map-deep-get-function)
+  - [✅carbon--key-by-index [function]](#carbon--key-by-index-function)
+  - [✅last-map-item [function]](#last-map-item-function)
 
 <!-- tocstop -->
 
 ## @carbon/layout
 
-### carbon--grid-gutter [variable]
+### ✅carbon--grid-gutter [variable]
 
 Carbon gutter size in rem
 
@@ -91,9 +93,10 @@ $carbon--grid-gutter: carbon--rem(32px);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 
-### carbon--grid-gutter--condensed [variable]
+### ✅carbon--grid-gutter--condensed [variable]
 
 Carbon condensed gutter size in rem
 
@@ -106,9 +109,10 @@ $carbon--grid-gutter--condensed: carbon--rem(2px);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 
-### carbon--grid-breakpoints [variable]
+### ✅carbon--grid-breakpoints [variable]
 
 <details>
 <summary>Source code</summary>
@@ -145,9 +149,10 @@ $carbon--grid-breakpoints: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### carbon--breakpoint-next [function]
+### ✅carbon--breakpoint-next [function]
 
 Get the value of the next breakpoint, or null for the last breakpoint
 
@@ -178,9 +183,10 @@ Get the value of the next breakpoint, or null for the last breakpoint
 | `$breakpoints`      | A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint | `Map`    | `$carbon--grid-breakpoints` |
 | `$breakpoint-names` | A list of names from the `$breakpoints` map                                                                     | `List`   | `map-keys($breakpoints)`    |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 
-### carbon--breakpoint-prev [function]
+### ✅carbon--breakpoint-prev [function]
 
 Get the value of the previous breakpoint, or null for the first breakpoint
 
@@ -211,9 +217,10 @@ Get the value of the previous breakpoint, or null for the first breakpoint
 | `$breakpoints`      | A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint | `Map`    | `$carbon--grid-breakpoints` |
 | `$breakpoint-names` | A list of names from the `$breakpoints` map                                                                     | `List`   | `map-keys($breakpoints)`    |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 
-### carbon--is-smallest-breakpoint [function]
+### ✅carbon--is-smallest-breakpoint [function]
 
 Check to see if the given breakpoint name
 
@@ -238,12 +245,13 @@ Check to see if the given breakpoint name
 | `$name`        | The name of the brekapoint                                                                                      | `String` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name of the breakpoint and the value is the values for the breakpoint | `Map`    | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Bool`
 - **Used by**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
   - [carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
 
-### carbon--largest-breakpoint-name [function]
+### ✅carbon--largest-breakpoint-name [function]
 
 Returns the largest breakpoint name
 
@@ -267,13 +275,14 @@ Returns the largest breakpoint name
 | -------------- | ---------------------------------------------- | ----- | --------------------------- |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map` | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 - **Requires**:
   - [carbon--key-by-index [function]](#carbon--key-by-index-function)
 - **Used by**:
   - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
 
-### carbon--breakpoint-infix [function]
+### ✅carbon--breakpoint-infix [function]
 
 Get the infix for a given breakpoint in a list of breakpoints. Usesful for generate the size part in a selector, for example: `.prefix--col-sm-2`.
 
@@ -294,9 +303,10 @@ Get the infix for a given breakpoint in a list of breakpoints. Usesful for gener
 | ------- | -------------------------- | -------- | ------------- |
 | `$name` | The name of the breakpoint | `String` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String`
 
-### carbon--breakpoint-up [mixin]
+### ✅carbon--breakpoint-up [mixin]
 
 Generate a media query up to the width of the given breakpoint name
 
@@ -334,13 +344,14 @@ Generate a media query up to the width of the given breakpoint name
 | `$name`        | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
 - **Used by**:
   - [carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
   - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
 
-### carbon--breakpoint-down [mixin]
+### ✅carbon--breakpoint-down [mixin]
 
 Generate a media query for the maximum width of the given styles
 
@@ -378,12 +389,13 @@ Generate a media query for the maximum width of the given styles
 | `$name`        | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--is-smallest-breakpoint [function]](#carbon--is-smallest-breakpoint-function)
 - **Used by**:
   - [carbon--breakpoint-between [mixin]](#carbon--breakpoint-between-mixin)
 
-### carbon--breakpoint-between [mixin]
+### ✅carbon--breakpoint-between [mixin]
 
 Generate a media query for the range between the lower and upper breakpoints
 
@@ -431,11 +443,12 @@ Generate a media query for the range between the lower and upper breakpoints
 | `$upper`       | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
   - [carbon--breakpoint-down [mixin]](#carbon--breakpoint-down-mixin)
 
-### carbon--largest-breakpoint [mixin]
+### ✅carbon--largest-breakpoint [mixin]
 
 Generate media query for the largest breakpoint
 
@@ -458,11 +471,12 @@ Generate media query for the largest breakpoint
 | -------------- | ---------------------------------------------- | ----- | --------------------------- |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map` | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
   - [carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
 
-### carbon--breakpoint [mixin]
+### ✅carbon--breakpoint [mixin]
 
 Generate a media query for a given breakpoint
 
@@ -486,12 +500,13 @@ Generate a media query for a given breakpoint
 | `$name`        | —                                              | `String \| Number` | —                           |
 | `$breakpoints` | A map of breakpoints where the key is the name | `Map`              | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Requires**:
   - [carbon--breakpoint-up [mixin]](#carbon--breakpoint-up-mixin)
 - **Used by**:
   - [carbon--largest-breakpoint [mixin]](#carbon--largest-breakpoint-mixin)
 
-### carbon--base-font-size [variable]
+### ✅carbon--base-font-size [variable]
 
 Default font size
 
@@ -504,12 +519,13 @@ $carbon--base-font-size: 16px;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Used by**:
   - [carbon--rem [function]](#carbon--rem-function)
   - [carbon--em [function]](#carbon--em-function)
 
-### carbon--rem [function]
+### ✅carbon--rem [function]
 
 Convert a given px unit to a rem unit
 
@@ -530,13 +546,14 @@ Convert a given px unit to a rem unit
 | ----- | ------------------- | -------- | ------------- |
 | `$px` | Number with px unit | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` Number with rem unit
 - **Requires**:
   - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
 - **Used by**:
   - [carbon--mini-units [function]](#carbon--mini-units-function)
 
-### carbon--em [function]
+### ✅carbon--em [function]
 
 Convert a given px unit to a em unit
 
@@ -557,11 +574,12 @@ Convert a given px unit to a em unit
 | ----- | ------------------- | -------- | ------------- |
 | `$px` | Number with px unit | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` Number with em unit
 - **Requires**:
   - [carbon--base-font-size [variable]](#carbon--base-font-size-variable)
 
-### carbon--get-column-width [function]
+### ✅carbon--get-column-width [function]
 
 Get the column width for a given breakpoint
 
@@ -595,9 +613,10 @@ Get the column width for a given breakpoint
 | `$breakpoint`  | —           | `String` | —                           |
 | `$breakpoints` | —           | `Map`    | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` In rem
 
-### carbon--key-height-scales [variable]
+### ✅carbon--key-height-scales [variable]
 
 <details>
 <summary>Source code</summary>
@@ -655,11 +674,12 @@ $carbon--key-height-scales: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--key-height [function]](#carbon--key-height-function)
 
-### carbon--key-height [function]
+### ✅carbon--key-height [function]
 
 Get the value of a key height step at a given breakpoint
 
@@ -685,11 +705,12 @@ Get the value of a key height step at a given breakpoint
 | `$breakpoint` | —           | `String` | —             |
 | `$step`       | —           | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` In rem
 - **Requires**:
   - [carbon--key-height-scales [variable]](#carbon--key-height-scales-variable)
 
-### carbon--mini-unit-size [variable]
+### ✅carbon--mini-unit-size [variable]
 
 Default mini-unit value
 
@@ -702,11 +723,12 @@ $carbon--mini-unit-size: 8px;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Used by**:
   - [carbon--mini-units [function]](#carbon--mini-units-function)
 
-### carbon--mini-units [function]
+### ✅carbon--mini-units [function]
 
 Get the value of the corresponding number of units
 
@@ -727,12 +749,13 @@ Get the value of the corresponding number of units
 | -------- | ---------------------------------------- | -------- | ------------- |
 | `$count` | The number of units to get the value for | `Number` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `Number` In rem units
 - **Requires**:
   - [carbon--rem [function]](#carbon--rem-function)
   - [carbon--mini-unit-size [variable]](#carbon--mini-unit-size-variable)
 
-### carbon--spacing-01 [variable]
+### ✅carbon--spacing-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -743,11 +766,12 @@ $carbon--spacing-01: carbon--mini-units(0.25);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-01`
 
-### carbon--spacing-02 [variable]
+### ✅carbon--spacing-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -758,11 +782,12 @@ $carbon--spacing-02: carbon--mini-units(0.5);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-02`
 
-### carbon--spacing-03 [variable]
+### ✅carbon--spacing-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -773,11 +798,12 @@ $carbon--spacing-03: carbon--mini-units(1);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-03`
 
-### carbon--spacing-04 [variable]
+### ✅carbon--spacing-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -788,11 +814,12 @@ $carbon--spacing-04: carbon--mini-units(1.5);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-04`
 
-### carbon--spacing-05 [variable]
+### ✅carbon--spacing-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -803,11 +830,12 @@ $carbon--spacing-05: carbon--mini-units(2);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-05`
 
-### carbon--spacing-06 [variable]
+### ✅carbon--spacing-06 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -818,11 +846,12 @@ $carbon--spacing-06: carbon--mini-units(3);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-06`
 
-### carbon--spacing-07 [variable]
+### ✅carbon--spacing-07 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -833,11 +862,12 @@ $carbon--spacing-07: carbon--mini-units(4);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-07`
 
-### carbon--spacing-08 [variable]
+### ✅carbon--spacing-08 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -848,11 +878,12 @@ $carbon--spacing-08: carbon--mini-units(5);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-08`
 
-### carbon--spacing-09 [variable]
+### ✅carbon--spacing-09 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -863,11 +894,12 @@ $carbon--spacing-09: carbon--mini-units(6);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `spacing-09`
 
-### carbon--spacing [variable]
+### ✅carbon--spacing [variable]
 
 <details>
 <summary>Source code</summary>
@@ -888,9 +920,145 @@ $carbon--spacing: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### carbon--layout-01 [variable]
+### ✅spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-01: $carbon--spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-01`
+
+### ✅spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-02: $carbon--spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-02`
+
+### ✅spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-03: $carbon--spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-03`
+
+### ✅spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-04: $carbon--spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-04`
+
+### ✅spacing-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-05: $carbon--spacing-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-05`
+
+### ✅spacing-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-06: $carbon--spacing-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-06`
+
+### ✅spacing-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-07: $carbon--spacing-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-07`
+
+### ✅spacing-08 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-08: $carbon--spacing-08;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-08`
+
+### ✅spacing-09 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-09: $carbon--spacing-09;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-09`
+
+### ✅carbon--layout-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -901,11 +1069,12 @@ $carbon--layout-01: carbon--mini-units(2);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-01`
 
-### carbon--layout-02 [variable]
+### ✅carbon--layout-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -916,11 +1085,12 @@ $carbon--layout-02: carbon--mini-units(3);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-02`
 
-### carbon--layout-03 [variable]
+### ✅carbon--layout-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -931,11 +1101,12 @@ $carbon--layout-03: carbon--mini-units(4);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-03`
 
-### carbon--layout-04 [variable]
+### ✅carbon--layout-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -946,11 +1117,12 @@ $carbon--layout-04: carbon--mini-units(6);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-04`
 
-### carbon--layout-05 [variable]
+### ✅carbon--layout-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -961,11 +1133,12 @@ $carbon--layout-05: carbon--mini-units(8);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-05`
 
-### carbon--layout-06 [variable]
+### ✅carbon--layout-06 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -976,11 +1149,12 @@ $carbon--layout-06: carbon--mini-units(12);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-06`
 
-### carbon--layout-07 [variable]
+### ✅carbon--layout-07 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -991,11 +1165,12 @@ $carbon--layout-07: carbon--mini-units(20);
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `layout-07`
 
-### carbon--layout [variable]
+### ✅carbon--layout [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1014,9 +1189,115 @@ $carbon--layout: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### carbon--fluid-spacing-01 [variable]
+### ✅layout-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-01: $carbon--layout-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-01`
+
+### ✅layout-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-02: $carbon--layout-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-02`
+
+### ✅layout-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-03: $carbon--layout-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-03`
+
+### ✅layout-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-04: $carbon--layout-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-04`
+
+### ✅layout-05 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-05: $carbon--layout-05;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-05`
+
+### ✅layout-06 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-06: $carbon--layout-06;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-06`
+
+### ✅layout-07 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$layout-07: $carbon--layout-07;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--layout-07`
+
+### ✅carbon--fluid-spacing-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1027,11 +1308,12 @@ $carbon--fluid-spacing-01: 0;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-01`
 
-### carbon--fluid-spacing-02 [variable]
+### ✅carbon--fluid-spacing-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1042,11 +1324,12 @@ $carbon--fluid-spacing-02: 2vw;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-02`
 
-### carbon--fluid-spacing-03 [variable]
+### ✅carbon--fluid-spacing-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1057,11 +1340,12 @@ $carbon--fluid-spacing-03: 5vw;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-03`
 
-### carbon--fluid-spacing-04 [variable]
+### ✅carbon--fluid-spacing-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1072,11 +1356,12 @@ $carbon--fluid-spacing-04: 10vw;
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Aliased**:
   - `fluid-spacing-04`
 
-### carbon--fluid-spacing [variable]
+### ✅carbon--fluid-spacing [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1092,9 +1377,70 @@ $carbon--fluid-spacing: (
 
 </details>
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Map`
 
-### map-deep-get [function]
+### ✅fluid-spacing-01 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-01: $carbon--fluid-spacing-01;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-01`
+
+### ✅fluid-spacing-02 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-02: $carbon--fluid-spacing-02;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-02`
+
+### ✅fluid-spacing-03 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-03: $carbon--fluid-spacing-03;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-03`
+
+### ✅fluid-spacing-04 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$fluid-spacing-04: $carbon--fluid-spacing-04;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--fluid-spacing-04`
+
+### ✅map-deep-get [function]
 
 Map deep get
 
@@ -1119,9 +1465,10 @@ Map deep get
 | `$map`  | Map         | `Map`     | —             |
 | `$keys` | Key chain   | `Arglist` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `*` Desired value
 
-### carbon--key-by-index [function]
+### ✅carbon--key-by-index [function]
 
 Provide a map and index, and get back the relevant key value
 
@@ -1144,12 +1491,13 @@ Provide a map and index, and get back the relevant key value
 | `$map`   | Map         | `Map`     | —             |
 | `$index` | Key chain   | `Integer` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `String` Desired value
 - **Used by**:
   - [carbon--largest-breakpoint-name [function]](#carbon--largest-breakpoint-name-function)
   - [last-map-item [function]](#last-map-item-function)
 
-### last-map-item [function]
+### ✅last-map-item [function]
 
 Pass in a map, and get the last one in the list back
 
@@ -1171,310 +1519,7 @@ Pass in a map, and get the last one in the list back
 | ------ | ----------- | ----- | ------------- |
 | `$map` | Map         | `Map` | —             |
 
+- **Group**: [@carbon/layout](#carbonlayout)
 - **Returns**: `*` Desired value
 - **Requires**:
   - [carbon--key-by-index [function]](#carbon--key-by-index-function)
-
-## @carbon/layout [deprecated]
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.
-
-### spacing-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-01: $carbon--spacing-01;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-01`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-02 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-02: $carbon--spacing-02;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-02`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-03 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-03: $carbon--spacing-03;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-03`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-04 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-04: $carbon--spacing-04;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-04`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-05 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-05: $carbon--spacing-05;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-05`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-06 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-06: $carbon--spacing-06;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-06`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-07 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-07: $carbon--spacing-07;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-07`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-08 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-08: $carbon--spacing-08;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-08`
-- **Deprecated**: This may not be available in future releases
-
-### spacing-09 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$spacing-09: $carbon--spacing-09;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--spacing-09`
-- **Deprecated**: This may not be available in future releases
-
-### layout-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-01: $carbon--layout-01;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-01`
-- **Deprecated**: This may not be available in future releases
-
-### layout-02 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-02: $carbon--layout-02;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-02`
-- **Deprecated**: This may not be available in future releases
-
-### layout-03 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-03: $carbon--layout-03;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-03`
-- **Deprecated**: This may not be available in future releases
-
-### layout-04 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-04: $carbon--layout-04;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-04`
-- **Deprecated**: This may not be available in future releases
-
-### layout-05 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-05: $carbon--layout-05;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-05`
-- **Deprecated**: This may not be available in future releases
-
-### layout-06 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-06: $carbon--layout-06;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-06`
-- **Deprecated**: This may not be available in future releases
-
-### layout-07 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$layout-07: $carbon--layout-07;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--layout-07`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-01 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-01: $carbon--fluid-spacing-01;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-01`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-02 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-02: $carbon--fluid-spacing-02;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-02`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-03 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-03: $carbon--fluid-spacing-03;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-03`
-- **Deprecated**: This may not be available in future releases
-
-### fluid-spacing-04 [variable]
-
-<details>
-<summary>Source code</summary>
-
-```scss
-$fluid-spacing-04: $carbon--fluid-spacing-04;
-```
-
-</details>
-
-- **Type**: `Number`
-- **Alias**: `carbon--fluid-spacing-04`
-- **Deprecated**: This may not be available in future releases

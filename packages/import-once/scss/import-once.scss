@@ -13,8 +13,8 @@ $imported-modules: () !default;
 
 /// Module export mixin that helps making sure a module is imported once and only once
 /// @access public
-/// @param {String} $name - name of exported module
-/// @param {Bool} $warn [false] - warn when a module has been already imported
+/// @param {String} $name - Name of exported module
+/// @param {Bool} $warn [false] - Warn when a module has been already imported
 /// @content Declaration blocks to be imported
 /// @group @carbon/import-once
 @mixin exports($name, $warn: false) {

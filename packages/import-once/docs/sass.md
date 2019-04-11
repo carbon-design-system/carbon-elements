@@ -1,18 +1,21 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/import-once](#carbonimport-once)
-  - [imported-modules [variable]](#imported-modules-variable)
-  - [exports [mixin]](#exports-mixin)
+  - [✅imported-modules [variable]](#imported-modules-variable)
+  - [✅exports [mixin]](#exports-mixin)
 
 <!-- tocstop -->
 
 ## @carbon/import-once
 
-### imported-modules [variable]
+### ✅imported-modules [variable]
 
 Used by `exports` mixin to track which modules have been imported
 
@@ -25,11 +28,12 @@ $imported-modules: ();
 
 </details>
 
+- **Group**: [@carbon/import-once](#carbonimport-once)
 - **Type**: `Map`
 - **Used by**:
   - [exports [mixin]](#exports-mixin)
 
-### exports [mixin]
+### ✅exports [mixin]
 
 Module export mixin that helps making sure a module is imported once and only once
 
@@ -53,9 +57,10 @@ Module export mixin that helps making sure a module is imported once and only on
 
 | Name    | Description                                  | Type     | Default value |
 | ------- | -------------------------------------------- | -------- | ------------- |
-| `$name` | name of exported module                      | `String` | —             |
-| `$warn` | warn when a module has been already imported | `Bool`   | `false`       |
+| `$name` | Name of exported module                      | `String` | —             |
+| `$warn` | Warn when a module has been already imported | `Bool`   | `false`       |
 
+- **Group**: [@carbon/import-once](#carbonimport-once)
 - **Content**: Declaration blocks to be imported
 - **Requires**:
   - [imported-modules [variable]](#imported-modules-variable)

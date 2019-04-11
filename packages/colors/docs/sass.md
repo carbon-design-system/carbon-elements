@@ -1,19 +1,277 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/colors](#carboncolors)
-  - [carbon--colors [mixin]](#carbon--colors-mixin)
-- [@carbon/colors [deprecated]](#carboncolors-deprecated)
-  - [ibm--colors [mixin]](#ibm--colors-mixin)
+  - [❌ibm--colors [mixin]](#ibm--colors-mixin)
+  - [✅carbon--colors [mixin]](#carbon--colors-mixin)
 
 <!-- tocstop -->
 
 ## @carbon/colors
 
-### carbon--colors [mixin]
+### ❌ibm--colors [mixin]
+
+Define color variables
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin ibm--colors() {
+  $ibm-color__black-100: #000000 !default !global;
+  $ibm-color__blue-10: #edf4ff !default !global;
+  $ibm-color__blue-20: #c9deff !default !global;
+  $ibm-color__blue-30: #97c1ff !default !global;
+  $ibm-color__blue-40: #6ea6ff !default !global;
+  $ibm-color__blue-50: #408bfc !default !global;
+  $ibm-color__blue-60: #0062ff !default !global;
+  $ibm-color__blue-70: #054ada !default !global;
+  $ibm-color__blue-80: #0530ad !default !global;
+  $ibm-color__blue-90: #061f80 !default !global;
+  $ibm-color__blue-100: #051243 !default !global;
+  $ibm-color__cool-gray-10: #f2f4f8 !default !global;
+  $ibm-color__cool-gray-20: #d5d9e0 !default !global;
+  $ibm-color__cool-gray-30: #b9bfc7 !default !global;
+  $ibm-color__cool-gray-40: #9fa5ad !default !global;
+  $ibm-color__cool-gray-50: #868d95 !default !global;
+  $ibm-color__cool-gray-60: #697077 !default !global;
+  $ibm-color__cool-gray-70: #50565b !default !global;
+  $ibm-color__cool-gray-80: #373d42 !default !global;
+  $ibm-color__cool-gray-90: #242a2e !default !global;
+  $ibm-color__cool-gray-100: #13171a !default !global;
+  $ibm-color__cyan-10: #e3f6ff !default !global;
+  $ibm-color__cyan-20: #b3e6ff !default !global;
+  $ibm-color__cyan-30: #6ccaff !default !global;
+  $ibm-color__cyan-40: #30b0ff !default !global;
+  $ibm-color__cyan-50: #1191e6 !default !global;
+  $ibm-color__cyan-60: #0072c3 !default !global;
+  $ibm-color__cyan-70: #0058a1 !default !global;
+  $ibm-color__cyan-80: #003d73 !default !global;
+  $ibm-color__cyan-90: #002b50 !default !global;
+  $ibm-color__cyan-100: #07192b !default !global;
+  $ibm-color__gray-10: #f3f3f3 !default !global;
+  $ibm-color__gray-20: #dcdcdc !default !global;
+  $ibm-color__gray-30: #bebebe !default !global;
+  $ibm-color__gray-40: #a4a4a4 !default !global;
+  $ibm-color__gray-50: #8c8c8c !default !global;
+  $ibm-color__gray-60: #6f6f6f !default !global;
+  $ibm-color__gray-70: #565656 !default !global;
+  $ibm-color__gray-80: #3d3d3d !default !global;
+  $ibm-color__gray-90: #282828 !default !global;
+  $ibm-color__gray-100: #171717 !default !global;
+  $ibm-color__green-10: #dafbe4 !default !global;
+  $ibm-color__green-20: #9deeb2 !default !global;
+  $ibm-color__green-30: #56d679 !default !global;
+  $ibm-color__green-40: #3dbb61 !default !global;
+  $ibm-color__green-50: #24a148 !default !global;
+  $ibm-color__green-60: #198038 !default !global;
+  $ibm-color__green-70: #10642a !default !global;
+  $ibm-color__green-80: #054719 !default !global;
+  $ibm-color__green-90: #01330f !default !global;
+  $ibm-color__green-100: #081b09 !default !global;
+  $ibm-color__magenta-10: #fff0f6 !default !global;
+  $ibm-color__magenta-20: #ffcfe1 !default !global;
+  $ibm-color__magenta-30: #ffa0c2 !default !global;
+  $ibm-color__magenta-40: #fa75a6 !default !global;
+  $ibm-color__magenta-50: #ee538b !default !global;
+  $ibm-color__magenta-60: #d12765 !default !global;
+  $ibm-color__magenta-70: #a11950 !default !global;
+  $ibm-color__magenta-80: #760a3a !default !global;
+  $ibm-color__magenta-90: #57002b !default !global;
+  $ibm-color__magenta-100: #2a0a16 !default !global;
+  $ibm-color__orange-40: #fc7b1e !default !global;
+  $ibm-color__purple-10: #f7f1ff !default !global;
+  $ibm-color__purple-20: #e6d6ff !default !global;
+  $ibm-color__purple-30: #d0b0ff !default !global;
+  $ibm-color__purple-40: #bb8eff !default !global;
+  $ibm-color__purple-50: #a66efa !default !global;
+  $ibm-color__purple-60: #8a3ffc !default !global;
+  $ibm-color__purple-70: #6e32c9 !default !global;
+  $ibm-color__purple-80: #4f2196 !default !global;
+  $ibm-color__purple-90: #38146b !default !global;
+  $ibm-color__purple-100: #1e1033 !default !global;
+  $ibm-color__red-10: #fff0f1 !default !global;
+  $ibm-color__red-20: #fcd0d3 !default !global;
+  $ibm-color__red-30: #ffa4a9 !default !global;
+  $ibm-color__red-40: #ff767c !default !global;
+  $ibm-color__red-50: #fb4b53 !default !global;
+  $ibm-color__red-60: #da1e28 !default !global;
+  $ibm-color__red-70: #a51920 !default !global;
+  $ibm-color__red-80: #750e13 !default !global;
+  $ibm-color__red-90: #570408 !default !global;
+  $ibm-color__red-100: #2c080a !default !global;
+  $ibm-color__teal-10: #dbfbfb !default !global;
+  $ibm-color__teal-20: #92eeee !default !global;
+  $ibm-color__teal-30: #20d5d2 !default !global;
+  $ibm-color__teal-40: #00bab6 !default !global;
+  $ibm-color__teal-50: #009c98 !default !global;
+  $ibm-color__teal-60: #007d79 !default !global;
+  $ibm-color__teal-70: #006161 !default !global;
+  $ibm-color__teal-80: #004548 !default !global;
+  $ibm-color__teal-90: #003137 !default !global;
+  $ibm-color__teal-100: #081a1c !default !global;
+  $ibm-color__warm-gray-10: #f7f3f1 !default !global;
+  $ibm-color__warm-gray-20: #e0dbda !default !global;
+  $ibm-color__warm-gray-30: #c1bcbb !default !global;
+  $ibm-color__warm-gray-40: #a7a2a2 !default !global;
+  $ibm-color__warm-gray-50: #8f8b8b !default !global;
+  $ibm-color__warm-gray-60: #726e6e !default !global;
+  $ibm-color__warm-gray-70: #595555 !default !global;
+  $ibm-color__warm-gray-80: #403c3c !default !global;
+  $ibm-color__warm-gray-90: #2b2828 !default !global;
+  $ibm-color__warm-gray-100: #1a1717 !default !global;
+  $ibm-color__white-0: #ffffff !default !global;
+  $ibm-color__yellow-20: #fdd13a !default !global;
+
+  $ibm-color-map: (
+    'black': (
+      100: #000000,
+    ),
+    'blue': (
+      10: #edf4ff,
+      20: #c9deff,
+      30: #97c1ff,
+      40: #6ea6ff,
+      50: #408bfc,
+      60: #0062ff,
+      70: #054ada,
+      80: #0530ad,
+      90: #061f80,
+      100: #051243,
+    ),
+    'coolGray': (
+      10: #f2f4f8,
+      20: #d5d9e0,
+      30: #b9bfc7,
+      40: #9fa5ad,
+      50: #868d95,
+      60: #697077,
+      70: #50565b,
+      80: #373d42,
+      90: #242a2e,
+      100: #13171a,
+    ),
+    'cyan': (
+      10: #e3f6ff,
+      20: #b3e6ff,
+      30: #6ccaff,
+      40: #30b0ff,
+      50: #1191e6,
+      60: #0072c3,
+      70: #0058a1,
+      80: #003d73,
+      90: #002b50,
+      100: #07192b,
+    ),
+    'gray': (
+      10: #f3f3f3,
+      20: #dcdcdc,
+      30: #bebebe,
+      40: #a4a4a4,
+      50: #8c8c8c,
+      60: #6f6f6f,
+      70: #565656,
+      80: #3d3d3d,
+      90: #282828,
+      100: #171717,
+    ),
+    'green': (
+      10: #dafbe4,
+      20: #9deeb2,
+      30: #56d679,
+      40: #3dbb61,
+      50: #24a148,
+      60: #198038,
+      70: #10642a,
+      80: #054719,
+      90: #01330f,
+      100: #081b09,
+    ),
+    'magenta': (
+      10: #fff0f6,
+      20: #ffcfe1,
+      30: #ffa0c2,
+      40: #fa75a6,
+      50: #ee538b,
+      60: #d12765,
+      70: #a11950,
+      80: #760a3a,
+      90: #57002b,
+      100: #2a0a16,
+    ),
+    'orange': (
+      40: #fc7b1e,
+    ),
+    'purple': (
+      10: #f7f1ff,
+      20: #e6d6ff,
+      30: #d0b0ff,
+      40: #bb8eff,
+      50: #a66efa,
+      60: #8a3ffc,
+      70: #6e32c9,
+      80: #4f2196,
+      90: #38146b,
+      100: #1e1033,
+    ),
+    'red': (
+      10: #fff0f1,
+      20: #fcd0d3,
+      30: #ffa4a9,
+      40: #ff767c,
+      50: #fb4b53,
+      60: #da1e28,
+      70: #a51920,
+      80: #750e13,
+      90: #570408,
+      100: #2c080a,
+    ),
+    'teal': (
+      10: #dbfbfb,
+      20: #92eeee,
+      30: #20d5d2,
+      40: #00bab6,
+      50: #009c98,
+      60: #007d79,
+      70: #006161,
+      80: #004548,
+      90: #003137,
+      100: #081a1c,
+    ),
+    'warmGray': (
+      10: #f7f3f1,
+      20: #e0dbda,
+      30: #c1bcbb,
+      40: #a7a2a2,
+      50: #8f8b8b,
+      60: #726e6e,
+      70: #595555,
+      80: #403c3c,
+      90: #2b2828,
+      100: #1a1717,
+    ),
+    'white': (
+      0: #ffffff,
+    ),
+    'yellow': (
+      20: #fdd13a,
+    ),
+  ) !default !global;
+}
+```
+
+</details>
+
+- **Group**: [@carbon/colors](#carboncolors)
+- **Deprecated**: Use `$carbon--colors` going forward
+
+### ✅carbon--colors [mixin]
 
 Define color variables
 
@@ -369,261 +627,4 @@ Define color variables
 
 </details>
 
-## @carbon/colors [deprecated]
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.
-
-### ibm--colors [mixin]
-
-Define color variables
-
-<details>
-<summary>Source code</summary>
-
-```scss
-@mixin ibm--colors() {
-  $ibm-color__black-100: #000000 !default !global;
-  $ibm-color__blue-10: #edf4ff !default !global;
-  $ibm-color__blue-20: #c9deff !default !global;
-  $ibm-color__blue-30: #97c1ff !default !global;
-  $ibm-color__blue-40: #6ea6ff !default !global;
-  $ibm-color__blue-50: #408bfc !default !global;
-  $ibm-color__blue-60: #0062ff !default !global;
-  $ibm-color__blue-70: #054ada !default !global;
-  $ibm-color__blue-80: #0530ad !default !global;
-  $ibm-color__blue-90: #061f80 !default !global;
-  $ibm-color__blue-100: #051243 !default !global;
-  $ibm-color__cool-gray-10: #f2f4f8 !default !global;
-  $ibm-color__cool-gray-20: #d5d9e0 !default !global;
-  $ibm-color__cool-gray-30: #b9bfc7 !default !global;
-  $ibm-color__cool-gray-40: #9fa5ad !default !global;
-  $ibm-color__cool-gray-50: #868d95 !default !global;
-  $ibm-color__cool-gray-60: #697077 !default !global;
-  $ibm-color__cool-gray-70: #50565b !default !global;
-  $ibm-color__cool-gray-80: #373d42 !default !global;
-  $ibm-color__cool-gray-90: #242a2e !default !global;
-  $ibm-color__cool-gray-100: #13171a !default !global;
-  $ibm-color__cyan-10: #e3f6ff !default !global;
-  $ibm-color__cyan-20: #b3e6ff !default !global;
-  $ibm-color__cyan-30: #6ccaff !default !global;
-  $ibm-color__cyan-40: #30b0ff !default !global;
-  $ibm-color__cyan-50: #1191e6 !default !global;
-  $ibm-color__cyan-60: #0072c3 !default !global;
-  $ibm-color__cyan-70: #0058a1 !default !global;
-  $ibm-color__cyan-80: #003d73 !default !global;
-  $ibm-color__cyan-90: #002b50 !default !global;
-  $ibm-color__cyan-100: #07192b !default !global;
-  $ibm-color__gray-10: #f3f3f3 !default !global;
-  $ibm-color__gray-20: #dcdcdc !default !global;
-  $ibm-color__gray-30: #bebebe !default !global;
-  $ibm-color__gray-40: #a4a4a4 !default !global;
-  $ibm-color__gray-50: #8c8c8c !default !global;
-  $ibm-color__gray-60: #6f6f6f !default !global;
-  $ibm-color__gray-70: #565656 !default !global;
-  $ibm-color__gray-80: #3d3d3d !default !global;
-  $ibm-color__gray-90: #282828 !default !global;
-  $ibm-color__gray-100: #171717 !default !global;
-  $ibm-color__green-10: #dafbe4 !default !global;
-  $ibm-color__green-20: #9deeb2 !default !global;
-  $ibm-color__green-30: #56d679 !default !global;
-  $ibm-color__green-40: #3dbb61 !default !global;
-  $ibm-color__green-50: #24a148 !default !global;
-  $ibm-color__green-60: #198038 !default !global;
-  $ibm-color__green-70: #10642a !default !global;
-  $ibm-color__green-80: #054719 !default !global;
-  $ibm-color__green-90: #01330f !default !global;
-  $ibm-color__green-100: #081b09 !default !global;
-  $ibm-color__magenta-10: #fff0f6 !default !global;
-  $ibm-color__magenta-20: #ffcfe1 !default !global;
-  $ibm-color__magenta-30: #ffa0c2 !default !global;
-  $ibm-color__magenta-40: #fa75a6 !default !global;
-  $ibm-color__magenta-50: #ee538b !default !global;
-  $ibm-color__magenta-60: #d12765 !default !global;
-  $ibm-color__magenta-70: #a11950 !default !global;
-  $ibm-color__magenta-80: #760a3a !default !global;
-  $ibm-color__magenta-90: #57002b !default !global;
-  $ibm-color__magenta-100: #2a0a16 !default !global;
-  $ibm-color__orange-40: #fc7b1e !default !global;
-  $ibm-color__purple-10: #f7f1ff !default !global;
-  $ibm-color__purple-20: #e6d6ff !default !global;
-  $ibm-color__purple-30: #d0b0ff !default !global;
-  $ibm-color__purple-40: #bb8eff !default !global;
-  $ibm-color__purple-50: #a66efa !default !global;
-  $ibm-color__purple-60: #8a3ffc !default !global;
-  $ibm-color__purple-70: #6e32c9 !default !global;
-  $ibm-color__purple-80: #4f2196 !default !global;
-  $ibm-color__purple-90: #38146b !default !global;
-  $ibm-color__purple-100: #1e1033 !default !global;
-  $ibm-color__red-10: #fff0f1 !default !global;
-  $ibm-color__red-20: #fcd0d3 !default !global;
-  $ibm-color__red-30: #ffa4a9 !default !global;
-  $ibm-color__red-40: #ff767c !default !global;
-  $ibm-color__red-50: #fb4b53 !default !global;
-  $ibm-color__red-60: #da1e28 !default !global;
-  $ibm-color__red-70: #a51920 !default !global;
-  $ibm-color__red-80: #750e13 !default !global;
-  $ibm-color__red-90: #570408 !default !global;
-  $ibm-color__red-100: #2c080a !default !global;
-  $ibm-color__teal-10: #dbfbfb !default !global;
-  $ibm-color__teal-20: #92eeee !default !global;
-  $ibm-color__teal-30: #20d5d2 !default !global;
-  $ibm-color__teal-40: #00bab6 !default !global;
-  $ibm-color__teal-50: #009c98 !default !global;
-  $ibm-color__teal-60: #007d79 !default !global;
-  $ibm-color__teal-70: #006161 !default !global;
-  $ibm-color__teal-80: #004548 !default !global;
-  $ibm-color__teal-90: #003137 !default !global;
-  $ibm-color__teal-100: #081a1c !default !global;
-  $ibm-color__warm-gray-10: #f7f3f1 !default !global;
-  $ibm-color__warm-gray-20: #e0dbda !default !global;
-  $ibm-color__warm-gray-30: #c1bcbb !default !global;
-  $ibm-color__warm-gray-40: #a7a2a2 !default !global;
-  $ibm-color__warm-gray-50: #8f8b8b !default !global;
-  $ibm-color__warm-gray-60: #726e6e !default !global;
-  $ibm-color__warm-gray-70: #595555 !default !global;
-  $ibm-color__warm-gray-80: #403c3c !default !global;
-  $ibm-color__warm-gray-90: #2b2828 !default !global;
-  $ibm-color__warm-gray-100: #1a1717 !default !global;
-  $ibm-color__white-0: #ffffff !default !global;
-  $ibm-color__yellow-20: #fdd13a !default !global;
-
-  $ibm-color-map: (
-    'black': (
-      100: #000000,
-    ),
-    'blue': (
-      10: #edf4ff,
-      20: #c9deff,
-      30: #97c1ff,
-      40: #6ea6ff,
-      50: #408bfc,
-      60: #0062ff,
-      70: #054ada,
-      80: #0530ad,
-      90: #061f80,
-      100: #051243,
-    ),
-    'coolGray': (
-      10: #f2f4f8,
-      20: #d5d9e0,
-      30: #b9bfc7,
-      40: #9fa5ad,
-      50: #868d95,
-      60: #697077,
-      70: #50565b,
-      80: #373d42,
-      90: #242a2e,
-      100: #13171a,
-    ),
-    'cyan': (
-      10: #e3f6ff,
-      20: #b3e6ff,
-      30: #6ccaff,
-      40: #30b0ff,
-      50: #1191e6,
-      60: #0072c3,
-      70: #0058a1,
-      80: #003d73,
-      90: #002b50,
-      100: #07192b,
-    ),
-    'gray': (
-      10: #f3f3f3,
-      20: #dcdcdc,
-      30: #bebebe,
-      40: #a4a4a4,
-      50: #8c8c8c,
-      60: #6f6f6f,
-      70: #565656,
-      80: #3d3d3d,
-      90: #282828,
-      100: #171717,
-    ),
-    'green': (
-      10: #dafbe4,
-      20: #9deeb2,
-      30: #56d679,
-      40: #3dbb61,
-      50: #24a148,
-      60: #198038,
-      70: #10642a,
-      80: #054719,
-      90: #01330f,
-      100: #081b09,
-    ),
-    'magenta': (
-      10: #fff0f6,
-      20: #ffcfe1,
-      30: #ffa0c2,
-      40: #fa75a6,
-      50: #ee538b,
-      60: #d12765,
-      70: #a11950,
-      80: #760a3a,
-      90: #57002b,
-      100: #2a0a16,
-    ),
-    'orange': (
-      40: #fc7b1e,
-    ),
-    'purple': (
-      10: #f7f1ff,
-      20: #e6d6ff,
-      30: #d0b0ff,
-      40: #bb8eff,
-      50: #a66efa,
-      60: #8a3ffc,
-      70: #6e32c9,
-      80: #4f2196,
-      90: #38146b,
-      100: #1e1033,
-    ),
-    'red': (
-      10: #fff0f1,
-      20: #fcd0d3,
-      30: #ffa4a9,
-      40: #ff767c,
-      50: #fb4b53,
-      60: #da1e28,
-      70: #a51920,
-      80: #750e13,
-      90: #570408,
-      100: #2c080a,
-    ),
-    'teal': (
-      10: #dbfbfb,
-      20: #92eeee,
-      30: #20d5d2,
-      40: #00bab6,
-      50: #009c98,
-      60: #007d79,
-      70: #006161,
-      80: #004548,
-      90: #003137,
-      100: #081a1c,
-    ),
-    'warmGray': (
-      10: #f7f3f1,
-      20: #e0dbda,
-      30: #c1bcbb,
-      40: #a7a2a2,
-      50: #8f8b8b,
-      60: #726e6e,
-      70: #595555,
-      80: #403c3c,
-      90: #2b2828,
-      100: #1a1717,
-    ),
-    'white': (
-      0: #ffffff,
-    ),
-    'yellow': (
-      20: #fdd13a,
-    ),
-  ) !default !global;
-}
-```
-
-</details>
-
-- **Deprecated**: Use `$carbon--colors` going forward
+- **Group**: [@carbon/colors](#carboncolors)

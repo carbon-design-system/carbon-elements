@@ -1,64 +1,67 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/type](#carbontype)
-  - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
-  - [carbon--font-families [variable]](#carbon--font-families-variable)
-  - [carbon--font-family [function]](#carbon--font-family-function)
-  - [carbon--font-family [mixin]](#carbon--font-family-mixin)
-  - [carbon--font-weights [variable]](#carbon--font-weights-variable)
-  - [carbon--font-weight [function]](#carbon--font-weight-function)
-  - [carbon--font-weight [mixin]](#carbon--font-weight-mixin)
-  - [prefix [variable]](#prefix-variable)
-  - [carbon--type-reset [mixin]](#carbon--type-reset-mixin)
-  - [carbon--get-type-size [function]](#carbon--get-type-size-function)
-  - [carbon--type-scale [variable]](#carbon--type-scale-variable)
-  - [carbon--type-scale [function]](#carbon--type-scale-function)
-  - [carbon--type-scale [mixin]](#carbon--type-scale-mixin)
-  - [carbon--font-size [mixin]](#carbon--font-size-mixin)
-  - [caption-01 [variable]](#caption-01-variable)
-  - [label-01 [variable]](#label-01-variable)
-  - [helper-text-01 [variable]](#helper-text-01-variable)
-  - [body-short-01 [variable]](#body-short-01-variable)
-  - [body-long-01 [variable]](#body-long-01-variable)
-  - [body-short-02 [variable]](#body-short-02-variable)
-  - [body-long-02 [variable]](#body-long-02-variable)
-  - [code-01 [variable]](#code-01-variable)
-  - [code-02 [variable]](#code-02-variable)
-  - [heading-01 [variable]](#heading-01-variable)
-  - [heading-02 [variable]](#heading-02-variable)
-  - [productive-heading-03 [variable]](#productive-heading-03-variable)
-  - [productive-heading-04 [variable]](#productive-heading-04-variable)
-  - [productive-heading-05 [variable]](#productive-heading-05-variable)
-  - [expressive-heading-03 [variable]](#expressive-heading-03-variable)
-  - [expressive-heading-04 [variable]](#expressive-heading-04-variable)
-  - [expressive-heading-05 [variable]](#expressive-heading-05-variable)
-  - [expressive-heading-06 [variable]](#expressive-heading-06-variable)
-  - [expressive-paragraph-01 [variable]](#expressive-paragraph-01-variable)
-  - [quotation-01 [variable]](#quotation-01-variable)
-  - [quotation-02 [variable]](#quotation-02-variable)
-  - [display-01 [variable]](#display-01-variable)
-  - [display-02 [variable]](#display-02-variable)
-  - [display-03 [variable]](#display-03-variable)
-  - [display-04 [variable]](#display-04-variable)
-  - [tokens [variable]](#tokens-variable)
-  - [properties [mixin]](#properties-mixin)
-  - [strip-unit [function]](#strip-unit-function)
-  - [fluid-type [mixin]](#fluid-type-mixin)
-  - [fluid-type-size [mixin]](#fluid-type-size-mixin)
-  - [carbon--type-style [mixin]](#carbon--type-style-mixin)
-  - [carbon--font-face-mono [mixin]](#carbon--font-face-mono-mixin)
-  - [carbon--font-face-sans [mixin]](#carbon--font-face-sans-mixin)
-  - [carbon--font-face-serif [mixin]](#carbon--font-face-serif-mixin)
+  - [✅carbon--type-classes [mixin]](#carbon--type-classes-mixin)
+  - [✅carbon--font-families [variable]](#carbon--font-families-variable)
+  - [✅carbon--font-family [function]](#carbon--font-family-function)
+  - [✅carbon--font-family [mixin]](#carbon--font-family-mixin)
+  - [✅carbon--font-weights [variable]](#carbon--font-weights-variable)
+  - [✅carbon--font-weight [function]](#carbon--font-weight-function)
+  - [✅carbon--font-weight [mixin]](#carbon--font-weight-mixin)
+  - [✅prefix [variable]](#prefix-variable)
+  - [✅carbon--type-reset [mixin]](#carbon--type-reset-mixin)
+  - [✅carbon--get-type-size [function]](#carbon--get-type-size-function)
+  - [✅carbon--type-scale [variable]](#carbon--type-scale-variable)
+  - [✅carbon--type-scale [function]](#carbon--type-scale-function)
+  - [✅carbon--type-scale [mixin]](#carbon--type-scale-mixin)
+  - [✅carbon--font-size [mixin]](#carbon--font-size-mixin)
+  - [✅caption-01 [variable]](#caption-01-variable)
+  - [✅label-01 [variable]](#label-01-variable)
+  - [✅helper-text-01 [variable]](#helper-text-01-variable)
+  - [✅body-short-01 [variable]](#body-short-01-variable)
+  - [✅body-long-01 [variable]](#body-long-01-variable)
+  - [✅body-short-02 [variable]](#body-short-02-variable)
+  - [✅body-long-02 [variable]](#body-long-02-variable)
+  - [✅code-01 [variable]](#code-01-variable)
+  - [✅code-02 [variable]](#code-02-variable)
+  - [✅heading-01 [variable]](#heading-01-variable)
+  - [✅heading-02 [variable]](#heading-02-variable)
+  - [✅productive-heading-03 [variable]](#productive-heading-03-variable)
+  - [✅productive-heading-04 [variable]](#productive-heading-04-variable)
+  - [✅productive-heading-05 [variable]](#productive-heading-05-variable)
+  - [✅expressive-heading-03 [variable]](#expressive-heading-03-variable)
+  - [✅expressive-heading-04 [variable]](#expressive-heading-04-variable)
+  - [✅expressive-heading-05 [variable]](#expressive-heading-05-variable)
+  - [✅expressive-heading-06 [variable]](#expressive-heading-06-variable)
+  - [✅expressive-paragraph-01 [variable]](#expressive-paragraph-01-variable)
+  - [✅quotation-01 [variable]](#quotation-01-variable)
+  - [✅quotation-02 [variable]](#quotation-02-variable)
+  - [✅display-01 [variable]](#display-01-variable)
+  - [✅display-02 [variable]](#display-02-variable)
+  - [✅display-03 [variable]](#display-03-variable)
+  - [✅display-04 [variable]](#display-04-variable)
+  - [✅tokens [variable]](#tokens-variable)
+  - [✅properties [mixin]](#properties-mixin)
+  - [✅strip-unit [function]](#strip-unit-function)
+  - [✅fluid-type [mixin]](#fluid-type-mixin)
+  - [✅fluid-type-size [mixin]](#fluid-type-size-mixin)
+  - [✅carbon--type-style [mixin]](#carbon--type-style-mixin)
+  - [✅carbon--font-face-mono [mixin]](#carbon--font-face-mono-mixin)
+  - [✅carbon--font-face-sans [mixin]](#carbon--font-face-sans-mixin)
+  - [✅carbon--font-face-serif [mixin]](#carbon--font-face-serif-mixin)
 
 <!-- tocstop -->
 
 ## @carbon/type
 
-### carbon--type-classes [mixin]
+### ✅carbon--type-classes [mixin]
 
 Create type classes for font families, weights, styles
 
@@ -97,6 +100,7 @@ Create type classes for font families, weights, styles
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
   - [carbon--font-families [variable]](#carbon--font-families-variable)
@@ -104,7 +108,7 @@ Create type classes for font families, weights, styles
   - [carbon--font-weights [variable]](#carbon--font-weights-variable)
   - [tokens [variable]](#tokens-variable)
 
-### carbon--font-families [variable]
+### ✅carbon--font-families [variable]
 
 Font family fallbacks for: IBM Plex Mono, IBM Plex Sans, IBM Plex Sans
 Condensed, IBM Plex Sans Hebrew, and IBM Plex Serif
@@ -124,12 +128,13 @@ $carbon--font-families: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--font-family [function]](#carbon--font-family-function)
 
-### carbon--font-family [function]
+### ✅carbon--font-family [function]
 
 Get the font-family for an IBM Plex font
 
@@ -150,13 +155,14 @@ Get the font-family for an IBM Plex font
 | ------- | ----------- | -------- | ------------- |
 | `$name` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `String`
 - **Requires**:
   - [carbon--font-families [variable]](#carbon--font-families-variable)
 - **Used by**:
   - [carbon--font-family [mixin]](#carbon--font-family-mixin)
 
-### carbon--font-family [mixin]
+### ✅carbon--font-family [mixin]
 
 Include the `font-family` definition for the given name in your selector
 
@@ -177,10 +183,11 @@ Include the `font-family` definition for the given name in your selector
 | ------- | ----------- | -------- | ------------- |
 | `$name` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--font-family [function]](#carbon--font-family-function)
 
-### carbon--font-weights [variable]
+### ✅carbon--font-weights [variable]
 
 Suggested font weights to be used in product
 
@@ -197,12 +204,13 @@ $carbon--font-weights: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--font-weight [function]](#carbon--font-weight-function)
 
-### carbon--font-weight [function]
+### ✅carbon--font-weight [function]
 
 Retrieve the font-weight value for a given name
 
@@ -223,13 +231,14 @@ Retrieve the font-weight value for a given name
 | --------- | ----------- | -------- | ------------- |
 | `$weight` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number`
 - **Requires**:
   - [carbon--font-weights [variable]](#carbon--font-weights-variable)
 - **Used by**:
   - [carbon--font-weight [mixin]](#carbon--font-weight-mixin)
 
-### carbon--font-weight [mixin]
+### ✅carbon--font-weight [mixin]
 
 Set the `font-weight` property with the value for a given name
 
@@ -250,10 +259,11 @@ Set the `font-weight` property with the value for a given name
 | --------- | ----------- | -------- | ------------- |
 | `$weight` | —           | `String` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--font-weight [function]](#carbon--font-weight-function)
 
-### prefix [variable]
+### ✅prefix [variable]
 
 <details>
 <summary>Source code</summary>
@@ -264,11 +274,12 @@ $prefix: 'bx';
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `String`
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
 
-### carbon--type-reset [mixin]
+### ✅carbon--type-reset [mixin]
 
 Include a type reset for a given body and mono font family
 
@@ -315,7 +326,9 @@ Include a type reset for a given body and mono font family
 | `$body-font-family` | The font family used on the `<body>` element                                        | `String` | `carbon--font-family('sans')` |
 | `$mono-font-family` | The font family used on elements that require mono fonts, like the `<code>` element | `String` | `carbon--font-family('mono')` |
 
-### carbon--get-type-size [function]
+- **Group**: [@carbon/type](#carbontype)
+
+### ✅carbon--get-type-size [function]
 
 Compute the type size for the given type scale step
 
@@ -340,9 +353,10 @@ Compute the type size for the given type scale step
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number` In px
 
-### carbon--type-scale [variable]
+### ✅carbon--type-scale [variable]
 
 Type scole follows a custom formula for determining each step size and supports sizes from 12px to 92px
 
@@ -355,13 +369,14 @@ $carbon--type-scale: ();
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Aliased**:
   - `carbon--font-size`
 - **Used by**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
 
-### carbon--type-scale [function]
+### ✅carbon--type-scale [function]
 
 Get the value of a specific step in the typescale
 
@@ -382,6 +397,7 @@ Get the value of a specific step in the typescale
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number` In rem
 - **Requires**:
   - [carbon--type-scale [variable]](#carbon--type-scale-variable)
@@ -389,7 +405,7 @@ Get the value of a specific step in the typescale
   - [carbon--type-scale [mixin]](#carbon--type-scale-mixin)
   - [carbon--font-size [mixin]](#carbon--font-size-mixin)
 
-### carbon--type-scale [mixin]
+### ✅carbon--type-scale [mixin]
 
 Set the font-size value of a selector with the value at the given `$step`
 
@@ -410,10 +426,11 @@ Set the font-size value of a selector with the value at the given `$step`
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
 
-### carbon--font-size [mixin]
+### ✅carbon--font-size [mixin]
 
 Alias of `type-scale` mixin.
 
@@ -434,11 +451,12 @@ Alias of `type-scale` mixin.
 | ------- | ----------- | -------- | ------------- |
 | `$step` | —           | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Alias**: `carbon--type-scale`
 - **Requires**:
   - [carbon--type-scale [function]](#carbon--type-scale-function)
 
-### caption-01 [variable]
+### ✅caption-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -454,9 +472,10 @@ $caption-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### label-01 [variable]
+### ✅label-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -472,9 +491,10 @@ $label-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### helper-text-01 [variable]
+### ✅helper-text-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -490,9 +510,10 @@ $helper-text-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-short-01 [variable]
+### ✅body-short-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -508,9 +529,10 @@ $body-short-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-long-01 [variable]
+### ✅body-long-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -526,9 +548,10 @@ $body-long-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-short-02 [variable]
+### ✅body-short-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -544,9 +567,10 @@ $body-short-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### body-long-02 [variable]
+### ✅body-long-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -562,9 +586,10 @@ $body-long-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### code-01 [variable]
+### ✅code-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -580,9 +605,10 @@ $code-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### code-02 [variable]
+### ✅code-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -598,9 +624,10 @@ $code-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### heading-01 [variable]
+### ✅heading-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -616,9 +643,10 @@ $heading-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### heading-02 [variable]
+### ✅heading-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -634,9 +662,10 @@ $heading-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### productive-heading-03 [variable]
+### ✅productive-heading-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -652,9 +681,10 @@ $productive-heading-03: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### productive-heading-04 [variable]
+### ✅productive-heading-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -670,9 +700,10 @@ $productive-heading-04: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### productive-heading-05 [variable]
+### ✅productive-heading-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -688,9 +719,10 @@ $productive-heading-05: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-03 [variable]
+### ✅expressive-heading-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -715,9 +747,10 @@ $expressive-heading-03: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-04 [variable]
+### ✅expressive-heading-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -742,9 +775,10 @@ $expressive-heading-04: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-05 [variable]
+### ✅expressive-heading-05 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -777,9 +811,10 @@ $expressive-heading-05: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-heading-06 [variable]
+### ✅expressive-heading-06 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -812,9 +847,10 @@ $expressive-heading-06: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### expressive-paragraph-01 [variable]
+### ✅expressive-paragraph-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -840,9 +876,10 @@ $expressive-paragraph-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### quotation-01 [variable]
+### ✅quotation-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -875,9 +912,10 @@ $quotation-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### quotation-02 [variable]
+### ✅quotation-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -910,9 +948,10 @@ $quotation-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-01 [variable]
+### ✅display-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -944,9 +983,10 @@ $display-01: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-02 [variable]
+### ✅display-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -978,9 +1018,10 @@ $display-02: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-03 [variable]
+### ✅display-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1017,9 +1058,10 @@ $display-03: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### display-04 [variable]
+### ✅display-04 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1056,9 +1098,10 @@ $display-04: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 
-### tokens [variable]
+### ✅tokens [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1095,12 +1138,13 @@ $tokens: (
 
 </details>
 
+- **Group**: [@carbon/type](#carbontype)
 - **Type**: `Map`
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
-### properties [mixin]
+### ✅properties [mixin]
 
 <details>
 <summary>Source code</summary>
@@ -1121,11 +1165,12 @@ $tokens: (
 | ------ | ----------- | ----- | ------------- |
 | `$map` | —           | `Map` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Used by**:
   - [fluid-type [mixin]](#fluid-type-mixin)
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
-### strip-unit [function]
+### ✅strip-unit [function]
 
 <details>
 <summary>Source code</summary>
@@ -1144,11 +1189,12 @@ $tokens: (
 | -------- | ----------------- | -------- | ------------- |
 | `$value` | Number with units | `Number` | —             |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Returns**: `Number` Without units
 - **Used by**:
   - [fluid-type-size [mixin]](#fluid-type-size-mixin)
 
-### fluid-type [mixin]
+### ✅fluid-type [mixin]
 
 This helper includes fluid type styles for the given token value. Fluid type
 means that the `font-size` is computed using `calc()` in order to be
@@ -1196,13 +1242,14 @@ https://css-tricks.com/snippets/css/fluid-typography/
 | `$type-styles` | The value of a given type token | `Map` | —                           |
 | `$breakpoints` | Custom breakpoints to use       | `Map` | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [properties [mixin]](#properties-mixin)
   - [fluid-type-size [mixin]](#fluid-type-size-mixin)
 - **Used by**:
   - [carbon--type-style [mixin]](#carbon--type-style-mixin)
 
-### fluid-type-size [mixin]
+### ✅fluid-type-size [mixin]
 
 Computes the fluid `font-size` for a given type style and breakpoint
 
@@ -1297,12 +1344,13 @@ Computes the fluid `font-size` for a given type style and breakpoint
 | `$name`        | The name of the breakpoint to which we apply the fluid | `String` | —                           |
 | `$breakpoints` | The breakpoints for the grid system                    | `Map`    | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [strip-unit [function]](#strip-unit-function)
 - **Used by**:
   - [fluid-type [mixin]](#fluid-type-mixin)
 
-### carbon--type-style [mixin]
+### ✅carbon--type-style [mixin]
 
 Helper mixin to include the styles for a given token in any selector in your
 project. Also includes an optional fluid option that will enable fluid
@@ -1347,6 +1395,7 @@ with caution in fixed contexts.
 | `$fluid`       | Specify whether to include fluid styles for the | `Boolean` | `false`                     |
 | `$breakpoints` | Provide a custom breakpoint map to use          | `Map`     | `$carbon--grid-breakpoints` |
 
+- **Group**: [@carbon/type](#carbontype)
 - **Requires**:
   - [fluid-type [mixin]](#fluid-type-mixin)
   - [properties [mixin]](#properties-mixin)
@@ -1354,7 +1403,7 @@ with caution in fixed contexts.
 - **Used by**:
   - [carbon--type-classes [mixin]](#carbon--type-classes-mixin)
 
-### carbon--font-face-mono [mixin]
+### ✅carbon--font-face-mono [mixin]
 
 Mono `@font-face`'s
 
@@ -1754,7 +1803,9 @@ Mono `@font-face`'s
 
 </details>
 
-### carbon--font-face-sans [mixin]
+- **Group**: [@carbon/type](#carbontype)
+
+### ✅carbon--font-face-sans [mixin]
 
 Sans `@font-face`'s
 
@@ -2216,7 +2267,9 @@ Sans `@font-face`'s
 
 </details>
 
-### carbon--font-face-serif [mixin]
+- **Group**: [@carbon/type](#carbontype)
+
+### ✅carbon--font-face-serif [mixin]
 
 Serif `@font-face`'s
 
@@ -2627,3 +2680,5 @@ Serif `@font-face`'s
 ```
 
 </details>
+
+- **Group**: [@carbon/type](#carbontype)

@@ -1,75 +1,77 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/themes](#carbonthemes)
-  - [carbon--theme [mixin]](#carbon--theme-mixin)
-  - [carbon--theme--white [variable]](#carbon--theme--white-variable)
-  - [carbon--theme--g10 [variable]](#carbon--theme--g10-variable)
-  - [carbon--theme--g90 [variable]](#carbon--theme--g90-variable)
-  - [carbon--theme--g100 [variable]](#carbon--theme--g100-variable)
-  - [carbon--theme [variable]](#carbon--theme-variable)
-  - [interactive-01 [variable]](#interactive-01-variable)
-  - [interactive-02 [variable]](#interactive-02-variable)
-  - [interactive-03 [variable]](#interactive-03-variable)
-  - [interactive-04 [variable]](#interactive-04-variable)
-  - [ui-background [variable]](#ui-background-variable)
-  - [ui-01 [variable]](#ui-01-variable)
-  - [ui-02 [variable]](#ui-02-variable)
-  - [ui-03 [variable]](#ui-03-variable)
-  - [ui-04 [variable]](#ui-04-variable)
-  - [ui-05 [variable]](#ui-05-variable)
-  - [text-01 [variable]](#text-01-variable)
-  - [text-02 [variable]](#text-02-variable)
-  - [text-03 [variable]](#text-03-variable)
-  - [text-04 [variable]](#text-04-variable)
-  - [icon-01 [variable]](#icon-01-variable)
-  - [icon-02 [variable]](#icon-02-variable)
-  - [icon-03 [variable]](#icon-03-variable)
-  - [link-01 [variable]](#link-01-variable)
-  - [field-01 [variable]](#field-01-variable)
-  - [field-02 [variable]](#field-02-variable)
-  - [inverse-01 [variable]](#inverse-01-variable)
-  - [inverse-02 [variable]](#inverse-02-variable)
-  - [support-01 [variable]](#support-01-variable)
-  - [support-02 [variable]](#support-02-variable)
-  - [support-03 [variable]](#support-03-variable)
-  - [support-04 [variable]](#support-04-variable)
-  - [overlay-01 [variable]](#overlay-01-variable)
-  - [focus [variable]](#focus-variable)
-  - [hover-primary [variable]](#hover-primary-variable)
-  - [active-primary [variable]](#active-primary-variable)
-  - [hover-primary-text [variable]](#hover-primary-text-variable)
-  - [hover-secondary [variable]](#hover-secondary-variable)
-  - [active-secondary [variable]](#active-secondary-variable)
-  - [hover-tertiary [variable]](#hover-tertiary-variable)
-  - [active-tertiary [variable]](#active-tertiary-variable)
-  - [hover-ui [variable]](#hover-ui-variable)
-  - [active-ui [variable]](#active-ui-variable)
-  - [selected-ui [variable]](#selected-ui-variable)
-  - [hover-selected-ui [variable]](#hover-selected-ui-variable)
-  - [hover-danger [variable]](#hover-danger-variable)
-  - [active-danger [variable]](#active-danger-variable)
-  - [hover-row [variable]](#hover-row-variable)
-  - [visited-link [variable]](#visited-link-variable)
-  - [disabled-01 [variable]](#disabled-01-variable)
-  - [disabled-02 [variable]](#disabled-02-variable)
-  - [disabled-03 [variable]](#disabled-03-variable)
-  - [highlight [variable]](#highlight-variable)
-- [@carbon/themes [deprecated]](#carbonthemes-deprecated)
-  - [brand-01 [variable]](#brand-01-variable)
-  - [brand-02 [variable]](#brand-02-variable)
-  - [brand-03 [variable]](#brand-03-variable)
-  - [active-01 [variable]](#active-01-variable)
-  - [hover-field [variable]](#hover-field-variable)
+  - [✅carbon--theme [mixin]](#carbon--theme-mixin)
+  - [✅carbon--theme--white [variable]](#carbon--theme--white-variable)
+  - [✅carbon--theme--g10 [variable]](#carbon--theme--g10-variable)
+  - [✅carbon--theme--g90 [variable]](#carbon--theme--g90-variable)
+  - [✅carbon--theme--g100 [variable]](#carbon--theme--g100-variable)
+  - [✅carbon--theme [variable]](#carbon--theme-variable)
+  - [✅interactive-01 [variable]](#interactive-01-variable)
+  - [✅interactive-02 [variable]](#interactive-02-variable)
+  - [✅interactive-03 [variable]](#interactive-03-variable)
+  - [✅interactive-04 [variable]](#interactive-04-variable)
+  - [✅ui-background [variable]](#ui-background-variable)
+  - [✅ui-01 [variable]](#ui-01-variable)
+  - [✅ui-02 [variable]](#ui-02-variable)
+  - [✅ui-03 [variable]](#ui-03-variable)
+  - [✅ui-04 [variable]](#ui-04-variable)
+  - [✅ui-05 [variable]](#ui-05-variable)
+  - [✅text-01 [variable]](#text-01-variable)
+  - [✅text-02 [variable]](#text-02-variable)
+  - [✅text-03 [variable]](#text-03-variable)
+  - [✅text-04 [variable]](#text-04-variable)
+  - [✅icon-01 [variable]](#icon-01-variable)
+  - [✅icon-02 [variable]](#icon-02-variable)
+  - [✅icon-03 [variable]](#icon-03-variable)
+  - [✅link-01 [variable]](#link-01-variable)
+  - [✅field-01 [variable]](#field-01-variable)
+  - [✅field-02 [variable]](#field-02-variable)
+  - [✅inverse-01 [variable]](#inverse-01-variable)
+  - [✅inverse-02 [variable]](#inverse-02-variable)
+  - [✅support-01 [variable]](#support-01-variable)
+  - [✅support-02 [variable]](#support-02-variable)
+  - [✅support-03 [variable]](#support-03-variable)
+  - [✅support-04 [variable]](#support-04-variable)
+  - [✅overlay-01 [variable]](#overlay-01-variable)
+  - [✅focus [variable]](#focus-variable)
+  - [✅hover-primary [variable]](#hover-primary-variable)
+  - [✅active-primary [variable]](#active-primary-variable)
+  - [✅hover-primary-text [variable]](#hover-primary-text-variable)
+  - [✅hover-secondary [variable]](#hover-secondary-variable)
+  - [✅active-secondary [variable]](#active-secondary-variable)
+  - [✅hover-tertiary [variable]](#hover-tertiary-variable)
+  - [✅active-tertiary [variable]](#active-tertiary-variable)
+  - [✅hover-ui [variable]](#hover-ui-variable)
+  - [✅active-ui [variable]](#active-ui-variable)
+  - [✅selected-ui [variable]](#selected-ui-variable)
+  - [✅hover-selected-ui [variable]](#hover-selected-ui-variable)
+  - [✅hover-danger [variable]](#hover-danger-variable)
+  - [✅active-danger [variable]](#active-danger-variable)
+  - [✅hover-row [variable]](#hover-row-variable)
+  - [✅visited-link [variable]](#visited-link-variable)
+  - [✅disabled-01 [variable]](#disabled-01-variable)
+  - [✅disabled-02 [variable]](#disabled-02-variable)
+  - [✅disabled-03 [variable]](#disabled-03-variable)
+  - [✅highlight [variable]](#highlight-variable)
+  - [❌brand-01 [variable]](#brand-01-variable)
+  - [❌brand-02 [variable]](#brand-02-variable)
+  - [❌brand-03 [variable]](#brand-03-variable)
+  - [❌active-01 [variable]](#active-01-variable)
+  - [❌hover-field [variable]](#hover-field-variable)
 
 <!-- tocstop -->
 
 ## @carbon/themes
 
-### carbon--theme [mixin]
+### ✅carbon--theme [mixin]
 
 Define theme variables from a map of tokens
 
@@ -172,6 +174,7 @@ Define theme variables from a map of tokens
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Content**: Pass in your custom declaration blocks to be used after the token maps set theming variables.
 - **Requires**:
   - [interactive-01 [variable]](#interactive-01-variable)
@@ -228,7 +231,7 @@ Define theme variables from a map of tokens
   - [hover-field [variable]](#hover-field-variable)
   - [carbon--theme [variable]](#carbon--theme-variable)
 
-### carbon--theme--white [variable]
+### ✅carbon--theme--white [variable]
 
 Carbon's white color theme
 
@@ -294,11 +297,12 @@ $carbon--theme--white: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 - **Aliased**:
   - `carbon--theme`
 
-### carbon--theme--g10 [variable]
+### ✅carbon--theme--g10 [variable]
 
 Carbon's g10 color theme
 
@@ -364,9 +368,10 @@ $carbon--theme--g10: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 
-### carbon--theme--g90 [variable]
+### ✅carbon--theme--g90 [variable]
 
 Carbon's g90 color theme
 
@@ -432,9 +437,10 @@ $carbon--theme--g90: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 
-### carbon--theme--g100 [variable]
+### ✅carbon--theme--g100 [variable]
 
 Carbon's g100 color theme
 
@@ -500,9 +506,10 @@ $carbon--theme--g100: (
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 
-### carbon--theme [variable]
+### ✅carbon--theme [variable]
 
 Carbon's default theme
 
@@ -515,12 +522,13 @@ $carbon--theme: $carbon--theme--white;
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Map`
 - **Alias**: `carbon--theme--white`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-01 [variable]
+### ✅interactive-01 [variable]
 
 Primary interactive color; Primary buttons
 
@@ -533,13 +541,14 @@ $interactive-01: map-get($carbon--theme, interactive-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `brand-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-02 [variable]
+### ✅interactive-02 [variable]
 
 Secondary interactive color; Secondary button
 
@@ -552,13 +561,14 @@ $interactive-02: map-get($carbon--theme, interactive-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `brand-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-03 [variable]
+### ✅interactive-03 [variable]
 
 4.5:1 AA contrast; Tertiary button
 
@@ -571,13 +581,14 @@ $interactive-03: map-get($carbon--theme, interactive-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `brand-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### interactive-04 [variable]
+### ✅interactive-04 [variable]
 
 3:1 AA contrast; Selected elements; Active elements; Accent icons
 
@@ -590,11 +601,12 @@ $interactive-04: map-get($carbon--theme, interactive-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-background [variable]
+### ✅ui-background [variable]
 
 Default page background
 
@@ -607,11 +619,12 @@ $ui-background: map-get($carbon--theme, ui-background);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-01 [variable]
+### ✅ui-01 [variable]
 
 Primary container background; Secondary page background
 
@@ -624,11 +637,12 @@ $ui-01: map-get($carbon--theme, ui-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-02 [variable]
+### ✅ui-02 [variable]
 
 Primary page background; Secondary container background
 
@@ -641,11 +655,12 @@ $ui-02: map-get($carbon--theme, ui-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-03 [variable]
+### ✅ui-03 [variable]
 
 Subtle border; Tertiary background color
 
@@ -658,11 +673,12 @@ $ui-03: map-get($carbon--theme, ui-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-04 [variable]
+### ✅ui-04 [variable]
 
 3:1 AA element contrast; Medium contrast border
 
@@ -675,11 +691,12 @@ $ui-04: map-get($carbon--theme, ui-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ui-05 [variable]
+### ✅ui-05 [variable]
 
 4.5:1 AA element contrast; High contrast border; Emphasis elements
 
@@ -692,11 +709,12 @@ $ui-05: map-get($carbon--theme, ui-05);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-01 [variable]
+### ✅text-01 [variable]
 
 Primary text; Body copy; Headers; Hover text color for `$text-02`
 
@@ -709,11 +727,12 @@ $text-01: map-get($carbon--theme, text-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-02 [variable]
+### ✅text-02 [variable]
 
 Secondary text; Input labels; Help text
 
@@ -726,11 +745,12 @@ $text-02: map-get($carbon--theme, text-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-03 [variable]
+### ✅text-03 [variable]
 
 Placeholder text
 
@@ -743,11 +763,12 @@ $text-03: map-get($carbon--theme, text-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### text-04 [variable]
+### ✅text-04 [variable]
 
 Text on interactive colors
 
@@ -760,11 +781,12 @@ $text-04: map-get($carbon--theme, text-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### icon-01 [variable]
+### ✅icon-01 [variable]
 
 Primary icons
 
@@ -777,11 +799,12 @@ $icon-01: map-get($carbon--theme, icon-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### icon-02 [variable]
+### ✅icon-02 [variable]
 
 Secondary icons
 
@@ -794,11 +817,12 @@ $icon-02: map-get($carbon--theme, icon-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### icon-03 [variable]
+### ✅icon-03 [variable]
 
 Tertiary icons; Icons on interactive colors; Icons on non-ui colors
 
@@ -811,11 +835,12 @@ $icon-03: map-get($carbon--theme, icon-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### link-01 [variable]
+### ✅link-01 [variable]
 
 Primary links; Ghost button
 
@@ -828,11 +853,12 @@ $link-01: map-get($carbon--theme, link-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### field-01 [variable]
+### ✅field-01 [variable]
 
 Default input fields; Field color on \$ui-backgrounds
 
@@ -845,11 +871,12 @@ $field-01: map-get($carbon--theme, field-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### field-02 [variable]
+### ✅field-02 [variable]
 
 Input field color on `$ui-02` backgrounds
 
@@ -862,11 +889,12 @@ $field-02: map-get($carbon--theme, field-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### inverse-01 [variable]
+### ✅inverse-01 [variable]
 
 Inverse text color; Inverse icon color
 
@@ -879,11 +907,12 @@ $inverse-01: map-get($carbon--theme, inverse-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### inverse-02 [variable]
+### ✅inverse-02 [variable]
 
 High contrast backgrounds; High contrast elements
 
@@ -896,11 +925,12 @@ $inverse-02: map-get($carbon--theme, inverse-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-01 [variable]
+### ✅support-01 [variable]
 
 Error
 
@@ -913,11 +943,12 @@ $support-01: map-get($carbon--theme, support-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-02 [variable]
+### ✅support-02 [variable]
 
 Success
 
@@ -930,11 +961,12 @@ $support-02: map-get($carbon--theme, support-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-03 [variable]
+### ✅support-03 [variable]
 
 Warning
 
@@ -947,11 +979,12 @@ $support-03: map-get($carbon--theme, support-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### support-04 [variable]
+### ✅support-04 [variable]
 
 Information
 
@@ -964,11 +997,12 @@ $support-04: map-get($carbon--theme, support-04);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### overlay-01 [variable]
+### ✅overlay-01 [variable]
 
 Background overlay
 
@@ -981,11 +1015,12 @@ $overlay-01: map-get($carbon--theme, overlay-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### focus [variable]
+### ✅focus [variable]
 
 Focus border; Focus underline
 
@@ -998,11 +1033,12 @@ $focus: map-get($carbon--theme, focus);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-primary [variable]
+### ✅hover-primary [variable]
 
 `$interactive-01` hover
 
@@ -1015,11 +1051,12 @@ $hover-primary: map-get($carbon--theme, hover-primary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-primary [variable]
+### ✅active-primary [variable]
 
 `$interactive-01` active
 
@@ -1032,11 +1069,12 @@ $active-primary: map-get($carbon--theme, active-primary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-primary-text [variable]
+### ✅hover-primary-text [variable]
 
 `$interactive-01` text hover
 
@@ -1049,11 +1087,12 @@ $hover-primary-text: map-get($carbon--theme, hover-primary-text);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-secondary [variable]
+### ✅hover-secondary [variable]
 
 `$interactive-02` hover
 
@@ -1066,11 +1105,12 @@ $hover-secondary: map-get($carbon--theme, hover-secondary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-secondary [variable]
+### ✅active-secondary [variable]
 
 `$interactive-02` active; `$inverse-01` active
 
@@ -1083,11 +1123,12 @@ $active-secondary: map-get($carbon--theme, active-secondary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-tertiary [variable]
+### ✅hover-tertiary [variable]
 
 `$interactive-03` hover; `$inverse-01` hover
 
@@ -1100,11 +1141,12 @@ $hover-tertiary: map-get($carbon--theme, hover-tertiary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-tertiary [variable]
+### ✅active-tertiary [variable]
 
 `$interactive-03` active
 
@@ -1117,11 +1159,12 @@ $active-tertiary: map-get($carbon--theme, active-tertiary);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-ui [variable]
+### ✅hover-ui [variable]
 
 `$ui-01` hover; `$ui-02` hover; Transparent background hover
 
@@ -1134,13 +1177,14 @@ $hover-ui: map-get($carbon--theme, hover-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `hover-field`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-ui [variable]
+### ✅active-ui [variable]
 
 `$ui-01` active; `$ui-02` active
 
@@ -1153,13 +1197,14 @@ $active-ui: map-get($carbon--theme, active-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Aliased**:
   - `active-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### selected-ui [variable]
+### ✅selected-ui [variable]
 
 Selected UI elements
 
@@ -1172,11 +1217,12 @@ $selected-ui: map-get($carbon--theme, selected-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-selected-ui [variable]
+### ✅hover-selected-ui [variable]
 
 Data table selected row hover
 
@@ -1189,11 +1235,12 @@ $hover-selected-ui: map-get($carbon--theme, hover-selected-ui);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-danger [variable]
+### ✅hover-danger [variable]
 
 Danger hover; `$support-01` hover
 
@@ -1206,11 +1253,12 @@ $hover-danger: map-get($carbon--theme, hover-danger);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### active-danger [variable]
+### ✅active-danger [variable]
 
 Danger active; `$support-01` active
 
@@ -1223,11 +1271,12 @@ $active-danger: map-get($carbon--theme, active-danger);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### hover-row [variable]
+### ✅hover-row [variable]
 
 Row hover
 
@@ -1240,11 +1289,12 @@ $hover-row: map-get($carbon--theme, hover-row);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### visited-link [variable]
+### ✅visited-link [variable]
 
 Visited links
 
@@ -1257,11 +1307,12 @@ $visited-link: map-get($carbon--theme, visited-link);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### disabled-01 [variable]
+### ✅disabled-01 [variable]
 
 Disabled fields; Disabled backgrounds; Disabled border
 
@@ -1274,11 +1325,12 @@ $disabled-01: map-get($carbon--theme, disabled-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### disabled-02 [variable]
+### ✅disabled-02 [variable]
 
 Disabled elements on `$disabled-01`; Disabled label; Disabled text on `$disabled-01`; Disabled icons; Disabled border
 
@@ -1291,11 +1343,12 @@ $disabled-02: map-get($carbon--theme, disabled-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### disabled-03 [variable]
+### ✅disabled-03 [variable]
 
 Disabled text on `$disabled-02`; Disabled icons on `$disabled-02`
 
@@ -1308,11 +1361,12 @@ $disabled-03: map-get($carbon--theme, disabled-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### highlight [variable]
+### ✅highlight [variable]
 
 `$interactive-01` high light
 
@@ -1325,15 +1379,12 @@ $highlight: map-get($carbon--theme, highlight);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-## @carbon/themes [deprecated]
-
-These public Sass functions, mixins, placeholders, and variables are deprecated and may not be available in future releases.
-
-### brand-01 [variable]
+### ❌brand-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1344,13 +1395,14 @@ $brand-01: map-get($carbon--theme, brand-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Alias**: `interactive-01`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### brand-02 [variable]
+### ❌brand-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1361,13 +1413,14 @@ $brand-02: map-get($carbon--theme, brand-02);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Alias**: `interactive-02`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### brand-03 [variable]
+### ❌brand-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1378,13 +1431,14 @@ $brand-03: map-get($carbon--theme, brand-03);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Alias**: `interactive-03`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### active-01 [variable]
+### ❌active-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1395,13 +1449,14 @@ $active-01: map-get($carbon--theme, active-01);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Alias**: `active-ui`
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### hover-field [variable]
+### ❌hover-field [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1412,6 +1467,7 @@ $hover-field: map-get($carbon--theme, hover-field);
 
 </details>
 
+- **Group**: [@carbon/themes](#carbonthemes)
 - **Type**: `Color`
 - **Alias**: `hover-ui`
 - **Used by**:

@@ -1,19 +1,22 @@
-# Sass functions, mixins, placeholders, variables
+# Sass public API
 
-These public Sass functions, mixins, placeholders, and variables are currently supported. Deprecated items are at the bottom of this document.
+| Mark | Description                                                        |
+| ---- | ------------------------------------------------------------------ |
+| ✅   | Currently supported functions, mixins, placeholders, and variables |
+| ❌   | Deprecated items that may not be available in future releases      |
 
 <!-- toc -->
 
 - [@carbon/motion](#carbonmotion)
-  - [carbon--easings [variable]](#carbon--easings-variable)
-  - [carbon--motion [function]](#carbon--motion-function)
-  - [carbon--motion [mixin]](#carbon--motion-mixin)
+  - [✅carbon--easings [variable]](#carbon--easings-variable)
+  - [✅carbon--motion [function]](#carbon--motion-function)
+  - [✅carbon--motion [mixin]](#carbon--motion-mixin)
 
 <!-- tocstop -->
 
 ## @carbon/motion
 
-### carbon--easings [variable]
+### ✅carbon--easings [variable]
 
 Common component easings
 
@@ -39,9 +42,10 @@ $carbon--easings: (
 
 </details>
 
+- **Group**: [@carbon/motion](#carbonmotion)
 - **Type**: `Map`
 
-### carbon--motion [function]
+### ✅carbon--motion [function]
 
 Get the transition-timing-function for a given easing and motion mode
 
@@ -73,11 +77,12 @@ Get the transition-timing-function for a given easing and motion mode
 | `$mode`    | Can be `productive` or `expressive`      | `String` | `productive`       |
 | `$easings` | Easings map                              | `Map`    | `$carbon--easings` |
 
+- **Group**: [@carbon/motion](#carbonmotion)
 - **Returns**: `Function` CSS `cubic-bezier()` function
 - **Used by**:
   - [carbon--motion [mixin]](#carbon--motion-mixin)
 
-### carbon--motion [mixin]
+### ✅carbon--motion [mixin]
 
 Set the transition-timing-function for a given easing and motion mode
 
@@ -99,5 +104,6 @@ Set the transition-timing-function for a given easing and motion mode
 | `$name` | The name of the easing curve to apply | `String` | —             |
 | `$mode` | The mode for the easing curve to use  | `String` | —             |
 
+- **Group**: [@carbon/motion](#carbonmotion)
 - **Requires**:
   - [carbon--motion [function]](#carbon--motion-function)
