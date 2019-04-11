@@ -113,7 +113,9 @@ const gerateIconStories = icons => {
 const generateStoryImports = icons => {
   let imports = '';
   for (const icon of icons) {
-    imports += `import { ${icon.moduleName}Module } from "./../${icon.outputOptions.file.replace("es", "lib")}"\n`;
+    imports += `import { ${
+      icon.moduleName
+    }Module } from "./../${icon.outputOptions.file.replace('es', 'lib')}"\n`;
   }
   return imports;
 };
@@ -125,7 +127,7 @@ ${generateStoryImports(icons)}
 
 storiesOf("${basename}", module)
   .addDecorator(moduleMetadata({
-    imports: [ ${icons.map(i => `${i.moduleName}Module`).join(", ")} ],
+    imports: [ ${icons.map(i => `${i.moduleName}Module`).join(', ')} ],
   }))
   ${gerateIconStories(icons)};
 `;

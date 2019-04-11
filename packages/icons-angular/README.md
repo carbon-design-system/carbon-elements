@@ -68,9 +68,7 @@ would result in
 
 ```html
 <ibm-icon-add16 class="host-class">
-  <svg class="inner-class">
-    <!-- ... -->
-  </svg>
+  <svg class="inner-class"><!-- ... --></svg>
 </ibm-icon-add16>
 ```
 
