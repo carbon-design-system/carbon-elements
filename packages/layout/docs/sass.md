@@ -39,6 +39,9 @@
   - [✅carbon--spacing-07 [variable]](#carbon--spacing-07-variable)
   - [✅carbon--spacing-08 [variable]](#carbon--spacing-08-variable)
   - [✅carbon--spacing-09 [variable]](#carbon--spacing-09-variable)
+  - [✅carbon--spacing-10 [variable]](#carbon--spacing-10-variable)
+  - [✅carbon--spacing-11 [variable]](#carbon--spacing-11-variable)
+  - [✅carbon--spacing-12 [variable]](#carbon--spacing-12-variable)
   - [✅carbon--spacing [variable]](#carbon--spacing-variable)
   - [✅spacing-01 [variable]](#spacing-01-variable)
   - [✅spacing-02 [variable]](#spacing-02-variable)
@@ -49,6 +52,9 @@
   - [✅spacing-07 [variable]](#spacing-07-variable)
   - [✅spacing-08 [variable]](#spacing-08-variable)
   - [✅spacing-09 [variable]](#spacing-09-variable)
+  - [✅spacing-10 [variable]](#spacing-10-variable)
+  - [✅spacing-11 [variable]](#spacing-11-variable)
+  - [✅spacing-12 [variable]](#spacing-12-variable)
   - [✅carbon--layout-01 [variable]](#carbon--layout-01-variable)
   - [✅carbon--layout-02 [variable]](#carbon--layout-02-variable)
   - [✅carbon--layout-03 [variable]](#carbon--layout-03-variable)
@@ -918,6 +924,60 @@ $carbon--spacing-09: carbon--mini-units(6);
 - **Aliased**:
   - `spacing-09`
 
+### ✅carbon--spacing-10 [variable]
+
+4rem (64px) spacing with default mini unit
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--spacing-10: carbon--mini-units(8);
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `spacing-10`
+
+### ✅carbon--spacing-11 [variable]
+
+5rem (80px) spacing with default mini unit
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--spacing-11: carbon--mini-units(10);
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `spacing-11`
+
+### ✅carbon--spacing-12 [variable]
+
+6rem (96px) spacing with default mini unit
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$carbon--spacing-12: carbon--mini-units(12);
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Aliased**:
+  - `spacing-12`
+
 ### ✅carbon--spacing [variable]
 
 All spacing increments in a map
@@ -935,7 +995,10 @@ $carbon--spacing: (
   $carbon--spacing-06,
   $carbon--spacing-07,
   $carbon--spacing-08,
-  $carbon--spacing-09
+  $carbon--spacing-09,
+  $carbon--spacing-10,
+  $carbon--spacing-11,
+  $carbon--spacing-12
 );
 ```
 
@@ -1078,6 +1141,51 @@ $spacing-09: $carbon--spacing-09;
 - **Group**: [@carbon/layout](#carbonlayout)
 - **Type**: `Number`
 - **Alias**: `carbon--spacing-09`
+
+### ✅spacing-10 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-10: $carbon--spacing-10;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-10`
+
+### ✅spacing-11 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-11: $carbon--spacing-11;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-11`
+
+### ✅spacing-12 [variable]
+
+<details>
+<summary>Source code</summary>
+
+```scss
+$spacing-12: $carbon--spacing-12;
+```
+
+</details>
+
+- **Group**: [@carbon/layout](#carbonlayout)
+- **Type**: `Number`
+- **Alias**: `carbon--spacing-12`
 
 ### ✅carbon--layout-01 [variable]
 
