@@ -122,7 +122,11 @@ function createMarkdownItem(item) {
 
   if (!item.context) return '';
 
-  const status = item.deprecated || item.deprecated === '' ? '❌' : '✅';
+  let status = item.access === 'public' ? '✅' : '❌';
+
+  if (item.deprecated || item.deprecated === '') {
+    status += '⚠️';
+  }
 
   // Name
   str += `\n\n### ${status}${createUniqueName(
@@ -347,23 +351,24 @@ async function createMarkdown(sourceDir, config) {
     data => {
       let markdownFile = '';
 
-      const publicItems = data.filter(
-        (item, index) => item.access === 'public'
+      const documentedItems = data.filter(
+        (item, index) => item.access === 'public' || item.access === 'private'
       );
 
-      markdownFile += `# Sass public API
+      markdownFile += `# Sass API
 
 | Mark | Description |
 | --- | --- |
-| ✅ | Currently supported functions, mixins, placeholders, and variables |
-| ❌ | Deprecated items that may not be available in future releases |
+| ✅ | Public functions, mixins, placeholders, and variables |
+| ❌ | Private items - not supported outside package's build |
+| ⚠️ | Deprecated items - may not be available in future releases |
 
 <!-- toc -->
 <!-- tocstop -->`;
 
       let currentGroup = '';
 
-      publicItems.forEach(item => {
+      documentedItems.forEach(item => {
         const itemGroup = createGroupName(item.group);
 
         if (itemGroup !== currentGroup) {

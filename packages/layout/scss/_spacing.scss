@@ -7,51 +7,61 @@
 
 @import 'mini-unit';
 
+/// 0.125rem (2px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-01: carbon--mini-units(0.25) !default;
 
+/// 0.25rem (4px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-02: carbon--mini-units(0.5) !default;
 
+/// 0.5rem (8px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-03: carbon--mini-units(1) !default;
 
+/// 0.75rem (12px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-04: carbon--mini-units(1.5) !default;
 
+/// 1rem (16px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-05: carbon--mini-units(2) !default;
 
+/// 1.5rem (24px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-06: carbon--mini-units(3) !default;
 
+/// 2rem (32px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-07: carbon--mini-units(4) !default;
 
+/// 2.5rem (40px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-08: carbon--mini-units(5) !default;
 
+/// 3rem (48px) spacing with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-09: carbon--mini-units(6) !default;
 
+/// All spacing increments in a map
 /// @type Map
 /// @access public
 /// @group @carbon/layout
@@ -121,41 +131,49 @@ $spacing-08: $carbon--spacing-08 !default;
 /// @alias carbon--spacing-09
 $spacing-09: $carbon--spacing-09 !default;
 
+/// 1rem (16px) layout with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--layout-01: carbon--mini-units(2) !default;
 
+/// 1.5rem (24px) layout with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--layout-02: carbon--mini-units(3) !default;
 
+/// 2rem (32px) layout with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--layout-03: carbon--mini-units(4) !default;
 
+/// 3rem (48px) layout with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--layout-04: carbon--mini-units(6) !default;
 
+/// 4rem (64px) layout with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--layout-05: carbon--mini-units(8) !default;
 
+/// 4rem (96px) layout with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--layout-06: carbon--mini-units(12) !default;
 
+/// 10rem (160px) layout with default mini unit
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--layout-07: carbon--mini-units(20) !default;
 
+/// All layout increments in a map
 /// @type Map
 /// @access public
 /// @group @carbon/layout
@@ -211,26 +229,31 @@ $layout-06: $carbon--layout-06 !default;
 /// @alias carbon--layout-07
 $layout-07: $carbon--layout-07 !default;
 
+/// 0vw fluid spacing
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--fluid-spacing-01: 0;
 
+/// 2vw fluid spacing
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--fluid-spacing-02: 2vw;
 
+/// 5vw fluid spacing
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--fluid-spacing-03: 5vw;
 
+/// 10vw fluid spacing
 /// @type Number
 /// @access public
 /// @group @carbon/layout
 $carbon--fluid-spacing-04: 10vw;
 
+/// All fluid spacing increments in a map
 /// @type Map
 /// @access public
 /// @group @carbon/layout

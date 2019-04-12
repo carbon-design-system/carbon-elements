@@ -1,9 +1,10 @@
-# Sass public API
+# Sass API
 
-| Mark | Description                                                        |
-| ---- | ------------------------------------------------------------------ |
-| ✅   | Currently supported functions, mixins, placeholders, and variables |
-| ❌   | Deprecated items that may not be available in future releases      |
+| Mark | Description                                                |
+| ---- | ---------------------------------------------------------- |
+| ✅   | Public functions, mixins, placeholders, and variables      |
+| ❌   | Private items - not supported outside package's build      |
+| ⚠️   | Deprecated items - may not be available in future releases |
 
 <!-- toc -->
 
@@ -757,6 +758,8 @@ Get the value of the corresponding number of units
 
 ### ✅carbon--spacing-01 [variable]
 
+0.125rem (2px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -772,6 +775,8 @@ $carbon--spacing-01: carbon--mini-units(0.25);
   - `spacing-01`
 
 ### ✅carbon--spacing-02 [variable]
+
+0.25rem (4px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -789,6 +794,8 @@ $carbon--spacing-02: carbon--mini-units(0.5);
 
 ### ✅carbon--spacing-03 [variable]
 
+0.5rem (8px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -804,6 +811,8 @@ $carbon--spacing-03: carbon--mini-units(1);
   - `spacing-03`
 
 ### ✅carbon--spacing-04 [variable]
+
+0.75rem (12px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -821,6 +830,8 @@ $carbon--spacing-04: carbon--mini-units(1.5);
 
 ### ✅carbon--spacing-05 [variable]
 
+1rem (16px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -836,6 +847,8 @@ $carbon--spacing-05: carbon--mini-units(2);
   - `spacing-05`
 
 ### ✅carbon--spacing-06 [variable]
+
+1.5rem (24px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -853,6 +866,8 @@ $carbon--spacing-06: carbon--mini-units(3);
 
 ### ✅carbon--spacing-07 [variable]
 
+2rem (32px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -868,6 +883,8 @@ $carbon--spacing-07: carbon--mini-units(4);
   - `spacing-07`
 
 ### ✅carbon--spacing-08 [variable]
+
+2.5rem (40px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -885,6 +902,8 @@ $carbon--spacing-08: carbon--mini-units(5);
 
 ### ✅carbon--spacing-09 [variable]
 
+3rem (48px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -900,6 +919,8 @@ $carbon--spacing-09: carbon--mini-units(6);
   - `spacing-09`
 
 ### ✅carbon--spacing [variable]
+
+All spacing increments in a map
 
 <details>
 <summary>Source code</summary>
@@ -1060,6 +1081,8 @@ $spacing-09: $carbon--spacing-09;
 
 ### ✅carbon--layout-01 [variable]
 
+1rem (16px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1075,6 +1098,8 @@ $carbon--layout-01: carbon--mini-units(2);
   - `layout-01`
 
 ### ✅carbon--layout-02 [variable]
+
+1.5rem (24px) layout with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -1092,6 +1117,8 @@ $carbon--layout-02: carbon--mini-units(3);
 
 ### ✅carbon--layout-03 [variable]
 
+2rem (32px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1107,6 +1134,8 @@ $carbon--layout-03: carbon--mini-units(4);
   - `layout-03`
 
 ### ✅carbon--layout-04 [variable]
+
+3rem (48px) layout with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -1124,6 +1153,8 @@ $carbon--layout-04: carbon--mini-units(6);
 
 ### ✅carbon--layout-05 [variable]
 
+4rem (64px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1139,6 +1170,8 @@ $carbon--layout-05: carbon--mini-units(8);
   - `layout-05`
 
 ### ✅carbon--layout-06 [variable]
+
+4rem (96px) layout with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -1156,6 +1189,8 @@ $carbon--layout-06: carbon--mini-units(12);
 
 ### ✅carbon--layout-07 [variable]
 
+10rem (160px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1171,6 +1206,8 @@ $carbon--layout-07: carbon--mini-units(20);
   - `layout-07`
 
 ### ✅carbon--layout [variable]
+
+All layout increments in a map
 
 <details>
 <summary>Source code</summary>
@@ -1299,6 +1336,8 @@ $layout-07: $carbon--layout-07;
 
 ### ✅carbon--fluid-spacing-01 [variable]
 
+0vw fluid spacing
+
 <details>
 <summary>Source code</summary>
 
@@ -1314,6 +1353,8 @@ $carbon--fluid-spacing-01: 0;
   - `fluid-spacing-01`
 
 ### ✅carbon--fluid-spacing-02 [variable]
+
+2vw fluid spacing
 
 <details>
 <summary>Source code</summary>
@@ -1331,6 +1372,8 @@ $carbon--fluid-spacing-02: 2vw;
 
 ### ✅carbon--fluid-spacing-03 [variable]
 
+5vw fluid spacing
+
 <details>
 <summary>Source code</summary>
 
@@ -1347,6 +1390,8 @@ $carbon--fluid-spacing-03: 5vw;
 
 ### ✅carbon--fluid-spacing-04 [variable]
 
+10vw fluid spacing
+
 <details>
 <summary>Source code</summary>
 
@@ -1362,6 +1407,8 @@ $carbon--fluid-spacing-04: 10vw;
   - `fluid-spacing-04`
 
 ### ✅carbon--fluid-spacing [variable]
+
+All fluid spacing increments in a map
 
 <details>
 <summary>Source code</summary>

@@ -1,9 +1,10 @@
-# Sass public API
+# Sass API
 
-| Mark | Description                                                        |
-| ---- | ------------------------------------------------------------------ |
-| ✅   | Currently supported functions, mixins, placeholders, and variables |
-| ❌   | Deprecated items that may not be available in future releases      |
+| Mark | Description                                                |
+| ---- | ---------------------------------------------------------- |
+| ✅   | Public functions, mixins, placeholders, and variables      |
+| ❌   | Private items - not supported outside package's build      |
+| ⚠️   | Deprecated items - may not be available in future releases |
 
 <!-- toc -->
 

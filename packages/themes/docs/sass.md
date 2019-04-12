@@ -1,9 +1,10 @@
-# Sass public API
+# Sass API
 
-| Mark | Description                                                        |
-| ---- | ------------------------------------------------------------------ |
-| ✅   | Currently supported functions, mixins, placeholders, and variables |
-| ❌   | Deprecated items that may not be available in future releases      |
+| Mark | Description                                                |
+| ---- | ---------------------------------------------------------- |
+| ✅   | Public functions, mixins, placeholders, and variables      |
+| ❌   | Private items - not supported outside package's build      |
+| ⚠️   | Deprecated items - may not be available in future releases |
 
 <!-- toc -->
 
@@ -61,11 +62,11 @@
   - [✅disabled-02 [variable]](#disabled-02-variable)
   - [✅disabled-03 [variable]](#disabled-03-variable)
   - [✅highlight [variable]](#highlight-variable)
-  - [❌brand-01 [variable]](#brand-01-variable)
-  - [❌brand-02 [variable]](#brand-02-variable)
-  - [❌brand-03 [variable]](#brand-03-variable)
-  - [❌active-01 [variable]](#active-01-variable)
-  - [❌hover-field [variable]](#hover-field-variable)
+  - [✅⚠️brand-01 [variable]](#brand-01-variable)
+  - [✅⚠️brand-02 [variable]](#brand-02-variable)
+  - [✅⚠️brand-03 [variable]](#brand-03-variable)
+  - [✅⚠️active-01 [variable]](#active-01-variable)
+  - [✅⚠️hover-field [variable]](#hover-field-variable)
 
 <!-- tocstop -->
 
@@ -1384,7 +1385,7 @@ $highlight: map-get($carbon--theme, highlight);
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ❌brand-01 [variable]
+### ✅⚠️brand-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1402,7 +1403,7 @@ $brand-01: map-get($carbon--theme, brand-01);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌brand-02 [variable]
+### ✅⚠️brand-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1420,7 +1421,7 @@ $brand-02: map-get($carbon--theme, brand-02);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌brand-03 [variable]
+### ✅⚠️brand-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1438,7 +1439,7 @@ $brand-03: map-get($carbon--theme, brand-03);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌active-01 [variable]
+### ✅⚠️active-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -1456,7 +1457,7 @@ $active-01: map-get($carbon--theme, active-01);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌hover-field [variable]
+### ✅⚠️hover-field [variable]
 
 <details>
 <summary>Source code</summary>

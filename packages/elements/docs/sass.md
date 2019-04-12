@@ -1,18 +1,30 @@
-# Sass public API
+# Sass API
 
-| Mark | Description                                                        |
-| ---- | ------------------------------------------------------------------ |
-| ✅   | Currently supported functions, mixins, placeholders, and variables |
-| ❌   | Deprecated items that may not be available in future releases      |
+| Mark | Description                                                |
+| ---- | ---------------------------------------------------------- |
+| ✅   | Public functions, mixins, placeholders, and variables      |
+| ❌   | Private items - not supported outside package's build      |
+| ⚠️   | Deprecated items - may not be available in future releases |
 
 <!-- toc -->
 
 - [@carbon/colors](#carboncolors)
-  - [❌ibm--colors [mixin]](#ibm--colors-mixin)
+  - [✅⚠️ibm--colors [mixin]](#ibm--colors-mixin)
   - [✅carbon--colors [mixin]](#carbon--colors-mixin)
 - [@carbon/grid](#carbongrid)
   - [✅carbon--12-column-grid [variable]](#carbon--12-column-grid-variable)
+  - [❌carbon--make-col-ready [mixin]](#carbon--make-col-ready-mixin)
+  - [❌carbon--make-col [mixin]](#carbon--make-col-mixin)
+  - [❌carbon--make-col-offset [mixin]](#carbon--make-col-offset-mixin)
+  - [❌carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
+  - [❌carbon--make-row [mixin]](#carbon--make-row-mixin)
+  - [❌carbon--no-gutter [mixin]](#carbon--no-gutter-mixin)
+  - [❌carbon--hang [mixin]](#carbon--hang-mixin)
   - [✅carbon--aspect-ratios [variable]](#carbon--aspect-ratios-variable)
+  - [❌carbon--aspect-ratio [mixin]](#carbon--aspect-ratio-mixin)
+  - [❌carbon--make-container [mixin]](#carbon--make-container-mixin)
+  - [❌carbon--set-largest-breakpoint [mixin]](#carbon--set-largest-breakpoint-mixin)
+  - [❌carbon--make-container-max-widths [mixin]](#carbon--make-container-max-widths-mixin)
   - [✅carbon--grid [mixin]](#carbon--grid-mixin)
   - [✅prefix [variable]](#prefix-variable)
 - [@carbon/icons](#carbonicons)
@@ -146,11 +158,11 @@
   - [✅disabled-02 [variable]](#disabled-02-variable)
   - [✅disabled-03 [variable]](#disabled-03-variable)
   - [✅highlight [variable]](#highlight-variable)
-  - [❌brand-01 [variable]](#brand-01-variable)
-  - [❌brand-02 [variable]](#brand-02-variable)
-  - [❌brand-03 [variable]](#brand-03-variable)
-  - [❌active-01 [variable]](#active-01-variable)
-  - [❌hover-field [variable]](#hover-field-variable)
+  - [✅⚠️brand-01 [variable]](#brand-01-variable)
+  - [✅⚠️brand-02 [variable]](#brand-02-variable)
+  - [✅⚠️brand-03 [variable]](#brand-03-variable)
+  - [✅⚠️active-01 [variable]](#active-01-variable)
+  - [✅⚠️hover-field [variable]](#hover-field-variable)
 - [@carbon/type](#carbontype)
   - [✅carbon--type-classes [mixin]](#carbon--type-classes-mixin)
   - [✅carbon--font-families [variable]](#carbon--font-families-variable)
@@ -205,7 +217,7 @@
 
 ## @carbon/colors
 
-### ❌ibm--colors [mixin]
+### ✅⚠️ibm--colors [mixin]
 
 Define color variables
 
@@ -859,6 +871,298 @@ $carbon--12-column-grid: map-merge(
 - **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `Map`
 
+### ❌carbon--make-col-ready [mixin]
+
+Used to initialize the default properties for a column class, most notably
+for setting width and default gutters when a column's breakpoint has not been
+hit yet.
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--make-col-ready(
+  $gutter: $carbon--grid-gutter,
+  $collapsed-gutter: $carbon--grid-gutter--condensed
+) {
+  // Prevent columns from becoming too narrow when at smaller grid tiers by
+  // always setting `width: 100%;`. This works because we use `flex` values
+  // later on to override this initial width.
+  width: 100%;
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+
+  // For our condensed use-case, our gutters collapse to 2px solid, 1px on each
+  // side.
+  .#{$prefix}--row--condensed &,
+  .#{$prefix}--grid--condensed & {
+    padding-right: ($condensed-gutter / 2);
+    padding-left: ($condensed-gutter / 2);
+  }
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name                | Description                    | Type     | Default value                     |
+| ------------------- | ------------------------------ | -------- | --------------------------------- |
+| `$gutter`           | The gutter for the grid system | `Number` | `$carbon--grid-gutter`            |
+| `$collapsed-gutter` | The condensed mode gutter      | `Number` | `$carbon--grid-gutter--condensed` |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [prefix [variable]](#prefix-variable)
+- **Used by**:
+  - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
+
+### ❌carbon--make-col [mixin]
+
+Define the width of the column for a given span and column count.
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--make-col($span, $columns) {
+  flex: 0 0 percentage($span / $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($span / $columns);
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name       | Description                           | Type     | Default value |
+| ---------- | ------------------------------------- | -------- | ------------- |
+| `$span`    | The number of columns covered         | `Number` | —             |
+| `$columns` | The total number of columns available | `Number` | —             |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Used by**:
+  - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
+
+### ❌carbon--make-col-offset [mixin]
+
+Create a column offset for a given span and column count.
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--make-col-offset($span, $columns) {
+  $offset: $span / $columns;
+  @if $offset == 0 {
+    margin-left: 0;
+  } @else {
+    margin-left: percentage($offset);
+  }
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name       | Description                                   | Type     | Default value |
+| ---------- | --------------------------------------------- | -------- | ------------- |
+| `$span`    | The number of columns the offset should cover | `Number` | —             |
+| `$columns` | The total number of columns available         | `Number` | —             |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Used by**:
+  - [carbon--make-grid-columns [mixin]](#carbon--make-grid-columns-mixin)
+
+### ❌carbon--make-grid-columns [mixin]
+
+Output the CSS required for all the columns in a given grid system.
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--make-grid-columns(
+  $breakpoints: $carbon--grid-breakpoints,
+  $gutter: $carbon--grid-gutter
+) {
+  .#{$prefix}--col {
+    @include carbon--make-col-ready();
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: carbon--breakpoint-infix($breakpoint);
+    $columns: map-get(map-get($breakpoints, $breakpoint), columns);
+
+    // Allow columns to stretch full width below their breakpoints
+    @for $i from 1 through $columns {
+      .#{$prefix}--col#{$infix}-#{$i} {
+        @include carbon--make-col-ready();
+      }
+    }
+
+    .#{$prefix}--col#{$infix},
+    .#{$prefix}--col#{$infix}--auto {
+      @include carbon--make-col-ready();
+    }
+
+    @include carbon--breakpoint($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      .#{$prefix}--col,
+      .#{$prefix}--col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .#{$prefix}--col--auto,
+      .#{$prefix}--col#{$infix}--auto {
+        flex: 1 0 0%;
+        width: auto;
+        // Reset earlier grid tiers
+        max-width: 100%;
+      }
+
+      @for $i from 1 through $columns {
+        .#{$prefix}--col#{$infix}-#{$i} {
+          @include carbon--make-col($i, $columns);
+        }
+      }
+
+      @for $i from 0 through ($columns - 1) {
+        @if not($infix == '') {
+          .#{$prefix}--offset#{$infix}-#{$i} {
+            @include carbon--make-col-offset($i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name           | Description                        | Type     | Default value               |
+| -------------- | ---------------------------------- | -------- | --------------------------- |
+| `$breakpoints` | The breakpoints in the grid system | `Map`    | `$carbon--grid-breakpoints` |
+| `$gutter`      | The gutter for the grid system     | `Number` | `$carbon--grid-gutter`      |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [carbon--make-col-ready [mixin]](#carbon--make-col-ready-mixin)
+  - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
+  - [carbon--make-col [mixin]](#carbon--make-col-mixin)
+  - [carbon--make-col-offset [mixin]](#carbon--make-col-offset-mixin)
+  - [carbon--breakpoint-infix [function]](#carbon--breakpoint-infix-function)
+  - [prefix [variable]](#prefix-variable)
+- **Used by**:
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+
+### ❌carbon--make-row [mixin]
+
+Define the properties for a selector assigned to a row in the grid system.
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--make-row($gutter: $carbon--grid-gutter) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1 * $gutter / 2;
+  margin-left: -1 * $gutter / 2;
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name      | Description                   | Type     | Default value          |
+| --------- | ----------------------------- | -------- | ---------------------- |
+| `$gutter` | The gutter in the grid system | `Number` | `$carbon--grid-gutter` |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Used by**:
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+
+### ❌carbon--no-gutter [mixin]
+
+Add `no-gutter` and `no-gutter--{left,right}` classes to the output CSS. These
+classes are useful for dropping the gutter in fluid situations.
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--no-gutter() {
+  .#{$prefix}--no-gutter,
+  .#{$prefix}--row.#{$prefix}--no-gutter [class*='#{$prefix}--col'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .#{$prefix}--no-gutter--left,
+  .#{$prefix}--row.#{$prefix}--no-gutter--left [class*='#{$prefix}--col'] {
+    padding-left: 0;
+  }
+
+  .#{$prefix}--no-gutter--right,
+  .#{$prefix}--row.#{$prefix}--no-gutter--right [class*='#{$prefix}--col'] {
+    padding-right: 0;
+  }
+}
+```
+
+</details>
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [prefix [variable]](#prefix-variable)
+- **Used by**:
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+
+### ❌carbon--hang [mixin]
+
+Add `hang--left` and `hang--right` classes for a given gutter. These classes are
+used alongside `no-gutter--left` and `no-gutter--right` to "hang" type.
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--hang($gutter: $carbon--grid-gutter) {
+  .#{$prefix}--hang--left {
+    padding-left: ($gutter / 2);
+  }
+
+  .#{$prefix}--hang--right {
+    padding-right: ($gutter / 2);
+  }
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name      | Description                   | Type     | Default value          |
+| --------- | ----------------------------- | -------- | ---------------------- |
+| `$gutter` | The gutter in the grid system | `Number` | `$carbon--grid-gutter` |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [prefix [variable]](#prefix-variable)
+- **Used by**:
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+
 ### ✅carbon--aspect-ratios [variable]
 
 The aspect ratios that are used to generate corresponding aspect ratio
@@ -876,15 +1180,183 @@ $carbon--aspect-ratios: ((16, 9), (2, 1), (4, 3), (1, 1));
 - **Group**: [@carbon/grid](#carbongrid)
 - **Type**: `List`
 
-### ✅carbon--grid [mixin]
+### ❌carbon--aspect-ratio [mixin]
 
-Generate the CSS for a grid for the given breakpoints and gutter
+Output the CSS classes for generating aspect ratio classes
 
 <details>
 <summary>Source code</summary>
 
 ```scss
-@mixin carbon--grid($breakpoints, $grid-gutter, $condensed-gutter) {
+@mixin carbon--aspect-ratio($aspect-ratios: $carbon--aspect-ratios) {
+  .#{$prefix}--aspect-ratio {
+    height: 0;
+    position: relative;
+  }
+
+  .#{$prefix}--aspect-ratio--object {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+
+  @each $ratio in $aspect-ratios {
+    $width: nth($ratio, 1);
+    $height: nth($ratio, 2);
+
+    .#{$prefix}--aspect-ratio--#{$width}x#{$height} {
+      padding-bottom: percentage($height / $width);
+    }
+  }
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name             | Description                         | Type   | Default value            |
+| ---------------- | ----------------------------------- | ------ | ------------------------ |
+| `$aspect-ratios` | A list of aspect ratios to generate | `List` | `$carbon--aspect-ratios` |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [prefix [variable]](#prefix-variable)
+- **Used by**:
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+
+### ❌carbon--make-container [mixin]
+
+Create the container for a grid. Will cause full-bleed for the grid unless
+max-width properties are added with `make-container-max-widths`
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--make-container($breakpoints: $carbon--grid-breakpoints) {
+  margin-right: auto;
+  margin-left: auto;
+
+  @include carbon--set-largest-breakpoint();
+
+  @each $name, $value in $breakpoints {
+    $prev-breakpoint: map-get($breakpoints, carbon--breakpoint-prev($name));
+    $margin: map-get($value, margin);
+
+    @if $prev-breakpoint {
+      $prev-margin: map-get($prev-breakpoint, margin);
+      @if $prev-margin != $margin {
+        @include carbon--breakpoint($name) {
+          padding-left: #{($carbon--grid-gutter / 2) + $margin};
+          padding-right: #{($carbon--grid-gutter / 2) + $margin};
+        }
+      }
+    } @else {
+      @include carbon--breakpoint($name) {
+        padding-left: #{($carbon--grid-gutter / 2) + $margin};
+        padding-right: #{($carbon--grid-gutter / 2) + $margin};
+      }
+    }
+  }
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name           | Description                                    | Type  | Default value               |
+| -------------- | ---------------------------------------------- | ----- | --------------------------- |
+| `$breakpoints` | A map of breakpoints where the key is the name | `Map` | `$carbon--grid-breakpoints` |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [carbon--set-largest-breakpoint [mixin]](#carbon--set-largest-breakpoint-mixin)
+  - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
+  - [carbon--breakpoint-prev [function]](#carbon--breakpoint-prev-function)
+  - [carbon--grid-gutter [variable]](#carbon--grid-gutter-variable)
+- **Used by**:
+  - [carbon--grid [mixin]](#carbon--grid-mixin)
+
+### ❌carbon--set-largest-breakpoint [mixin]
+
+Get the last breakpoint width and set max-width to its value
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--set-largest-breakpoint($breakpoints: $carbon--grid-breakpoints) {
+  $largest-breakpoint: last-map-item($breakpoints);
+
+  max-width: map-get($largest-breakpoint, 'width');
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name           | Description                                    | Type  | Default value               |
+| -------------- | ---------------------------------------------- | ----- | --------------------------- |
+| `$breakpoints` | A map of breakpoints where the key is the name | `Map` | `$carbon--grid-breakpoints` |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [last-map-item [function]](#last-map-item-function)
+- **Used by**:
+  - [carbon--make-container [mixin]](#carbon--make-container-mixin)
+
+### ❌carbon--make-container-max-widths [mixin]
+
+Add in the max-widths for each breakpoint to the container
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--make-container-max-widths(
+  $breakpoints: $carbon--grid-breakpoints
+) {
+  @each $name, $value in $breakpoints {
+    @include carbon--breakpoint($name) {
+      max-width: map-get($value, width);
+    }
+  }
+}
+```
+
+</details>
+
+- **Parameters**:
+
+| Name           | Description                                    | Type  | Default value               |
+| -------------- | ---------------------------------------------- | ----- | --------------------------- |
+| `$breakpoints` | A map of breakpoints where the key is the name | `Map` | `$carbon--grid-breakpoints` |
+
+- **Group**: [@carbon/grid](#carbongrid)
+- **Requires**:
+  - [carbon--breakpoint [mixin]](#carbon--breakpoint-mixin)
+
+### ✅carbon--grid [mixin]
+
+Generate the CSS for a grid for the given breakpoints and gutters
+
+<details>
+<summary>Source code</summary>
+
+```scss
+@mixin carbon--grid(
+  $breakpoints: $carbon--grid-breakpoints,
+  $grid-gutter: $carbon--grid-gutter,
+  $condensed-gutter: $carbon--grid-gutter--condensed
+) {
   .#{$prefix}--grid {
     @include carbon--make-container($breakpoints);
   }
@@ -918,11 +1390,11 @@ Generate the CSS for a grid for the given breakpoints and gutter
 
 - **Parameters**:
 
-| Name                | Description | Type     | Default value |
-| ------------------- | ----------- | -------- | ------------- |
-| `$breakpoints`      | —           | `Map`    | —             |
-| `$grid-gutter`      | —           | `Number` | —             |
-| `$condensed-gutter` | —           | `Number` | —             |
+| Name                | Description               | Type     | Default value                     |
+| ------------------- | ------------------------- | -------- | --------------------------------- |
+| `$breakpoints`      | The default breakpoints   | `Map`    | `$carbon--grid-breakpoints`       |
+| `$grid-gutter`      | The default gutters       | `Number` | `$carbon--grid-gutter`            |
+| `$condensed-gutter` | The condensed mode gutter | `Number` | `$carbon--grid-gutter--condensed` |
 
 - **Group**: [@carbon/grid](#carbongrid)
 - **Requires**:
@@ -1729,6 +2201,8 @@ Get the value of the corresponding number of units
 
 ### ✅carbon--spacing-01 [variable]
 
+0.125rem (2px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1744,6 +2218,8 @@ $carbon--spacing-01: carbon--mini-units(0.25);
   - `spacing-01`
 
 ### ✅carbon--spacing-02 [variable]
+
+0.25rem (4px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -1761,6 +2237,8 @@ $carbon--spacing-02: carbon--mini-units(0.5);
 
 ### ✅carbon--spacing-03 [variable]
 
+0.5rem (8px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1776,6 +2254,8 @@ $carbon--spacing-03: carbon--mini-units(1);
   - `spacing-03`
 
 ### ✅carbon--spacing-04 [variable]
+
+0.75rem (12px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -1793,6 +2273,8 @@ $carbon--spacing-04: carbon--mini-units(1.5);
 
 ### ✅carbon--spacing-05 [variable]
 
+1rem (16px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1808,6 +2290,8 @@ $carbon--spacing-05: carbon--mini-units(2);
   - `spacing-05`
 
 ### ✅carbon--spacing-06 [variable]
+
+1.5rem (24px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -1825,6 +2309,8 @@ $carbon--spacing-06: carbon--mini-units(3);
 
 ### ✅carbon--spacing-07 [variable]
 
+2rem (32px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1840,6 +2326,8 @@ $carbon--spacing-07: carbon--mini-units(4);
   - `spacing-07`
 
 ### ✅carbon--spacing-08 [variable]
+
+2.5rem (40px) spacing with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -1857,6 +2345,8 @@ $carbon--spacing-08: carbon--mini-units(5);
 
 ### ✅carbon--spacing-09 [variable]
 
+3rem (48px) spacing with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -1872,6 +2362,8 @@ $carbon--spacing-09: carbon--mini-units(6);
   - `spacing-09`
 
 ### ✅carbon--spacing [variable]
+
+All spacing increments in a map
 
 <details>
 <summary>Source code</summary>
@@ -2032,6 +2524,8 @@ $spacing-09: $carbon--spacing-09;
 
 ### ✅carbon--layout-01 [variable]
 
+1rem (16px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -2047,6 +2541,8 @@ $carbon--layout-01: carbon--mini-units(2);
   - `layout-01`
 
 ### ✅carbon--layout-02 [variable]
+
+1.5rem (24px) layout with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -2064,6 +2560,8 @@ $carbon--layout-02: carbon--mini-units(3);
 
 ### ✅carbon--layout-03 [variable]
 
+2rem (32px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -2079,6 +2577,8 @@ $carbon--layout-03: carbon--mini-units(4);
   - `layout-03`
 
 ### ✅carbon--layout-04 [variable]
+
+3rem (48px) layout with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -2096,6 +2596,8 @@ $carbon--layout-04: carbon--mini-units(6);
 
 ### ✅carbon--layout-05 [variable]
 
+4rem (64px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -2111,6 +2613,8 @@ $carbon--layout-05: carbon--mini-units(8);
   - `layout-05`
 
 ### ✅carbon--layout-06 [variable]
+
+4rem (96px) layout with default mini unit
 
 <details>
 <summary>Source code</summary>
@@ -2128,6 +2632,8 @@ $carbon--layout-06: carbon--mini-units(12);
 
 ### ✅carbon--layout-07 [variable]
 
+10rem (160px) layout with default mini unit
+
 <details>
 <summary>Source code</summary>
 
@@ -2143,6 +2649,8 @@ $carbon--layout-07: carbon--mini-units(20);
   - `layout-07`
 
 ### ✅carbon--layout [variable]
+
+All layout increments in a map
 
 <details>
 <summary>Source code</summary>
@@ -2271,6 +2779,8 @@ $layout-07: $carbon--layout-07;
 
 ### ✅carbon--fluid-spacing-01 [variable]
 
+0vw fluid spacing
+
 <details>
 <summary>Source code</summary>
 
@@ -2286,6 +2796,8 @@ $carbon--fluid-spacing-01: 0;
   - `fluid-spacing-01`
 
 ### ✅carbon--fluid-spacing-02 [variable]
+
+2vw fluid spacing
 
 <details>
 <summary>Source code</summary>
@@ -2303,6 +2815,8 @@ $carbon--fluid-spacing-02: 2vw;
 
 ### ✅carbon--fluid-spacing-03 [variable]
 
+5vw fluid spacing
+
 <details>
 <summary>Source code</summary>
 
@@ -2319,6 +2833,8 @@ $carbon--fluid-spacing-03: 5vw;
 
 ### ✅carbon--fluid-spacing-04 [variable]
 
+10vw fluid spacing
+
 <details>
 <summary>Source code</summary>
 
@@ -2334,6 +2850,8 @@ $carbon--fluid-spacing-04: 10vw;
   - `fluid-spacing-04`
 
 ### ✅carbon--fluid-spacing [variable]
+
+All fluid spacing increments in a map
 
 <details>
 <summary>Source code</summary>
@@ -3907,7 +4425,7 @@ $highlight: map-get($carbon--theme, highlight);
 - **Used by**:
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 
-### ❌brand-01 [variable]
+### ✅⚠️brand-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3925,7 +4443,7 @@ $brand-01: map-get($carbon--theme, brand-01);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌brand-02 [variable]
+### ✅⚠️brand-02 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3943,7 +4461,7 @@ $brand-02: map-get($carbon--theme, brand-02);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌brand-03 [variable]
+### ✅⚠️brand-03 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3961,7 +4479,7 @@ $brand-03: map-get($carbon--theme, brand-03);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌active-01 [variable]
+### ✅⚠️active-01 [variable]
 
 <details>
 <summary>Source code</summary>
@@ -3979,7 +4497,7 @@ $active-01: map-get($carbon--theme, active-01);
   - [carbon--theme [mixin]](#carbon--theme-mixin)
 - **Deprecated**: This may not be available in future releases
 
-### ❌hover-field [variable]
+### ✅⚠️hover-field [variable]
 
 <details>
 <summary>Source code</summary>
