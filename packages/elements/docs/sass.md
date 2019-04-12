@@ -7370,7 +7370,7 @@ Serif `@font-face`'s
 
 ### ✅carbon--font-display [variable]
 
-Defines how font files are loaded and displayed by the browser.
+Defines how font files are loaded and displayed by the browser
 
 <details>
 <summary>Source code</summary>
