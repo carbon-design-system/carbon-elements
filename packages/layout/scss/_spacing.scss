@@ -60,6 +60,9 @@ $carbon--spacing-08: carbon--mini-units(5) !default;
 /// @access public
 /// @group @carbon/layout
 $carbon--spacing-09: carbon--mini-units(6) !default;
+$carbon--spacing-10: carbon--mini-units(8) !default;
+$carbon--spacing-11: carbon--mini-units(10) !default;
+$carbon--spacing-12: carbon--mini-units(12) !default;
 
 /// All spacing increments in a map
 /// @type Map
@@ -74,7 +77,10 @@ $carbon--spacing: (
   $carbon--spacing-06,
   $carbon--spacing-07,
   $carbon--spacing-08,
-  $carbon--spacing-09
+  $carbon--spacing-09,
+  $carbon--spacing-10,
+  $carbon--spacing-11,
+  $carbon--spacing-12
 ) !default;
 
 /// @type Number
@@ -130,6 +136,9 @@ $spacing-08: $carbon--spacing-08 !default;
 /// @group @carbon/layout
 /// @alias carbon--spacing-09
 $spacing-09: $carbon--spacing-09 !default;
+$spacing-09: $carbon--spacing-10 !default;
+$spacing-09: $carbon--spacing-11 !default;
+$spacing-09: $carbon--spacing-12 !default;
 
 /// 1rem (16px) layout with default mini unit
 /// @type Number
