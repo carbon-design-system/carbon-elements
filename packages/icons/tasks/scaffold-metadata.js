@@ -7,6 +7,7 @@
 
 'use strict';
 
+const { sentenceCase } = require('change-case');
 const fs = require('fs-extra');
 const path = require('path');
 const yaml = require('js-yaml');
@@ -42,11 +43,11 @@ async function scaffold() {
         }
         group.icon = iconsGroupedByVariant[key][0];
       } else {
-        if (!group.variants[variant]) {
-          group.variants[variant] = [];
+        if (!group.variants[key]) {
+          group.variants[key] = [];
         }
 
-        group.variants[variant].push(...iconsGroupedByVariant[key]);
+        group.variants[key].push(...iconsGroupedByVariant[key]);
       }
 
       return {
@@ -61,7 +62,7 @@ async function scaffold() {
     const group = iconsGroupedByName[key];
     const icon = {
       name: key,
-      friendly_name: key,
+      friendly_name: sentenceCase(key),
       usage: 'This is a description for usage',
       categories: ['example cateogry'],
       aliases: [key],
@@ -80,12 +81,13 @@ async function scaffold() {
           }
           return size;
         });
-        return {
+        return acc.concat({
           name,
+          friendly_name: sentenceCase(name),
           usage: 'This is a description for usage',
           sizes,
-        };
-      }, {});
+        });
+      }, []);
     }
 
     return icon;

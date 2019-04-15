@@ -3,27 +3,34 @@ icons:
     friendly_name: Add
     usage: This is a description for usage
     categories:
-      - Navigation
+      - example cateogry
     aliases:
       - add
-      - plus
-      - cross
-      - create
     sizes:
       - 16
-      - 32
     variants:
       - name: add--alt
+        friendly_name: Add alt
         usage: This is a description for usage
         sizes:
           - 16
           - 32
       - name: add--filled
+        friendly_name: Add filled
         usage: This is a description for usage
         sizes:
           - 16
+  - name: app-switcher
+    friendly_name: App switcher
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - app-switcher
+    sizes:
+      - 16
   - name: apps
-    friendly_name: apps
+    friendly_name: Apps
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -32,19 +39,61 @@ icons:
     sizes:
       - 16
   - name: arrow
-    friendly_name: arrow
+    friendly_name: Arrow
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - arrow
     variants:
-      name: up-right
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: arrow--down
+        friendly_name: Arrow down
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: arrow--left
+        friendly_name: Arrow left
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: arrow--right
+        friendly_name: Arrow right
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 20
+          - 24
+          - 32
+      - name: arrow--up
+        friendly_name: Arrow up
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: arrow--down-left
+        friendly_name: Arrow down left
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: arrow--down-right
+        friendly_name: Arrow down right
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: arrow--up-left
+        friendly_name: Arrow up left
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: arrow--up-right
+        friendly_name: Arrow up right
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: arrows
-    friendly_name: arrows
+    friendly_name: Arrows
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -53,12 +102,18 @@ icons:
     sizes:
       - 16
     variants:
-      name: vertical
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: arrows--horizontal
+        friendly_name: Arrows horizontal
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: arrows--vertical
+        friendly_name: Arrows vertical
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: asleep
-    friendly_name: asleep
+    friendly_name: Asleep
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -67,12 +122,13 @@ icons:
     sizes:
       - 16
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: asleep--filled
+        friendly_name: Asleep filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: attachment
-    friendly_name: attachment
+    friendly_name: Attachment
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -81,7 +137,7 @@ icons:
     sizes:
       - 16
   - name: awake
-    friendly_name: awake
+    friendly_name: Awake
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -90,7 +146,7 @@ icons:
     sizes:
       - 16
   - name: back-to-top
-    friendly_name: back-to-top
+    friendly_name: Back to top
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -99,7 +155,7 @@ icons:
     sizes:
       - 16
   - name: calendar
-    friendly_name: calendar
+    friendly_name: Calendar
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -108,21 +164,59 @@ icons:
     sizes:
       - 16
   - name: caret
-    friendly_name: caret
+    friendly_name: Caret
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - caret
     variants:
-      name: up
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
-        - glyph
+      - name: caret--down
+        friendly_name: Caret down
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
+      - name: caret--left
+        friendly_name: Caret left
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
+      - name: caret--right
+        friendly_name: Caret right
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
+      - name: caret--sort--down
+        friendly_name: Caret sort down
+        usage: This is a description for usage
+        sizes:
+          - 16
+      - name: caret--sort--up
+        friendly_name: Caret sort up
+        usage: This is a description for usage
+        sizes:
+          - 16
+      - name: caret--sort
+        friendly_name: Caret sort
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: caret--up
+        friendly_name: Caret up
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
   - name: chat
-    friendly_name: chat
+    friendly_name: Chat
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -131,35 +225,83 @@ icons:
     sizes:
       - 16
   - name: checkmark
-    friendly_name: checkmark
+    friendly_name: Checkmark
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - checkmark
     sizes:
-      - 32
+      - 16
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 16
+      - name: checkmark--filled
+        friendly_name: Checkmark filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 20
+          - 24
+          - 32
+      - name: checkmark--outline
+        friendly_name: Checkmark outline
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: chevron
-    friendly_name: chevron
+    friendly_name: Chevron
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - chevron
     variants:
-      name: up
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
-        - glyph
+      - name: chevron--down
+        friendly_name: Chevron down
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
+      - name: chevron--left
+        friendly_name: Chevron left
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
+      - name: chevron--right
+        friendly_name: Chevron right
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
+      - name: chevron--sort--down
+        friendly_name: Chevron sort down
+        usage: This is a description for usage
+        sizes:
+          - 16
+      - name: chevron--sort--up
+        friendly_name: Chevron sort up
+        usage: This is a description for usage
+        sizes:
+          - 16
+      - name: chevron--sort
+        friendly_name: Chevron sort
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: chevron--up
+        friendly_name: Chevron up
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+          - glyph
   - name: close
-    friendly_name: close
+    friendly_name: Close
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -168,12 +310,18 @@ icons:
     sizes:
       - 16
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 16
+      - name: close--filled
+        friendly_name: Close filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+      - name: close--outline
+        friendly_name: Close outline
+        usage: This is a description for usage
+        sizes:
+          - 16
   - name: code
-    friendly_name: code
+    friendly_name: Code
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -182,7 +330,7 @@ icons:
     sizes:
       - 16
   - name: copy
-    friendly_name: copy
+    friendly_name: Copy
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -191,13 +339,14 @@ icons:
     sizes:
       - 16
     variants:
-      name: file
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: copy--file
+        friendly_name: Copy file
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: delete
-    friendly_name: delete
+    friendly_name: Delete
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -206,7 +355,7 @@ icons:
     sizes:
       - 16
   - name: document
-    friendly_name: document
+    friendly_name: Document
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -215,12 +364,33 @@ icons:
     sizes:
       - 16
     variants:
-      name: tasks
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: document--add
+        friendly_name: Document add
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: document--export
+        friendly_name: Document export
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: document--import
+        friendly_name: Document import
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: document--subtract
+        friendly_name: Document subtract
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: document--tasks
+        friendly_name: Document tasks
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: down-to-bottom
-    friendly_name: down-to-bottom
+    friendly_name: Down to bottom
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -229,7 +399,7 @@ icons:
     sizes:
       - 16
   - name: download
-    friendly_name: download
+    friendly_name: Download
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -238,7 +408,7 @@ icons:
     sizes:
       - 16
   - name: draggable
-    friendly_name: draggable
+    friendly_name: Draggable
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -247,7 +417,7 @@ icons:
     sizes:
       - 16
   - name: edit
-    friendly_name: edit
+    friendly_name: Edit
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -256,7 +426,7 @@ icons:
     sizes:
       - 16
   - name: email
-    friendly_name: email
+    friendly_name: Email
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -265,7 +435,7 @@ icons:
     sizes:
       - 16
   - name: error
-    friendly_name: error
+    friendly_name: Error
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -274,12 +444,21 @@ icons:
     sizes:
       - 32
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 16
+      - name: error--filled
+        friendly_name: Error filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 20
+          - 24
+          - 32
+      - name: error--outline
+        friendly_name: Error outline
+        usage: This is a description for usage
+        sizes:
+          - 16
   - name: export
-    friendly_name: export
+    friendly_name: Export
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -288,7 +467,7 @@ icons:
     sizes:
       - 16
   - name: fade
-    friendly_name: fade
+    friendly_name: Fade
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -297,7 +476,7 @@ icons:
     sizes:
       - 16
   - name: favorite
-    friendly_name: favorite
+    friendly_name: Favorite
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -306,13 +485,14 @@ icons:
     sizes:
       - 16
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: favorite--filled
+        friendly_name: Favorite filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: filter
-    friendly_name: filter
+    friendly_name: Filter
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -321,12 +501,13 @@ icons:
     sizes:
       - 16
     variants:
-      name: edit
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: filter--edit
+        friendly_name: Filter edit
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: folder
-    friendly_name: folder
+    friendly_name: Folder
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -335,12 +516,24 @@ icons:
     sizes:
       - 16
     variants:
-      name: shared
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: folder--add
+        friendly_name: Folder add
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: folder--details
+        friendly_name: Folder details
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: folder--shared
+        friendly_name: Folder shared
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: forum
-    friendly_name: forum
+    friendly_name: Forum
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -349,7 +542,7 @@ icons:
     sizes:
       - 16
   - name: grid
-    friendly_name: grid
+    friendly_name: Grid
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -358,7 +551,7 @@ icons:
     sizes:
       - 16
   - name: help
-    friendly_name: help
+    friendly_name: Help
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -367,13 +560,14 @@ icons:
     sizes:
       - 16
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: help--filled
+        friendly_name: Help filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: information
-    friendly_name: information
+    friendly_name: Information
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -382,13 +576,14 @@ icons:
     sizes:
       - 16
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: information--filled
+        friendly_name: Information filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: launch
-    friendly_name: launch
+    friendly_name: Launch
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -397,7 +592,7 @@ icons:
     sizes:
       - 16
   - name: list
-    friendly_name: list
+    friendly_name: List
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -406,12 +601,29 @@ icons:
     sizes:
       - 32
     variants:
-      name: numbered
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: list--bulleted
+        friendly_name: List bulleted
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: list--checked
+        friendly_name: List checked
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: list--dropdown
+        friendly_name: List dropdown
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: list--numbered
+        friendly_name: List numbered
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: locked
-    friendly_name: locked
+    friendly_name: Locked
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -420,7 +632,7 @@ icons:
     sizes:
       - 16
   - name: maximize
-    friendly_name: maximize
+    friendly_name: Maximize
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -429,7 +641,7 @@ icons:
     sizes:
       - 16
   - name: menu
-    friendly_name: menu
+    friendly_name: Menu
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -438,7 +650,7 @@ icons:
     sizes:
       - 16
   - name: minimize
-    friendly_name: minimize
+    friendly_name: Minimize
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -447,7 +659,7 @@ icons:
     sizes:
       - 16
   - name: misuse
-    friendly_name: misuse
+    friendly_name: Misuse
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -456,12 +668,13 @@ icons:
     sizes:
       - 16
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 16
+      - name: misuse--outline
+        friendly_name: Misuse outline
+        usage: This is a description for usage
+        sizes:
+          - 16
   - name: new-tab
-    friendly_name: new-tab
+    friendly_name: New tab
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -470,7 +683,7 @@ icons:
     sizes:
       - 16
   - name: notification
-    friendly_name: notification
+    friendly_name: Notification
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -479,25 +692,49 @@ icons:
     sizes:
       - 16
     variants:
-      name: new
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: notification--off
+        friendly_name: Notification off
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: notification--filled
+        friendly_name: Notification filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: notification--new
+        friendly_name: Notification new
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: notification--off--filled
+        friendly_name: Notification off filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: overflow-menu
-    friendly_name: overflow-menu
+    friendly_name: Overflow menu
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - overflow-menu
     variants:
-      name: vertical
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: overflow-menu--horizontal
+        friendly_name: Overflow menu horizontal
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: overflow-menu--vertical
+        friendly_name: Overflow menu vertical
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: pause
-    friendly_name: pause
+    friendly_name: Pause
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -506,15 +743,20 @@ icons:
     sizes:
       - 16
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
-        - 16
-        - 32
+      - name: pause--outline--filled
+        friendly_name: Pause outline filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: pause--outline
+        friendly_name: Pause outline
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: play
-    friendly_name: play
+    friendly_name: Play
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -523,15 +765,26 @@ icons:
     sizes:
       - 16
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
-        - 16
-        - 32
+      - name: play--filled
+        friendly_name: Play filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: play--outline--filled
+        friendly_name: Play outline filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: play--outline
+        friendly_name: Play outline
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: power
-    friendly_name: power
+    friendly_name: Power
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -539,8 +792,17 @@ icons:
       - power
     sizes:
       - 16
+  - name: redo
+    friendly_name: Redo
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - redo
+    sizes:
+      - 16
   - name: restart
-    friendly_name: restart
+    friendly_name: Restart
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -549,7 +811,7 @@ icons:
     sizes:
       - 16
   - name: save
-    friendly_name: save
+    friendly_name: Save
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -558,12 +820,23 @@ icons:
     sizes:
       - 16
     variants:
-      name: series
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: save--annotation
+        friendly_name: Save annotation
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: save--image
+        friendly_name: Save image
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: save--series
+        friendly_name: Save series
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: search
-    friendly_name: search
+    friendly_name: Search
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -572,7 +845,7 @@ icons:
     sizes:
       - 16
   - name: settings
-    friendly_name: settings
+    friendly_name: Settings
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -581,12 +854,13 @@ icons:
     sizes:
       - 16
     variants:
-      name: adjust
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: settings--adjust
+        friendly_name: Settings adjust
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: star
-    friendly_name: star
+    friendly_name: Star
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -595,13 +869,20 @@ icons:
     sizes:
       - 16
     variants:
-      name: half
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: star--filled
+        friendly_name: Star filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: star--half
+        friendly_name: Star half
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: stop
-    friendly_name: stop
+    friendly_name: Stop
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -610,15 +891,26 @@ icons:
     sizes:
       - 16
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
-        - 16
-        - 32
+      - name: stop--filled
+        friendly_name: Stop filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: stop--outline--filled
+        friendly_name: Stop outline filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: stop--outline
+        friendly_name: Stop outline
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: subtract
-    friendly_name: subtract
+    friendly_name: Subtract
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -627,13 +919,14 @@ icons:
     sizes:
       - 16
     variants:
-      name: alt
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: subtract--alt
+        friendly_name: Subtract alt
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: trash-can
-    friendly_name: trash-can
+    friendly_name: Trash can
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -641,8 +934,17 @@ icons:
       - trash-can
     sizes:
       - 16
+  - name: undo
+    friendly_name: Undo
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - undo
+    sizes:
+      - 16
   - name: unlocked
-    friendly_name: unlocked
+    friendly_name: Unlocked
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -651,7 +953,7 @@ icons:
     sizes:
       - 16
   - name: up-to-top
-    friendly_name: up-to-top
+    friendly_name: Up to top
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -660,7 +962,7 @@ icons:
     sizes:
       - 16
   - name: upload
-    friendly_name: upload
+    friendly_name: Upload
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -669,7 +971,7 @@ icons:
     sizes:
       - 16
   - name: user
-    friendly_name: user
+    friendly_name: User
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -678,12 +980,89 @@ icons:
     sizes:
       - 16
     variants:
-      name: role
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: user--avatar
+        friendly_name: User avatar
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: user--activity
+        friendly_name: User activity
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--admin
+        friendly_name: User admin
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--avatar--filled--alt
+        friendly_name: User avatar filled alt
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--avatar--filled
+        friendly_name: User avatar filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--data
+        friendly_name: User data
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--favorite--alt--filled
+        friendly_name: User favorite alt filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--favorite--alt
+        friendly_name: User favorite alt
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--favorite
+        friendly_name: User favorite
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--filled
+        friendly_name: User filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--follow
+        friendly_name: User follow
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--identification
+        friendly_name: User identification
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--online
+        friendly_name: User online
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--profile
+        friendly_name: User profile
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--role
+        friendly_name: User role
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: user--x-ray
+        friendly_name: User x ray
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: view
-    friendly_name: view
+    friendly_name: View
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -692,12 +1071,34 @@ icons:
     sizes:
       - 16
     variants:
-      name: mode-2
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: view--off
+        friendly_name: View off
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: view--filled
+        friendly_name: View filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: view--mode-1
+        friendly_name: View mode 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: view--mode-2
+        friendly_name: View mode 2
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: view--off--filled
+        friendly_name: View off filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: warning
-    friendly_name: warning
+    friendly_name: Warning
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -706,35 +1107,48 @@ icons:
     sizes:
       - 16
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
+      - name: warning--alt--filled
+        friendly_name: Warning alt filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: warning--alt
+        friendly_name: Warning alt
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: warning--filled
+        friendly_name: Warning filled
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 20
+          - 24
+          - 32
   - name: zoom
-    friendly_name: zoom
+    friendly_name: Zoom
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - zoom
     variants:
-      name: out
-      usage: This is a description for usage
-      sizes:
-        - 16
-        - 32
-  - name: app-switcher
-    friendly_name: app-switcher
-    usage: This is a description for usage
-    categories:
-      - example cateogry
-    aliases:
-      - app-switcher
-    sizes:
-      - 20
+      - name: zoom--in
+        friendly_name: Zoom in
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
+      - name: zoom--out
+        friendly_name: Zoom out
+        usage: This is a description for usage
+        sizes:
+          - 16
+          - 32
   - name: 4K
-    friendly_name: 4K
+    friendly_name: 4 k
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -743,24 +1157,26 @@ icons:
     sizes:
       - 32
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: 4K--filled
+        friendly_name: 4 k filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: API
-    friendly_name: API
+    friendly_name: Api
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - API
     variants:
-      name: '1'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: API--1
+        friendly_name: Api 1
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: CAD
-    friendly_name: CAD
+    friendly_name: Cad
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -768,8 +1184,17 @@ icons:
       - CAD
     sizes:
       - 32
+  - name: CSV
+    friendly_name: Csv
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - CSV
+    sizes:
+      - 32
   - name: DVR
-    friendly_name: DVR
+    friendly_name: Dvr
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -778,7 +1203,7 @@ icons:
     sizes:
       - 32
   - name: GIF
-    friendly_name: GIF
+    friendly_name: Gif
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -787,7 +1212,7 @@ icons:
     sizes:
       - 32
   - name: HD
-    friendly_name: HD
+    friendly_name: Hd
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -796,12 +1221,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: HD--filled
+        friendly_name: Hd filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: HDR
-    friendly_name: HDR
+    friendly_name: Hdr
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -809,8 +1235,17 @@ icons:
       - HDR
     sizes:
       - 32
+  - name: HTTP
+    friendly_name: Http
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - HTTP
+    sizes:
+      - 32
   - name: ISO
-    friendly_name: ISO
+    friendly_name: Iso
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -819,12 +1254,18 @@ icons:
     sizes:
       - 32
     variants:
-      name: outline
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: ISO--filled
+        friendly_name: Iso filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: ISO--outline
+        friendly_name: Iso outline
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: JPG
-    friendly_name: JPG
+    friendly_name: Jpg
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -832,8 +1273,17 @@ icons:
       - JPG
     sizes:
       - 32
+  - name: JSON
+    friendly_name: Json
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - JSON
+    sizes:
+      - 32
   - name: MOV
-    friendly_name: MOV
+    friendly_name: Mov
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -842,7 +1292,7 @@ icons:
     sizes:
       - 32
   - name: MP3
-    friendly_name: MP3
+    friendly_name: Mp3
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -851,7 +1301,7 @@ icons:
     sizes:
       - 32
   - name: MP4
-    friendly_name: MP4
+    friendly_name: Mp4
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -860,7 +1310,7 @@ icons:
     sizes:
       - 32
   - name: PDF
-    friendly_name: PDF
+    friendly_name: Pdf
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -869,7 +1319,7 @@ icons:
     sizes:
       - 32
   - name: PNG
-    friendly_name: PNG
+    friendly_name: Png
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -896,10 +1346,11 @@ icons:
     sizes:
       - 32
     variants:
-      name: alt
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: S--alt
+        friendly_name: S alt
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: T
     friendly_name: T
     usage: This is a description for usage
@@ -910,10 +1361,11 @@ icons:
     sizes:
       - 32
     variants:
-      name: alt
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: T--alt
+        friendly_name: T alt
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: U1
     friendly_name: U1
     usage: This is a description for usage
@@ -969,7 +1421,7 @@ icons:
     sizes:
       - 32
   - name: barrier
-    friendly_name: barrier
+    friendly_name: Barrier
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -978,7 +1430,7 @@ icons:
     sizes:
       - 32
   - name: bloch-sphere
-    friendly_name: bloch-sphere
+    friendly_name: Bloch sphere
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -987,7 +1439,7 @@ icons:
     sizes:
       - 32
   - name: cU1
-    friendly_name: cU1
+    friendly_name: C u1
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -996,7 +1448,7 @@ icons:
     sizes:
       - 32
   - name: cU3
-    friendly_name: cU3
+    friendly_name: C u3
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1005,7 +1457,7 @@ icons:
     sizes:
       - 32
   - name: cY
-    friendly_name: cY
+    friendly_name: C y
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1014,7 +1466,7 @@ icons:
     sizes:
       - 32
   - name: cZ
-    friendly_name: cZ
+    friendly_name: C z
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1023,7 +1475,7 @@ icons:
     sizes:
       - 32
   - name: ccX
-    friendly_name: ccX
+    friendly_name: Cc x
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1031,8 +1483,17 @@ icons:
       - ccX
     sizes:
       - 32
+  - name: circuit-composer
+    friendly_name: Circuit composer
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - circuit-composer
+    sizes:
+      - 32
   - name: composer-edit
-    friendly_name: composer-edit
+    friendly_name: Composer edit
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1041,7 +1502,7 @@ icons:
     sizes:
       - 32
   - name: hinton-plot
-    friendly_name: hinton-plot
+    friendly_name: Hinton plot
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1050,7 +1511,7 @@ icons:
     sizes:
       - 32
   - name: iD
-    friendly_name: iD
+    friendly_name: I d
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1059,7 +1520,7 @@ icons:
     sizes:
       - 32
   - name: matrix
-    friendly_name: matrix
+    friendly_name: Matrix
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1068,7 +1529,7 @@ icons:
     sizes:
       - 32
   - name: operation
-    friendly_name: operation
+    friendly_name: Operation
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1077,12 +1538,18 @@ icons:
     sizes:
       - 32
     variants:
-      name: if
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: operation--gauge
+        friendly_name: Operation gauge
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: operation--if
+        friendly_name: Operation if
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: RAW
-    friendly_name: RAW
+    friendly_name: Raw
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1091,7 +1558,7 @@ icons:
     sizes:
       - 32
   - name: SQL
-    friendly_name: SQL
+    friendly_name: Sql
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1100,7 +1567,7 @@ icons:
     sizes:
       - 32
   - name: SVG
-    friendly_name: SVG
+    friendly_name: Svg
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1109,7 +1576,7 @@ icons:
     sizes:
       - 32
   - name: TIF
-    friendly_name: TIF
+    friendly_name: Tif
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1117,8 +1584,17 @@ icons:
       - TIF
     sizes:
       - 32
+  - name: TSV
+    friendly_name: Tsv
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - TSV
+    sizes:
+      - 32
   - name: TXT
-    friendly_name: TXT
+    friendly_name: Txt
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1127,7 +1603,7 @@ icons:
     sizes:
       - 32
   - name: USB
-    friendly_name: USB
+    friendly_name: Usb
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1136,7 +1612,7 @@ icons:
     sizes:
       - 32
   - name: VPN
-    friendly_name: VPN
+    friendly_name: Vpn
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1145,7 +1621,7 @@ icons:
     sizes:
       - 32
   - name: WMV
-    friendly_name: WMV
+    friendly_name: Wmv
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1153,8 +1629,17 @@ icons:
       - WMV
     sizes:
       - 32
+  - name: XLS
+    friendly_name: Xls
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - XLS
+    sizes:
+      - 32
   - name: XML
-    friendly_name: XML
+    friendly_name: Xml
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1163,7 +1648,7 @@ icons:
     sizes:
       - 32
   - name: ZIP
-    friendly_name: ZIP
+    friendly_name: Zip
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1172,7 +1657,7 @@ icons:
     sizes:
       - 32
   - name: accessibility
-    friendly_name: accessibility
+    friendly_name: Accessibility
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1181,7 +1666,7 @@ icons:
     sizes:
       - 32
   - name: activity
-    friendly_name: activity
+    friendly_name: Activity
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1190,7 +1675,7 @@ icons:
     sizes:
       - 32
   - name: add-comment
-    friendly_name: add-comment
+    friendly_name: Add comment
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1199,7 +1684,7 @@ icons:
     sizes:
       - 32
   - name: alarm
-    friendly_name: alarm
+    friendly_name: Alarm
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1208,12 +1693,18 @@ icons:
     sizes:
       - 32
     variants:
-      name: subtract
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: alarm--add
+        friendly_name: Alarm add
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: alarm--subtract
+        friendly_name: Alarm subtract
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: analytics
-    friendly_name: analytics
+    friendly_name: Analytics
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1222,7 +1713,7 @@ icons:
     sizes:
       - 32
   - name: aperture
-    friendly_name: aperture
+    friendly_name: Aperture
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1231,7 +1722,7 @@ icons:
     sizes:
       - 32
   - name: api
-    friendly_name: api
+    friendly_name: Api
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1240,7 +1731,7 @@ icons:
     sizes:
       - 32
   - name: application
-    friendly_name: application
+    friendly_name: Application
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1249,7 +1740,7 @@ icons:
     sizes:
       - 32
   - name: archive
-    friendly_name: archive
+    friendly_name: Archive
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1258,7 +1749,7 @@ icons:
     sizes:
       - 32
   - name: arrival
-    friendly_name: arrival
+    friendly_name: Arrival
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1266,8 +1757,17 @@ icons:
       - arrival
     sizes:
       - 32
+  - name: asset
+    friendly_name: Asset
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - asset
+    sizes:
+      - 32
   - name: at
-    friendly_name: at
+    friendly_name: At
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1275,20 +1775,45 @@ icons:
       - at
     sizes:
       - 32
+  - name: bar
+    friendly_name: Bar
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - bar
+    sizes:
+      - 32
   - name: battery
-    friendly_name: battery
+    friendly_name: Battery
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - battery
     variants:
-      name: low
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: battery--charging
+        friendly_name: Battery charging
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: battery--full
+        friendly_name: Battery full
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: battery--half
+        friendly_name: Battery half
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: battery--low
+        friendly_name: Battery low
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: bee
-    friendly_name: bee
+    friendly_name: Bee
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1297,7 +1822,7 @@ icons:
     sizes:
       - 32
   - name: bicycle
-    friendly_name: bicycle
+    friendly_name: Bicycle
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1306,7 +1831,7 @@ icons:
     sizes:
       - 32
   - name: binoculars
-    friendly_name: binoculars
+    friendly_name: Binoculars
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1315,7 +1840,7 @@ icons:
     sizes:
       - 32
   - name: blog
-    friendly_name: blog
+    friendly_name: Blog
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1324,7 +1849,7 @@ icons:
     sizes:
       - 32
   - name: bluetooth
-    friendly_name: bluetooth
+    friendly_name: Bluetooth
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1333,12 +1858,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: 'off'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: bluetooth--off
+        friendly_name: Bluetooth off
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: bookmark
-    friendly_name: bookmark
+    friendly_name: Bookmark
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1347,7 +1873,7 @@ icons:
     sizes:
       - 32
   - name: box
-    friendly_name: box
+    friendly_name: Box
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1356,7 +1882,7 @@ icons:
     sizes:
       - 32
   - name: brightness-contrast
-    friendly_name: brightness-contrast
+    friendly_name: Brightness contrast
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1364,8 +1890,33 @@ icons:
       - brightness-contrast
     sizes:
       - 32
+  - name: building
+    friendly_name: Building
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - building
+    sizes:
+      - 32
+    variants:
+      - name: building--insights-1
+        friendly_name: Building insights 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: building--insights-2
+        friendly_name: Building insights 2
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: building--insights-3
+        friendly_name: Building insights 3
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: bullhorn
-    friendly_name: bullhorn
+    friendly_name: Bullhorn
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1374,7 +1925,7 @@ icons:
     sizes:
       - 32
   - name: bus
-    friendly_name: bus
+    friendly_name: Bus
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1382,8 +1933,17 @@ icons:
       - bus
     sizes:
       - 32
+  - name: cafe
+    friendly_name: Cafe
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - cafe
+    sizes:
+      - 32
   - name: calculator
-    friendly_name: calculator
+    friendly_name: Calculator
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1392,7 +1952,7 @@ icons:
     sizes:
       - 32
   - name: calibrate
-    friendly_name: calibrate
+    friendly_name: Calibrate
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1401,7 +1961,7 @@ icons:
     sizes:
       - 32
   - name: camera
-    friendly_name: camera
+    friendly_name: Camera
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1410,12 +1970,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: action
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: camera--action
+        friendly_name: Camera action
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: car
-    friendly_name: car
+    friendly_name: Car
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1424,19 +1985,25 @@ icons:
     sizes:
       - 32
   - name: carousel
-    friendly_name: carousel
+    friendly_name: Carousel
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - carousel
     variants:
-      name: vertical
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: carousel--horizontal
+        friendly_name: Carousel horizontal
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: carousel--vertical
+        friendly_name: Carousel vertical
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: catalog
-    friendly_name: catalog
+    friendly_name: Catalog
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1445,7 +2012,7 @@ icons:
     sizes:
       - 32
   - name: categories
-    friendly_name: categories
+    friendly_name: Categories
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1454,19 +2021,55 @@ icons:
     sizes:
       - 32
   - name: chart
-    friendly_name: chart
+    friendly_name: Chart
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - chart
     variants:
-      name: venn-diagram
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: chart--bar
+        friendly_name: Chart bar
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: chart--bubble
+        friendly_name: Chart bubble
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: chart--line--data
+        friendly_name: Chart line data
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: chart--line
+        friendly_name: Chart line
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: chart--network
+        friendly_name: Chart network
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: chart--pie
+        friendly_name: Chart pie
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: chart--scatter
+        friendly_name: Chart scatter
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: chart--venn-diagram
+        friendly_name: Chart venn diagram
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: checkbox
-    friendly_name: checkbox
+    friendly_name: Checkbox
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1475,13 +2078,28 @@ icons:
     sizes:
       - 32
     variants:
-      name: undeterminate
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: checkbox--checked--filled
+        friendly_name: Checkbox checked filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: checkbox--checked
+        friendly_name: Checkbox checked
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: checkbox--undeterminate--filled
+        friendly_name: Checkbox undeterminate filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: checkbox--undeterminate
+        friendly_name: Checkbox undeterminate
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: chemistry
-    friendly_name: chemistry
+    friendly_name: Chemistry
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1490,7 +2108,7 @@ icons:
     sizes:
       - 32
   - name: chip
-    friendly_name: chip
+    friendly_name: Chip
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1499,7 +2117,7 @@ icons:
     sizes:
       - 32
   - name: circle-dash
-    friendly_name: circle-dash
+    friendly_name: Circle dash
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1508,19 +2126,20 @@ icons:
     sizes:
       - 32
   - name: classifier
-    friendly_name: classifier
+    friendly_name: Classifier
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - classifier
     variants:
-      name: language
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: classifier--language
+        friendly_name: Classifier language
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: closed-caption
-    friendly_name: closed-caption
+    friendly_name: Closed caption
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1529,12 +2148,18 @@ icons:
     sizes:
       - 32
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: closed-caption--alt
+        friendly_name: Closed caption alt
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: closed-caption--filled
+        friendly_name: Closed caption filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: cloud
-    friendly_name: cloud
+    friendly_name: Cloud
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1543,24 +2168,51 @@ icons:
     sizes:
       - 32
     variants:
-      name: upload
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: cloud--download
+        friendly_name: Cloud download
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cloud--lightning
+        friendly_name: Cloud lightning
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cloud--rain
+        friendly_name: Cloud rain
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cloud--snow
+        friendly_name: Cloud snow
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cloud--upload
+        friendly_name: Cloud upload
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: cloud-foundry
-    friendly_name: cloud-foundry
+    friendly_name: Cloud foundry
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - cloud-foundry
     variants:
-      name: '2'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: cloud-foundry--1
+        friendly_name: Cloud foundry 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cloud-foundry--2
+        friendly_name: Cloud foundry 2
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: cognitive
-    friendly_name: cognitive
+    friendly_name: Cognitive
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1569,7 +2221,7 @@ icons:
     sizes:
       - 32
   - name: collaborate
-    friendly_name: collaborate
+    friendly_name: Collaborate
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1578,7 +2230,7 @@ icons:
     sizes:
       - 32
   - name: color-palette
-    friendly_name: color-palette
+    friendly_name: Color palette
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1587,7 +2239,7 @@ icons:
     sizes:
       - 32
   - name: column
-    friendly_name: column
+    friendly_name: Column
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1596,7 +2248,7 @@ icons:
     sizes:
       - 32
   - name: compare
-    friendly_name: compare
+    friendly_name: Compare
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1605,7 +2257,7 @@ icons:
     sizes:
       - 32
   - name: compass
-    friendly_name: compass
+    friendly_name: Compass
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1614,7 +2266,7 @@ icons:
     sizes:
       - 32
   - name: connect
-    friendly_name: connect
+    friendly_name: Connect
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1623,7 +2275,7 @@ icons:
     sizes:
       - 32
   - name: connection-signal
-    friendly_name: connection-signal
+    friendly_name: Connection signal
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1632,7 +2284,7 @@ icons:
     sizes:
       - 32
   - name: contrast
-    friendly_name: contrast
+    friendly_name: Contrast
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1641,7 +2293,7 @@ icons:
     sizes:
       - 32
   - name: corner
-    friendly_name: corner
+    friendly_name: Corner
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1650,7 +2302,7 @@ icons:
     sizes:
       - 32
   - name: crop
-    friendly_name: crop
+    friendly_name: Crop
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1659,19 +2311,25 @@ icons:
     sizes:
       - 32
   - name: cursor
-    friendly_name: cursor
+    friendly_name: Cursor
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - cursor
     variants:
-      name: '2'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: cursor--1
+        friendly_name: Cursor 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cursor--2
+        friendly_name: Cursor 2
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: cut
-    friendly_name: cut
+    friendly_name: Cut
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1679,20 +2337,112 @@ icons:
       - cut
     sizes:
       - 32
+  - name: dashboard
+    friendly_name: Dashboard
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - dashboard
+    sizes:
+      - 32
   - name: data
-    friendly_name: data
+    friendly_name: Data
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - data
     variants:
-      name: unstructured
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: data--1
+        friendly_name: Data 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--2
+        friendly_name: Data 2
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--base
+        friendly_name: Data base
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--check
+        friendly_name: Data check
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--connected
+        friendly_name: Data connected
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--error
+        friendly_name: Data error
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--reference
+        friendly_name: Data reference
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--set
+        friendly_name: Data set
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--structured
+        friendly_name: Data structured
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data--unstructured
+        friendly_name: Data unstructured
+        usage: This is a description for usage
+        sizes:
+          - 32
+  - name: data-share
+    friendly_name: Data share
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - data-share
+    sizes:
+      - 32
+  - name: data-vis
+    friendly_name: Data vis
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - data-vis
+    variants:
+      - name: data-vis--1
+        friendly_name: Data vis 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data-vis--2
+        friendly_name: Data vis 2
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data-vis--3
+        friendly_name: Data vis 3
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: data-vis--4
+        friendly_name: Data vis 4
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: debug
-    friendly_name: debug
+    friendly_name: Debug
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1701,7 +2451,7 @@ icons:
     sizes:
       - 32
   - name: delivery-truck
-    friendly_name: delivery-truck
+    friendly_name: Delivery truck
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1710,7 +2460,7 @@ icons:
     sizes:
       - 32
   - name: departure
-    friendly_name: departure
+    friendly_name: Departure
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1719,7 +2469,7 @@ icons:
     sizes:
       - 32
   - name: deploy-rules
-    friendly_name: deploy-rules
+    friendly_name: Deploy rules
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1728,7 +2478,7 @@ icons:
     sizes:
       - 32
   - name: development
-    friendly_name: development
+    friendly_name: Development
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1737,7 +2487,7 @@ icons:
     sizes:
       - 32
   - name: devices
-    friendly_name: devices
+    friendly_name: Devices
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1746,7 +2496,7 @@ icons:
     sizes:
       - 32
   - name: diagram
-    friendly_name: diagram
+    friendly_name: Diagram
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1755,19 +2505,25 @@ icons:
     sizes:
       - 32
   - name: drag
-    friendly_name: drag
+    friendly_name: Drag
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - drag
     variants:
-      name: vertical
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: drag--horizontal
+        friendly_name: Drag horizontal
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: drag--vertical
+        friendly_name: Drag vertical
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: draw
-    friendly_name: draw
+    friendly_name: Draw
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1775,8 +2531,26 @@ icons:
       - draw
     sizes:
       - 32
+  - name: edt-loop
+    friendly_name: Edt loop
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - edt-loop
+    sizes:
+      - 32
+  - name: education
+    friendly_name: Education
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - education
+    sizes:
+      - 32
   - name: erase
-    friendly_name: erase
+    friendly_name: Erase
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1785,7 +2559,7 @@ icons:
     sizes:
       - 32
   - name: event
-    friendly_name: event
+    friendly_name: Event
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1794,12 +2568,22 @@ icons:
     sizes:
       - 32
     variants:
-      name: schedule
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: event--schedule
+        friendly_name: Event schedule
+        usage: This is a description for usage
+        sizes:
+          - 32
+  - name: events
+    friendly_name: Events
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - events
+    sizes:
+      - 32
   - name: exam-mode
-    friendly_name: exam-mode
+    friendly_name: Exam mode
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1808,7 +2592,7 @@ icons:
     sizes:
       - 32
   - name: eyedropper
-    friendly_name: eyedropper
+    friendly_name: Eyedropper
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1817,20 +2601,100 @@ icons:
     sizes:
       - 32
   - name: face
-    friendly_name: face
+    friendly_name: Face
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - face
     variants:
-      name: wink
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: face--activated--add
+        friendly_name: Face activated add
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--activated--filled
+        friendly_name: Face activated filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--activated
+        friendly_name: Face activated
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--add
+        friendly_name: Face add
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--cool
+        friendly_name: Face cool
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--dissatisfied--filled
+        friendly_name: Face dissatisfied filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--dissatisfied
+        friendly_name: Face dissatisfied
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--dizzy--filled
+        friendly_name: Face dizzy filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--dizzy
+        friendly_name: Face dizzy
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--neutral--filled
+        friendly_name: Face neutral filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--neutral
+        friendly_name: Face neutral
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--pending--filled
+        friendly_name: Face pending filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--pending
+        friendly_name: Face pending
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--satisfied--filled
+        friendly_name: Face satisfied filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--satisfied
+        friendly_name: Face satisfied
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--wink--filled
+        friendly_name: Face wink filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: face--wink
+        friendly_name: Face wink
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: finance
-    friendly_name: finance
+    friendly_name: Finance
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1839,7 +2703,7 @@ icons:
     sizes:
       - 32
   - name: fingerprint-recognition
-    friendly_name: fingerprint-recognition
+    friendly_name: Fingerprint recognition
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1848,7 +2712,7 @@ icons:
     sizes:
       - 32
   - name: flag
-    friendly_name: flag
+    friendly_name: Flag
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1857,7 +2721,7 @@ icons:
     sizes:
       - 32
   - name: flash
-    friendly_name: flash
+    friendly_name: Flash
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1866,13 +2730,23 @@ icons:
     sizes:
       - 32
     variants:
-      name: 'off'
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: flash--filled
+        friendly_name: Flash filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: flash--off--filled
+        friendly_name: Flash off filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: flash--off
+        friendly_name: Flash off
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: flow
-    friendly_name: flow
+    friendly_name: Flow
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1881,24 +2755,41 @@ icons:
     sizes:
       - 32
     variants:
-      name: stream
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: flow--data
+        friendly_name: Flow data
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: flow--stream
+        friendly_name: Flow stream
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: forward
-    friendly_name: forward
+    friendly_name: Forward
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - forward
     variants:
-      name: '30'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: forward--10
+        friendly_name: Forward 10
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: forward--30
+        friendly_name: Forward 30
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: forward--5
+        friendly_name: Forward 5
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: function
-    friendly_name: function
+    friendly_name: Function
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1907,19 +2798,25 @@ icons:
     sizes:
       - 32
   - name: game
-    friendly_name: game
+    friendly_name: Game
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - game
     variants:
-      name: wireless
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: game--console
+        friendly_name: Game console
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: game--wireless
+        friendly_name: Game wireless
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: globe
-    friendly_name: globe
+    friendly_name: Globe
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1928,7 +2825,7 @@ icons:
     sizes:
       - 32
   - name: group
-    friendly_name: group
+    friendly_name: Group
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1937,7 +2834,7 @@ icons:
     sizes:
       - 32
   - name: headphones
-    friendly_name: headphones
+    friendly_name: Headphones
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1946,7 +2843,7 @@ icons:
     sizes:
       - 32
   - name: headset
-    friendly_name: headset
+    friendly_name: Headset
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1954,8 +2851,17 @@ icons:
       - headset
     sizes:
       - 32
+  - name: health-cross
+    friendly_name: Health cross
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - health-cross
+    sizes:
+      - 32
   - name: hearing
-    friendly_name: hearing
+    friendly_name: Hearing
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1964,7 +2870,7 @@ icons:
     sizes:
       - 32
   - name: home
-    friendly_name: home
+    friendly_name: Home
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1973,7 +2879,7 @@ icons:
     sizes:
       - 32
   - name: hotel
-    friendly_name: hotel
+    friendly_name: Hotel
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1982,7 +2888,7 @@ icons:
     sizes:
       - 32
   - name: hourglass
-    friendly_name: hourglass
+    friendly_name: Hourglass
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -1990,8 +2896,26 @@ icons:
       - hourglass
     sizes:
       - 32
+  - name: humidity
+    friendly_name: Humidity
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - humidity
+    sizes:
+      - 32
+  - name: ibm-cloud
+    friendly_name: Ibm cloud
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - ibm-cloud
+    sizes:
+      - 32
   - name: ibm-security
-    friendly_name: ibm-security
+    friendly_name: Ibm security
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2000,7 +2924,7 @@ icons:
     sizes:
       - 32
   - name: idea
-    friendly_name: idea
+    friendly_name: Idea
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2009,7 +2933,7 @@ icons:
     sizes:
       - 32
   - name: identification
-    friendly_name: identification
+    friendly_name: Identification
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2018,7 +2942,7 @@ icons:
     sizes:
       - 32
   - name: image
-    friendly_name: image
+    friendly_name: Image
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2027,12 +2951,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: medical
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: image--medical
+        friendly_name: Image medical
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: industry
-    friendly_name: industry
+    friendly_name: Industry
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2041,7 +2966,7 @@ icons:
     sizes:
       - 32
   - name: insert
-    friendly_name: insert
+    friendly_name: Insert
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2050,7 +2975,7 @@ icons:
     sizes:
       - 32
   - name: integration
-    friendly_name: integration
+    friendly_name: Integration
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2058,8 +2983,35 @@ icons:
       - integration
     sizes:
       - 32
+  - name: inventory-management
+    friendly_name: Inventory management
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - inventory-management
+    sizes:
+      - 32
+  - name: iot
+    friendly_name: Iot
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - iot
+    variants:
+      - name: iot--connect
+        friendly_name: Iot connect
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: iot--platform
+        friendly_name: Iot platform
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: keyboard
-    friendly_name: keyboard
+    friendly_name: Keyboard
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2068,19 +3020,145 @@ icons:
     sizes:
       - 32
   - name: letter
-    friendly_name: letter
+    friendly_name: Letter
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - letter
     variants:
-      name: Zz
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: letter--Aa
+        friendly_name: Letter aa
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Bb
+        friendly_name: Letter bb
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Cc
+        friendly_name: Letter cc
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Dd
+        friendly_name: Letter dd
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Ee
+        friendly_name: Letter ee
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Ff
+        friendly_name: Letter ff
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Gg
+        friendly_name: Letter gg
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Hh
+        friendly_name: Letter hh
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Ii
+        friendly_name: Letter ii
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Jj
+        friendly_name: Letter jj
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Kk
+        friendly_name: Letter kk
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Ll
+        friendly_name: Letter ll
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Mm
+        friendly_name: Letter mm
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Nn
+        friendly_name: Letter nn
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Oo
+        friendly_name: Letter oo
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Pp
+        friendly_name: Letter pp
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Qq
+        friendly_name: Letter qq
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Rr
+        friendly_name: Letter rr
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Ss
+        friendly_name: Letter ss
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Tt
+        friendly_name: Letter tt
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Uu
+        friendly_name: Letter uu
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Vv
+        friendly_name: Letter vv
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Ww
+        friendly_name: Letter ww
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Xx
+        friendly_name: Letter xx
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Yy
+        friendly_name: Letter yy
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: letter--Zz
+        friendly_name: Letter zz
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: light
-    friendly_name: light
+    friendly_name: Light
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2089,12 +3167,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: light--filled
+        friendly_name: Light filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: link
-    friendly_name: link
+    friendly_name: Link
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2103,7 +3182,7 @@ icons:
     sizes:
       - 32
   - name: location
-    friendly_name: location
+    friendly_name: Location
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2112,7 +3191,7 @@ icons:
     sizes:
       - 32
   - name: login
-    friendly_name: login
+    friendly_name: Login
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2121,19 +3200,105 @@ icons:
     sizes:
       - 32
   - name: logo
-    friendly_name: logo
+    friendly_name: Logo
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - logo
     variants:
-      name: youtube
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: logo--delicious
+        friendly_name: Logo delicious
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--digg
+        friendly_name: Logo digg
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--facebook
+        friendly_name: Logo facebook
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--flickr
+        friendly_name: Logo flickr
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--github
+        friendly_name: Logo github
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--google
+        friendly_name: Logo google
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--linkedin
+        friendly_name: Logo linkedin
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--livestream
+        friendly_name: Logo livestream
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--pinterest
+        friendly_name: Logo pinterest
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--quora
+        friendly_name: Logo quora
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--skype
+        friendly_name: Logo skype
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--slack
+        friendly_name: Logo slack
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--snapchat
+        friendly_name: Logo snapchat
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--stumbleupon
+        friendly_name: Logo stumbleupon
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--tumblr
+        friendly_name: Logo tumblr
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--twitter
+        friendly_name: Logo twitter
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--xing
+        friendly_name: Logo xing
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: logo--youtube
+        friendly_name: Logo youtube
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: logout
-    friendly_name: logout
+    friendly_name: Logout
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2142,7 +3307,7 @@ icons:
     sizes:
       - 32
   - name: loop
-    friendly_name: loop
+    friendly_name: Loop
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2151,31 +3316,43 @@ icons:
     sizes:
       - 32
   - name: mac
-    friendly_name: mac
+    friendly_name: Mac
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - mac
     variants:
-      name: shift
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: mac--command
+        friendly_name: Mac command
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: mac--option
+        friendly_name: Mac option
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: mac--shift
+        friendly_name: Mac shift
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: mail
-    friendly_name: mail
+    friendly_name: Mail
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - mail
     variants:
-      name: all
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: mail--all
+        friendly_name: Mail all
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: map
-    friendly_name: map
+    friendly_name: Map
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2184,7 +3361,7 @@ icons:
     sizes:
       - 32
   - name: medication
-    friendly_name: medication
+    friendly_name: Medication
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2193,12 +3370,18 @@ icons:
     sizes:
       - 32
     variants:
-      name: reminder
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: medication--alert
+        friendly_name: Medication alert
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: medication--reminder
+        friendly_name: Medication reminder
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: microphone
-    friendly_name: microphone
+    friendly_name: Microphone
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2207,13 +3390,23 @@ icons:
     sizes:
       - 32
     variants:
-      name: 'off'
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: microphone--filled
+        friendly_name: Microphone filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: microphone--off--filled
+        friendly_name: Microphone off filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: microphone--off
+        friendly_name: Microphone off
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: migrate
-    friendly_name: migrate
+    friendly_name: Migrate
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2222,7 +3415,7 @@ icons:
     sizes:
       - 32
   - name: mobile
-    friendly_name: mobile
+    friendly_name: Mobile
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2231,12 +3424,38 @@ icons:
     sizes:
       - 32
     variants:
-      name: download
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: mobile--add
+        friendly_name: Mobile add
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: mobile--check
+        friendly_name: Mobile check
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: mobile--download
+        friendly_name: Mobile download
+        usage: This is a description for usage
+        sizes:
+          - 32
+  - name: model
+    friendly_name: Model
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - model
+    sizes:
+      - 32
+    variants:
+      - name: model--reference
+        friendly_name: Model reference
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: move
-    friendly_name: move
+    friendly_name: Move
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2245,7 +3464,7 @@ icons:
     sizes:
       - 32
   - name: movement
-    friendly_name: movement
+    friendly_name: Movement
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2253,8 +3472,17 @@ icons:
       - movement
     sizes:
       - 32
+  - name: music
+    friendly_name: Music
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - music
+    sizes:
+      - 32
   - name: not-sent
-    friendly_name: not-sent
+    friendly_name: Not sent
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2263,33 +3491,136 @@ icons:
     sizes:
       - 32
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: not-sent--filled
+        friendly_name: Not sent filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+  - name: notebook
+    friendly_name: Notebook
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - notebook
+    sizes:
+      - 32
+    variants:
+      - name: notebook--reference
+        friendly_name: Notebook reference
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: number
-    friendly_name: number
+    friendly_name: Number
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - number
     variants:
-      name: small
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
-        - 32
-        - 32
-        - 32
-        - 32
-        - 32
-        - 32
-        - 32
-        - 32
+      - name: number--0
+        friendly_name: Number 0
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--1
+        friendly_name: Number 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--2
+        friendly_name: Number 2
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--3
+        friendly_name: Number 3
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--4
+        friendly_name: Number 4
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--5
+        friendly_name: Number 5
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--6
+        friendly_name: Number 6
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--7
+        friendly_name: Number 7
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--8
+        friendly_name: Number 8
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--9
+        friendly_name: Number 9
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--0
+        friendly_name: Number small 0
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--1
+        friendly_name: Number small 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--2
+        friendly_name: Number small 2
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--3
+        friendly_name: Number small 3
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--4
+        friendly_name: Number small 4
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--5
+        friendly_name: Number small 5
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--6
+        friendly_name: Number small 6
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--7
+        friendly_name: Number small 7
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--8
+        friendly_name: Number small 8
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: number--small--9
+        friendly_name: Number small 9
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: opacity
-    friendly_name: opacity
+    friendly_name: Opacity
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2298,19 +3629,55 @@ icons:
     sizes:
       - 32
   - name: open-panel
-    friendly_name: open-panel
+    friendly_name: Open panel
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - open-panel
     variants:
-      name: top
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: open-panel--bottom
+        friendly_name: Open panel bottom
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: open-panel--filled--bottom
+        friendly_name: Open panel filled bottom
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: open-panel--filled--left
+        friendly_name: Open panel filled left
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: open-panel--filled--right
+        friendly_name: Open panel filled right
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: open-panel--filled--top
+        friendly_name: Open panel filled top
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: open-panel--left
+        friendly_name: Open panel left
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: open-panel--right
+        friendly_name: Open panel right
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: open-panel--top
+        friendly_name: Open panel top
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: package
-    friendly_name: package
+    friendly_name: Package
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2319,19 +3686,25 @@ icons:
     sizes:
       - 32
   - name: page
-    friendly_name: page
+    friendly_name: Page
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - page
     variants:
-      name: last
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: page--first
+        friendly_name: Page first
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: page--last
+        friendly_name: Page last
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: paint-brush
-    friendly_name: paint-brush
+    friendly_name: Paint brush
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2340,7 +3713,7 @@ icons:
     sizes:
       - 32
   - name: panel-expansion
-    friendly_name: panel-expansion
+    friendly_name: Panel expansion
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2349,7 +3722,7 @@ icons:
     sizes:
       - 32
   - name: parent-child
-    friendly_name: parent-child
+    friendly_name: Parent child
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2358,7 +3731,7 @@ icons:
     sizes:
       - 32
   - name: partnership
-    friendly_name: partnership
+    friendly_name: Partnership
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2367,7 +3740,7 @@ icons:
     sizes:
       - 32
   - name: password
-    friendly_name: password
+    friendly_name: Password
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2376,7 +3749,7 @@ icons:
     sizes:
       - 32
   - name: paste
-    friendly_name: paste
+    friendly_name: Paste
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2385,7 +3758,7 @@ icons:
     sizes:
       - 32
   - name: person
-    friendly_name: person
+    friendly_name: Person
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2393,8 +3766,14 @@ icons:
       - person
     sizes:
       - 32
+    variants:
+      - name: person--favorite
+        friendly_name: Person favorite
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: phone
-    friendly_name: phone
+    friendly_name: Phone
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2403,13 +3782,23 @@ icons:
     sizes:
       - 32
     variants:
-      name: 'off'
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: phone--filled
+        friendly_name: Phone filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: phone--off--filled
+        friendly_name: Phone off filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: phone--off
+        friendly_name: Phone off
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: pills
-    friendly_name: pills
+    friendly_name: Pills
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2418,12 +3807,18 @@ icons:
     sizes:
       - 32
     variants:
-      name: subtract
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: pills--add
+        friendly_name: Pills add
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: pills--subtract
+        friendly_name: Pills subtract
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: pin
-    friendly_name: pin
+    friendly_name: Pin
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2432,7 +3827,7 @@ icons:
     sizes:
       - 32
   - name: plane
-    friendly_name: plane
+    friendly_name: Plane
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2441,7 +3836,7 @@ icons:
     sizes:
       - 32
   - name: playlist
-    friendly_name: playlist
+    friendly_name: Playlist
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2450,7 +3845,7 @@ icons:
     sizes:
       - 32
   - name: popup
-    friendly_name: popup
+    friendly_name: Popup
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2459,7 +3854,7 @@ icons:
     sizes:
       - 32
   - name: portfolio
-    friendly_name: portfolio
+    friendly_name: Portfolio
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2468,7 +3863,7 @@ icons:
     sizes:
       - 32
   - name: presentation-file
-    friendly_name: presentation-file
+    friendly_name: Presentation file
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2477,7 +3872,7 @@ icons:
     sizes:
       - 32
   - name: printer
-    friendly_name: printer
+    friendly_name: Printer
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2486,7 +3881,7 @@ icons:
     sizes:
       - 32
   - name: purchase
-    friendly_name: purchase
+    friendly_name: Purchase
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2495,7 +3890,7 @@ icons:
     sizes:
       - 32
   - name: query-queue
-    friendly_name: query-queue
+    friendly_name: Query queue
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2504,7 +3899,7 @@ icons:
     sizes:
       - 32
   - name: quotes
-    friendly_name: quotes
+    friendly_name: Quotes
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2513,7 +3908,7 @@ icons:
     sizes:
       - 32
   - name: radio-button
-    friendly_name: radio-button
+    friendly_name: Radio button
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2522,12 +3917,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: checked
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: radio-button--checked
+        friendly_name: Radio button checked
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: radio
-    friendly_name: radio
+    friendly_name: Radio
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2535,8 +3931,17 @@ icons:
       - radio
     sizes:
       - 32
+  - name: receipt
+    friendly_name: Receipt
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - receipt
+    sizes:
+      - 32
   - name: recently-viewed
-    friendly_name: recently-viewed
+    friendly_name: Recently viewed
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2545,7 +3950,7 @@ icons:
     sizes:
       - 32
   - name: recommend
-    friendly_name: recommend
+    friendly_name: Recommend
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2554,7 +3959,7 @@ icons:
     sizes:
       - 32
   - name: recording
-    friendly_name: recording
+    friendly_name: Recording
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2563,13 +3968,18 @@ icons:
     sizes:
       - 32
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: recording--filled--alt
+        friendly_name: Recording filled alt
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: recording--filled
+        friendly_name: Recording filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: renew
-    friendly_name: renew
+    friendly_name: Renew
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2578,7 +3988,7 @@ icons:
     sizes:
       - 32
   - name: repeat
-    friendly_name: repeat
+    friendly_name: Repeat
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2587,12 +3997,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: one
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: repeat--one
+        friendly_name: Repeat one
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: reply
-    friendly_name: reply
+    friendly_name: Reply
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2601,7 +4012,7 @@ icons:
     sizes:
       - 32
   - name: report
-    friendly_name: report
+    friendly_name: Report
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2610,12 +4021,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: data
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: report--data
+        friendly_name: Report data
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: request-quote
-    friendly_name: request-quote
+    friendly_name: Request quote
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2624,19 +4036,30 @@ icons:
     sizes:
       - 32
   - name: research
-    friendly_name: research
+    friendly_name: Research
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - research
     variants:
-      name: matrix
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: research--bloch-sphere
+        friendly_name: Research bloch sphere
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: research--hinton-plot
+        friendly_name: Research hinton plot
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: research--matrix
+        friendly_name: Research matrix
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: reset
-    friendly_name: reset
+    friendly_name: Reset
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2645,12 +4068,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: alt
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: reset--alt
+        friendly_name: Reset alt
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: restaurant
-    friendly_name: restaurant
+    friendly_name: Restaurant
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2658,20 +4082,37 @@ icons:
       - restaurant
     sizes:
       - 32
+    variants:
+      - name: restaurant--fine
+        friendly_name: Restaurant fine
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: rewind
-    friendly_name: rewind
+    friendly_name: Rewind
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - rewind
     variants:
-      name: '30'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: rewind--10
+        friendly_name: Rewind 10
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: rewind--30
+        friendly_name: Rewind 30
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: rewind--5
+        friendly_name: Rewind 5
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: rocket
-    friendly_name: rocket
+    friendly_name: Rocket
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2680,7 +4121,7 @@ icons:
     sizes:
       - 32
   - name: rotate
-    friendly_name: rotate
+    friendly_name: Rotate
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2689,7 +4130,7 @@ icons:
     sizes:
       - 32
   - name: row
-    friendly_name: row
+    friendly_name: Row
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2698,7 +4139,7 @@ icons:
     sizes:
       - 32
   - name: rss
-    friendly_name: rss
+    friendly_name: Rss
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2707,7 +4148,7 @@ icons:
     sizes:
       - 32
   - name: ruler
-    friendly_name: ruler
+    friendly_name: Ruler
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2716,12 +4157,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: alt
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: ruler--alt
+        friendly_name: Ruler alt
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: run
-    friendly_name: run
+    friendly_name: Run
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2730,7 +4172,7 @@ icons:
     sizes:
       - 32
   - name: scale
-    friendly_name: scale
+    friendly_name: Scale
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2739,7 +4181,7 @@ icons:
     sizes:
       - 32
   - name: scalpel
-    friendly_name: scalpel
+    friendly_name: Scalpel
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2748,7 +4190,7 @@ icons:
     sizes:
       - 32
   - name: scan
-    friendly_name: scan
+    friendly_name: Scan
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2757,7 +4199,7 @@ icons:
     sizes:
       - 32
   - name: screen
-    friendly_name: screen
+    friendly_name: Screen
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2766,12 +4208,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: 'off'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: screen--off
+        friendly_name: Screen off
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: send
-    friendly_name: send
+    friendly_name: Send
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2780,12 +4223,32 @@ icons:
     sizes:
       - 32
     variants:
-      name: filled
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: send--alt--filled
+        friendly_name: Send alt filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: send--alt
+        friendly_name: Send alt
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: send--filled
+        friendly_name: Send filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+  - name: share-knowledge
+    friendly_name: Share knowledge
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - share-knowledge
+    sizes:
+      - 32
   - name: share
-    friendly_name: share
+    friendly_name: Share
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2794,19 +4257,45 @@ icons:
     sizes:
       - 32
   - name: shopping
-    friendly_name: shopping
+    friendly_name: Shopping
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - shopping
     variants:
-      name: catalog
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: shopping--bag
+        friendly_name: Shopping bag
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: shopping--cart
+        friendly_name: Shopping cart
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: shopping--catalog
+        friendly_name: Shopping catalog
+        usage: This is a description for usage
+        sizes:
+          - 32
+  - name: shrink-screen
+    friendly_name: Shrink screen
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - shrink-screen
+    sizes:
+      - 32
+    variants:
+      - name: shrink-screen--filled
+        friendly_name: Shrink screen filled
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: shuffle
-    friendly_name: shuffle
+    friendly_name: Shuffle
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2815,7 +4304,7 @@ icons:
     sizes:
       - 32
   - name: shuttle
-    friendly_name: shuttle
+    friendly_name: Shuttle
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2824,19 +4313,25 @@ icons:
     sizes:
       - 32
   - name: skip
-    friendly_name: skip
+    friendly_name: Skip
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - skip
     variants:
-      name: forward
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: skip--back
+        friendly_name: Skip back
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: skip--forward
+        friendly_name: Skip forward
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: smell
-    friendly_name: smell
+    friendly_name: Smell
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2845,7 +4340,7 @@ icons:
     sizes:
       - 32
   - name: spell-check
-    friendly_name: spell-check
+    friendly_name: Spell check
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2854,7 +4349,7 @@ icons:
     sizes:
       - 32
   - name: split-screen
-    friendly_name: split-screen
+    friendly_name: Split screen
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2862,8 +4357,17 @@ icons:
       - split-screen
     sizes:
       - 32
+  - name: spray-paint
+    friendly_name: Spray paint
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - spray-paint
+    sizes:
+      - 32
   - name: store
-    friendly_name: store
+    friendly_name: Store
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2872,7 +4376,7 @@ icons:
     sizes:
       - 32
   - name: table
-    friendly_name: table
+    friendly_name: Table
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2881,12 +4385,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: split
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: table--split
+        friendly_name: Table split
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: table-of-contents
-    friendly_name: table-of-contents
+    friendly_name: Table of contents
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2895,7 +4400,7 @@ icons:
     sizes:
       - 32
   - name: tag
-    friendly_name: tag
+    friendly_name: Tag
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2904,12 +4409,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: group
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: tag--group
+        friendly_name: Tag group
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: task
-    friendly_name: task
+    friendly_name: Task
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2918,7 +4424,7 @@ icons:
     sizes:
       - 32
   - name: taste
-    friendly_name: taste
+    friendly_name: Taste
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2927,7 +4433,7 @@ icons:
     sizes:
       - 32
   - name: taxi
-    friendly_name: taxi
+    friendly_name: Taxi
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2936,7 +4442,7 @@ icons:
     sizes:
       - 32
   - name: temperature
-    friendly_name: temperature
+    friendly_name: Temperature
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2945,7 +4451,7 @@ icons:
     sizes:
       - 32
   - name: template
-    friendly_name: template
+    friendly_name: Template
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2954,7 +4460,7 @@ icons:
     sizes:
       - 32
   - name: terminal
-    friendly_name: terminal
+    friendly_name: Terminal
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2963,31 +4469,158 @@ icons:
     sizes:
       - 32
   - name: text
-    friendly_name: text
+    friendly_name: Text
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - text
     variants:
-      name: wrap
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: text--align--center
+        friendly_name: Text align center
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--align--left
+        friendly_name: Text align left
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--align--right
+        friendly_name: Text align right
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--all-caps
+        friendly_name: Text all caps
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--bold
+        friendly_name: Text bold
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--color
+        friendly_name: Text color
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--creation
+        friendly_name: Text creation
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--fill
+        friendly_name: Text fill
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--highlight
+        friendly_name: Text highlight
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--indent--less
+        friendly_name: Text indent less
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--indent--more
+        friendly_name: Text indent more
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--indent
+        friendly_name: Text indent
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--italic
+        friendly_name: Text italic
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--kerning
+        friendly_name: Text kerning
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--leading
+        friendly_name: Text leading
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--line-spacing
+        friendly_name: Text line spacing
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--scale
+        friendly_name: Text scale
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--selection
+        friendly_name: Text selection
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--small-caps
+        friendly_name: Text small caps
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--strikethrough
+        friendly_name: Text strikethrough
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--subscript
+        friendly_name: Text subscript
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--superscript
+        friendly_name: Text superscript
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--tracking
+        friendly_name: Text tracking
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--underline
+        friendly_name: Text underline
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: text--wrap
+        friendly_name: Text wrap
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: thumbnail
-    friendly_name: thumbnail
+    friendly_name: Thumbnail
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - thumbnail
     variants:
-      name: '2'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: thumbnail--1
+        friendly_name: Thumbnail 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: thumbnail--2
+        friendly_name: Thumbnail 2
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: thumbs-down
-    friendly_name: thumbs-down
+    friendly_name: Thumbs down
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -2996,7 +4629,7 @@ icons:
     sizes:
       - 32
   - name: thumbs-up
-    friendly_name: thumbs-up
+    friendly_name: Thumbs up
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3005,7 +4638,7 @@ icons:
     sizes:
       - 32
   - name: ticket
-    friendly_name: ticket
+    friendly_name: Ticket
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3014,7 +4647,7 @@ icons:
     sizes:
       - 32
   - name: time
-    friendly_name: time
+    friendly_name: Time
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3023,7 +4656,7 @@ icons:
     sizes:
       - 32
   - name: timer
-    friendly_name: timer
+    friendly_name: Timer
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3032,7 +4665,7 @@ icons:
     sizes:
       - 32
   - name: tool-box
-    friendly_name: tool-box
+    friendly_name: Tool box
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3041,7 +4674,7 @@ icons:
     sizes:
       - 32
   - name: tools
-    friendly_name: tools
+    friendly_name: Tools
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3050,19 +4683,25 @@ icons:
     sizes:
       - 32
   - name: touch
-    friendly_name: touch
+    friendly_name: Touch
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - touch
     variants:
-      name: '2'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: touch--1
+        friendly_name: Touch 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: touch--2
+        friendly_name: Touch 2
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: train
-    friendly_name: train
+    friendly_name: Train
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3071,7 +4710,7 @@ icons:
     sizes:
       - 32
   - name: translate
-    friendly_name: translate
+    friendly_name: Translate
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3080,7 +4719,7 @@ icons:
     sizes:
       - 32
   - name: tree-view
-    friendly_name: tree-view
+    friendly_name: Tree view
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3089,7 +4728,7 @@ icons:
     sizes:
       - 32
   - name: unlink
-    friendly_name: unlink
+    friendly_name: Unlink
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3097,8 +4736,21 @@ icons:
       - unlink
     sizes:
       - 32
+  - name: user-profile
+    friendly_name: User profile
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - user-profile
+    variants:
+      - name: user-profile--alt
+        friendly_name: User profile alt
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: van
-    friendly_name: van
+    friendly_name: Van
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3107,7 +4759,7 @@ icons:
     sizes:
       - 32
   - name: video
-    friendly_name: video
+    friendly_name: Video
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3116,13 +4768,33 @@ icons:
     sizes:
       - 32
     variants:
-      name: 'off'
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: video--add
+        friendly_name: Video add
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: video--chat
+        friendly_name: Video chat
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: video--filled
+        friendly_name: Video filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: video--off--filled
+        friendly_name: Video off filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: video--off
+        friendly_name: Video off
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: visual-recognition
-    friendly_name: visual-recognition
+    friendly_name: Visual recognition
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3131,7 +4803,7 @@ icons:
     sizes:
       - 32
   - name: voicemail
-    friendly_name: voicemail
+    friendly_name: Voicemail
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3140,20 +4812,45 @@ icons:
     sizes:
       - 32
   - name: volume
-    friendly_name: volume
+    friendly_name: Volume
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - volume
     variants:
-      name: up
-      usage: This is a description for usage
-      sizes:
-        - 32
-        - 32
+      - name: volume--down--filled
+        friendly_name: Volume down filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: volume--down
+        friendly_name: Volume down
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: volume--mute--filled
+        friendly_name: Volume mute filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: volume--mute
+        friendly_name: Volume mute
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: volume--up--filled
+        friendly_name: Volume up filled
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: volume--up
+        friendly_name: Volume up
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: wallet
-    friendly_name: wallet
+    friendly_name: Wallet
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3162,7 +4859,7 @@ icons:
     sizes:
       - 32
   - name: watch
-    friendly_name: watch
+    friendly_name: Watch
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3171,7 +4868,7 @@ icons:
     sizes:
       - 32
   - name: watson
-    friendly_name: watson
+    friendly_name: Watson
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3180,12 +4877,13 @@ icons:
     sizes:
       - 32
     variants:
-      name: machine-learning
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: watson--machine-learning
+        friendly_name: Watson machine learning
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: 3D-Cursor
-    friendly_name: 3D-Cursor
+    friendly_name: 3 d cursor
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3194,7 +4892,7 @@ icons:
     sizes:
       - 32
   - name: 3D-MPR-Toggle
-    friendly_name: 3D-MPR-Toggle
+    friendly_name: 3 d mpr toggle
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3203,19 +4901,30 @@ icons:
     sizes:
       - 32
   - name: 3D-curve
-    friendly_name: 3D-curve
+    friendly_name: 3 d curve
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - 3D-curve
     variants:
-      name: manual
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: 3D-curve--auto-colon
+        friendly_name: 3 d curve auto colon
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: 3D-curve--auto-vessels
+        friendly_name: 3 d curve auto vessels
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: 3D-curve--manual
+        friendly_name: 3 d curve manual
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: 3rd-party-connected
-    friendly_name: 3rd-party-connected
+    friendly_name: 3rd party connected
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3224,7 +4933,7 @@ icons:
     sizes:
       - 32
   - name: angle
-    friendly_name: angle
+    friendly_name: Angle
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3233,7 +4942,7 @@ icons:
     sizes:
       - 32
   - name: annotation-visibility
-    friendly_name: annotation-visibility
+    friendly_name: Annotation visibility
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3242,7 +4951,7 @@ icons:
     sizes:
       - 32
   - name: arrow-annotation
-    friendly_name: arrow-annotation
+    friendly_name: Arrow annotation
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3251,7 +4960,7 @@ icons:
     sizes:
       - 32
   - name: auto-scroll
-    friendly_name: auto-scroll
+    friendly_name: Auto scroll
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3260,19 +4969,30 @@ icons:
     sizes:
       - 32
   - name: cd
-    friendly_name: cd
+    friendly_name: Cd
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - cd
     variants:
-      name: create-exchange
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: cd--archive
+        friendly_name: Cd archive
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cd--create-archive
+        friendly_name: Cd create archive
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: cd--create-exchange
+        friendly_name: Cd create exchange
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: circle-measurement
-    friendly_name: circle-measurement
+    friendly_name: Circle measurement
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3281,7 +5001,7 @@ icons:
     sizes:
       - 32
   - name: cobb-angle
-    friendly_name: cobb-angle
+    friendly_name: Cobb angle
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3290,7 +5010,7 @@ icons:
     sizes:
       - 32
   - name: cross-reference
-    friendly_name: cross-reference
+    friendly_name: Cross reference
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3299,19 +5019,25 @@ icons:
     sizes:
       - 32
   - name: dicom
-    friendly_name: dicom
+    friendly_name: Dicom
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - dicom
     variants:
-      name: overlay
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: dicom--6000
+        friendly_name: Dicom 6000
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: dicom--overlay
+        friendly_name: Dicom overlay
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: edit-filter
-    friendly_name: edit-filter
+    friendly_name: Edit filter
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3320,7 +5046,7 @@ icons:
     sizes:
       - 32
   - name: fusion-blender
-    friendly_name: fusion-blender
+    friendly_name: Fusion blender
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3329,7 +5055,7 @@ icons:
     sizes:
       - 32
   - name: hanging-protocol
-    friendly_name: hanging-protocol
+    friendly_name: Hanging protocol
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3338,7 +5064,7 @@ icons:
     sizes:
       - 32
   - name: iCA-3D
-    friendly_name: iCA-3D
+    friendly_name: I ca 3 d
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3347,19 +5073,30 @@ icons:
     sizes:
       - 32
   - name: launch-study
-    friendly_name: launch-study
+    friendly_name: Launch study
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - launch-study
     variants:
-      name: '3'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: launch-study--1
+        friendly_name: Launch study 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: launch-study--2
+        friendly_name: Launch study 2
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: launch-study--3
+        friendly_name: Launch study 3
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: magnify
-    friendly_name: magnify
+    friendly_name: Magnify
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3368,7 +5105,7 @@ icons:
     sizes:
       - 32
   - name: page-scroll
-    friendly_name: page-scroll
+    friendly_name: Page scroll
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3377,19 +5114,25 @@ icons:
     sizes:
       - 32
   - name: pet-image
-    friendly_name: pet-image
+    friendly_name: Pet image
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - pet-image
     variants:
-      name: O
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: pet-image--B
+        friendly_name: Pet image b
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: pet-image--O
+        friendly_name: Pet image o
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: pointer-text
-    friendly_name: pointer-text
+    friendly_name: Pointer text
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3397,8 +5140,26 @@ icons:
       - pointer-text
     sizes:
       - 32
+  - name: region-analysis
+    friendly_name: Region analysis
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - region-analysis
+    variants:
+      - name: region-analysis--area
+        friendly_name: Region analysis area
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: region-analysis--volume
+        friendly_name: Region analysis volume
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: spine-label
-    friendly_name: spine-label
+    friendly_name: Spine label
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3407,7 +5168,7 @@ icons:
     sizes:
       - 32
   - name: stacked-move
-    friendly_name: stacked-move
+    friendly_name: Stacked move
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3416,19 +5177,25 @@ icons:
     sizes:
       - 32
   - name: stacked-scrolling
-    friendly_name: stacked-scrolling
+    friendly_name: Stacked scrolling
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - stacked-scrolling
     variants:
-      name: '2'
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: stacked-scrolling--1
+        friendly_name: Stacked scrolling 1
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: stacked-scrolling--2
+        friendly_name: Stacked scrolling 2
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: stress-breath-editor
-    friendly_name: stress-breath-editor
+    friendly_name: Stress breath editor
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3437,31 +5204,53 @@ icons:
     sizes:
       - 32
   - name: study
-    friendly_name: study
+    friendly_name: Study
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - study
     variants:
-      name: skip
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: study--next
+        friendly_name: Study next
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: study--previous
+        friendly_name: Study previous
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: study--skip
+        friendly_name: Study skip
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: window
-    friendly_name: window
+    friendly_name: Window
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - window
     variants:
-      name: overlay
-      usage: This is a description for usage
-      sizes:
-        - 32
+      - name: window--auto
+        friendly_name: Window auto
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: window--base
+        friendly_name: Window base
+        usage: This is a description for usage
+        sizes:
+          - 32
+      - name: window--overlay
+        friendly_name: Window overlay
+        usage: This is a description for usage
+        sizes:
+          - 32
   - name: zoom-pan
-    friendly_name: zoom-pan
+    friendly_name: Zoom pan
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3470,7 +5259,7 @@ icons:
     sizes:
       - 32
   - name: wikis
-    friendly_name: wikis
+    friendly_name: Wikis
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3479,7 +5268,7 @@ icons:
     sizes:
       - 32
   - name: wireless-checkout
-    friendly_name: wireless-checkout
+    friendly_name: Wireless checkout
     usage: This is a description for usage
     categories:
       - example cateogry
@@ -3488,11 +5277,38 @@ icons:
     sizes:
       - 32
   - name: workspace
-    friendly_name: workspace
+    friendly_name: Workspace
     usage: This is a description for usage
     categories:
       - example cateogry
     aliases:
       - workspace
+    sizes:
+      - 32
+  - name: x-axis
+    friendly_name: X axis
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - x-axis
+    sizes:
+      - 32
+  - name: y-axis
+    friendly_name: Y axis
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - y-axis
+    sizes:
+      - 32
+  - name: z-axis
+    friendly_name: Z axis
+    usage: This is a description for usage
+    categories:
+      - example cateogry
+    aliases:
+      - z-axis
     sizes:
       - 32
