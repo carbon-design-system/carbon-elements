@@ -17,6 +17,69 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 <!-- prettier-ignore-end -->
 
+## Setting up your machine
+
+Before getting started, you will need to install some of the tools we use to build the website. These tools also can be used to contribute to some of our other projects, as well! To start off, you'll want to install a version of Node.js `npm`, and `yarn`. These are the powerhouse tools that drive most of the work we do in JavaScript.
+
+While you can install Node.js directly from [their website](https://nodejs.org/en/), we recommend using a tool called [`nvm`](https://github.com/creationix/nvm#install-script). Node.js can change versions multiple times in a year, and this tool helps to easily update to the latest version.
+
+To install `nvm`, you can follow their [install instructions](https://github.com/creationix/nvm#install-script). If this is your first time working in the terminal, all you will need to do is open up your terminal of choice (either Terminal.app or iTerm) and run the following command next to the prompt:
+
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+```
+
+This command will install `nvm` for you, allowing you to run `nvm` commands directly from your terminal. When this command completes, you should see a message that looks like the following:
+
+```bash
+=> Close and reopen your terminal to start using nvm or run the following to use it now:
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+```
+
+After you see this, you will need to run:
+
+```bash
+echo 'export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' > ~/.bash_profile
+```
+
+When this is complete, you should open a new tab in your terminal and close the one that you were using to enter in the commands above.
+
+_Tip: to open a new tab, you can use `CMD`+`T`_
+
+In this new tab, you should be able to run the following command from `nvm`:
+
+```bash
+nvm install v8
+nvm alias default v8
+```
+
+This will install Node.js v8.x and alias is as your default Node.js version.
+
+Now, each time you open the terminal you should be able to run the command `node -v` and see an output that `v8.x.y`. In addition to installing Node.js and the `node` command, this work will also install the `npm` tool for you to use in the terminal.
+
+To find out how to install Yarn, head to [this section]().
+
+### Install Homebrew
+
+[Homebrew](https://brew.sh/) is a tool used for installing software on MacOS machines. Installing this on your machine is completely optional, but it can make it easier to install other tools that might be relevant while working on our projects. To install Homebrew, you can run the following command in your terminal:
+
+```bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Install Yarn
+
+[Yarn](https://yarnpkg.com/en/) is an alternative to the `npm` we use for the website. You can install Yarn by using Homebrew, or by following their install instructions [here](https://yarnpkg.com/en/docs/install#alternatives-stable).
+
+If you're using homebrew, you can install Yarn by running:
+
+```bash
+brew install yarn --without-node
+```
+
 ## Installing dependencies
 
 Carbon Elements is built using a collection of packages all built in the same
