@@ -8,6 +8,7 @@ icons:
       - add
     sizes:
       - 16
+      - 32
     variants:
       - name: add--alt
         friendly_name: Add alt
@@ -29,6 +30,9 @@ icons:
       - app-switcher
     sizes:
       - 16
+      - 20
+      - 24
+      - 32
   - name: apps
     friendly_name: Apps
     usage: This is a description for usage
@@ -121,6 +125,7 @@ icons:
       - asleep
     sizes:
       - 16
+      - 32
     variants:
       - name: asleep--filled
         friendly_name: Asleep filled
@@ -136,6 +141,7 @@ icons:
       - attachment
     sizes:
       - 16
+      - 32
   - name: awake
     friendly_name: Awake
     usage: This is a description for usage
@@ -163,6 +169,7 @@ icons:
       - calendar
     sizes:
       - 16
+      - 32
   - name: caret
     friendly_name: Caret
     usage: This is a description for usage
@@ -224,6 +231,7 @@ icons:
       - chat
     sizes:
       - 16
+      - 32
   - name: checkmark
     friendly_name: Checkmark
     usage: This is a description for usage
@@ -233,6 +241,9 @@ icons:
       - checkmark
     sizes:
       - 16
+      - 20
+      - 24
+      - 32
     variants:
       - name: checkmark--filled
         friendly_name: Checkmark filled
@@ -309,6 +320,7 @@ icons:
       - close
     sizes:
       - 16
+      - 32
     variants:
       - name: close--filled
         friendly_name: Close filled
@@ -329,6 +341,7 @@ icons:
       - code
     sizes:
       - 16
+      - 32
   - name: copy
     friendly_name: Copy
     usage: This is a description for usage
@@ -338,6 +351,7 @@ icons:
       - copy
     sizes:
       - 16
+      - 32
     variants:
       - name: copy--file
         friendly_name: Copy file
@@ -363,6 +377,7 @@ icons:
       - document
     sizes:
       - 16
+      - 32
     variants:
       - name: document--add
         friendly_name: Document add
@@ -398,6 +413,7 @@ icons:
       - down-to-bottom
     sizes:
       - 16
+      - 32
   - name: download
     friendly_name: Download
     usage: This is a description for usage
@@ -407,6 +423,7 @@ icons:
       - download
     sizes:
       - 16
+      - 32
   - name: draggable
     friendly_name: Draggable
     usage: This is a description for usage
@@ -416,6 +433,7 @@ icons:
       - draggable
     sizes:
       - 16
+      - 32
   - name: edit
     friendly_name: Edit
     usage: This is a description for usage
@@ -425,6 +443,7 @@ icons:
       - edit
     sizes:
       - 16
+      - 32
   - name: email
     friendly_name: Email
     usage: This is a description for usage
@@ -434,6 +453,7 @@ icons:
       - email
     sizes:
       - 16
+      - 32
   - name: error
     friendly_name: Error
     usage: This is a description for usage
@@ -466,6 +486,7 @@ icons:
       - export
     sizes:
       - 16
+      - 32
   - name: fade
     friendly_name: Fade
     usage: This is a description for usage
@@ -475,6 +496,7 @@ icons:
       - fade
     sizes:
       - 16
+      - 32
   - name: favorite
     friendly_name: Favorite
     usage: This is a description for usage
@@ -484,6 +506,7 @@ icons:
       - favorite
     sizes:
       - 16
+      - 32
     variants:
       - name: favorite--filled
         friendly_name: Favorite filled
@@ -500,6 +523,7 @@ icons:
       - filter
     sizes:
       - 16
+      - 32
     variants:
       - name: filter--edit
         friendly_name: Filter edit
@@ -515,6 +539,7 @@ icons:
       - folder
     sizes:
       - 16
+      - 32
     variants:
       - name: folder--add
         friendly_name: Folder add
@@ -541,6 +566,7 @@ icons:
       - forum
     sizes:
       - 16
+      - 32
   - name: grid
     friendly_name: Grid
     usage: This is a description for usage
@@ -550,6 +576,7 @@ icons:
       - grid
     sizes:
       - 16
+      - 32
   - name: help
     friendly_name: Help
     usage: This is a description for usage
@@ -559,6 +586,7 @@ icons:
       - help
     sizes:
       - 16
+      - 32
     variants:
       - name: help--filled
         friendly_name: Help filled
@@ -575,6 +603,7 @@ icons:
       - information
     sizes:
       - 16
+      - 32
     variants:
       - name: information--filled
         friendly_name: Information filled
@@ -591,6 +620,7 @@ icons:
       - launch
     sizes:
       - 16
+      - 32
   - name: list
     friendly_name: List
     usage: This is a description for usage
@@ -631,6 +661,7 @@ icons:
       - locked
     sizes:
       - 16
+      - 32
   - name: maximize
     friendly_name: Maximize
     usage: This is a description for usage
@@ -640,6 +671,7 @@ icons:
       - maximize
     sizes:
       - 16
+      - 32
   - name: menu
     friendly_name: Menu
     usage: This is a description for usage
@@ -649,6 +681,9 @@ icons:
       - menu
     sizes:
       - 16
+      - 20
+      - 24
+      - 32
   - name: minimize
     friendly_name: Minimize
     usage: This is a description for usage
@@ -658,6 +693,7 @@ icons:
       - minimize
     sizes:
       - 16
+      - 32
   - name: misuse
     friendly_name: Misuse
     usage: This is a description for usage
@@ -667,6 +703,9 @@ icons:
       - misuse
     sizes:
       - 16
+      - 20
+      - 24
+      - 32
     variants:
       - name: misuse--outline
         friendly_name: Misuse outline
@@ -682,6 +721,7 @@ icons:
       - new-tab
     sizes:
       - 16
+      - 32
   - name: notification
     friendly_name: Notification
     usage: This is a description for usage
@@ -691,6 +731,7 @@ icons:
       - notification
     sizes:
       - 16
+      - 32
     variants:
       - name: notification--off
         friendly_name: Notification off
@@ -742,6 +783,7 @@ icons:
       - pause
     sizes:
       - 16
+      - 32
     variants:
       - name: pause--outline--filled
         friendly_name: Pause outline filled
@@ -764,6 +806,7 @@ icons:
       - play
     sizes:
       - 16
+      - 32
     variants:
       - name: play--filled
         friendly_name: Play filled
@@ -792,6 +835,7 @@ icons:
       - power
     sizes:
       - 16
+      - 32
   - name: redo
     friendly_name: Redo
     usage: This is a description for usage
@@ -801,6 +845,9 @@ icons:
       - redo
     sizes:
       - 16
+      - 20
+      - 24
+      - 32
   - name: restart
     friendly_name: Restart
     usage: This is a description for usage
@@ -810,6 +857,7 @@ icons:
       - restart
     sizes:
       - 16
+      - 32
   - name: save
     friendly_name: Save
     usage: This is a description for usage
@@ -819,6 +867,9 @@ icons:
       - save
     sizes:
       - 16
+      - 20
+      - 24
+      - 32
     variants:
       - name: save--annotation
         friendly_name: Save annotation
@@ -844,6 +895,7 @@ icons:
       - search
     sizes:
       - 16
+      - 32
   - name: settings
     friendly_name: Settings
     usage: This is a description for usage
@@ -853,6 +905,7 @@ icons:
       - settings
     sizes:
       - 16
+      - 32
     variants:
       - name: settings--adjust
         friendly_name: Settings adjust
@@ -868,6 +921,7 @@ icons:
       - star
     sizes:
       - 16
+      - 32
     variants:
       - name: star--filled
         friendly_name: Star filled
@@ -890,6 +944,7 @@ icons:
       - stop
     sizes:
       - 16
+      - 32
     variants:
       - name: stop--filled
         friendly_name: Stop filled
@@ -918,6 +973,7 @@ icons:
       - subtract
     sizes:
       - 16
+      - 32
     variants:
       - name: subtract--alt
         friendly_name: Subtract alt
@@ -934,6 +990,7 @@ icons:
       - trash-can
     sizes:
       - 16
+      - 32
   - name: undo
     friendly_name: Undo
     usage: This is a description for usage
@@ -943,6 +1000,9 @@ icons:
       - undo
     sizes:
       - 16
+      - 20
+      - 24
+      - 32
   - name: unlocked
     friendly_name: Unlocked
     usage: This is a description for usage
@@ -952,6 +1012,7 @@ icons:
       - unlocked
     sizes:
       - 16
+      - 32
   - name: up-to-top
     friendly_name: Up to top
     usage: This is a description for usage
@@ -961,6 +1022,7 @@ icons:
       - up-to-top
     sizes:
       - 16
+      - 32
   - name: upload
     friendly_name: Upload
     usage: This is a description for usage
@@ -970,6 +1032,7 @@ icons:
       - upload
     sizes:
       - 16
+      - 32
   - name: user
     friendly_name: User
     usage: This is a description for usage
@@ -979,6 +1042,7 @@ icons:
       - user
     sizes:
       - 16
+      - 32
     variants:
       - name: user--avatar
         friendly_name: User avatar
@@ -1070,6 +1134,7 @@ icons:
       - view
     sizes:
       - 16
+      - 32
     variants:
       - name: view--off
         friendly_name: View off
@@ -1106,6 +1171,7 @@ icons:
       - warning
     sizes:
       - 16
+      - 32
     variants:
       - name: warning--alt--filled
         friendly_name: Warning alt filled
@@ -1500,6 +1566,7 @@ icons:
     aliases:
       - composer-edit
     sizes:
+      - 32
       - 32
   - name: hinton-plot
     friendly_name: Hinton plot
