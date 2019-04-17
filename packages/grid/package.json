@@ -21,7 +21,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "bundler sassdoc 'scss' && bundler inline && bundler check 'scss/*.scss'",
+    "build": "yarn clean && bundler sassdoc 'scss' && bundler inline && bundler check 'scss/*.scss'",
     "clean": "rimraf scss/_inlined scss/vendor"
   },
   "dependencies": {
