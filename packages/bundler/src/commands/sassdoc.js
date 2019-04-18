@@ -21,7 +21,6 @@ async function sassdoc(pattern, { ignore, cwd, json, output } = {}) {
   const files = await glob(pattern, {
     cwd,
     ignore,
-    absolute: true,
   });
 
   if (json) {
