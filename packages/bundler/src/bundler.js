@@ -14,7 +14,9 @@ const packageJson = require('../package.json');
 const bundlers = require('./bundlers');
 const bundle = require('./commands/bundle');
 const check = require('./commands/check');
+const inline = require('./commands/inline');
 const measure = require('./commands/measure');
+const sassdoc = require('./commands/sassdoc');
 
 async function bundler({ argv, cwd: getWorkingDirectory }) {
   const cwd = getWorkingDirectory();
@@ -25,7 +27,6 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
     .version(packageJson.version)
     .usage('<command> [options]');
 
-  // check package(s) to see if scss files compile
   program
     .command('check <glob>')
     .description('check that each file can be compiled')
@@ -36,6 +37,37 @@ async function bundler({ argv, cwd: getWorkingDirectory }) {
         cwd,
         list: cmd.list || false,
         ignore: cmd.ignore || [],
+      })
+    );
+
+  program
+    .command('sassdoc <glob>')
+    .description('generate sassdoc as markdown')
+    .option('-i, --ignore <glob>', 'pass in a glob of files to ignore')
+    .option('-j, --json', 'output as json file')
+    .option('-o, --output <dir>', 'specify the directory to output the files')
+    .action((pattern, cmd) =>
+      sassdoc(pattern, {
+        cwd,
+        ignore: cmd.ignore || [],
+        json: cmd.json || false,
+        output: cmd.output || 'docs',
+      })
+    );
+
+  program
+    .command('inline')
+    .description(
+      'inline sass dependencies from package.json in a target folder'
+    )
+    .option(
+      '-o, --output <dir>',
+      'the directory to output inlined sass dependencies',
+      'scss'
+    )
+    .action(cmd =>
+      inline(cleanArgs(cmd), {
+        cwd,
       })
     );
 
