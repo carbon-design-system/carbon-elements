@@ -1,0 +1,2819 @@
+icons:
+
+  - name: add
+    aliases:
+    - plus
+    - positive
+    - addition
+    - increase
+  - name: app-switcher
+    aliases:
+    - switcher
+    - drawer
+    - 9 dot
+  - name: apps
+    aliases:
+    - application
+    - drawer
+    - 9 dot
+    - 9 square
+  - name: arrow
+    aliases:
+    - direction
+    - point
+  - name: arrows
+   aliases:
+    - direction
+    - point
+  - name: asleep
+   aliases:
+    - night
+    - moon
+    - sleep
+    - rest
+    - dark
+  - name: attachment
+   aliases:
+    - paper clip
+    - attach
+    - file
+    - affix
+    - add
+  - name: awake
+   aliases:
+    - sun
+    - active
+    - day
+    - bright
+  - name: back-to-top
+   aliases:
+    - up
+    - scroll up
+  - name: calendar
+   aliases:
+    - date
+    - schedule
+    - day
+    - time
+    - month
+    - year
+  - name: caret
+   aliases:
+    - pointer
+    - open
+    - close
+    - expand
+    - collapse
+  - name: chat
+   aliases:
+   - sms
+   - text
+   - bubble
+   - bot
+   - speak
+  - name: checkmark
+   aliases:
+   - approved
+   - yes
+   - valid
+   - status
+  - name: chevron
+   aliases:
+   - open
+   - close
+   - expand
+   - collapse
+  - name: close
+   aliases:
+   - X
+   - dismiss
+   - deny
+   - denied
+   - ex
+  - name: code
+   aliases:
+   - </>
+   - html
+   - java
+   - css
+   - dev
+   - development
+  - name: copy
+   aliases:
+   - duplicate
+   - clipboard
+   - copied
+  - name: delete
+   aliases:
+   - trash can
+   - remove
+   - trash
+   - edit
+  - name: document
+   aliases:
+   - file
+   - doc
+   - paper
+  - name: down-to-bottom
+   aliases:
+   - jump to bottom
+   - down
+   - footer
+  - name: download
+   aliases:
+   - install
+  - name: draggable
+   aliases:
+   - handle
+   - drag
+  - name: edit
+   aliases:
+   - modify
+   - pencil
+   - change
+  - name: email
+   aliases:
+   - mail
+   - contact
+   - envelope
+   - post
+   - send
+  - name: error
+   aliases:
+   - state
+   - stop
+   - alert
+   - issue
+  - name: export
+   aliases:
+   - ship
+   - send
+   - out
+  - name: fade
+   aliases:
+   - dim
+   - vanish
+   - remove
+   - dissolve
+   - disappear
+  - name: favorite
+   aliases:
+   - heart
+   - save
+   - like
+   - fave
+   - bookmark
+  - name: filter
+   aliases:
+   - settings
+   - refine
+   - funnel
+   - adjust
+   - modify
+   - set
+  - name: folder
+   aliases:
+   - file
+   - save
+   - document
+   - organize
+  - name: forum
+   aliases:
+   - chat
+   - talk
+   - discuss
+   - conference
+  - name: grid
+   aliases:
+   - align
+   - boxes
+   - 4 boxes
+   - 2x grid
+   - pattern
+  - name: help
+   aliases:
+   - support
+   - question
+   - assist
+   - more info
+  - name: information
+   aliases:
+   - info
+   - learn
+   - more
+   - tip
+   - help
+  - name: launch
+   aliases:
+   - open
+   - new window
+   - window
+   - expand
+  - name: list
+   aliases:
+   - bullet
+   - agenda
+   - checklist
+   - file
+   - index
+   - inventory
+   - table
+   - tally
+  - name: locked
+   aliases:
+   - lock
+   - seal
+   - hidden
+   - edit
+   - padlock
+  - name: maximize
+   aliases:
+   - enlarge
+   - full screen
+   - expand
+   - magnify
+   - stretch
+   - open
+   - minimize
+  - name: menu
+   aliases:
+   - left nav
+   - drawer
+   - list
+   - nav
+   - navigation
+  - name: minimize
+   aliases:
+   - close
+   - small
+   - shrink
+   - maximize
+  - name: misuse
+   aliases:
+   - X
+   - close
+   - error
+   - don't
+  - name: new-tab
+   aliases:
+   - open
+   - expand
+   - view
+   - browser
+   - window
+  - name: notification
+   aliases:
+   - alert
+   - bell
+   - sound
+   - mute
+   - chime
+   - noise
+  - name: overflow-menu
+   aliases:
+   - show more
+   - options
+   - extra
+   - hidden
+  - name: pause
+   aliases:
+   - stop
+   - play
+   - music
+   - control
+  - name: play
+   aliases:
+   - start
+   - stop
+   - music
+   - control
+  - name: power
+   aliases:
+   - on
+   - off
+   - start
+   - stop
+  - name: redo
+   aliases:
+   - restart
+   - return
+   - back
+   - revert
+   - undo
+  - name: restart
+   aliases:
+   - undo
+   - rever
+   - refresh
+  - name: save
+   aliases:
+   - floppy
+   - floppy disk
+   - progress
+   - safe
+   - memory
+   - intact
+   - preserve
+
+  - name: search
+    aliases:
+      - find
+      - investigate
+      - explore
+      - look
+
+  - name: settings
+    aliases:
+      - preferences
+      - options
+      - alternatives
+
+  - name: star
+    aliases:
+      - favorite
+      - progress
+      - rate
+      - rating
+      - saved
+      - starred
+
+  - name: stop
+    aliases:
+      - block
+      - break
+      - close
+      - cease
+      - control
+      - pause
+      - conclude
+
+  - name: subtract
+    aliases:
+      - minus
+      - remove
+      - deduct
+      - withold
+      - decrease
+      - diminish
+      - discount
+      - remove
+      - take
+
+  - name: trash-can
+    aliases:
+      - trash
+      - waste
+      - delete
+      - litter
+      - bin
+      - wastebin
+      - destroy
+      - remove
+
+  - name: undo
+    aliases:
+      - go back
+      - revert
+      - back
+
+  - name: unlocked
+    aliases:
+      - open
+      - lock
+      - opened
+
+  - name: up-to-top
+    aliases:
+      - top
+      - top of page
+      - page up
+      - up chevron
+      - up
+
+  - name: upload
+    aliases:
+      - transfer
+      - connect
+      - exchange
+      - send
+      - sync
+      - transmit
+      - load
+
+  - name: user
+    aliases:
+      - person
+      - avatar
+      - man
+      - woman
+      - figure
+      - profile
+      - account
+      - my account
+
+  - name: view
+    aliases:
+      - eye
+      - eyeball
+      - examine
+      - look
+      - inspect
+
+  - name: warning
+    aliases:
+      - halt
+      - stop
+      - caution
+      - danger
+      - warn
+      - alert
+      - notification
+
+  - name: zoom
+    aliases:
+      - expand
+      - inspect
+      - size
+      - enlarge
+      - detail
+
+  - name: 4K
+    aliases:
+      - four k
+      - resolution
+      - pixels
+      - HD
+      - high definition
+
+  - name: API
+    aliases:
+      - Application Programming Interface
+      - tool
+      - application
+      - programming
+      - interface
+      - file
+      - file type
+
+
+  - name: CAD
+    aliases:
+      - computer aided design
+      - canada
+      - canadian dollar
+      - dollar
+      - money
+      - design
+      - print
+      - file
+      - file type
+
+  - name: CSV
+    aliases:
+      - file
+      - file type
+      - comma
+      - separated
+      - variable
+      - spreadsheet
+      - data
+
+  - name: DVR
+    aliases:
+      - record
+      - digital
+      - video
+      - recorder
+      - cable
+      - TV
+
+  - name: GIF
+    aliases:
+      - file
+      - file type
+      - move
+
+  - name: HD
+    aliases:
+      - high
+      - def
+      - definition
+      - high quality
+      - 4K
+
+  - name: HDR
+    aliases:
+      - high
+      - dynamic
+      - range
+      - color
+      - HD
+
+  - name: HTTP
+    aliases:
+      - internet
+      - web
+      - cert
+      - certificate
+      - website
+      - site
+      - URL
+
+  - name: ISO
+    aliases:
+      - photo
+      - sensitivity
+      - light
+      - camera
+
+  - name: JPG
+    aliases:
+      - file
+      - type
+      - format
+      - pic
+      - picture
+      - photo
+      - image
+      - compress
+
+  - name: JSON
+    aliases:
+      - javascript
+      - object
+      - notation
+      - file
+      - type
+      - format
+      - data
+
+  - name: MOV
+    aliases:
+      - movie
+      - video
+      - file
+      - type
+      - film
+      - format
+
+  - name: MP3
+    aliases:
+      - music
+      - audio
+      - song
+      - compress
+      - file
+      - type
+
+  - name: MP4
+    aliases:
+      - movie
+      - video
+      - file
+      - type
+      - film
+      - format
+
+  - name: PDF
+    aliases:
+      - document
+      - doc
+      - compress
+      - portable
+      - document
+      - format
+
+  - name: PNG
+    aliases:
+      - file
+      - type
+      - format
+      - pic
+      - picture
+      - photo
+      - image
+      - compress
+
+  - name: H
+    aliases:
+      - letter
+      - alphabet
+
+  - name: S
+    aliases:
+      - standard
+      - letter
+      - alphabet
+      - alt
+
+  - name: T
+    aliases:
+      - letter
+      - alphabet
+      - alt
+
+  - name: U1
+    aliases:
+      - Q
+
+  - name: U2
+    aliases:
+      - Q
+
+  - name: U3
+    aliases:
+      - Q
+
+  - name: X
+    aliases:
+      - alphabet
+      - letter
+      - cross
+
+  - name: 'Y'
+    aliases:
+      - alphabet
+      - letter
+
+  - name: Z
+    aliases:
+      - alphabet
+      - letter
+
+  - name: barrier
+    aliases:
+      - wall
+      - fence
+      - block
+      - stop
+      - divide
+
+  - name: bloch-sphere
+    aliases:
+      - Q
+      - bloch
+      - sphere
+
+  - name: cU1
+    aliases:
+      - Q
+      - c
+      - u
+      - one
+
+  - name: cU3
+    aliases:
+      - q
+      - c
+      - u
+      - three
+
+  - name: cY
+    aliases:
+      - Q
+      - c
+      - y
+
+  - name: cZ
+    aliases:
+      - Q
+      - c
+      - z
+
+  - name: ccX
+    aliases:
+      - Q
+      - cc
+      - c
+      - X
+
+  - name: circuit-composer
+    aliases:
+      - Q
+      - H
+      - circuit
+      - composer
+
+  - name: composer-edit
+    aliases:
+    - Q
+    - circuit
+    - composer
+    - edit
+
+  - name: hinton-plot
+    aliases:
+    - Q
+    - hinton
+    - plot
+    - grid
+
+  - name: iD
+    aliases:
+      - identification
+      - identity
+
+  - name: matrix
+    aliases:
+      - cast
+      - grid
+      - model
+      - binary
+
+  - name: operation
+    aliases:
+      - meter
+      - gauge
+      - indicator
+      - bracket
+  - name: RAW
+    aliases:
+      - format
+      - unedited
+
+  - name: SQL
+    aliases:
+      - database
+      - query
+
+  - name: SVG
+    aliases:
+      - format
+      - image
+      - vector
+
+  - name: TIF
+    aliases:
+      - format
+      - image
+
+  - name: TSV
+    aliases:
+      - format
+      - data
+      - database
+      - spreadsheet
+
+  - name: TXT
+    aliases:
+      - text
+      - format
+      - string
+
+  - name: USB
+    aliases:
+      - connector
+      - protocol
+      - connection
+      - bus
+      - port
+
+  - name: VPN
+    aliases:
+      - protocol
+      - virtual
+      - network
+      - connection
+      - secure
+      - internet
+
+  - name: WMV
+    aliases:
+      - format
+      - music
+      - video
+      - codec
+
+  - name: XLS
+    aliases:
+      - excel
+      - format
+      - spreadsheet
+
+  - name: XML
+    aliases:
+      - format
+      - markup
+      - language
+      - HTML
+
+  - name: ZIP
+    aliases:
+      - compress
+      - format
+
+  - name: accessibility
+    aliases:
+      - wheelchair
+      - convenience
+      - accessible
+
+  - name: activity
+    aliases:
+      - line chart
+      - vital
+      - action
+      - heartbeat
+
+  - name: add-comment
+    aliases:
+      - add
+      - comment
+      - chat
+      - bubble
+
+  - name: alarm
+    aliases:
+      - clock
+      - timer
+      - time
+      - alert
+
+  - name: analytics
+    aliases:
+      - line chart
+      - trend
+      - graph
+      - analyze
+      - data
+
+  - name: aperture
+    aliases:
+      - eye
+      - camera
+      - pinhole
+      - pinwheel
+
+  - name: api
+    aliases:
+      - program
+      - tool
+      - application
+      - format
+      - interface
+      - protocol
+      - connect
+      - group
+      - network
+
+  - name: application
+    aliases:
+      - box
+      - app
+      - interface
+
+  - name: archive
+    aliases:
+      - drawer
+      - server
+      - stack
+      - tower
+      - file cabinet
+
+  - name: arrival
+    aliases:
+      - plane
+      - landing
+      - descend
+
+  - name: asset
+    aliases:
+      - runtime
+      - wheel
+      - tape
+      - roll
+
+  - name: at
+    aliases:
+      - at
+      - @
+
+  - name: bar
+    aliases:
+      - drink
+      - alcohol
+      - cocktail
+      - wine
+
+  - name: battery
+    aliases:
+      - charging
+      - power
+
+  - name: bee
+    aliases:
+      - ibm
+      - fly
+      - honey
+      - bumblebee
+      - drone
+      - insect
+
+  - name: bicycle
+    aliases:
+      - bike
+      - cycle
+      - wheels
+      - transport
+      - transportation
+
+  - name: binoculars
+    aliases:
+      - search
+      - vision
+      - field
+      - glasses
+      - zoom
+
+  - name: blog
+    aliases:
+      - writing
+      - journal
+      - site
+      - layout
+      - page
+
+  - name: bluetooth
+    aliases:
+      - wireless
+      - connect
+      - blue
+      - tooth
+
+  - name: bookmark
+    aliases:
+      - flag
+      - marker
+
+  - name: box
+    aliases:
+      - file
+      - archive
+      - office
+
+  - name: brightness-contrast
+    aliases:
+      - sun
+      - bright
+      - light
+      - dark
+      - contrast
+      - opposite
+
+  - name: building
+    aliases:
+      - factory
+      - architecture
+      - office
+
+  - name: bullhorn
+    aliases:
+      - announcement
+      - announce
+      - broadcast
+      - news
+      - release
+      - notify
+      - decare
+      - blast
+      - speaker
+
+  - name: bus
+    aliases:
+      - transport
+      - transportation
+      - travel
+      - public
+
+  - name: cafe
+    aliases:
+      - coffee
+      - caffine
+      - drink
+      - espresso
+      - brew
+      - mocha
+
+  - name: calculator
+    aliases:
+      - calculate
+      - PDA
+      - computer
+
+  - name: calibrate
+    aliases:
+      - caliper
+      - measure
+      - measurement
+      - adjust
+      - gauge
+
+  - name: camera
+    aliases:
+      - photo
+      - photography
+      - image
+      - record
+      - picture
+      - snapshot
+
+  - name: car
+    aliases:
+      - transport
+      - private
+      - automobile
+      - jeep
+      - ride
+      - pickup
+
+  - name: carousel
+    aliases:
+      - roundabout
+      - ride
+      - image
+      - gallery
+      - sequence
+
+  - name: catalog
+    aliases:
+      - book
+      - menu
+      - inventory
+      - index
+      - schedule
+
+  - name: catalog
+    aliases:
+     - notebook
+     - book
+     - list
+     - schedule
+  - name: categories
+    aliases:
+     - group
+     - section
+     - class
+     - department
+  - name: chart
+    aliases:
+     - graph
+     - bar
+     - data
+  - name: checkbox
+    aliases:
+     - check
+     - box
+  - name: chemistry
+    aliases:
+     - science
+     - flask
+     - glass
+  - name: chip
+    aliases:
+     - microchip
+     - computer chip
+  - name: circle-dash
+    aliases:
+     - circle
+     - dash
+     - dashed line
+  - name: classifier
+    aliases:
+     - measure word
+     - counter word
+  - name: closed-caption
+    aliases:
+     - caption
+     - closed
+     - cc
+  - name: cloud
+    aliases:
+     - donwload
+     - compute
+     - data
+     - hybrid
+  - name: cloud-foundry
+    aliases:
+     - platform
+     - multi cloud
+     - cloud
+     - foundry
+  - name: cognitive
+    aliases:
+     - brain
+     - idea
+     - think
+     - mind
+  - name: collaborate
+    aliases:
+     - people
+     - cooperate
+     - relation
+     - coworker
+     - rotate
+     - shift
+  - name: color-palette
+    aliases:
+     - paint palette
+     - paint
+     - palette
+  - name: column
+    aliases:
+     - grid
+     - lines
+     - structure
+  - name: compare
+    aliases:
+     - arrows
+     - exchange
+     - merge
+     - match
+     - files
+     - documents
+  - name: compass
+    aliases:
+     - direction
+     - navigation
+     - explore
+     - navigate
+     - destination
+     - guide
+  - name: connect
+    aliases:
+     - network
+     - link
+     - join
+     - attach
+     - associate
+  - name: connection-signal
+    aliases:
+     - signal
+     - tower
+     - service
+     - station
+     - radio
+     - connection
+     - wireless
+     - network
+  - name: contrast
+    aliases:
+     - brightness
+     - darkness
+     - sun
+     - light
+     - dark
+     - comparison
+  - name: corner
+    aliases:
+     - frame
+     - flourish
+     - squares
+     - connection
+     - edge
+     - intersection
+     - decoration
+  - name: crop
+    aliases:
+     - cut
+     - trim
+     - picture
+     - tool
+     - cropping
+     - editing
+     - photo
+  - name: cursor
+    aliases:
+     - mouse
+     - arrow
+     - direction
+     - mouse
+     - click
+     - pointer
+  - name: cut
+    aliases:
+     - scissors
+     - cutting
+     - snip
+     - trim
+     - shear
+     - clippers
+  - name: dashboard
+    aliases:
+     - gauge
+     - ui
+     - control panel
+     - analytics
+     - metrics
+     - interface
+     - overview
+     - wireframe
+  - name: data
+    aliases:
+     - connection
+     - dot
+     - numbers
+     - metrics
+     - characters
+  - name: data-share
+    aliases:
+     - data
+     - share
+     - link
+     - compare
+     - transfer
+     - exchange
+  - name: data-vis
+    aliases:
+     - vis
+     - graph
+     - chart
+     - infographic
+     - analytics
+     - metrics
+     - stats
+     - web
+  - name: debug
+    aliases:
+     - bug
+     - beetle
+     - insect
+     - code bug
+  - name: delivery-truck
+    aliases:
+     - truck
+     - car
+     - delivery
+     - transportation
+     - shopping
+     - van
+     - shipping
+     - ecommerce
+  - name: departure
+    aliases:
+     - plane
+     - airplane
+     - vacation
+     - travel
+     - journey
+     - leave
+  - name: deploy-rules
+    aliases:
+     - rules
+     - deploy
+     - document
+     - instruction
+     - deploy
+  - name: development
+    aliases:
+     - build
+     - pixels
+     - squares
+     - structure
+     - code
+     - html
+     - code
+     - grid
+  - name: devices
+    aliases:
+     - monitor
+     - screen
+     - devices
+     - compatibility
+  - name: diagram
+    aliases:
+     - pie chart
+     - pie
+     - chart
+     - infographic
+     - data vis
+  - name: drag
+    aliases:
+     - expand
+     - drop
+     - move
+     - expand
+     - drop
+     - move
+  - name: draw
+    aliases:
+     - squiggle
+     - drawing
+     - graphic
+     - line
+     - doodle
+  - name: edt-loop
+    aliases:
+     - version
+     - iteration
+     - repeat
+     - loop
+     - editing
+     - recycle
+  - name: education
+   aliases:
+     - graduation
+     - scholarship
+     - student
+     - university
+     - study
+     - school
+     - college
+  - name: erase
+    aliases:
+     - eraser
+     - remove
+     - clear
+     - rubber
+     - change
+     - edit
+     - rubber
+     - format
+  - name: event
+    aliases:
+     - calendar
+     - star
+     - date
+     - favorite
+     - schedule
+  - name: events
+    aliases:
+     - people
+     - team
+     - group
+     - organization
+     - network
+  - name: exam-mode
+    aliases:
+     - dev test
+     - testing
+     - test
+     - exam
+  - name: eyedropper
+    aliases:
+     - dropper
+     - pipette
+     - tester
+     - drop
+  - name: face
+    aliases:
+     - smiley
+     - smile
+     - smiley face
+     - emoji
+     - head
+     - emotion
+  - name: finance
+    aliases:
+     - bank
+     - columns
+     - money
+     - business
+     - corporation
+     - business
+  - name: fingerprint-recognition
+    aliases:
+     - identification
+     - fingerprint
+     - finger
+     - dna
+     - security
+     - touch
+     - identity
+     - mark
+  - name: flag
+    aliases:
+     - country
+     - location
+     - nation
+     - banner
+     - notification
+     - marker
+  - name: flash
+    aliases:
+     - battery
+     - lightning
+     - energy
+     - charge
+     - power
+     - camera
+     - electricity
+     - storm
+  - name: flow
+    aliases:
+     - flow chart
+     - chart
+     - graph
+     - diagram
+     - outline
+  - name: forward
+    aliases:
+     - ahead
+     - future
+     - fast forward
+     - skip
+     - next
+     - fast
+
+  - name: function
+    aliases:
+      - action
+      - behavior
+      - duty
+      - purpose
+      - role
+      - responsibility
+      - objective
+
+  - name: game
+    aliases:
+      - play
+      - match
+      - activity
+      - ballgame
+      - energy
+      - spirit
+
+  - name: globe
+    aliases:
+      - planet
+      - earth
+      - world
+      - map
+      - orb
+
+  - name: group
+    aliases:
+      - category
+      - band
+      - bucket
+      - club
+      - association
+      - bunch
+      - organization
+      - cluster
+
+  - name: headphones
+    aliases:
+      - headset
+      - listening device
+      - listening
+      - ear buds
+      - hearing
+      - transceiver
+
+  - name: headset
+    aliases:
+      - headphones
+      - listening device
+      - listening
+      - ear buds
+      - hearing
+      - console
+      - transceiver
+
+  - name: health-cross
+  aliases:
+      - red cross
+      - medicine
+      - healthcare
+      - medical
+      - ambulance
+
+  - name: hearing
+    aliases:
+      - detecting
+      - ear
+      - headphones
+      - headset
+      - listen
+      - auditory
+      - perception
+      - senses
+
+  - name: home
+    aliases:
+      - detecting
+      - ear
+      - headphones
+      - headset
+      - listen
+      - auditory
+      - perception
+      - senses
+
+  - name: hotel
+    aliases:
+      - hostel
+      - motel
+      - house
+      - inn
+      - lodging
+      - resort
+
+  - name: hourglass
+   aliases:
+      - clock
+      - metronome
+      - timepiece
+      - timer
+      - time
+      - duration
+
+
+  - name: humidity
+    aliases:
+      - weather
+      - damp
+      - dampness
+      - moisture
+      - dew
+      - muggy
+      - mugginess
+      - steaminess
+      - steam
+
+  - name: ibm-cloud
+    aliases:
+      - product
+      - cloud
+      - hybrid
+      - service
+      - offerring
+      - online
+      - internet
+      - brand
+
+  - name: ibm-security
+    aliases:
+      - safe
+      - cyber security
+      - hacking
+      - data security
+      - offerring
+      - product
+      - protection
+      - cyber crime
+      - cyber
+      - secure
+
+  - name: idea
+    aliases:
+      - thought
+      - notion
+      - belief
+      - concept
+      - light bulb
+      - inspiration
+      - opinion
+      - intention
+      - design
+
+  - name: identification
+    aliases:
+      - id
+      - passport
+      - drivers license
+      - recognition
+      - badge
+      - papers
+      - avatar
+
+  - name: image
+    aliases:
+      - appearance
+      - form
+      - drawing
+      - illustration
+      - picture
+      - portrait
+      - likeness
+      - avatar
+
+  - name: industry
+    aliases:
+      - field
+      - business
+      - commerce
+      - corporation
+      - trade
+      - line of work
+      - job
+      - career
+
+  - name: insert
+    aliases:
+      - embed
+      - enter
+      - fill in
+      - paste
+      - inject
+      - include
+      - infuse
+
+  - name: integration
+    aliases:
+      - assimilate
+      - assimilation
+      - amalgamation
+      - synthesis
+      - combination
+      - combine
+      - union
+
+  - name: inventory-management
+   aliases:
+      - supervision
+      - asset management
+      - inventory
+      - dashboard
+      - supply chain
+      - analytics
+      - administration
+      - oversight
+
+  - name: iot
+   aliases:
+      - internet of things
+      - smart objects
+      - connectivity
+      - connected
+      - network
+      - communication
+      - wireless
+      - sensors
+      - analytics
+      - machine learning
+      - smart devices
+      - connect
+      - platform
+
+  - name: keyboard
+    aliases:
+      - console
+      - typing
+      - type
+      - key commands
+      - computer
+      - word processor
+      - write
+
+
+  - name: letter
+    aliases:
+      - alphabet
+      - language
+      - english
+
+  - name: light
+    aliases:
+      - bright
+      - sun
+      - sunny
+      - lightbulb
+      - glow
+      - luminous
+      - lamp
+
+  - name: link
+    aliases:
+      - associate
+      - association
+      - network
+      - connect
+      - join
+      - hookup
+
+  - name: location
+    aliases:
+      - place
+      - locate
+      - gps
+      - destination
+      - map
+      - pin
+      - site
+      - area
+
+  - name: login
+    aliases:
+      - log on
+      - password
+      - enter
+      - sign in
+      - sign on
+      - pin
+      - username
+
+
+  - name: logo
+    aliases:
+      - brand
+      - emblem
+      - logotype
+      - symbol
+      - id
+      - avatar
+      - tag
+      - identification
+
+  - name: logout
+    aliases:
+      - sign off
+      - sign out
+      - log off
+      - quit
+      - exit
+
+  - name: loop
+    aliases:
+      - knot
+      - curl
+      - circuit
+      - bend
+      - coil
+      - curve
+      - around
+      - twirl
+
+  - name: mac
+    aliases:
+      - command
+      - key command
+      - command key
+      - macintosh
+      - apple
+      - keyboard
+
+  - name: mail
+    aliases:
+      - email
+      - send
+      - letter
+      - reply
+      - envelope
+      - letter
+
+
+  - name: map
+    aliases:
+      - atlas
+      - locate
+      - gps
+      - location
+      - graph
+      - directions
+      - diagram
+      - plan
+
+  - name: medication
+    aliases:
+      -  medicine
+      - drug
+      - treatment
+      - remedy
+      - medicate
+      - assistance
+      - placebo
+      - pill
+      - antidote
+
+  - name: microphone
+    aliases:
+      - mic
+      - speaker
+      - wire
+      - speaker
+      - MC
+      - presenter
+      - present
+
+  - name: migrate
+    aliases:
+      - drift
+      - roam
+      - shift
+      - emigrate
+      - immigrate
+      - journey
+      - transfer
+      - move
+
+  - name: mobile
+    aliases:
+      - phone
+      - iphone
+      - responsive
+      - view port
+      - telephone
+      - roaming
+      - ux
+      - portable
+
+  - name: model
+    aliases:
+      - reference
+      - 3d
+      - prototype
+      - sketch
+      - illustrate
+      - assemble
+      - fabricate
+      - manufacture
+      - construct
+
+  - name: move
+    aliases:
+      - action
+      - transfer
+      - direction
+      - directional
+      - shift
+      - maneuver
+
+
+  - name: movement
+    aliases:
+      - action
+      - transfer
+      - direction
+      - directional
+      - shift
+      - maneuver
+
+  - name: music
+    aliases:
+      - audio
+      - melody
+      - sound
+      - singing
+      - harmony
+      - beat
+      - rhythm
+
+  - name: not-sent
+    aliases:
+      - failed
+      - failure
+      - incomplete
+      - sent
+      - send
+      - email
+
+
+  - name: notebook
+    aliases:
+      - book
+      - notes
+      - diary
+      - journal
+      - binder
+      - log
+      - workbook
+
+  - name: number
+    aliases:
+      - count
+      - numeral
+      - digit
+      - statistic
+      - figure
+
+
+  - name: opacity
+    aliases:
+      - transparency
+      - dim
+      - darkness
+      - shade
+      - color
+      - gradient
+
+  - name: open-panel
+    aliases:
+      - open
+      - panel
+      - navigation
+      - side nav
+      - ui
+      - nav
+
+
+  - name: package
+    aliases:
+      - download
+      - kit
+      - packet
+      - assortment
+      - bunch
+      - load
+      - group
+
+  - name: page
+    aliases:
+      - next
+      - forward
+      - backward
+      - read
+      - back
+
+
+  - name: paint-brush
+    aliases:
+      - brush
+      - paint
+      - color
+      - art
+      - artwork
+      - image
+      - portrait
+      - palette
+
+- name: panel-expansion
+    aliases:
+    - side
+    - navigation
+    - UI
+    - open
+- name: parent-child
+    aliases:
+    - nested
+    - relation
+    - tree
+    - org
+- name: partnership
+    aliases:
+    - relationship
+    - handshake
+    - people
+    - business
+- name: password
+    aliases:
+    - key
+    - code
+    - lock
+    - security
+- name: paste
+    aliases:
+    - copy
+    - file
+    - text
+- name: person
+    aliases:
+    - human
+    - male
+    - female
+    - figure
+    - user
+- name: phone
+    aliases:
+    - call
+    - cell
+    - connect
+    - chat
+    - sound
+    - mute
+- name: pills
+    aliases:
+    - health
+    - medicine
+- name: pin
+    aliases:
+    - save
+    - favorite
+- name: plane
+    aliases:
+    - airplane
+    - flight
+    - travel
+- name: playlist
+    aliases:
+    - music
+    - play
+    - dj
+- name: popup
+    aliases:
+    - modal
+    - overlay
+    - expand
+- name: portfolio
+    aliases:
+    - briefcase
+    - suitcase
+    - travel
+    - case
+- name: presentation-file
+    aliases:
+    - keynote
+    - chart
+    - meeting
+    - graph
+- name: printer
+    aliases:
+    - print
+    - copy
+    - file
+    - paper
+- name: purchase
+    aliases:
+    - charge
+    - card
+    - credit card
+    - debit
+- name: query-queue
+    aliases:
+    - list
+- name: quotes
+    aliases:
+    - mark
+    - punctuation
+- name: radio-button
+    aliases:
+    - component
+    - circle
+    - travel
+    - case
+- name: radio
+    aliases:
+    - music
+    - sound
+    - audio
+    - broadcast
+- name: receipt
+    aliases:
+    - check
+    - bill
+    - total
+- name: recently-viewed
+    aliases:
+    - history
+    - version
+    - back
+    - recent
+- name: recommend
+    aliases:
+    - suggest
+    - award
+    - favorite
+- name: recording
+    aliases:
+    - start
+    - music
+    - sound
+    - control
+- name: renew
+    aliases:
+    - refresh
+    - replay
+    - restart
+- name: repeat
+    aliases:
+    - repeat once
+    - music
+    - control
+- name: reply
+    aliases:
+    - back
+    - respond
+    - email
+- name: report
+    aliases:
+    - clipboard
+    - paper
+    - chart
+    - summary
+- name: request-quote
+    aliases:
+    - edit
+    - pencil
+    - paper
+    - modify
+- name: research
+    aliases:
+    - study
+    - sphere
+- name: reset
+    aliases:
+    - refresh
+    - undo
+    - revert
+
+  - name: restaurant
+  aliases:
+     - dining
+     - knife
+     - fork
+     - utensil
+     - dinner
+     - food
+     - cafe
+     - eat
+
+- name: rewind
+  aliases:
+     - back
+     - previous
+     - past
+     - reverse
+
+- name: rocket
+  aliases:
+     - missile
+     - spaceship
+     - spacecraft
+     - boost
+     - launch
+
+- name: rotate
+  aliases:
+     - revolve
+     - circle
+     - circulate
+     - circle arrow
+     - launch
+
+- name: row
+  aliases:
+     - line
+     - tier
+     - queue
+     - column
+     - composition
+     - layout
+     - horizontal
+     - template
+
+- name: rss
+  aliases:
+     - web feed
+     - feed
+     - news
+     - reading
+     - subscribe
+     - subscription
+
+- name: ruler
+  aliases:
+     - measure
+     - tool
+     - school
+     - office
+     - length
+     - scale
+
+- name: run
+  aliases:
+     - start
+     - play
+     - program
+
+- name: scale
+  aliases:
+     - scalable
+     - ratio
+     - proportion
+     - scope
+     - spectrum
+     - resize
+     - design
+     - square
+     - tool
+
+- name: scalpel
+  aliases:
+     - blade
+     - cutter
+     - knife
+     - cut
+     - tool
+     - surgery
+     - sharp
+     - health
+     - hospital
+     - medical
+
+- name: scan
+  aliases:
+     - scanner
+     - code
+     - barcode
+     - detect
+     - examine
+     - check
+     - qr
+
+- name: screen
+  aliases:
+     - computer
+     - display
+     - monitor
+     - desktop
+     - device
+     - technology
+     - pc
+     - mac
+
+- name: send
+  aliases:
+     - mail
+     - message
+     - paper plane
+     - sending
+     - message
+     - arrow
+     - deliver
+     - letter
+     - email
+
+- name: share-knowledge
+  aliases:
+     - people
+     - communicate
+     - idea
+     - contribution
+     - brainstorm
+     - thinking
+     - knowledge
+     - exchange
+
+- name: share
+  aliases:
+     - social media
+     - facebook
+     - twitter
+     - media
+     - social
+     - network
+     - nodes
+     - connect
+
+- name: shopping
+  aliases:
+     - bag
+     - cart
+     - shop
+     - buy
+     - e-commerce
+     - purchase
+     - store
+     - retail
+
+- name: shrink-screen
+  aliases:
+     - minimize
+     - resize
+     - arrow
+     - smaller
+     - reduce
+     - shrink
+     - screen
+     - zoom out
+
+- name: shuffle
+  aliases:
+     - move
+     - reorder
+     - cross arrows
+     - randomize
+     - random
+     - songs
+     - player
+     - music
+     - multimedia
+
+- name: shuttle
+  aliases:
+     - bus
+     - truck
+     - transportation
+     - transit
+     - vehicle
+     - delivery
+     - car
+
+- name: skip
+  aliases:
+     - arrow
+     - next
+     - forward
+     - button
+     - music
+     - media
+     - multi-media
+     - player
+     - song
+     - music
+
+- name: smell
+  aliases:
+     - nose
+     - scent
+     - odor
+     - fragrance
+     - nostril
+     - senses
+
+- name: spell-check
+  aliases:
+     - check
+     - correction
+     - spelling
+     - type
+     - tool
+     - school
+     - writing
+     - grammar
+     - education
+
+- name: split-screen
+  aliases:
+     - divide
+     - dual
+     - split
+     - screen
+     - multitask
+     - view
+     - half
+     - even
+
+- name: spray-paint
+  aliases:
+     - paint
+     - spray
+     - spray can
+     - aerosol
+     - art
+     - bottle
+     - half
+
+- name: store
+  aliases:
+     - building
+     - shop
+     - house
+     - retail
+     - buisness
+     - online
+     - ecommerce
+     - market
+     - buy
+
+- name: table
+  aliases:
+     - data
+     - spreadsheet
+     - excel
+     - chart
+     - rows
+     - grid
+
+- name: table-of-contents
+  aliases:
+     - list
+     - chart
+     - schedule
+     - record
+     - appendix
+     - index
+     - summary
+     - bullet point
+     - content
+     - menu
+
+- name: tag
+  aliases:
+     - label
+     - mark
+     - price
+     - sale
+     - shop
+     - marker
+
+- name: task
+  aliases:
+     - clipboard
+     - checkmark
+     - checklist
+     - assignment
+     - to do list
+     - list
+     - chore
+
+- name: taste
+  aliases:
+     - tongue
+     - mouth
+     - eat
+     - senses
+
+- name: taxi
+  aliases:
+     - car
+     - cab
+     - transportation
+     - transit
+     - vehicle
+  - name: temperature
+  aliases:
+    -	weather
+    -	thermometer
+    -	degree
+    -	heat
+    -	hot
+    -	cold
+
+- name: template
+  aliases:
+  	-	dashboard
+    -	arrange
+    -	layout
+    -	wireframe
+    -	pattern
+
+- name: terminal
+  aliases:
+    -	code
+    -	code editor
+    -	command line
+
+- name: text
+  aliases:
+  	-	letter
+    -	typography
+    -	alphabet
+    -	editor
+
+- name: thumbnail
+  aliases:
+  	-	preview
+    -	carousel
+    -	grid
+
+- name: thumbs-down
+  aliases:
+  	-	dislike
+    -	hand
+    -	down vote
+    -	no
+    -	disagree
+
+- name: thumbs-up
+  aliases:
+  	-	like
+    -	hand
+    -	up vote
+    -	yes
+    -	agree
+
+- name: ticket
+  aliases:
+  	-	stub
+    -	admission
+
+- name: time
+  aliases:
+  	-	clock
+    -	hour
+    -	minute
+    -	watch
+
+- name: timer
+  aliases:
+  	-	alarm
+    -	alert
+    -	stop watch
+
+- name: tool-box
+  aliases:
+  	-	kit
+    -	container
+
+- name: tools
+  aliases:
+  	-	wrench
+    - fix
+    - setting
+    - customize
+
+- name: touch
+  aliases:
+    -	hand
+    -	tap
+    -	press
+    -	click
+
+- name: train
+  aliases:
+  	-	subway
+    -	metro
+    -	underground
+
+- name: translate
+  aliases:
+  	-	language
+
+- name: tree-view
+  aliases:
+  	-	flow chart
+
+- name: unlink
+  aliases:
+  	-	detach
+    -	paperclip
+    -	break
+
+- name: user-profile
+  aliases:
+  	-	person
+    -	account
+
+- name: van
+  aliases:
+  	-	vehicle
+    -	car
+    -	delivery
+
+- name: video
+  aliases:
+  	-	camera
+    -	recorder
+    -	movie
+
+- name: visual-recognition
+  aliases:
+    -	picture
+    -	ai
+
+- name: voicemail
+  aliases:
+    -	recording
+    -	audio
+    -	tape
+
+- name: volume
+  aliases:
+  	-	sound
+    -	noise
+
+- name: wallet
+  aliases:
+  	-	money
+    -	purse
+
+- name: watch
+  aliases:
+  	-	time
+    -	clock
+
+- name: watson
+  aliases:
+    - ai
+
+- name: 3D-Cursor
+  aliases:
+   - watson
+
+- name: 3D-MPR-Toggle
+  aliases:
+    - watson
+
+- name: 3D-curve
+  aliases:
+   - watson
+   - curve
+   - spline
+
+- name: 3rd-party-connected
+  aliases:
+   - watson
+   - dots
+   - connection
+   - lattice
+   - group
+
+- name: angle
+  aliases:
+   - watson
+   - tilt
+   - meter
+   - gauge
+
+  - name: annotation-visibility
+  aliases:
+    - meter
+    - instrument
+    - annotate
+    - diagram
+    - comment
+
+- name: arrow-annotation
+  aliases:
+    - cursor
+    - text
+    - expansion
+
+- name: auto-scroll
+  aliases:
+    - scrolling
+    - slide
+    - control
+
+- name: cd
+  aliases:
+    - target
+    - mark
+    - spot
+    - bull's eye
+
+- name: circle-measurement
+  aliases:
+    - pan
+    - scan
+    - track
+
+- name: cobb-angle
+  aliases:
+    - corner
+    - slant
+    - twist
+    - bend
+    - crook
+    - stack
+
+- name: cross-reference
+  aliases:
+    - read
+    - research
+    - refer
+
+- name: dicom
+  aliases:
+    - digital
+    - imaging
+    - communication
+
+- name: edit-filter
+  aliases:
+    - pencil
+    - funnel
+
+- name: fusion-blender
+  aliases:
+    - bar
+    - box
+    - plot
+
+- name: hanging-protocol
+  aliases:
+    - hanger
+    - clothes
+    - suspended
+    - swing
+
+- name: iCA-3D
+  aliases:
+    - iCA
+    - dimension
+    - cube
+    - space
+
+- name: launch-study
+  aliases:
+    - push
+    - pull
+    - server
+    - drive
+
+- name: magnify
+  aliases:
+    - expand
+    - zoom
+    - amplify
+    - enhance
+
+- name: page-scroll
+  aliases:
+    - pages
+    - stack
+    - flip
+    - browse
+    - shuffle
+    - sheets
+
+- name: pet-image
+  aliases:
+    - cursor
+    - brightness
+    - contrast
+
+- name: pointer-text
+  aliases:
+    - cursor
+    - text
+    - arrow
+
+- name: region-analysis
+  aliases:
+    - circle
+    - hash
+    - select
+    - area
+
+- name: spine-label
+  aliases:
+    - backbone
+    - stack
+    - pointer
+    - gap
+    - annotate
+
+- name: stacked-move
+  aliases:
+    - stack
+    - pages
+    - sheet
+    - migrate
+    - drag
+
+- name: stacked-scrolling
+  aliases:
+    - stack
+    - pages
+    - sheet
+    - browse
+    - thick
+    - tall
+
+- name: stress-breath-editor
+  aliases:
+    - air
+    - gas
+    - blow
+    - flow
+    - breathalyzer
+
+- name: study
+  aliases:
+    - patient
+    - user
+    - profile
+
+- name: window
+  aliases:
+    - brightness
+    - contrast
+    - sun
+
+- name: zoom-pan
+  aliases:
+    - track
+    - move
+    - view
+    - zoom
+    - magnifying glass
+    - search
+
+- name: wikis
+  aliases:
+    - globe
+    - wikipedia
+    - earth
+    - world
+    - international
+
+- name: wireless-checkout
+  aliases:
+    - shopping bag
+    - buy
+    - tote
+    - WiFi
+
+- name: workspace
+  aliases:
+    - tiles
+    - dashboard
+    - apps
+
+- name: x-axis
+  aliases:
+    - horizontal
+    - data
+    - right
+    - angle
+    - corner
+    - turn
+
+- name: y-axis
+  aliases:
+    - verticle
+    - data
+    - up
+    - angle
+    - corner
+    - turn
+
+- name: z-axis
+  aliases:
+    - depth
+    - 3D
+    - dimension
+    - 3
