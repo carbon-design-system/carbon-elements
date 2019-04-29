@@ -5,7 +5,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - add
+      - plus
+      - positive
+      - addition
+      - increase
     sizes:
       - 16
       - 32
@@ -27,7 +30,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - app-switcher
+      - switcher
+      - drawer
+      - 9 dot
     sizes:
       - 16
       - 20
@@ -39,7 +44,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - apps
+      - application
+      - drawer
+      - 9 dot
+      - 9 square
     sizes:
       - 16
   - name: arrow
@@ -48,7 +56,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - arrow
+      - direction
+      - point
     variants:
       - name: arrow--down
         friendly_name: Arrow down
@@ -102,7 +111,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - arrows
+      - direction
+      - point
     sizes:
       - 16
     variants:
@@ -122,7 +132,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - asleep
+      - night
+      - moon
+      - sleep
+      - rest
+      - dark
     sizes:
       - 16
       - 32
@@ -138,7 +152,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - attachment
+      - paper clip
+      - attach
+      - file
+      - affix
+      - add
     sizes:
       - 16
       - 32
@@ -148,7 +166,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - awake
+      - sun
+      - active
+      - day
+      - bright
     sizes:
       - 16
   - name: back-to-top
@@ -157,7 +178,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - back-to-top
+      - up
+      - scroll up
     sizes:
       - 16
   - name: calendar
@@ -166,7 +188,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - calendar
+      - date
+      - schedule
+      - day
+      - time
+      - month
+      - year
     sizes:
       - 16
       - 32
@@ -176,7 +203,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - caret
+      - pointer
+      - open
+      - close
+      - expand
+      - collapse
     variants:
       - name: caret--down
         friendly_name: Caret down
@@ -228,7 +259,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - chat
+      - sms
+      - text
+      - bubble
+      - bot
+      - speak
     sizes:
       - 16
       - 32
@@ -238,7 +273,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - checkmark
+      - approved
+      - 'yes'
+      - valid
+      - status
     sizes:
       - 16
       - 20
@@ -265,7 +303,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - chevron
+      - open
+      - close
+      - expand
+      - collapse
     variants:
       - name: chevron--down
         friendly_name: Chevron down
@@ -317,7 +358,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - close
+      - X
+      - dismiss
+      - deny
+      - denied
+      - ex
     sizes:
       - 16
       - 32
@@ -338,7 +383,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - code
+      - </>
+      - html
+      - java
+      - css
+      - dev
+      - development
     sizes:
       - 16
       - 32
@@ -348,7 +398,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - copy
+      - duplicate
+      - clipboard
+      - copied
     sizes:
       - 16
       - 32
@@ -365,7 +417,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - delete
+      - trash can
+      - remove
+      - trash
+      - edit
     sizes:
       - 16
   - name: document
@@ -374,7 +429,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - document
+      - file
+      - doc
+      - paper
     sizes:
       - 16
       - 32
@@ -410,7 +467,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - down-to-bottom
+      - jump to bottom
+      - down
+      - footer
     sizes:
       - 16
       - 32
@@ -420,7 +479,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - download
+      - install
     sizes:
       - 16
       - 32
@@ -430,7 +489,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - draggable
+      - handle
+      - drag
     sizes:
       - 16
       - 32
@@ -440,7 +500,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - edit
+      - modify
+      - pencil
+      - change
     sizes:
       - 16
       - 32
@@ -450,7 +512,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - email
+      - mail
+      - contact
+      - envelope
+      - post
+      - send
     sizes:
       - 16
       - 32
@@ -460,7 +526,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - error
+      - state
+      - stop
+      - alert
+      - issue
     sizes:
       - 32
     variants:
@@ -483,7 +552,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - export
+      - ship
+      - send
+      - out
     sizes:
       - 16
       - 32
@@ -493,7 +564,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - fade
+      - dim
+      - vanish
+      - remove
+      - dissolve
+      - disappear
     sizes:
       - 16
       - 32
@@ -503,7 +578,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - favorite
+      - heart
+      - save
+      - like
+      - fave
+      - bookmark
     sizes:
       - 16
       - 32
@@ -520,7 +599,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - filter
+      - settings
+      - refine
+      - funnel
+      - adjust
+      - modify
+      - set
     sizes:
       - 16
       - 32
@@ -536,7 +620,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - folder
+      - file
+      - save
+      - document
+      - organize
     sizes:
       - 16
       - 32
@@ -563,7 +650,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - forum
+      - chat
+      - talk
+      - discuss
+      - conference
     sizes:
       - 16
       - 32
@@ -573,7 +663,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - grid
+      - align
+      - boxes
+      - 4 boxes
+      - 2x grid
+      - pattern
     sizes:
       - 16
       - 32
@@ -583,7 +677,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - help
+      - support
+      - question
+      - assist
+      - more info
     sizes:
       - 16
       - 32
@@ -600,7 +697,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - information
+      - info
+      - learn
+      - more
+      - tip
+      - help
     sizes:
       - 16
       - 32
@@ -617,7 +718,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - launch
+      - open
+      - new window
+      - window
+      - expand
     sizes:
       - 16
       - 32
@@ -627,7 +731,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - list
+      - bullet
+      - agenda
+      - checklist
+      - file
+      - index
+      - inventory
+      - table
+      - tally
     sizes:
       - 32
     variants:
@@ -658,7 +769,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - locked
+      - lock
+      - seal
+      - hidden
+      - edit
+      - padlock
     sizes:
       - 16
       - 32
@@ -668,7 +783,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - maximize
+      - enlarge
+      - full screen
+      - expand
+      - magnify
+      - stretch
+      - open
+      - minimize
     sizes:
       - 16
       - 32
@@ -678,7 +799,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - menu
+      - left nav
+      - drawer
+      - list
+      - nav
+      - navigation
     sizes:
       - 16
       - 20
@@ -690,7 +815,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - minimize
+      - close
+      - small
+      - shrink
+      - maximize
     sizes:
       - 16
       - 32
@@ -700,7 +828,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - misuse
+      - X
+      - close
+      - error
+      - don't
     sizes:
       - 16
       - 20
@@ -718,7 +849,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - new-tab
+      - open
+      - expand
+      - view
+      - browser
+      - window
     sizes:
       - 16
       - 32
@@ -728,7 +863,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - notification
+      - alert
+      - bell
+      - sound
+      - mute
+      - chime
+      - noise
     sizes:
       - 16
       - 32
@@ -760,7 +900,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - overflow-menu
+      - show more
+      - options
+      - extra
+      - hidden
     variants:
       - name: overflow-menu--horizontal
         friendly_name: Overflow menu horizontal
@@ -780,7 +923,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - pause
+      - stop
+      - play
+      - music
+      - control
     sizes:
       - 16
       - 32
@@ -803,7 +949,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - play
+      - start
+      - stop
+      - music
+      - control
     sizes:
       - 16
       - 32
@@ -832,7 +981,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - power
+      - 'on'
+      - 'off'
+      - start
+      - stop
     sizes:
       - 16
       - 32
@@ -842,7 +994,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - redo
+      - restart
+      - return
+      - back
+      - revert
+      - undo
     sizes:
       - 16
       - 20
@@ -854,7 +1010,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - restart
+      - undo
+      - rever
+      - refresh
     sizes:
       - 16
       - 32
@@ -864,7 +1022,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - save
+      - floppy
+      - floppy disk
+      - progress
+      - safe
+      - memory
+      - intact
+      - preserve
     sizes:
       - 16
       - 20
@@ -892,7 +1056,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - search
+      - find
+      - investigate
+      - explore
+      - look
     sizes:
       - 16
       - 32
@@ -902,7 +1069,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - settings
+      - preferences
+      - options
+      - alternatives
     sizes:
       - 16
       - 32
@@ -918,7 +1087,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - star
+      - favorite
+      - progress
+      - rate
+      - rating
+      - saved
+      - starred
     sizes:
       - 16
       - 32
@@ -941,7 +1115,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - stop
+      - block
+      - break
+      - close
+      - cease
+      - control
+      - pause
+      - conclude
     sizes:
       - 16
       - 32
@@ -970,7 +1150,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - subtract
+      - minus
+      - remove
+      - deduct
+      - withold
+      - decrease
+      - diminish
+      - discount
+      - remove
+      - take
     sizes:
       - 16
       - 32
@@ -987,7 +1175,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - trash-can
+      - trash
+      - waste
+      - delete
+      - litter
+      - bin
+      - wastebin
+      - destroy
+      - remove
     sizes:
       - 16
       - 32
@@ -997,7 +1192,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - undo
+      - go back
+      - revert
+      - back
     sizes:
       - 16
       - 20
@@ -1009,7 +1206,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - unlocked
+      - open
+      - lock
+      - opened
     sizes:
       - 16
       - 32
@@ -1019,7 +1218,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - up-to-top
+      - top
+      - top of page
+      - page up
+      - up chevron
+      - up
     sizes:
       - 16
       - 32
@@ -1029,7 +1232,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - upload
+      - transfer
+      - connect
+      - exchange
+      - send
+      - sync
+      - transmit
+      - load
     sizes:
       - 16
       - 32
@@ -1039,7 +1248,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - user
+      - person
+      - avatar
+      - man
+      - woman
+      - figure
+      - profile
+      - account
+      - my account
     sizes:
       - 16
       - 32
@@ -1131,7 +1347,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - view
+      - eye
+      - eyeball
+      - examine
+      - look
+      - inspect
     sizes:
       - 16
       - 32
@@ -1168,7 +1388,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - warning
+      - halt
+      - stop
+      - caution
+      - danger
+      - warn
+      - alert
+      - notification
     sizes:
       - 16
       - 32
@@ -1199,7 +1425,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - zoom
+      - expand
+      - inspect
+      - size
+      - enlarge
+      - detail
     variants:
       - name: zoom--in
         friendly_name: Zoom in
@@ -1219,7 +1449,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - 4K
+      - four k
+      - resolution
+      - pixels
+      - HD
+      - high definition
     sizes:
       - 32
     variants:
@@ -1234,7 +1468,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - API
+      - Application Programming Interface
+      - tool
+      - application
+      - programming
+      - interface
+      - file
+      - file type
     variants:
       - name: API--1
         friendly_name: Api 1
@@ -1247,7 +1487,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - CAD
+      - computer aided design
+      - canada
+      - canadian dollar
+      - dollar
+      - money
+      - design
+      - print
+      - file
+      - file type
     sizes:
       - 32
   - name: CSV
@@ -1256,7 +1504,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - CSV
+      - file
+      - file type
+      - comma
+      - separated
+      - variable
+      - spreadsheet
+      - data
     sizes:
       - 32
   - name: DVR
@@ -1265,7 +1519,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - DVR
+      - record
+      - digital
+      - video
+      - recorder
+      - cable
+      - TV
     sizes:
       - 32
   - name: GIF
@@ -1274,7 +1533,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - GIF
+      - file
+      - file type
+      - move
     sizes:
       - 32
   - name: HD
@@ -1283,7 +1544,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - HD
+      - high
+      - def
+      - definition
+      - high quality
+      - 4K
     sizes:
       - 32
     variants:
@@ -1298,7 +1563,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - HDR
+      - high
+      - dynamic
+      - range
+      - color
+      - HD
     sizes:
       - 32
   - name: HTTP
@@ -1307,7 +1576,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - HTTP
+      - internet
+      - web
+      - cert
+      - certificate
+      - website
+      - site
+      - URL
     sizes:
       - 32
   - name: ISO
@@ -1316,7 +1591,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - ISO
+      - photo
+      - sensitivity
+      - light
+      - camera
     sizes:
       - 32
     variants:
@@ -1336,7 +1614,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - JPG
+      - file
+      - type
+      - format
+      - pic
+      - picture
+      - photo
+      - image
+      - compress
     sizes:
       - 32
   - name: JSON
@@ -1345,7 +1630,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - JSON
+      - javascript
+      - object
+      - notation
+      - file
+      - type
+      - format
+      - data
     sizes:
       - 32
   - name: MOV
@@ -1354,7 +1645,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - MOV
+      - movie
+      - video
+      - file
+      - type
+      - film
+      - format
     sizes:
       - 32
   - name: MP3
@@ -1363,7 +1659,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - MP3
+      - music
+      - audio
+      - song
+      - compress
+      - file
+      - type
     sizes:
       - 32
   - name: MP4
@@ -1372,7 +1673,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - MP4
+      - movie
+      - video
+      - file
+      - type
+      - film
+      - format
     sizes:
       - 32
   - name: PDF
@@ -1381,7 +1687,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - PDF
+      - document
+      - doc
+      - compress
+      - portable
+      - document
+      - format
     sizes:
       - 32
   - name: PNG
@@ -1390,7 +1701,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - PNG
+      - file
+      - type
+      - format
+      - pic
+      - picture
+      - photo
+      - image
+      - compress
     sizes:
       - 32
   - name: H
@@ -1399,7 +1717,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - H
+      - letter
+      - alphabet
     sizes:
       - 32
   - name: S
@@ -1408,7 +1727,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - S
+      - standard
+      - letter
+      - alphabet
+      - alt
     sizes:
       - 32
     variants:
@@ -1423,7 +1745,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - T
+      - letter
+      - alphabet
+      - alt
     sizes:
       - 32
     variants:
@@ -1438,7 +1762,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - U1
+      - Q
     sizes:
       - 32
   - name: U2
@@ -1447,7 +1771,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - U2
+      - Q
     sizes:
       - 32
   - name: U3
@@ -1456,7 +1780,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - U3
+      - Q
     sizes:
       - 32
   - name: X
@@ -1465,7 +1789,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - X
+      - alphabet
+      - letter
+      - cross
     sizes:
       - 32
   - name: 'Y'
@@ -1474,7 +1800,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - 'Y'
+      - alphabet
+      - letter
     sizes:
       - 32
   - name: Z
@@ -1483,7 +1810,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - Z
+      - alphabet
+      - letter
     sizes:
       - 32
   - name: barrier
@@ -1492,7 +1820,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - barrier
+      - wall
+      - fence
+      - block
+      - stop
+      - divide
     sizes:
       - 32
   - name: bloch-sphere
@@ -1501,7 +1833,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bloch-sphere
+      - Q
+      - bloch
+      - sphere
     sizes:
       - 32
   - name: cU1
@@ -1510,7 +1844,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cU1
+      - Q
+      - c
+      - u
+      - one
     sizes:
       - 32
   - name: cU3
@@ -1519,7 +1856,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cU3
+      - q
+      - c
+      - u
+      - three
     sizes:
       - 32
   - name: cY
@@ -1528,7 +1868,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cY
+      - Q
+      - c
+      - 'y'
     sizes:
       - 32
   - name: cZ
@@ -1537,7 +1879,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cZ
+      - Q
+      - c
+      - z
     sizes:
       - 32
   - name: ccX
@@ -1546,7 +1890,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - ccX
+      - Q
+      - cc
+      - c
+      - X
     sizes:
       - 32
   - name: circuit-composer
@@ -1555,7 +1902,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - circuit-composer
+      - Q
+      - H
+      - circuit
+      - composer
     sizes:
       - 32
   - name: composer-edit
@@ -1564,7 +1914,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - composer-edit
+      - Q
+      - circuit
+      - composer
+      - edit
     sizes:
       - 32
       - 32
@@ -1574,7 +1927,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - hinton-plot
+      - Q
+      - hinton
+      - plot
+      - grid
     sizes:
       - 32
   - name: iD
@@ -1583,7 +1939,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - iD
+      - identification
+      - identity
     sizes:
       - 32
   - name: matrix
@@ -1592,7 +1949,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - matrix
+      - cast
+      - grid
+      - model
+      - binary
     sizes:
       - 32
   - name: operation
@@ -1601,7 +1961,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - operation
+      - meter
+      - gauge
+      - indicator
+      - bracket
     sizes:
       - 32
     variants:
@@ -1621,7 +1984,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - RAW
+      - format
+      - unedited
     sizes:
       - 32
   - name: SQL
@@ -1630,7 +1994,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - SQL
+      - database
+      - query
     sizes:
       - 32
   - name: SVG
@@ -1639,7 +2004,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - SVG
+      - format
+      - image
+      - vector
     sizes:
       - 32
   - name: TIF
@@ -1648,7 +2015,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - TIF
+      - format
+      - image
     sizes:
       - 32
   - name: TSV
@@ -1657,7 +2025,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - TSV
+      - format
+      - data
+      - database
+      - spreadsheet
     sizes:
       - 32
   - name: TXT
@@ -1666,7 +2037,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - TXT
+      - text
+      - format
+      - string
     sizes:
       - 32
   - name: USB
@@ -1675,7 +2048,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - USB
+      - connector
+      - protocol
+      - connection
+      - bus
+      - port
     sizes:
       - 32
   - name: VPN
@@ -1684,7 +2061,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - VPN
+      - protocol
+      - virtual
+      - network
+      - connection
+      - secure
+      - internet
     sizes:
       - 32
   - name: WMV
@@ -1693,7 +2075,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - WMV
+      - format
+      - music
+      - video
+      - codec
     sizes:
       - 32
   - name: XLS
@@ -1702,7 +2087,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - XLS
+      - excel
+      - format
+      - spreadsheet
     sizes:
       - 32
   - name: XML
@@ -1711,7 +2098,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - XML
+      - format
+      - markup
+      - language
+      - HTML
     sizes:
       - 32
   - name: ZIP
@@ -1720,7 +2110,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - ZIP
+      - compress
+      - format
     sizes:
       - 32
   - name: accessibility
@@ -1729,7 +2120,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - accessibility
+      - wheelchair
+      - convenience
+      - accessible
     sizes:
       - 32
   - name: activity
@@ -1738,7 +2131,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - activity
+      - line chart
+      - vital
+      - action
+      - heartbeat
     sizes:
       - 32
   - name: add-comment
@@ -1747,7 +2143,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - add-comment
+      - add
+      - comment
+      - chat
+      - bubble
     sizes:
       - 32
   - name: alarm
@@ -1756,7 +2155,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - alarm
+      - clock
+      - timer
+      - time
+      - alert
     sizes:
       - 32
     variants:
@@ -1776,7 +2178,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - analytics
+      - line chart
+      - trend
+      - graph
+      - analyze
+      - data
     sizes:
       - 32
   - name: aperture
@@ -1785,7 +2191,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - aperture
+      - eye
+      - camera
+      - pinhole
+      - pinwheel
     sizes:
       - 32
   - name: api
@@ -1794,7 +2203,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - api
+      - program
+      - tool
+      - application
+      - format
+      - interface
+      - protocol
+      - connect
+      - group
+      - network
     sizes:
       - 32
   - name: application
@@ -1803,7 +2220,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - application
+      - box
+      - app
+      - interface
     sizes:
       - 32
   - name: archive
@@ -1812,7 +2231,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - archive
+      - drawer
+      - server
+      - stack
+      - tower
+      - file cabinet
     sizes:
       - 32
   - name: arrival
@@ -1821,7 +2244,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - arrival
+      - plane
+      - landing
+      - descend
     sizes:
       - 32
   - name: asset
@@ -1830,7 +2255,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - asset
+      - runtime
+      - wheel
+      - tape
+      - roll
     sizes:
       - 32
   - name: at
@@ -1840,6 +2268,7 @@ icons:
       - example cateogry
     aliases:
       - at
+      - \@
     sizes:
       - 32
   - name: bar
@@ -1848,7 +2277,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bar
+      - drink
+      - alcohol
+      - cocktail
+      - wine
     sizes:
       - 32
   - name: battery
@@ -1857,7 +2289,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - battery
+      - charging
+      - power
     variants:
       - name: battery--charging
         friendly_name: Battery charging
@@ -1885,7 +2318,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bee
+      - ibm
+      - fly
+      - honey
+      - bumblebee
+      - drone
+      - insect
     sizes:
       - 32
   - name: bicycle
@@ -1894,7 +2332,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bicycle
+      - bike
+      - cycle
+      - wheels
+      - transport
+      - transportation
     sizes:
       - 32
   - name: binoculars
@@ -1903,7 +2345,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - binoculars
+      - search
+      - vision
+      - field
+      - glasses
+      - zoom
     sizes:
       - 32
   - name: blog
@@ -1912,7 +2358,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - blog
+      - writing
+      - journal
+      - site
+      - layout
+      - page
     sizes:
       - 32
   - name: bluetooth
@@ -1921,7 +2371,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bluetooth
+      - wireless
+      - connect
+      - blue
+      - tooth
     sizes:
       - 32
     variants:
@@ -1936,7 +2389,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bookmark
+      - flag
+      - marker
     sizes:
       - 32
   - name: box
@@ -1945,7 +2399,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - box
+      - file
+      - archive
+      - office
     sizes:
       - 32
   - name: brightness-contrast
@@ -1954,7 +2410,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - brightness-contrast
+      - sun
+      - bright
+      - light
+      - dark
+      - contrast
+      - opposite
     sizes:
       - 32
   - name: building
@@ -1963,7 +2424,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - building
+      - factory
+      - architecture
+      - office
     sizes:
       - 32
     variants:
@@ -1988,7 +2451,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bullhorn
+      - announcement
+      - announce
+      - broadcast
+      - news
+      - release
+      - notify
+      - decare
+      - blast
+      - speaker
     sizes:
       - 32
   - name: bus
@@ -1997,7 +2468,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - bus
+      - transport
+      - transportation
+      - travel
+      - public
     sizes:
       - 32
   - name: cafe
@@ -2006,7 +2480,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cafe
+      - coffee
+      - caffine
+      - drink
+      - espresso
+      - brew
+      - mocha
     sizes:
       - 32
   - name: calculator
@@ -2015,7 +2494,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - calculator
+      - calculate
+      - PDA
+      - computer
     sizes:
       - 32
   - name: calibrate
@@ -2024,7 +2505,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - calibrate
+      - caliper
+      - measure
+      - measurement
+      - adjust
+      - gauge
     sizes:
       - 32
   - name: camera
@@ -2033,7 +2518,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - camera
+      - photo
+      - photography
+      - image
+      - record
+      - picture
+      - snapshot
     sizes:
       - 32
     variants:
@@ -2048,7 +2538,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - car
+      - transport
+      - private
+      - automobile
+      - jeep
+      - ride
+      - pickup
     sizes:
       - 32
   - name: carousel
@@ -2057,7 +2552,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - carousel
+      - roundabout
+      - ride
+      - image
+      - gallery
+      - sequence
     variants:
       - name: carousel--horizontal
         friendly_name: Carousel horizontal
@@ -2075,7 +2574,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - catalog
+      - notebook
+      - book
+      - list
+      - schedule
     sizes:
       - 32
   - name: categories
@@ -2084,7 +2586,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - categories
+      - group
+      - section
+      - class
+      - department
     sizes:
       - 32
   - name: chart
@@ -2093,7 +2598,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - chart
+      - graph
+      - bar
+      - data
     variants:
       - name: chart--bar
         friendly_name: Chart bar
@@ -2141,7 +2648,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - checkbox
+      - check
+      - box
     sizes:
       - 32
     variants:
@@ -2171,7 +2679,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - chemistry
+      - science
+      - flask
+      - glass
     sizes:
       - 32
   - name: chip
@@ -2180,7 +2690,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - chip
+      - microchip
+      - computer chip
     sizes:
       - 32
   - name: circle-dash
@@ -2189,7 +2700,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - circle-dash
+      - circle
+      - dash
+      - dashed line
     sizes:
       - 32
   - name: classifier
@@ -2198,7 +2711,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - classifier
+      - measure word
+      - counter word
     variants:
       - name: classifier--language
         friendly_name: Classifier language
@@ -2211,7 +2725,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - closed-caption
+      - caption
+      - closed
+      - cc
     sizes:
       - 32
     variants:
@@ -2231,7 +2747,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cloud
+      - donwload
+      - compute
+      - data
+      - hybrid
     sizes:
       - 32
     variants:
@@ -2266,7 +2785,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cloud-foundry
+      - platform
+      - multi cloud
+      - cloud
+      - foundry
     variants:
       - name: cloud-foundry--1
         friendly_name: Cloud foundry 1
@@ -2284,7 +2806,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cognitive
+      - brain
+      - idea
+      - think
+      - mind
     sizes:
       - 32
   - name: collaborate
@@ -2293,7 +2818,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - collaborate
+      - people
+      - cooperate
+      - relation
+      - coworker
+      - rotate
+      - shift
     sizes:
       - 32
   - name: color-palette
@@ -2302,7 +2832,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - color-palette
+      - paint palette
+      - paint
+      - palette
     sizes:
       - 32
   - name: column
@@ -2311,7 +2843,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - column
+      - grid
+      - lines
+      - structure
     sizes:
       - 32
   - name: compare
@@ -2320,7 +2854,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - compare
+      - arrows
+      - exchange
+      - merge
+      - match
+      - files
+      - documents
     sizes:
       - 32
   - name: compass
@@ -2329,7 +2868,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - compass
+      - direction
+      - navigation
+      - explore
+      - navigate
+      - destination
+      - guide
     sizes:
       - 32
   - name: connect
@@ -2338,7 +2882,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - connect
+      - network
+      - link
+      - join
+      - attach
+      - associate
     sizes:
       - 32
   - name: connection-signal
@@ -2347,7 +2895,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - connection-signal
+      - signal
+      - tower
+      - service
+      - station
+      - radio
+      - connection
+      - wireless
+      - network
     sizes:
       - 32
   - name: contrast
@@ -2356,7 +2911,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - contrast
+      - brightness
+      - darkness
+      - sun
+      - light
+      - dark
+      - comparison
     sizes:
       - 32
   - name: corner
@@ -2365,7 +2925,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - corner
+      - frame
+      - flourish
+      - squares
+      - connection
+      - edge
+      - intersection
+      - decoration
     sizes:
       - 32
   - name: crop
@@ -2374,7 +2940,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - crop
+      - cut
+      - trim
+      - picture
+      - tool
+      - cropping
+      - editing
+      - photo
     sizes:
       - 32
   - name: cursor
@@ -2383,7 +2955,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cursor
+      - mouse
+      - arrow
+      - direction
+      - mouse
+      - click
+      - pointer
     variants:
       - name: cursor--1
         friendly_name: Cursor 1
@@ -2401,7 +2978,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cut
+      - scissors
+      - cutting
+      - snip
+      - trim
+      - shear
+      - clippers
     sizes:
       - 32
   - name: dashboard
@@ -2410,7 +2992,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - dashboard
+      - gauge
+      - ui
+      - control panel
+      - analytics
+      - metrics
+      - interface
+      - overview
+      - wireframe
     sizes:
       - 32
   - name: data
@@ -2419,7 +3008,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - data
+      - connection
+      - dot
+      - numbers
+      - metrics
+      - characters
     variants:
       - name: data--1
         friendly_name: Data 1
@@ -2477,7 +3070,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - data-share
+      - data
+      - share
+      - link
+      - compare
+      - transfer
+      - exchange
     sizes:
       - 32
   - name: data-vis
@@ -2486,7 +3084,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - data-vis
+      - vis
+      - graph
+      - chart
+      - infographic
+      - analytics
+      - metrics
+      - stats
+      - web
     variants:
       - name: data-vis--1
         friendly_name: Data vis 1
@@ -2514,7 +3119,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - debug
+      - bug
+      - beetle
+      - insect
+      - code bug
     sizes:
       - 32
   - name: delivery-truck
@@ -2523,7 +3131,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - delivery-truck
+      - truck
+      - car
+      - delivery
+      - transportation
+      - shopping
+      - van
+      - shipping
+      - ecommerce
     sizes:
       - 32
   - name: departure
@@ -2532,7 +3147,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - departure
+      - plane
+      - airplane
+      - vacation
+      - travel
+      - journey
+      - leave
     sizes:
       - 32
   - name: deploy-rules
@@ -2541,7 +3161,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - deploy-rules
+      - rules
+      - deploy
+      - document
+      - instruction
+      - deploy
     sizes:
       - 32
   - name: development
@@ -2550,7 +3174,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - development
+      - build
+      - pixels
+      - squares
+      - structure
+      - code
+      - html
+      - code
+      - grid
     sizes:
       - 32
   - name: devices
@@ -2559,7 +3190,10 @@ icons:
     categories:
       - example cateogry
     aliases:
+      - monitor
+      - screen
       - devices
+      - compatibility
     sizes:
       - 32
   - name: diagram
@@ -2568,7 +3202,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - diagram
+      - pie chart
+      - pie
+      - chart
+      - infographic
+      - data vis
     sizes:
       - 32
   - name: drag
@@ -2577,7 +3215,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - drag
+      - expand
+      - drop
+      - move
+      - expand
+      - drop
+      - move
     variants:
       - name: drag--horizontal
         friendly_name: Drag horizontal
@@ -2595,7 +3238,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - draw
+      - squiggle
+      - drawing
+      - graphic
+      - line
+      - doodle
     sizes:
       - 32
   - name: edt-loop
@@ -2604,7 +3251,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - edt-loop
+      - version
+      - iteration
+      - repeat
+      - loop
+      - editing
+      - recycle
     sizes:
       - 32
   - name: education
@@ -2613,7 +3265,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - education
+      - graduation
+      - scholarship
+      - student
+      - university
+      - study
+      - school
+      - college
     sizes:
       - 32
   - name: erase
@@ -2622,7 +3280,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - erase
+      - eraser
+      - remove
+      - clear
+      - rubber
+      - change
+      - edit
+      - rubber
+      - format
     sizes:
       - 32
   - name: event
@@ -2631,7 +3296,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - event
+      - calendar
+      - star
+      - date
+      - favorite
+      - schedule
     sizes:
       - 32
     variants:
@@ -2646,7 +3315,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - events
+      - people
+      - team
+      - group
+      - organization
+      - network
     sizes:
       - 32
   - name: exam-mode
@@ -2655,7 +3328,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - exam-mode
+      - dev test
+      - testing
+      - test
+      - exam
     sizes:
       - 32
   - name: eyedropper
@@ -2664,7 +3340,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - eyedropper
+      - dropper
+      - pipette
+      - tester
+      - drop
     sizes:
       - 32
   - name: face
@@ -2673,7 +3352,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - face
+      - smiley
+      - smile
+      - smiley face
+      - emoji
+      - head
+      - emotion
     variants:
       - name: face--activated--add
         friendly_name: Face activated add
@@ -2766,7 +3450,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - finance
+      - bank
+      - columns
+      - money
+      - business
+      - corporation
+      - business
     sizes:
       - 32
   - name: fingerprint-recognition
@@ -2775,7 +3464,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - fingerprint-recognition
+      - identification
+      - fingerprint
+      - finger
+      - dna
+      - security
+      - touch
+      - identity
+      - mark
     sizes:
       - 32
   - name: flag
@@ -2784,7 +3480,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - flag
+      - country
+      - location
+      - nation
+      - banner
+      - notification
+      - marker
     sizes:
       - 32
   - name: flash
@@ -2793,7 +3494,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - flash
+      - battery
+      - lightning
+      - energy
+      - charge
+      - power
+      - camera
+      - electricity
+      - storm
     sizes:
       - 32
     variants:
@@ -2818,7 +3526,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - flow
+      - flow chart
+      - chart
+      - graph
+      - diagram
+      - outline
     sizes:
       - 32
     variants:
@@ -2838,7 +3550,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - forward
+      - ahead
+      - future
+      - fast forward
+      - skip
+      - next
+      - fast
     variants:
       - name: forward--10
         friendly_name: Forward 10
@@ -2861,7 +3578,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - function
+      - action
+      - behavior
+      - duty
+      - purpose
+      - role
+      - responsibility
+      - objective
     sizes:
       - 32
   - name: game
@@ -2870,7 +3593,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - game
+      - play
+      - match
+      - activity
+      - ballgame
+      - energy
+      - spirit
     variants:
       - name: game--console
         friendly_name: Game console
@@ -2888,7 +3616,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - globe
+      - planet
+      - earth
+      - world
+      - map
+      - orb
     sizes:
       - 32
   - name: group
@@ -2897,7 +3629,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - group
+      - category
+      - band
+      - bucket
+      - club
+      - association
+      - bunch
+      - organization
+      - cluster
     sizes:
       - 32
   - name: headphones
@@ -2906,7 +3645,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - headphones
+      - headset
+      - listening device
+      - listening
+      - ear buds
+      - hearing
+      - transceiver
     sizes:
       - 32
   - name: headset
@@ -2915,7 +3659,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - headset
+      - headphones
+      - listening device
+      - listening
+      - ear buds
+      - hearing
+      - console
+      - transceiver
     sizes:
       - 32
   - name: health-cross
@@ -2924,7 +3674,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - health-cross
+      - red cross
+      - medicine
+      - healthcare
+      - medical
+      - ambulance
     sizes:
       - 32
   - name: hearing
@@ -2933,7 +3687,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - hearing
+      - detecting
+      - ear
+      - headphones
+      - headset
+      - listen
+      - auditory
+      - perception
+      - senses
     sizes:
       - 32
   - name: home
@@ -2942,7 +3703,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - home
+      - detecting
+      - ear
+      - headphones
+      - headset
+      - listen
+      - auditory
+      - perception
+      - senses
     sizes:
       - 32
   - name: hotel
@@ -2951,7 +3719,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - hotel
+      - hostel
+      - motel
+      - house
+      - inn
+      - lodging
+      - resort
     sizes:
       - 32
   - name: hourglass
@@ -2960,7 +3733,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - hourglass
+      - clock
+      - metronome
+      - timepiece
+      - timer
+      - time
+      - duration
     sizes:
       - 32
   - name: humidity
@@ -2969,7 +3747,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - humidity
+      - weather
+      - damp
+      - dampness
+      - moisture
+      - dew
+      - muggy
+      - mugginess
+      - steaminess
+      - steam
     sizes:
       - 32
   - name: ibm-cloud
@@ -2978,7 +3764,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - ibm-cloud
+      - product
+      - cloud
+      - hybrid
+      - service
+      - offerring
+      - online
+      - internet
+      - brand
     sizes:
       - 32
   - name: ibm-security
@@ -2987,7 +3780,16 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - ibm-security
+      - safe
+      - cyber security
+      - hacking
+      - data security
+      - offerring
+      - product
+      - protection
+      - cyber crime
+      - cyber
+      - secure
     sizes:
       - 32
   - name: idea
@@ -2996,7 +3798,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - idea
+      - thought
+      - notion
+      - belief
+      - concept
+      - light bulb
+      - inspiration
+      - opinion
+      - intention
+      - design
     sizes:
       - 32
   - name: identification
@@ -3005,7 +3815,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - identification
+      - id
+      - passport
+      - drivers license
+      - recognition
+      - badge
+      - papers
+      - avatar
     sizes:
       - 32
   - name: image
@@ -3014,7 +3830,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - image
+      - appearance
+      - form
+      - drawing
+      - illustration
+      - picture
+      - portrait
+      - likeness
+      - avatar
     sizes:
       - 32
     variants:
@@ -3029,7 +3852,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - industry
+      - field
+      - business
+      - commerce
+      - corporation
+      - trade
+      - line of work
+      - job
+      - career
     sizes:
       - 32
   - name: insert
@@ -3038,7 +3868,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - insert
+      - embed
+      - enter
+      - fill in
+      - paste
+      - inject
+      - include
+      - infuse
     sizes:
       - 32
   - name: integration
@@ -3047,7 +3883,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - integration
+      - assimilate
+      - assimilation
+      - amalgamation
+      - synthesis
+      - combination
+      - combine
+      - union
     sizes:
       - 32
   - name: inventory-management
@@ -3056,7 +3898,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - inventory-management
+      - supervision
+      - asset management
+      - inventory
+      - dashboard
+      - supply chain
+      - analytics
+      - administration
+      - oversight
     sizes:
       - 32
   - name: iot
@@ -3065,7 +3914,19 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - iot
+      - internet of things
+      - smart objects
+      - connectivity
+      - connected
+      - network
+      - communication
+      - wireless
+      - sensors
+      - analytics
+      - machine learning
+      - smart devices
+      - connect
+      - platform
     variants:
       - name: iot--connect
         friendly_name: Iot connect
@@ -3083,7 +3944,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - keyboard
+      - console
+      - typing
+      - type
+      - key commands
+      - computer
+      - word processor
+      - write
     sizes:
       - 32
   - name: letter
@@ -3092,7 +3959,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - letter
+      - alphabet
+      - language
+      - english
     variants:
       - name: letter--Aa
         friendly_name: Letter aa
@@ -3230,7 +4099,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - light
+      - bright
+      - sun
+      - sunny
+      - lightbulb
+      - glow
+      - luminous
+      - lamp
     sizes:
       - 32
     variants:
@@ -3245,7 +4120,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - link
+      - associate
+      - association
+      - network
+      - connect
+      - join
+      - hookup
     sizes:
       - 32
   - name: location
@@ -3254,7 +4134,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - location
+      - place
+      - locate
+      - gps
+      - destination
+      - map
+      - pin
+      - site
+      - area
     sizes:
       - 32
   - name: login
@@ -3263,7 +4150,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - login
+      - log on
+      - password
+      - enter
+      - sign in
+      - sign on
+      - pin
+      - username
     sizes:
       - 32
   - name: logo
@@ -3272,7 +4165,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - logo
+      - brand
+      - emblem
+      - logotype
+      - symbol
+      - id
+      - avatar
+      - tag
+      - identification
     variants:
       - name: logo--delicious
         friendly_name: Logo delicious
@@ -3370,7 +4270,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - logout
+      - sign off
+      - sign out
+      - log off
+      - quit
+      - exit
     sizes:
       - 32
   - name: loop
@@ -3379,7 +4283,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - loop
+      - knot
+      - curl
+      - circuit
+      - bend
+      - coil
+      - curve
+      - around
+      - twirl
     sizes:
       - 32
   - name: mac
@@ -3388,7 +4299,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - mac
+      - command
+      - key command
+      - command key
+      - macintosh
+      - apple
+      - keyboard
     variants:
       - name: mac--command
         friendly_name: Mac command
@@ -3411,7 +4327,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - mail
+      - email
+      - send
+      - letter
+      - reply
+      - envelope
+      - letter
     variants:
       - name: mail--all
         friendly_name: Mail all
@@ -3424,7 +4345,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - map
+      - atlas
+      - locate
+      - gps
+      - location
+      - graph
+      - directions
+      - diagram
+      - plan
     sizes:
       - 32
   - name: medication
@@ -3433,7 +4361,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - medication
+      - medicine
+      - drug
+      - treatment
+      - remedy
+      - medicate
+      - assistance
+      - placebo
+      - pill
+      - antidote
     sizes:
       - 32
     variants:
@@ -3453,7 +4389,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - microphone
+      - mic
+      - speaker
+      - wire
+      - speaker
+      - MC
+      - presenter
+      - present
     sizes:
       - 32
     variants:
@@ -3478,7 +4420,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - migrate
+      - drift
+      - roam
+      - shift
+      - emigrate
+      - immigrate
+      - journey
+      - transfer
+      - move
     sizes:
       - 32
   - name: mobile
@@ -3487,7 +4436,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - mobile
+      - phone
+      - iphone
+      - responsive
+      - view port
+      - telephone
+      - roaming
+      - ux
+      - portable
     sizes:
       - 32
     variants:
@@ -3512,7 +4468,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - model
+      - reference
+      - 3d
+      - prototype
+      - sketch
+      - illustrate
+      - assemble
+      - fabricate
+      - manufacture
+      - construct
     sizes:
       - 32
     variants:
@@ -3527,7 +4491,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - move
+      - action
+      - transfer
+      - direction
+      - directional
+      - shift
+      - maneuver
     sizes:
       - 32
   - name: movement
@@ -3536,7 +4505,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - movement
+      - action
+      - transfer
+      - direction
+      - directional
+      - shift
+      - maneuver
     sizes:
       - 32
   - name: music
@@ -3545,7 +4519,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - music
+      - audio
+      - melody
+      - sound
+      - singing
+      - harmony
+      - beat
+      - rhythm
     sizes:
       - 32
   - name: not-sent
@@ -3554,7 +4534,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - not-sent
+      - failed
+      - failure
+      - incomplete
+      - sent
+      - send
+      - email
     sizes:
       - 32
     variants:
@@ -3569,7 +4554,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - notebook
+      - book
+      - notes
+      - diary
+      - journal
+      - binder
+      - log
+      - workbook
     sizes:
       - 32
     variants:
@@ -3584,7 +4575,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - number
+      - count
+      - numeral
+      - digit
+      - statistic
+      - figure
     variants:
       - name: number--0
         friendly_name: Number 0
@@ -3692,7 +4687,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - opacity
+      - transparency
+      - dim
+      - darkness
+      - shade
+      - color
+      - gradient
     sizes:
       - 32
   - name: open-panel
@@ -3701,7 +4701,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - open-panel
+      - open
+      - panel
+      - navigation
+      - side nav
+      - ui
+      - nav
     variants:
       - name: open-panel--bottom
         friendly_name: Open panel bottom
@@ -3749,7 +4754,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - package
+      - download
+      - kit
+      - packet
+      - assortment
+      - bunch
+      - load
+      - group
     sizes:
       - 32
   - name: page
@@ -3758,7 +4769,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - page
+      - next
+      - forward
+      - backward
+      - read
+      - back
     variants:
       - name: page--first
         friendly_name: Page first
@@ -3776,7 +4791,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - paint-brush
+      - brush
+      - paint
+      - color
+      - art
+      - artwork
+      - image
+      - portrait
+      - palette
     sizes:
       - 32
   - name: panel-expansion
@@ -3785,7 +4807,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - panel-expansion
+      - side
+      - navigation
+      - UI
+      - open
     sizes:
       - 32
   - name: parent-child
@@ -3794,7 +4819,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - parent-child
+      - nested
+      - relation
+      - tree
+      - org
     sizes:
       - 32
   - name: partnership
@@ -3803,7 +4831,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - partnership
+      - relationship
+      - handshake
+      - people
+      - business
     sizes:
       - 32
   - name: password
@@ -3812,7 +4843,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - password
+      - key
+      - code
+      - lock
+      - security
     sizes:
       - 32
   - name: paste
@@ -3821,7 +4855,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - paste
+      - copy
+      - file
+      - text
     sizes:
       - 32
   - name: person
@@ -3830,7 +4866,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - person
+      - human
+      - male
+      - female
+      - figure
+      - user
     sizes:
       - 32
     variants:
@@ -3845,7 +4885,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - phone
+      - call
+      - cell
+      - connect
+      - chat
+      - sound
+      - mute
     sizes:
       - 32
     variants:
@@ -3870,7 +4915,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - pills
+      - health
+      - medicine
     sizes:
       - 32
     variants:
@@ -3890,7 +4936,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - pin
+      - save
+      - favorite
     sizes:
       - 32
   - name: plane
@@ -3899,7 +4946,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - plane
+      - airplane
+      - flight
+      - travel
     sizes:
       - 32
   - name: playlist
@@ -3908,7 +4957,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - playlist
+      - music
+      - play
+      - dj
     sizes:
       - 32
   - name: popup
@@ -3917,7 +4968,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - popup
+      - modal
+      - overlay
+      - expand
     sizes:
       - 32
   - name: portfolio
@@ -3926,7 +4979,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - portfolio
+      - briefcase
+      - suitcase
+      - travel
+      - case
     sizes:
       - 32
   - name: presentation-file
@@ -3935,7 +4991,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - presentation-file
+      - keynote
+      - chart
+      - meeting
+      - graph
     sizes:
       - 32
   - name: printer
@@ -3944,7 +5003,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - printer
+      - print
+      - copy
+      - file
+      - paper
     sizes:
       - 32
   - name: purchase
@@ -3953,7 +5015,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - purchase
+      - charge
+      - card
+      - credit card
+      - debit
     sizes:
       - 32
   - name: query-queue
@@ -3962,7 +5027,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - query-queue
+      - list
     sizes:
       - 32
   - name: quotes
@@ -3971,7 +5036,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - quotes
+      - mark
+      - punctuation
     sizes:
       - 32
   - name: radio-button
@@ -3980,7 +5046,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - radio-button
+      - component
+      - circle
+      - travel
+      - case
     sizes:
       - 32
     variants:
@@ -3995,7 +5064,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - radio
+      - music
+      - sound
+      - audio
+      - broadcast
     sizes:
       - 32
   - name: receipt
@@ -4004,7 +5076,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - receipt
+      - check
+      - bill
+      - total
     sizes:
       - 32
   - name: recently-viewed
@@ -4013,7 +5087,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - recently-viewed
+      - history
+      - version
+      - back
+      - recent
     sizes:
       - 32
   - name: recommend
@@ -4022,7 +5099,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - recommend
+      - suggest
+      - award
+      - favorite
     sizes:
       - 32
   - name: recording
@@ -4031,7 +5110,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - recording
+      - start
+      - music
+      - sound
+      - control
     sizes:
       - 32
     variants:
@@ -4051,7 +5133,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - renew
+      - refresh
+      - replay
+      - restart
     sizes:
       - 32
   - name: repeat
@@ -4060,7 +5144,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - repeat
+      - repeat once
+      - music
+      - control
     sizes:
       - 32
     variants:
@@ -4075,7 +5161,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - reply
+      - back
+      - respond
+      - email
     sizes:
       - 32
   - name: report
@@ -4084,7 +5172,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - report
+      - clipboard
+      - paper
+      - chart
+      - summary
     sizes:
       - 32
     variants:
@@ -4099,7 +5190,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - request-quote
+      - edit
+      - pencil
+      - paper
+      - modify
     sizes:
       - 32
   - name: research
@@ -4108,7 +5202,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - research
+      - study
+      - sphere
     variants:
       - name: research--bloch-sphere
         friendly_name: Research bloch sphere
@@ -4131,7 +5226,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - reset
+      - refresh
+      - undo
+      - revert
     sizes:
       - 32
     variants:
@@ -4146,7 +5243,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - restaurant
+      - dining
+      - knife
+      - fork
+      - utensil
+      - dinner
+      - food
+      - cafe
+      - eat
     sizes:
       - 32
     variants:
@@ -4161,7 +5265,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - rewind
+      - back
+      - previous
+      - past
+      - reverse
     variants:
       - name: rewind--10
         friendly_name: Rewind 10
@@ -4184,7 +5291,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - rocket
+      - missile
+      - spaceship
+      - spacecraft
+      - boost
+      - launch
     sizes:
       - 32
   - name: rotate
@@ -4193,7 +5304,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - rotate
+      - revolve
+      - circle
+      - circulate
+      - circle arrow
+      - launch
     sizes:
       - 32
   - name: row
@@ -4202,7 +5317,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - row
+      - line
+      - tier
+      - queue
+      - column
+      - composition
+      - layout
+      - horizontal
+      - template
     sizes:
       - 32
   - name: rss
@@ -4211,7 +5333,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - rss
+      - web feed
+      - feed
+      - news
+      - reading
+      - subscribe
+      - subscription
     sizes:
       - 32
   - name: ruler
@@ -4220,7 +5347,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - ruler
+      - measure
+      - tool
+      - school
+      - office
+      - length
+      - scale
     sizes:
       - 32
     variants:
@@ -4235,7 +5367,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - run
+      - start
+      - play
+      - program
     sizes:
       - 32
   - name: scale
@@ -4244,7 +5378,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - scale
+      - scalable
+      - ratio
+      - proportion
+      - scope
+      - spectrum
+      - resize
+      - design
+      - square
+      - tool
     sizes:
       - 32
   - name: scalpel
@@ -4253,7 +5395,16 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - scalpel
+      - blade
+      - cutter
+      - knife
+      - cut
+      - tool
+      - surgery
+      - sharp
+      - health
+      - hospital
+      - medical
     sizes:
       - 32
   - name: scan
@@ -4262,7 +5413,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - scan
+      - scanner
+      - code
+      - barcode
+      - detect
+      - examine
+      - check
+      - qr
     sizes:
       - 32
   - name: screen
@@ -4271,7 +5428,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - screen
+      - computer
+      - display
+      - monitor
+      - desktop
+      - device
+      - technology
+      - pc
+      - mac
     sizes:
       - 32
     variants:
@@ -4286,7 +5450,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - send
+      - mail
+      - message
+      - paper plane
+      - sending
+      - message
+      - arrow
+      - deliver
+      - letter
+      - email
     sizes:
       - 32
     variants:
@@ -4311,7 +5483,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - share-knowledge
+      - people
+      - communicate
+      - idea
+      - contribution
+      - brainstorm
+      - thinking
+      - knowledge
+      - exchange
     sizes:
       - 32
   - name: share
@@ -4320,7 +5499,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - share
+      - social media
+      - facebook
+      - twitter
+      - media
+      - social
+      - network
+      - nodes
+      - connect
     sizes:
       - 32
   - name: shopping
@@ -4329,7 +5515,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - shopping
+      - bag
+      - cart
+      - shop
+      - buy
+      - e-commerce
+      - purchase
+      - store
+      - retail
     variants:
       - name: shopping--bag
         friendly_name: Shopping bag
@@ -4352,7 +5545,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - shrink-screen
+      - minimize
+      - resize
+      - arrow
+      - smaller
+      - reduce
+      - shrink
+      - screen
+      - zoom out
     sizes:
       - 32
     variants:
@@ -4367,7 +5567,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - shuffle
+      - move
+      - reorder
+      - cross arrows
+      - randomize
+      - random
+      - songs
+      - player
+      - music
+      - multimedia
     sizes:
       - 32
   - name: shuttle
@@ -4376,7 +5584,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - shuttle
+      - bus
+      - truck
+      - transportation
+      - transit
+      - vehicle
+      - delivery
+      - car
     sizes:
       - 32
   - name: skip
@@ -4385,7 +5599,16 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - skip
+      - arrow
+      - next
+      - forward
+      - button
+      - music
+      - media
+      - multi-media
+      - player
+      - song
+      - music
     variants:
       - name: skip--back
         friendly_name: Skip back
@@ -4403,7 +5626,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - smell
+      - nose
+      - scent
+      - odor
+      - fragrance
+      - nostril
+      - senses
     sizes:
       - 32
   - name: spell-check
@@ -4412,7 +5640,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - spell-check
+      - check
+      - correction
+      - spelling
+      - type
+      - tool
+      - school
+      - writing
+      - grammar
+      - education
     sizes:
       - 32
   - name: split-screen
@@ -4421,7 +5657,14 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - split-screen
+      - divide
+      - dual
+      - split
+      - screen
+      - multitask
+      - view
+      - half
+      - even
     sizes:
       - 32
   - name: spray-paint
@@ -4430,7 +5673,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - spray-paint
+      - paint
+      - spray
+      - spray can
+      - aerosol
+      - art
+      - bottle
+      - half
     sizes:
       - 32
   - name: store
@@ -4439,7 +5688,15 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - store
+      - building
+      - shop
+      - house
+      - retail
+      - buisness
+      - online
+      - ecommerce
+      - market
+      - buy
     sizes:
       - 32
   - name: table
@@ -4448,7 +5705,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - table
+      - data
+      - spreadsheet
+      - excel
+      - chart
+      - rows
+      - grid
     sizes:
       - 32
     variants:
@@ -4463,7 +5725,16 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - table-of-contents
+      - list
+      - chart
+      - schedule
+      - record
+      - appendix
+      - index
+      - summary
+      - bullet point
+      - content
+      - menu
     sizes:
       - 32
   - name: tag
@@ -4472,7 +5743,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - tag
+      - label
+      - mark
+      - price
+      - sale
+      - shop
+      - marker
     sizes:
       - 32
     variants:
@@ -4487,7 +5763,13 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - task
+      - clipboard
+      - checkmark
+      - checklist
+      - assignment
+      - to do list
+      - list
+      - chore
     sizes:
       - 32
   - name: taste
@@ -4496,7 +5778,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - taste
+      - tongue
+      - mouth
+      - eat
+      - senses
     sizes:
       - 32
   - name: taxi
@@ -4505,7 +5790,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - taxi
+      - car
+      - cab
+      - transportation
+      - transit
+      - vehicle
     sizes:
       - 32
   - name: temperature
@@ -4514,7 +5803,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - temperature
+      - weather
+      - thermometer
+      - degree
+      - heat
+      - hot
+      - cold
     sizes:
       - 32
   - name: template
@@ -4523,7 +5817,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - template
+      - dashboard
+      - arrange
+      - layout
+      - wireframe
+      - pattern
     sizes:
       - 32
   - name: terminal
@@ -4532,7 +5830,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - terminal
+      - code
+      - code editor
+      - command line
     sizes:
       - 32
   - name: text
@@ -4541,7 +5841,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - text
+      - letter
+      - typography
+      - alphabet
+      - editor
     variants:
       - name: text--align--center
         friendly_name: Text align center
@@ -4674,7 +5977,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - thumbnail
+      - preview
+      - carousel
+      - grid
     variants:
       - name: thumbnail--1
         friendly_name: Thumbnail 1
@@ -4692,7 +5997,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - thumbs-down
+      - dislike
+      - hand
+      - down vote
+      - 'no'
+      - disagree
     sizes:
       - 32
   - name: thumbs-up
@@ -4701,7 +6010,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - thumbs-up
+      - like
+      - hand
+      - up vote
+      - 'yes'
+      - agree
     sizes:
       - 32
   - name: ticket
@@ -4710,7 +6023,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - ticket
+      - stub
+      - admission
     sizes:
       - 32
   - name: time
@@ -4719,7 +6033,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - time
+      - clock
+      - hour
+      - minute
+      - watch
     sizes:
       - 32
   - name: timer
@@ -4728,7 +6045,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - timer
+      - alarm
+      - alert
+      - stop watch
     sizes:
       - 32
   - name: tool-box
@@ -4737,7 +6056,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - tool-box
+      - kit
+      - container
     sizes:
       - 32
   - name: tools
@@ -4746,7 +6066,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - tools
+      - wrench
+      - fix
+      - setting
+      - customize
     sizes:
       - 32
   - name: touch
@@ -4755,7 +6078,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - touch
+      - hand
+      - tap
+      - press
+      - click
     variants:
       - name: touch--1
         friendly_name: Touch 1
@@ -4773,7 +6099,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - train
+      - subway
+      - metro
+      - underground
     sizes:
       - 32
   - name: translate
@@ -4782,7 +6110,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - translate
+      - language
     sizes:
       - 32
   - name: tree-view
@@ -4791,7 +6119,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - tree-view
+      - flow chart
     sizes:
       - 32
   - name: unlink
@@ -4800,7 +6128,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - unlink
+      - detach
+      - paperclip
+      - break
     sizes:
       - 32
   - name: user-profile
@@ -4809,7 +6139,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - user-profile
+      - person
+      - account
     variants:
       - name: user-profile--alt
         friendly_name: User profile alt
@@ -4822,7 +6153,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - van
+      - vehicle
+      - car
+      - delivery
     sizes:
       - 32
   - name: video
@@ -4831,7 +6164,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - video
+      - camera
+      - recorder
+      - movie
     sizes:
       - 32
     variants:
@@ -4866,7 +6201,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - visual-recognition
+      - picture
+      - ai
     sizes:
       - 32
   - name: voicemail
@@ -4875,7 +6211,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - voicemail
+      - recording
+      - audio
+      - tape
     sizes:
       - 32
   - name: volume
@@ -4884,7 +6222,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - volume
+      - sound
+      - noise
     variants:
       - name: volume--down--filled
         friendly_name: Volume down filled
@@ -4922,7 +6261,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - wallet
+      - money
+      - purse
     sizes:
       - 32
   - name: watch
@@ -4931,7 +6271,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - watch
+      - time
+      - clock
     sizes:
       - 32
   - name: watson
@@ -4940,7 +6281,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - watson
+      - ai
     sizes:
       - 32
     variants:
@@ -4955,7 +6296,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - 3D-Cursor
+      - watson
     sizes:
       - 32
   - name: 3D-MPR-Toggle
@@ -4964,7 +6305,7 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - 3D-MPR-Toggle
+      - watson
     sizes:
       - 32
   - name: 3D-curve
@@ -4973,7 +6314,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - 3D-curve
+      - watson
+      - curve
+      - spline
     variants:
       - name: 3D-curve--auto-colon
         friendly_name: 3 d curve auto colon
@@ -4996,7 +6339,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - 3rd-party-connected
+      - watson
+      - dots
+      - connection
+      - lattice
+      - group
     sizes:
       - 32
   - name: angle
@@ -5005,7 +6352,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - angle
+      - watson
+      - tilt
+      - meter
+      - gauge
     sizes:
       - 32
   - name: annotation-visibility
@@ -5014,7 +6364,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - annotation-visibility
+      - meter
+      - instrument
+      - annotate
+      - diagram
+      - comment
     sizes:
       - 32
   - name: arrow-annotation
@@ -5023,7 +6377,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - arrow-annotation
+      - cursor
+      - text
+      - expansion
     sizes:
       - 32
   - name: auto-scroll
@@ -5032,7 +6388,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - auto-scroll
+      - scrolling
+      - slide
+      - control
     sizes:
       - 32
   - name: cd
@@ -5041,7 +6399,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cd
+      - target
+      - mark
+      - spot
+      - bull's eye
     variants:
       - name: cd--archive
         friendly_name: Cd archive
@@ -5064,7 +6425,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - circle-measurement
+      - pan
+      - scan
+      - track
     sizes:
       - 32
   - name: cobb-angle
@@ -5073,7 +6436,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cobb-angle
+      - corner
+      - slant
+      - twist
+      - bend
+      - crook
+      - stack
     sizes:
       - 32
   - name: cross-reference
@@ -5082,7 +6450,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - cross-reference
+      - read
+      - research
+      - refer
     sizes:
       - 32
   - name: dicom
@@ -5091,7 +6461,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - dicom
+      - digital
+      - imaging
+      - communication
     variants:
       - name: dicom--6000
         friendly_name: Dicom 6000
@@ -5109,7 +6481,8 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - edit-filter
+      - pencil
+      - funnel
     sizes:
       - 32
   - name: fusion-blender
@@ -5118,7 +6491,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - fusion-blender
+      - bar
+      - box
+      - plot
     sizes:
       - 32
   - name: hanging-protocol
@@ -5127,7 +6502,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - hanging-protocol
+      - hanger
+      - clothes
+      - suspended
+      - swing
     sizes:
       - 32
   - name: iCA-3D
@@ -5136,7 +6514,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - iCA-3D
+      - iCA
+      - dimension
+      - cube
+      - space
     sizes:
       - 32
   - name: launch-study
@@ -5145,7 +6526,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - launch-study
+      - push
+      - pull
+      - server
+      - drive
     variants:
       - name: launch-study--1
         friendly_name: Launch study 1
@@ -5168,7 +6552,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - magnify
+      - expand
+      - zoom
+      - amplify
+      - enhance
     sizes:
       - 32
   - name: page-scroll
@@ -5177,7 +6564,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - page-scroll
+      - pages
+      - stack
+      - flip
+      - browse
+      - shuffle
+      - sheets
     sizes:
       - 32
   - name: pet-image
@@ -5186,7 +6578,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - pet-image
+      - cursor
+      - brightness
+      - contrast
     variants:
       - name: pet-image--B
         friendly_name: Pet image b
@@ -5204,7 +6598,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - pointer-text
+      - cursor
+      - text
+      - arrow
     sizes:
       - 32
   - name: region-analysis
@@ -5213,7 +6609,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - region-analysis
+      - circle
+      - hash
+      - select
+      - area
     variants:
       - name: region-analysis--area
         friendly_name: Region analysis area
@@ -5231,7 +6630,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - spine-label
+      - backbone
+      - stack
+      - pointer
+      - gap
+      - annotate
     sizes:
       - 32
   - name: stacked-move
@@ -5240,7 +6643,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - stacked-move
+      - stack
+      - pages
+      - sheet
+      - migrate
+      - drag
     sizes:
       - 32
   - name: stacked-scrolling
@@ -5249,7 +6656,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - stacked-scrolling
+      - stack
+      - pages
+      - sheet
+      - browse
+      - thick
+      - tall
     variants:
       - name: stacked-scrolling--1
         friendly_name: Stacked scrolling 1
@@ -5267,7 +6679,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - stress-breath-editor
+      - air
+      - gas
+      - blow
+      - flow
+      - breathalyzer
     sizes:
       - 32
   - name: study
@@ -5276,7 +6692,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - study
+      - patient
+      - user
+      - profile
     variants:
       - name: study--next
         friendly_name: Study next
@@ -5299,7 +6717,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - window
+      - brightness
+      - contrast
+      - sun
     variants:
       - name: window--auto
         friendly_name: Window auto
@@ -5322,7 +6742,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - zoom-pan
+      - track
+      - move
+      - view
+      - zoom
+      - magnifying glass
+      - search
     sizes:
       - 32
   - name: wikis
@@ -5331,7 +6756,11 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - wikis
+      - globe
+      - wikipedia
+      - earth
+      - world
+      - international
     sizes:
       - 32
   - name: wireless-checkout
@@ -5340,7 +6769,10 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - wireless-checkout
+      - shopping bag
+      - buy
+      - tote
+      - WiFi
     sizes:
       - 32
   - name: workspace
@@ -5349,7 +6781,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - workspace
+      - tiles
+      - dashboard
+      - apps
     sizes:
       - 32
   - name: x-axis
@@ -5358,7 +6792,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - x-axis
+      - horizontal
+      - data
+      - right
+      - angle
+      - corner
+      - turn
     sizes:
       - 32
   - name: y-axis
@@ -5367,7 +6806,12 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - y-axis
+      - verticle
+      - data
+      - up
+      - angle
+      - corner
+      - turn
     sizes:
       - 32
   - name: z-axis
@@ -5376,6 +6820,9 @@ icons:
     categories:
       - example cateogry
     aliases:
-      - z-axis
+      - depth
+      - 3D
+      - dimension
+      - 3
     sizes:
       - 32
