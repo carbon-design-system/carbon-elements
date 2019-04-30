@@ -45,6 +45,7 @@ describe('@carbon/scss', () => {
             t.SassMapProperty({
               key: t.Identifier({ name: 'b' }),
               value: t.SassNumber({ value: 2 }),
+              quoted: true,
             }),
             t.SassMapProperty({
               key: t.Identifier({ name: 'c' }),
@@ -54,7 +55,7 @@ describe('@carbon/scss', () => {
         }),
         `$variable: (
   a: 1,
-  b: 2,
+  'b': 2,
   c: 3
 );`,
       ],
@@ -422,6 +423,96 @@ describe('@carbon/scss', () => {
         })
       );
       expect(code).toEqual(prettier.format(expected.trim(), prettierOptions));
+    });
+  });
+
+  describe('Control structures', () => {
+    const structures = [
+      [
+        'if statement',
+        t.IfStatement({
+          test: t.SassBoolean(true),
+          consequent: t.BlockStatement([]),
+        }),
+        `@if true {
+}`,
+      ],
+
+      [
+        'if else',
+        t.IfStatement({
+          test: t.SassBoolean(false),
+          consequent: t.BlockStatement([]),
+          alternate: t.BlockStatement([]),
+        }),
+        `@if false {
+} @else {
+}`,
+      ],
+
+      [
+        'if > else if > else',
+        t.IfStatement({
+          test: t.SassBoolean(false),
+          consequent: t.BlockStatement([]),
+          alternate: t.IfStatement({
+            test: t.SassBoolean(false),
+            consequent: t.BlockStatement([]),
+            alternate: t.BlockStatement([]),
+          }),
+        }),
+        `@if false {
+} @else if false {
+} @else {
+}`,
+      ],
+    ];
+
+    test.each(structures)('%s', (_, ast, expected) => {
+      const { code } = generate(ast);
+      expect(code.trim()).toEqual(expected.trim());
+    });
+  });
+
+  describe('Expressions', () => {
+    const expressions = [
+      [
+        'no arguments',
+        t.Assignment({
+          id: t.Identifier('test'),
+          init: t.CallExpression({
+            callee: t.Identifier('foo'),
+          }),
+        }),
+        '$test: foo();',
+      ],
+      [
+        'single arguments',
+        t.Assignment({
+          id: t.Identifier('test'),
+          init: t.CallExpression({
+            callee: t.Identifier('foo'),
+            arguments: [t.Identifier('bar')],
+          }),
+        }),
+        '$test: foo($bar);',
+      ],
+      [
+        'multiple arguments',
+        t.Assignment({
+          id: t.Identifier('test'),
+          init: t.CallExpression({
+            callee: t.Identifier('foo'),
+            arguments: [t.Identifier('bar'), t.Identifier('baz')],
+          }),
+        }),
+        '$test: foo($bar, $baz);',
+      ],
+    ];
+
+    test.each(expressions)('%s', (_, ast, expected) => {
+      const { code } = generate(ast);
+      expect(code.trim()).toEqual(expected.trim());
     });
   });
 });
