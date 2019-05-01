@@ -1,7 +1,7 @@
 {
   "name": "@carbon/grid",
   "description": "Grid for digital and software products using the Carbon Design System",
-  "version": "10.0.0",
+  "version": "10.1.1",
   "license": "Apache-2.0",
   "repository": "https://github.com/IBM/carbon-elements/tree/master/packages/grid",
   "bugs": "https://github.com/IBM/carbon-elements/issues",
@@ -20,10 +20,17 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "yarn clean && bundler sassdoc 'scss/*.scss' && bundler inline && bundler check 'scss/*.scss'",
+    "clean": "rimraf scss/_inlined scss/vendor"
+  },
   "dependencies": {
-    "@carbon/import-once": "10.0.0",
-    "@carbon/layout": "10.0.0"
+    "@carbon/import-once": "10.1.0",
+    "@carbon/layout": "10.1.1"
+  },
+  "devDependencies": {
+    "@carbon/bundler": "10.1.1",
+    "rimraf": "^2.6.3"
   },
   "eyeglass": {
     "exports": false,
