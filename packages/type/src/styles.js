@@ -80,13 +80,7 @@ export const heading01 = {
   letterSpacing: px(0.16),
 };
 
-export const productiveHeading01 = {
-  fontSize: rem(scale[1]),
-  fontWeight: fontWeights.semibold,
-  lineHeight: rem(18),
-  letterSpacing: px(0.16),
-};
-
+export const productiveHeading01 = heading01;
 
 export const heading02 = {
   fontSize: rem(scale[2]),
@@ -95,13 +89,7 @@ export const heading02 = {
   letterSpacing: 0,
 };
 
-export const productiveHeading02 = {
-  fontSize: rem(scale[2]),
-  fontWeight: fontWeights.semibold,
-  lineHeight: rem(22),
-  letterSpacing: 0,
-};
-
+export const productiveHeading02 = heading02;
 
 export const productiveHeading03 = {
   fontSize: rem(scale[4]),
@@ -138,21 +126,9 @@ export const productiveHeading07 = {
   letterSpacing: 0,
 };
 
+export const expressiveHeading01 = heading01;
 
-export const expressiveHeading01 = {
-  fontSize: rem(scale[1]),
-  fontWeight: fontWeights.semibold,
-  lineHeight: rem(18),
-  letterSpacing: px(0.16),
-};
-
-
-export const expressiveHeading02 = {
-  fontSize: rem(scale[2]),
-  fontWeight: fontWeights.semibold,
-  lineHeight: rem(22),
-  letterSpacing: 0,
-};
+export const expressiveHeading02 = heading02;
 
 export const expressiveHeading03 = fluid({
   fontSize: rem(scale[4]),
